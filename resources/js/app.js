@@ -19,7 +19,11 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+// Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('admin', require('./components/Admin.vue'));
+Vue.component('admin-header', require('./components/AdminHeader.vue'));
+Vue.component('sidebar', require('./components/Sidebar.vue'));
+Vue.component('dashboard', require('./components/Dashboard.vue'));
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -27,6 +31,9 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+import Admin from './components/Admin';
+
 const app = new Vue({
     el: '#app',
-});
+    template: '<Admin/>',
+    render: h => h(Admin)});
