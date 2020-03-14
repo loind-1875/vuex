@@ -24,6 +24,7 @@ Vue.component('admin', require('./components/Admin.vue'));
 Vue.component('admin-header', require('./components/AdminHeader.vue'));
 Vue.component('sidebar', require('./components/Sidebar.vue'));
 Vue.component('dashboard', require('./components/Dashboard.vue'));
+Vue.component('create-product', require ('./components/Product/CreateProduct'));
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -32,8 +33,22 @@ Vue.component('dashboard', require('./components/Dashboard.vue'));
  */
 
 import Admin from './components/Admin';
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import routes from './routes';
+import productStore from './store/productStore';
+
+Vue.use(VueRouter);
+
+const router = new VueRouter({
+    routes
+});
+window.events = new Vue();
 
 const app = new Vue({
     el: '#app',
     template: '<Admin/>',
-    render: h => h(Admin)});
+    render: h => h(Admin),
+    router,
+    store: productStore,
+});

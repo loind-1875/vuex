@@ -45,7 +45,7 @@
                             <a href="email.html">List product</a>
                         </li>
                         <li>
-                            <a href="calendar.html">Add news</a>
+                            <router-link class="nav-link" :to="{name: 'products.create'}">Add new</router-link>
                         </li>
                     </ul>
                 </li>

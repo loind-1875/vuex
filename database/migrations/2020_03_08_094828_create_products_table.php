@@ -19,10 +19,10 @@ class CreateProductsTable extends Migration
             $table->string('status');
             $table->integer('price');
             $table->integer('old_price');
-            $table->integer('star');
-            $table->string('slug');
+            $table->integer('star')->default(0);
+            $table->string('slug')->nullable();
             $table->text('detail');
-            $table->longText('post');
+            $table->longText('post')->nullable();
             $table->string('color');
             $table->integer('view')->default(0);
             $table->integer('is_trending')->default(0);

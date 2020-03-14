@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('admin');
+Route::get('/dashboard', 'AdminController@login');
+
+Route::prefix('admin')->group(function () {
+    Route::view('/{any}', 'admin')
+        ->where('any', '.*');
+    Route::resource('products', 'ProductController');
 });
