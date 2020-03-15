@@ -17,8 +17,5 @@ Route::get('/', function () {
 
 Route::get('/dashboard', 'AdminController@login');
 
-Route::prefix('admin')->group(function () {
-    Route::view('/{any}', 'admin')
-        ->where('any', '.*');
-    Route::resource('products', 'ProductController');
-});
+Route::view('/{any}', 'admin')
+    ->where('any', '.*');

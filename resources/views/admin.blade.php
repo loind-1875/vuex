@@ -4,6 +4,12 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="/admin/css/admin.css">
+    <script type="text/javascript">
+        window.Laravel = {!! json_encode([
+                'baseUrl' => url('/'),
+                'csrfToken' => csrf_token(),
+            ]) !!};
+    </script>
 </head>
 <body>
     <div id="app"></div>

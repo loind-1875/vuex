@@ -5,7 +5,7 @@
                 <li class="side-nav-header">
                     <span>Navigation</span>
                 </li>
-                <li class="nav-item dropdown open">
+                <li class="nav-item dropdown">
                     <a class="dropdown-toggle" href="javascript:void(0);">
                                 <span class="icon-holder">
                                     <i class="mdi mdi-gauge"></i>
@@ -30,7 +30,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown" :class="['open', {active: $route.name === 'products.*'}]">
                     <a class="dropdown-toggle" href="javascript:void(0);">
                         <span class="icon-holder">
                             <i class="mdi mdi-image-filter-drama"></i>
@@ -42,7 +42,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="email.html">List product</a>
+                            <router-link class="nav-link" :to="{name: 'products.index'}">List product</router-link>
                         </li>
                         <li>
                             <router-link class="nav-link" :to="{name: 'products.create'}">Add new</router-link>

@@ -86,7 +86,7 @@
                     detail: this.detail,
                     color: this.color
                 });
-                this.$router.push({name: 'products.create'});
+                this.$router.push({name: 'products.index'});
             }
         }
     }

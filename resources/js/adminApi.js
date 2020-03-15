@@ -1,4 +1,4 @@
-const RESOURCE_PRODUCT= '/admin/products';
+const RESOURCE_PRODUCT= '/api/admin/products';
 
 export {
     RESOURCE_PRODUCT

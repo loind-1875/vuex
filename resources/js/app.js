@@ -25,6 +25,7 @@ Vue.component('admin-header', require('./components/AdminHeader.vue'));
 Vue.component('sidebar', require('./components/Sidebar.vue'));
 Vue.component('dashboard', require('./components/Dashboard.vue'));
 Vue.component('create-product', require ('./components/Product/CreateProduct'));
+Vue.component('list-product', require ('./components/Product/ListProduct'));
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -41,7 +42,8 @@ import productStore from './store/productStore';
 Vue.use(VueRouter);
 
 const router = new VueRouter({
-    routes
+    routes,
+    mode: 'history',
 });
 window.events = new Vue();
 

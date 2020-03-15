@@ -1,15 +1,15 @@
 import CreateProduct from './components/Product/CreateProduct'
 // import EditUser from './components/EditUser'
-// import UserList from './components/UserList'
+import ListProduct from './components/Product/ListProduct'
 
 const routes = [
-    // {
-    //     path: '/',
-    //     component: UserList,
-    //     name: 'users.index',
-    // },
     {
-        path: '/product/create',
+        path: '/admin/products',
+        component: ListProduct,
+        name: 'products.index',
+    },
+    {
+        path: '/admin/products/create',
         component: CreateProduct,
         name: 'products.create',
     }
@@ -19,4 +19,5 @@ const routes = [
     //     name: 'users.edit',
     // },
 ];
+
 export default routes;
