@@ -21,14 +21,11 @@ const productStore = new Vuex.Store({
     actions: {
         fetch({ commit }) {
             return axios.get(RESOURCE_PRODUCT)
-                .then(response => {
-                    console.log(response);
-                    commit('FETCH', response.data)
-                })
+                .then(response => commit('FETCH', response.data))
                 .catch();
         },
         fetchOne({ commit }, id) {
-            axios.get(`${RESOURCE_PRODUCT}/${id}/edit`)
+            axios.get(`${RESOURCE_PRODUCT}/${id}`)
                 .then(response => commit('FETCH_ONE', response.data))
                 .catch();
         },

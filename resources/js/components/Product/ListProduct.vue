@@ -12,8 +12,16 @@
         </div>
         <div class="card">
             <div class="card-body">
+                <div class="alert alert-info-gradient" v-if="message">
+                    <div class="d-flex align-items-center justify-content-start">
+                        <span class="alert-icon">
+                            <i class="mdi mdi-check-circle-outline"></i>
+                        </span>
+                        <span><strong>Success!</strong> {{ message }}</span>
+                    </div>
+                </div>
                 <div class="table-overflow">
-                    <table class="table table-xl border">
+                    <table class="table table-xl border" v-if="products.length" >
                         <thead class="thead-light">
                             <tr>
                                 <th>
@@ -44,20 +52,37 @@
                                 </td>
                                 <td>{{ product.name }}</td>
                                 <td><span class="badge badge-pill badge-warning">{{ product.status }}</span></td>
-                                <td>{{ product.price }}</td>
-                                <td>{{ product.old_price }}</td>
+                                <td>{{ Until.formatNumber(product.price) }}</td>
+                                <td>{{ Until.formatNumber(product.old_price) }}</td>
                                 <td>{{ product.star }}</td>
-                                <td>{{ product.view }}</td>
+                                <td>{{ Until.formatNumber(product.view) }}</td>
                                 <td class="text-center">{{ product.is_trending }}</td>
                                 <td>{{ product.detail }}</td>
                                 <td>{{ product.post }}</td>
                                 <td class="text-center font-size-18">
-                                    <a href="#" class="text-gray m-r-15"><i class="ti-pencil"></i></a>
-                                    <a href="#" class="text-gray"><i class="ti-trash"></i></a>
+                                    <router-link class="text-gray m-r-5" :to="`/admin/products/edit/${product.id}`"><i class="ti-pencil"></i></router-link>
+                                    <a data-toggle="modal" data-target="#modal-sm" @click="getProduct(product)"><i class="ti-trash"></i></a>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
+                    <div v-else>
+                        <p class="text-center">No data</p>
+                    </div>
+                    <div class="modal fade" id="modal-sm">
+                        <div class="modal-dialog modal-sm" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <h4 class="m-b-15">Are you sure?</h4>
+                                    <p>Delete product {{ name }}</p>
+                                    <div class="m-t-20 text-right">
+                                        <button class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                        <button class="btn btn-primary" data-dismiss="modal" @click="deleteProduct">Delete</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -66,11 +91,16 @@
 
 <script>
     import { mapState } from 'vuex';
+    import { Until } from "../../until";
+
     export default {
         name: 'ListProduct',
         data: function () {
             return {
-
+                name: '',
+                id: null,
+                message: '',
+                Until,
             };
         },
         computed: {
@@ -78,6 +108,24 @@
         },
         created: function () {
             this.$store.dispatch('fetch');
+        },
+        methods: {
+            deleteProduct: function () {
+                this.$store.dispatch('deleteProduct', this.id)
+                    .then(() => {
+                        this.message = "Deleted " + this.name;
+                    })
+            },
+            getProduct: function (product) {
+                this.name = product.name;
+                this.id = product.id;
+            }
         }
     }
 </script>
+
+<style>
+    a {
+        cursor: pointer;
+    }
+</style>

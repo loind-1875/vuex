@@ -49,44 +49,71 @@ class ProductController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return JsonResponse
      */
     public function show($id)
     {
-        //
+        $product = Product::find($id);
+
+        if (!$product) {
+            return response()->json(['message' => 'Product not found']);
+        }
+
+        return response()->json($product);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return JsonResponse
      */
     public function edit($id)
     {
-        //
+        $product = Product::find($id);
+
+        if (!$product) {
+            return response()->json(['message' => 'Product not found']);
+        }
+
+        return response()->json($product);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return JsonResponse
      */
     public function update(Request $request, $id)
     {
-        //
+        $product = Product::find($id);
+
+        if (!$product) {
+            return response()->json(['message' => 'Product not found']);
+        }
+
+        $product->update($request->all());
+
+        return response()->json($product);
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return JsonResponse
      */
     public function destroy($id)
     {
-        //
+        $product = Product::find($id);
+
+        if (!$product) {
+            return response()->json(['message' => 'Product not found']);
+        }
+
+        $product->delete();
+        return response()->json(['message' => 'Done']);
     }
 }
