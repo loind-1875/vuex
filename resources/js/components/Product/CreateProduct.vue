@@ -139,7 +139,7 @@
                     color: this.color,
                     categories: this.categories,
                 });
-                // this.$router.push({name: 'products.index'});
+                this.$router.push({name: 'products.index'});
             }
         }
     }
