@@ -20,30 +20,63 @@
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
                                             <label class="control-label">Name</label>
-                                            <input type="text" class="form-control" v-model="name" required>
+                                            <ValidationProvider rules="required" v-slot="{ errors }">
+                                                <input type="text" class="form-control" placeholder="product name" v-model="name" required>
+                                                <span class="text-danger help">{{ errors[0] }}</span>
+                                            </ValidationProvider>
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label class="control-label">Status</label>
-                                            <input type="text" class="form-control" v-model="status" required>
+                                            <ValidationProvider rules="required" v-slot="{ errors }">
+                                                <input type="text" class="form-control" placeholder="product status" v-model="status" required>
+                                                <span class="text-danger help">{{ errors[0] }}</span>
+                                            </ValidationProvider>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
                                             <label class="control-label">Price</label>
-                                            <input type="number" class="form-control" v-model="price" required>
+                                            <ValidationProvider rules="required|numeric" v-slot="{ errors }">
+                                                <input type="number" class="form-control" placeholder="product price" v-model="price" required>
+                                                <span class="text-danger help" v-for="err in errors">{{ err }}</span>
+                                            </ValidationProvider>
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label class="control-label">Old Price</label>
-                                            <input type="number" class="form-control" v-model="old_price" required>
+                                            <ValidationProvider rules="required|numeric" v-slot="{ errors }">
+                                                <input type="number" class="form-control" placeholder="product old price" v-model="old_price" required>
+                                                <span class="text-danger help" v-for="err in errors">{{ err }}</span>
+                                            </ValidationProvider>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label">Color</label>
-                                        <input type="text" class="form-control" v-model="color" required>
+                                        <ValidationProvider rules="required" v-slot="{ errors }">
+                                            <input type="text" class="form-control" placeholder="product color" v-model="color" required>
+                                            <span class="text-danger help">{{ errors[0] }}</span>
+                                        </ValidationProvider>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label">Detail</label>
-                                        <textarea  class="form-control"  id="" cols="100" rows="5" v-model="detail" required></textarea>
+                                        <ValidationProvider rules="required" v-slot="{ errors }">
+                                            <textarea  class="form-control" placeholder="product detail" id="" cols="100" rows="5" v-model="detail" required></textarea>
+                                            <span class="text-danger help">{{ errors[0] }}</span>
+                                        </ValidationProvider>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label">Category</label>
+                                            <multiselect
+                                                v-model="categories"
+                                                :options="data"
+                                                :searchable="true"
+                                                :close-on-select="false"
+                                                :allow-empty="false"
+                                                placeholder="Select one"
+                                                label="name"
+                                                track-by="name"
+                                            >
+                                            </multiselect>
                                     </div>
 
                                     <div class="form-row">
@@ -64,7 +97,21 @@
 </template>
 
 <script>
+    import { ValidationProvider } from 'vee-validate';
+    import { extend } from 'vee-validate';
+    import { required, numeric } from 'vee-validate/dist/rules';
+
+    extend('required', required);
+    extend('numeric', numeric);
+    extend('required', {
+        ...required,
+        message: 'This field is required'
+    });
+
     export default {
+        components: {
+            ValidationProvider,
+        },
         name: 'CreateProduct',
         data: function () {
             return {
@@ -73,7 +120,12 @@
                 price: null,
                 old_price: null,
                 detail: null,
-                color: null
+                color: null,
+                categories: [],
+                data: [
+                    {name: 'select1', id: 1},
+                    {name: 'select2', id: 2}
+                ]
             }
         },
         methods: {
@@ -84,10 +136,17 @@
                     price: this.price,
                     old_price: this.old_price,
                     detail: this.detail,
-                    color: this.color
+                    color: this.color,
+                    categories: this.categories,
                 });
-                this.$router.push({name: 'products.index'});
+                // this.$router.push({name: 'products.index'});
             }
         }
     }
 </script>
+
+<style>
+    .form-control {
+        margin-bottom: 5px;
+    }
+</style>

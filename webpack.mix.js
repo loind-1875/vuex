@@ -22,6 +22,7 @@ mix.js('resources/js/app.js', 'public/js')
         'resources/admin/css/materialdesignicons.min.css',
         'node_modules/animate.css/animate.css',
         'resources/admin/css/app.css',
+        'node_modules/vue-multiselect/dist/vue-multiselect.min.css',
     ], 'public/admin/css/admin.css')
     .scripts([
         'resources/admin/js/vendor.js',

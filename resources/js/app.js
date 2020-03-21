@@ -18,6 +18,7 @@ window.Vue = require('vue');
 
 // const files = require.context('./', true, /\.vue$/i);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
+import Multiselect from 'vue-multiselect';
 
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('admin', require('./components/Admin.vue'));
@@ -26,6 +27,7 @@ Vue.component('sidebar', require('./components/Sidebar.vue'));
 Vue.component('dashboard', require('./components/Dashboard.vue'));
 Vue.component('create-product', require ('./components/Product/CreateProduct'));
 Vue.component('list-product', require ('./components/Product/ListProduct'));
+Vue.component('multiselect', Multiselect);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

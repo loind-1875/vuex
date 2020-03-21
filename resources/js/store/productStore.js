@@ -58,6 +58,7 @@ const productStore = new Vuex.Store({
                 star: product.star,
                 detail: product.detail,
                 color: product.color,
+                categories: product.categories,
             })
                 .then();
         }
