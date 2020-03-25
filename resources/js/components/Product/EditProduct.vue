@@ -73,14 +73,16 @@
             }
         },
         beforeCreate() {
-            this.$store.dispatch('fetchOne', this.$route.params.id);
+            this.$store.dispatch('product/fetchOne', this.$route.params.id);
         },
         computed: {
-            ...mapState(['product'])
+            ...mapState('product', {
+                product: 'product'
+            })
         },
         methods: {
             edit: function () {
-                this.$store.dispatch('editProduct', this.product);
+                this.$store.dispatch('product/editProduct', this.product);
                 this.$router.push({name: 'products.index'});
             }
         }

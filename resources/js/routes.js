@@ -1,23 +1,9 @@
-import CreateProduct from './components/Product/CreateProduct'
-import EditProduct from './components/Product/EditProduct'
-import ListProduct from './components/Product/ListProduct'
+import productRouter from '@/routes/productRouter';
+import categoryStore from '@/routes/categoryRouter';
 
 const routes = [
-    {
-        path: '/admin/products',
-        component: ListProduct,
-        name: 'products.index',
-    },
-    {
-        path: '/admin/products/create',
-        component: CreateProduct,
-        name: 'products.create',
-    },
-    {
-        path: '/admin/products/edit/:id',
-        component: EditProduct,
-        name: 'products.edit',
-    },
+    ...productRouter,
+    ...categoryStore,
 ];
 
 export default routes;

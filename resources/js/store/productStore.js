@@ -3,9 +3,8 @@ import Vuex from 'vuex';
 import axios from 'axios';
 import {RESOURCE_PRODUCT} from '../adminApi';
 
-Vue.use(Vuex);
-
-const productStore = new Vuex.Store({
+const productStore = {
+    namespaced: true,
     state: {
         products: [],
         product: {},
@@ -31,7 +30,7 @@ const productStore = new Vuex.Store({
         },
         deleteProduct({}, id) {
             axios.delete(`${RESOURCE_PRODUCT}/${id}`)
-                .then(() => this.dispatch('fetch'))
+                .then(() => this.dispatch('product/fetch'))
                 .catch();
         },
         editProduct({}, product) {
@@ -45,7 +44,6 @@ const productStore = new Vuex.Store({
                 color: product.color,
                 view: product.view,
                 is_trending: product.is_trending,
-                created_at: product.created_at
             })
                 .then(() => this.dispatch('fetch'));
         },
@@ -63,6 +61,6 @@ const productStore = new Vuex.Store({
                 .then();
         }
     }
-});
+};
 
 export default productStore;

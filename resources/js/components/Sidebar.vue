@@ -49,43 +49,22 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown" :class="['open', {active: $route.name === 'category.*'}]">
                     <a class="dropdown-toggle" href="javascript:void(0);">
-                                <span class="icon-holder">
-									<i class="mdi mdi-vector-arrange-above"></i>
-								</span>
-                        <span class="title">UI Elements</span>
+                        <span class="icon-holder">
+                            <i class="mdi mdi-vector-arrange-above"></i>
+                        </span>
+                        <span class="title">Category</span>
                         <span class="arrow">
-									<i class="mdi mdi-chevron-right"></i>
-								</span>
+                            <i class="mdi mdi-chevron-right"></i>
+                        </span>
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="alert.html">Alert</a>
+                            <router-link class="nav-link" :to="{name: 'category.index'}">List Category</router-link>
                         </li>
                         <li>
-                            <a href="badge.html">Badge</a>
-                        </li>
-                        <li>
-                            <a href="buttons.html">Buttons</a>
-                        </li>
-                        <li>
-                            <a href="cards.html">Cards</a>
-                        </li>
-                        <li>
-                            <a href="colors.html">Colors</a>
-                        </li>
-                        <li>
-                            <a href="grid.html">Grid</a>
-                        </li>
-                        <li>
-                            <a href="icons.html">Icons</a>
-                        </li>
-                        <li>
-                            <a href="lists.html">Lists</a>
-                        </li>
-                        <li>
-                            <a href="typography.html">Typography</a>
+                            <router-link class="nav-link" :to="{name: 'category.create'}">Add New</router-link>
                         </li>
                     </ul>
                 </li>

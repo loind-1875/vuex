@@ -39,7 +39,7 @@ import Admin from './components/Admin';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import routes from './routes';
-import productStore from './store/productStore';
+import stores from './stores';
 
 Vue.use(VueRouter);
 
@@ -54,5 +54,5 @@ const app = new Vue({
     template: '<Admin/>',
     render: h => h(Admin),
     router,
-    store: productStore,
+    store: stores,
 });

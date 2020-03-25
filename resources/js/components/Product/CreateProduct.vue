@@ -130,7 +130,7 @@
         },
         methods: {
             add: function () {
-                this.$store.dispatch('addProduct', {
+                this.$store.dispatch('product/addProduct', {
                     name: this.name,
                     status: this.status,
                     price: this.price,

@@ -104,14 +104,16 @@
             };
         },
         computed: {
-            ...mapState(['products']),
+            ...mapState('product', {
+                products: 'products'
+            }),
         },
         created: function () {
-            this.$store.dispatch('fetch');
+            this.$store.dispatch('product/fetch');
         },
         methods: {
             deleteProduct: function () {
-                this.$store.dispatch('deleteProduct', this.id)
+                this.$store.dispatch('product/deleteProduct', this.id)
                     .then(() => {
                         this.message = "Deleted " + this.name;
                     })
