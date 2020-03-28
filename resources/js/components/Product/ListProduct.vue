@@ -20,8 +20,8 @@
                         <span><strong>Success!</strong> {{ message }}</span>
                     </div>
                 </div>
-                <div class="table-overflow">
-                    <table class="table table-xl border" v-if="products.length" >
+                <div class="table-overflow" v-if="listProducts.length" >
+                    <table class="table table-xl border">
                         <thead class="thead-light">
                             <tr>
                                 <th>
@@ -43,7 +43,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr v-for="product in products" :key="product.id">
+                            <tr v-for="product in listProducts" :key="product.id">
                                 <td>
                                     <div class="checkbox">
                                         <input id="selectable2" type="checkbox">
@@ -66,9 +66,42 @@
                             </tr>
                         </tbody>
                     </table>
-                    <div v-else>
-                        <p class="text-center">No data</p>
+
+                    <div class="row">
+                        <div class="col-sm-12 col-md-5">
+                            <div class="dataTables_info" id="dt-opt_info" role="status" aria-live="polite">
+                                Showing {{ from }} to {{ to }} of {{ total }} entries
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-7">
+                            <div class="paging_simple_numbers" id="dt-opt_paginate">
+                                <ul class="pagination">
+                                    <li
+                                        :class="{'disabled': current_page === 1}"
+                                        class="paginate_button page-item previous"
+                                        id="dt-opt_previous"
+                                    >
+                                        <a @click="getProductByPage(prev_page_url)" aria-controls="dt-opt" data-dt-idx="0" tabindex="0" class="page-link">Previous</a>
+                                    </li>
+                                    <li class="paginate_button page-item" :class="{'active disabled': current_page === 1}">
+                                        <a @click="getProductByPage(first_page_url)" aria-controls="dt-opt" data-dt-idx="1" tabindex="0" class="page-link">1</a>
+                                    </li>
+                                    <li class="paginate_button page-item" :class="{'active disabled': current_page === 2}">
+                                        <a @click="getProductByPage(path + '?page=2')" aria-controls="dt-opt" data-dt-idx="2" tabindex="0" class="page-link">2</a>
+                                    </li>
+                                    <li
+                                        :class="{'disabled': last_page === current_page}"
+                                        class="paginate_button page-item next"
+                                        id="dt-opt_next"
+                                    >
+                                        <a @click="getProductByPage(next_page_url)" aria-controls="dt-opt" data-dt-idx="3" tabindex="0" class="page-link">Next</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
+
+                    <!-- modal confirm -->
                     <div class="modal fade" id="modal-sm">
                         <div class="modal-dialog modal-sm" role="document">
                             <div class="modal-content">
@@ -83,6 +116,10 @@
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div v-else>
+                    <p class="text-center">No data</p>
                 </div>
             </div>
         </div>
@@ -101,6 +138,17 @@
                 id: null,
                 message: '',
                 Until,
+                listProducts: [],
+                next_page_url: '',
+                prev_page_url: '',
+                first_page_url: '',
+                last_page_url: '',
+                current_page: null,
+                last_page: null,
+                to: null,
+                from: null,
+                total: null,
+                path: '',
             };
         },
         computed: {
@@ -109,18 +157,35 @@
             }),
         },
         created: function () {
-            this.$store.dispatch('product/fetch');
+            this.$store.dispatch('product/fetch')
+                .then(() => this.makeData());
         },
         methods: {
             deleteProduct: function () {
                 this.$store.dispatch('product/deleteProduct', this.id)
                     .then(() => {
-                        this.message = "Deleted " + this.name;
+                        this.message = 'Deleted ' + this.name;
                     })
             },
             getProduct: function (product) {
                 this.name = product.name;
                 this.id = product.id;
+            },
+            getProductByPage: function (url) {
+                this.$store.dispatch('product/fetchPage', url)
+                    .then(() => this.makeData());
+            },
+            makeData: function () {
+                this.listProducts = this.products.data;
+                this.next_page_url = this.products.next_page_url;
+                this.prev_page_url = this.products.prev_page_url;
+                this.last_page_url = this.products.last_page_url;
+                this.current_page = this.products.current_page;
+                this.last_page = this.products.last_page;
+                this.to = this.products.to;
+                this.from = this.products.from;
+                this.total = this.products.total;
+                this.path = this.products.path;
             }
         }
     }
@@ -129,5 +194,11 @@
 <style>
     a {
         cursor: pointer;
+    }
+    #dt-opt_paginate {
+        overflow: auto;
+    }
+    ul.pagination {
+        float: right;
     }
 </style>

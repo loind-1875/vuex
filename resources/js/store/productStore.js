@@ -28,6 +28,11 @@ const productStore = {
                 .then(response => commit('FETCH_ONE', response.data))
                 .catch();
         },
+        fetchPage({ commit }, url) {
+            return axios.get(url)
+                .then(response => commit('FETCH', response.data))
+                .catch();
+        },
         deleteProduct({}, id) {
             axios.delete(`${RESOURCE_PRODUCT}/${id}`)
                 .then(() => this.dispatch('product/fetch'))

@@ -20,8 +20,8 @@
                         <span><strong>Success!</strong> {{ message }}</span>
                     </div>
                 </div>
-                <div class="table-overflow">
-                    <table class="table table-xl border" v-if="categories.length" >
+                <div class="table-overflow" v-if="categories.length" >
+                    <table class="table table-xl border">
                         <thead class="thead-light">
                         <tr>
                             <th>
@@ -97,7 +97,7 @@
             deleteCategory: function () {
                 this.$store.dispatch('category/deleteCategory', this.id)
                     .then(() => {
-                        this.message = "Deleted " + this.name;
+                        this.message = 'Deleted ' + this.name;
                     })
             },
             getCategory: function (product) {
@@ -111,5 +111,11 @@
 <style>
     a {
         cursor: pointer;
+    }
+    #dt-opt_paginate {
+        overflow: auto;
+    }
+    ul.pagination {
+        float: right;
     }
 </style>
