@@ -20,7 +20,7 @@
                         <span><strong>Success!</strong> {{ message }}</span>
                     </div>
                 </div>
-                <div class="table-overflow" v-if="categories.length" >
+                <div class="table-overflow" v-if="listCategory.length" >
                     <table class="table table-xl border">
                         <thead class="thead-light">
                         <tr>
@@ -35,7 +35,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr v-for="category in categories" :key="category.id">
+                        <tr v-for="category in listCategory" :key="category.id">
                             <td>
                                 <div class="checkbox">
                                     <input :id="`selectone${category.id}`" type="checkbox">
@@ -50,9 +50,44 @@
                         </tr>
                         </tbody>
                     </table>
-                    <div v-else>
-                        <p class="text-center">No data</p>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-5">
+                            <div class="dataTables_info" id="dt-opt_info" role="status" aria-live="polite">
+                                Showing {{ from }} to {{ to }} of {{ total }} entries
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-7">
+                            <div class="paging_simple_numbers" id="dt-opt_paginate">
+                                <ul class="pagination">
+                                    <li
+                                        :class="{'disabled': current_page === 1}"
+                                        class="paginate_button page-item previous"
+                                        id="dt-opt_previous"
+                                    >
+                                        <a @click="getCategoryByPage(prev_page_url)" aria-controls="dt-opt" data-dt-idx="0" tabindex="0" class="page-link">Previous</a>
+                                    </li>
+                                    <li class="paginate_button page-item" :class="{'active disabled': current_page === 1}">
+                                        <a @click="getCategoryByPage(first_page_url)" aria-controls="dt-opt" data-dt-idx="1" tabindex="0" class="page-link">1</a>
+                                    </li>
+                                    <li
+                                        class="paginate_button page-item"
+                                        :class="{'active disabled': current_page === 2}"
+                                        v-if="last_page > 1"
+                                    >
+                                        <a @click="getCategoryByPage(path + '?page=2')" aria-controls="dt-opt" data-dt-idx="2" tabindex="0" class="page-link">2</a>
+                                    </li>
+                                    <li
+                                        :class="{'disabled': last_page === current_page}"
+                                        class="paginate_button page-item next"
+                                        id="dt-opt_next"
+                                    >
+                                        <a @click="getCategoryByPage(next_page_url)" aria-controls="dt-opt" data-dt-idx="3" tabindex="0" class="page-link">Next</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
+                    <!-- modal confirm delete -->
                     <div class="modal fade" id="modal-sm">
                         <div class="modal-dialog modal-sm" role="document">
                             <div class="modal-content">
@@ -67,6 +102,10 @@
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div v-else>
+                    <p class="text-center">No data</p>
                 </div>
             </div>
         </div>
@@ -83,6 +122,17 @@
                 name: '',
                 id: null,
                 message: '',
+                listCategory: [],
+                next_page_url: '',
+                prev_page_url: '',
+                first_page_url: '',
+                last_page_url: '',
+                current_page: null,
+                last_page: null,
+                to: null,
+                from: null,
+                total: null,
+                path: '',
             };
         },
         computed: {
@@ -91,7 +141,8 @@
             }),
         },
         created: function () {
-            this.$store.dispatch('category/fetch');
+            this.$store.dispatch('category/fetch')
+                .then(() => this.makeData());
         },
         methods: {
             deleteCategory: function () {
@@ -103,6 +154,23 @@
             getCategory: function (product) {
                 this.name = product.name;
                 this.id = product.id;
+            },
+            getCategoryByPage: function (url) {
+                this.$store.dispatch('category/fetchPage', url)
+                    .then(() => this.makeData());
+            },
+            makeData: function () {
+                this.listCategory = this.categories.data;
+                this.next_page_url = this.categories.next_page_url;
+                this.prev_page_url = this.categories.prev_page_url;
+                this.last_page_url = this.categories.last_page_url;
+                this.first_page_url = this.categories.first_page_url;
+                this.current_page = this.categories.current_page;
+                this.last_page = this.categories.last_page;
+                this.to = this.categories.to;
+                this.from = this.categories.from;
+                this.total = this.categories.total;
+                this.path = this.categories.path;
             }
         }
     }

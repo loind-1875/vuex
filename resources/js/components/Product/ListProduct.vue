@@ -180,6 +180,7 @@
                 this.next_page_url = this.products.next_page_url;
                 this.prev_page_url = this.products.prev_page_url;
                 this.last_page_url = this.products.last_page_url;
+                this.first_page_url = this.products.first_page_url;
                 this.current_page = this.products.current_page;
                 this.last_page = this.products.last_page;
                 this.to = this.products.to;

@@ -30,6 +30,11 @@ const categoryStore = {
                 .then(response => commit('FETCH_ONE', response.data))
                 .catch()
         },
+        fetchPage({ commit }, url) {
+            return axios.get(url)
+                .then(response => commit('FETCH', response.data))
+                .catch();
+        },
         addCategory ({}, category) {
             return axios.post(`${RESOURCE_CATEGORY}`, {
                 name: category.name,
