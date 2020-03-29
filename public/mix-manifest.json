@@ -5,5 +5,6 @@
     "/admin/js/categoryIndex.js": "/admin/js/categoryIndex.js",
     "/admin/js/productEdit.js": "/admin/js/productEdit.js",
     "/admin/css/admin.css": "/admin/css/admin.css",
-    "/admin/js/admin.js": "/admin/js/admin.js"
+    "/admin/js/admin.js": "/admin/js/admin.js",
+    "/admin/js/categoryEdit.js": "/admin/js/categoryEdit.js"
 }

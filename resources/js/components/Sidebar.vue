@@ -30,7 +30,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item dropdown" :class="['open', {active: $route.name === 'products.*'}]">
+                <li class="nav-item dropdown" :class="{'open': $route.name === 'products.index'}">
                     <a class="dropdown-toggle" href="javascript:void(0);">
                         <span class="icon-holder">
                             <i class="mdi mdi-image-filter-drama"></i>
@@ -49,7 +49,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item dropdown" :class="['open', {active: $route.name === 'category.*'}]">
+                <li class="nav-item dropdown" :class="{'open': $route.name === 'category.index'}">
                     <a class="dropdown-toggle" href="javascript:void(0);">
                         <span class="icon-holder">
                             <i class="mdi mdi-vector-arrange-above"></i>

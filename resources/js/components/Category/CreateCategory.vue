@@ -21,7 +21,7 @@
                                         <div class="form-group col-md-6">
                                             <label class="control-label">Name</label>
                                             <ValidationProvider rules="required" v-slot="{ errors }">
-                                                <input type="text" class="form-control" placeholder="product name" v-model="name" required>
+                                                <input type="text" class="form-control" placeholder="category name" v-model="name" required>
                                                 <span class="text-danger help">{{ errors[0] }}</span>
                                             </ValidationProvider>
                                         </div>
