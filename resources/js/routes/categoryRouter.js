@@ -12,7 +12,7 @@ const routes = [
     {
         path: '/admin/categories/edit/:id',
         name: 'category.edit',
-        component: () => import(/* webpackChunkName :"admin/js/categoryEdit" */ '@/components/Category/EditCategory')
+        component: () => import(/* webpackChunkName: "admin/js/categoryEdit" */ '@/components/Category/EditCategory')
     }
 ];
 
