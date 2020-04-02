@@ -46,6 +46,24 @@
                                         <textarea  class="form-control"  id="" cols="100" rows="5" v-model="product.detail" required></textarea>
                                     </div>
 
+                                    <div class="form-group">
+                                        <label class="control-label">Category</label>
+                                        <multiselect
+                                            v-model="product.categories"
+                                            :options="categories"
+                                            :multiple="true"
+                                            :searchable="true"
+                                            :close-on-select="false"
+                                            :allow-empty="false"
+                                            placeholder="Select categories"
+                                            label="name"
+                                            track-by="name"
+                                            :clear-on-select="false"
+                                            :preselect-first="true"
+                                        >
+                                        </multiselect>
+                                    </div>
+
                                     <div class="form-row">
                                         <div class="col-sm-6">
                                             <div class="text-sm-right">
@@ -64,7 +82,7 @@
 </template>
 
 <script>
-    import {mapState} from 'vuex';
+    import { mapState } from 'vuex';
 
     export default {
         name: 'EditProduct',
@@ -74,10 +92,14 @@
         },
         beforeCreate() {
             this.$store.dispatch('product/fetchOne', this.$route.params.id);
+            this.$store.dispatch('category/getAll');
         },
         computed: {
             ...mapState('product', {
                 product: 'product'
+            }),
+            ...mapState('category', {
+                categories: 'categories'
             })
         },
         methods: {

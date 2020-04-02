@@ -67,12 +67,13 @@
                                     <div class="form-group">
                                         <label class="control-label">Category</label>
                                             <multiselect
-                                                v-model="categories"
-                                                :options="data"
+                                                v-model="product_category"
+                                                :options="categories"
+                                                :multiple="true"
                                                 :searchable="true"
                                                 :close-on-select="false"
                                                 :allow-empty="false"
-                                                placeholder="Select one"
+                                                placeholder="Select categories"
                                                 label="name"
                                                 track-by="name"
                                             >
@@ -100,6 +101,7 @@
     import { ValidationProvider } from 'vee-validate';
     import { extend } from 'vee-validate';
     import { required, numeric } from 'vee-validate/dist/rules';
+    import { mapState } from 'vuex';
 
     extend('required', required);
     extend('numeric', numeric);
@@ -121,12 +123,16 @@
                 old_price: null,
                 detail: null,
                 color: null,
-                categories: [],
-                data: [
-                    {name: 'select1', id: 1},
-                    {name: 'select2', id: 2}
-                ]
+                product_category: null,
             }
+        },
+        computed: {
+            ...mapState('category', {
+                categories: 'categories'
+            })
+        },
+        beforeCreate() {
+            this.$store.dispatch('category/getAll');
         },
         methods: {
             add: function () {
@@ -137,7 +143,7 @@
                     old_price: this.old_price,
                     detail: this.detail,
                     color: this.color,
-                    categories: this.categories,
+                    categories: this.product_category,
                 });
                 this.$router.push({name: 'products.index'});
             }

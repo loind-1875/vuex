@@ -49,6 +49,7 @@ const productStore = {
                 color: product.color,
                 view: product.view,
                 is_trending: product.is_trending,
+                categories: product.categories,
             })
                 .then(() => this.dispatch('fetch'));
         },

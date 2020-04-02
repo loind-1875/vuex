@@ -108,4 +108,11 @@ class CategoryController extends Controller
         $category->delete();
         return response()->json(['message' => 'Done']);
     }
+
+    public function getAll()
+    {
+        $categories = Category::all(['id', 'name']);
+
+        return response()->json($categories);
+    }
 }

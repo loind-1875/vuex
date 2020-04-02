@@ -51,6 +51,11 @@ const categoryStore = {
             return axios.delete(`${RESOURCE_CATEGORY}/${id}`)
                 .then(() => this.dispatch('category/fetch'))
                 .catch();
+        },
+        getAll ({commit}) {
+            return axios.get(`${RESOURCE_CATEGORY}-all`)
+                .then(response => commit('FETCH', response.data))
+                .catch();
         }
     }
 };

@@ -41,6 +41,8 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $product = Product::create($request->all());
+        $categoryIds = array_column($request->categories, 'id');
+        $product->categories()->attach($categoryIds);
 
         return response()->json(['data' => $product]);
     }
@@ -53,7 +55,7 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        $product = Product::find($id);
+        $product = Product::with('categories')->find($id);
 
         if (!$product) {
             return response()->json(['message' => 'Product not found']);
@@ -93,8 +95,9 @@ class ProductController extends Controller
         if (!$product) {
             return response()->json(['message' => 'Product not found']);
         }
-
+        $categoryIds = array_column($request->categories, 'id');
         $product->update($request->all());
+        $product->categories()->sync($categoryIds);
 
         return response()->json($product);
     }
