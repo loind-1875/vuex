@@ -5,7 +5,6 @@
  */
 
 require('./bootstrap');
-require('./modules/loading');
 
 window.Vue = require('vue');
 
@@ -22,12 +21,12 @@ window.Vue = require('vue');
 import Multiselect from 'vue-multiselect';
 
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('admin', require('./components/Admin.vue'));
-Vue.component('admin-header', require('./components/AdminHeader.vue'));
-Vue.component('sidebar', require('./components/Sidebar.vue'));
-Vue.component('dashboard', require('./components/Dashboard.vue'));
-Vue.component('create-product', require ('./components/Product/CreateProduct'));
-Vue.component('list-product', require ('./components/Product/ListProduct'));
+Vue.component('admin', require('./admin/components/Layout/Admin.vue'));
+Vue.component('admin-header', require('./admin/components/Layout/AdminHeader.vue'));
+Vue.component('sidebar', require('./admin/components/Layout/Sidebar.vue'));
+Vue.component('dashboard', require('./admin/components/Layout/Dashboard.vue'));
+Vue.component('create-product', require ('./admin/components/Product/CreateProduct'));
+Vue.component('list-product', require ('./admin/components/Product/ListProduct'));
 Vue.component('multiselect', Multiselect);
 
 /**
@@ -36,11 +35,11 @@ Vue.component('multiselect', Multiselect);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-import Admin from './components/Admin';
+import Admin from './admin/components/Layout/Admin';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import routes from './routes';
-import stores from './stores';
+import routes from './admin/routes/routes';
+import stores from './admin/store/stores';
 
 Vue.use(VueRouter);
 

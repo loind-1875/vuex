@@ -128,7 +128,7 @@
 
 <script>
     import { mapState } from 'vuex';
-    import { Until } from "../../until";
+    import { Until } from "../../helper/until";
 
     export default {
         name: 'ListProduct',

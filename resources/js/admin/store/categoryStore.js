@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import axios from 'axios';
-import {RESOURCE_CATEGORY} from '../adminApi';
+import {RESOURCE_CATEGORY} from '../api/adminApi';
 
 Vue.use(Vuex);
 

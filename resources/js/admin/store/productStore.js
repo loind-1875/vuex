@@ -1,7 +1,9 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import axios from 'axios';
-import {RESOURCE_PRODUCT} from '../adminApi';
+import {RESOURCE_PRODUCT} from '../api/adminApi';
+
+Vue.use(Vuex);
 
 const productStore = {
     namespaced: true,
@@ -51,7 +53,7 @@ const productStore = {
                 is_trending: product.is_trending,
                 categories: product.categories,
             })
-                .then(() => this.dispatch('fetch'));
+                .then(() => this.dispatch('product/fetch'));
         },
         addProduct({}, product) {
             axios.post(`${RESOURCE_PRODUCT}`, {

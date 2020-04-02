@@ -18,6 +18,7 @@
     import AdminHeader from "./AdminHeader";
     import Sidebar from "./Sidebar";
     import Dashboard from "./Dashboard";
+    require('@/admin/modules/loading');
 
     export default {
         name: "Admin",
