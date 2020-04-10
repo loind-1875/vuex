@@ -11,11 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('/dashboard', 'AdminController@login');
 
-Route::view('/{any}', 'admin')
+Route::view('/admin/{any}', 'admin')
     ->where('any', '.*');
+
+Route::group(['namespace' => 'Client'], function() {
+    Route::get('/', 'ClientController@index');
+});

@@ -15,6 +15,6 @@
     <div id="app"></div>
 
     <script src="/admin/js/admin.js" defer></script>
-    <script src="/js/app.js"></script>
+    <script src="/js/admin/app.js"></script>
 </body>
 </html>

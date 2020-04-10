@@ -20,7 +20,8 @@ mix.webpackConfig({
     }
 });
 
-mix.js('resources/js/app.js', 'public/js')
+mix.js('resources/js/admin/app.js', 'public/js/admin/app.js')
+    .js('resources/js/client/app.js', 'public/js/client/app.js')
     .sass('resources/sass/app.scss', 'public/css')
     .styles([
         'node_modules/bootstrap/dist/css/bootstrap.css',
@@ -36,9 +37,31 @@ mix.js('resources/js/app.js', 'public/js')
     .scripts([
         'resources/assets/admin/js/vendor.js',
         'resources/assets/admin/js/app.min.js',
-        // 'resources/admin/js/Chart.min.js',
-        // 'resources/admin/js/jquery.sparkline.min.js',
-        // 'resources/admin/js/default.js',
+        'resources/admin/js/Chart.min.js',
+        'resources/admin/js/jquery.sparkline.min.js',
+        'resources/admin/js/default.js',
     ], 'public/admin/js/admin.js')
     .copyDirectory('resources/assets/admin/fonts', 'public/admin/fonts')
-;
+
+    /* ---------------------------client------------------------------ */
+    .copyDirectory('resources/assets/client/images', 'public/client/images')
+    .copyDirectory('resources/assets/client/font', 'public/client/font')
+    .copyDirectory('resources/assets/client/external', 'public/client/external')
+    .styles([
+        // 'resources/bootstrap/dist/css/bootstrap.css',
+        'resources/assets/client/css/theme.css'
+    ], 'public/client/css/client.css')
+    .scripts([
+        'resources/assets/client/external/jquery/jquery.min.js',
+        'resources/assets/client/external/bootstrap/dist/js/bootstrap.min.js',
+        'resources/assets/client/external/slick/slick.min.js',
+        'resources/assets/client/external/perfect-scrollbar/perfect-scrollbar.min.js',
+        'resources/assets/client/external/panelmenu/panelmenu.js',
+        'resources/assets/client/external/instafeed/instafeed.min.js',
+        'resources/assets/client/external/rs-plugin/js/jquery.themepunch.tools.min.js',
+        'resources/assets/client/external/rs-plugin/js/jquery.themepunch.revolution.min.js',
+        'resources/assets/client/external/countdown/jquery.plugin.min.js',
+        'resources/assets/client/external/countdown/jquery.countdown.min.js',
+        'resources/assets/client/external/lazyLoad/lazyload.min.js',
+    ], 'public/client/js/client.js')
+    .js('resources/assets/client/js/main.js', 'public/client/js/main.js');
