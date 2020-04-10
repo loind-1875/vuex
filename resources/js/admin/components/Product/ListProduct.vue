@@ -152,9 +152,14 @@
             };
         },
         computed: {
-            ...mapState('product', {
-                products: 'products'
-            }),
+            products () {
+                return this.$store.state.product.products;
+            }
+        },
+        watch: {
+            products: function (val) {
+                this.makeData()
+            },
         },
         created: function () {
             this.$store.dispatch('product/fetch')
