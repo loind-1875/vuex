@@ -55,19 +55,14 @@ const productStore = {
             })
                 .then(() => this.dispatch('product/fetch'));
         },
-        addProduct({}, product) {
-            axios.post(`${RESOURCE_PRODUCT}`, {
-                name: product.name,
-                status: product.status,
-                price: product.price,
-                old_price: product.old_price,
-                star: product.star,
-                detail: product.detail,
-                color: product.color,
-                categories: product.categories,
-            })
+        addProduct({}, formData) {
+            const config = {
+                headers: { 'content-type': 'multipart/form-data' }
+            };
+
+            axios.post(`${RESOURCE_PRODUCT}`, formData, config)
                 .then();
-        }
+        },
     }
 };
 

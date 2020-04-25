@@ -45,7 +45,12 @@
                                         <label class="control-label">Detail</label>
                                         <textarea  class="form-control"  id="" cols="100" rows="5" v-model="product.detail" required></textarea>
                                     </div>
-
+                                    <div class="form-group">
+                                        <div class="form-row">
+                                            <label class="control-label">Images</label>
+                                            <input type="file" class="form-control" @change="uploadFile" required>
+                                        </div>
+                                    </div>
                                     <div class="form-group">
                                         <label class="control-label">Category</label>
                                         <multiselect
@@ -106,6 +111,9 @@
             edit: function () {
                 this.$store.dispatch('product/editProduct', this.product);
                 this.$router.push({name: 'products.index'});
+            },
+            uploadFile: function (event) {
+                this.product.image = event.target.files[0];
             }
         }
     }

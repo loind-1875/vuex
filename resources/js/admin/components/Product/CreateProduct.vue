@@ -65,6 +65,12 @@
                                     </div>
 
                                     <div class="form-group">
+                                        <div class="form-row">
+                                            <label class="control-label">Images</label>
+                                            <input type="file" class="form-control" @change="uploadFile" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
                                         <label class="control-label">Category</label>
                                             <multiselect
                                                 v-model="product_category"
@@ -123,7 +129,9 @@
                 old_price: null,
                 detail: null,
                 color: null,
+                image: null,
                 product_category: null,
+                categoryIds: [],
             }
         },
         computed: {
@@ -136,23 +144,40 @@
         },
         methods: {
             add: function () {
-                this.$store.dispatch('product/addProduct', {
-                    name: this.name,
-                    status: this.status,
-                    price: this.price,
-                    old_price: this.old_price,
-                    detail: this.detail,
-                    color: this.color,
-                    categories: this.product_category,
-                });
+                this.getIdCategory();
+                const formData = this.appendForm();
+                this.$store.dispatch('product/addProduct', formData);
                 this.$router.push({name: 'products.index'});
-            }
+            },
+
+            uploadFile: function (event, index) {
+                this.image = event.target.files[0];
+            },
+
+            getIdCategory: function () {
+                this.product_category.map(($item) => {
+                    this.categoryIds.push($item.id);
+                });
+            },
+
+            appendForm () {
+                const form = new FormData();
+                form.append('image', this.image);
+                form.append('name', this.name);
+                form.append('status', this.status);
+                form.append('price', this.price);
+                form.append('old_price', this.old_price);
+                form.append('star', this.star);
+                form.append('detail', this.detail);
+                form.append('color', this.color);
+                form.append('categories', this.categoryIds);
+                form.append('image', this.image);
+
+                return form;
+            },
         }
     }
 </script>
 
 <style>
-    .form-control {
-        margin-bottom: 5px;
-    }
 </style>
