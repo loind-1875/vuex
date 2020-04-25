@@ -4,12 +4,20 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Product;
-use Illuminate\Contracts\Support\Jsonable;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+    protected $mediaController;
+
+    public function __construct(
+        MediaController $mediaController
+    )
+    {
+        $this->mediaController = $mediaController;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -40,9 +48,21 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $product = Product::create($request->all());
-        $categoryIds = array_column($request->categories, 'id');
+        $product = Product::create($request->only([
+            'name',
+            'status',
+            'price',
+            'old_price',
+            'star',
+            'detail',
+            'color',
+        ]));
+        $categoryIds = json_decode($request->categories);
+
         $product->categories()->attach($categoryIds);
+
+        //create image
+        $this->mediaController->saveImage($product, $request->image);
 
         return response()->json(['data' => $product]);
     }

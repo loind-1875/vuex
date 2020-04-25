@@ -65,6 +65,12 @@
                                     </div>
 
                                     <div class="form-group">
+                                        <div class="form-row">
+                                            <label class="control-label">Images</label>
+                                            <input type="file" class="form-control" @change="uploadFile" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
                                         <label class="control-label">Category</label>
                                             <multiselect
                                                 v-model="product_category"
@@ -123,7 +129,9 @@
                 old_price: null,
                 detail: null,
                 color: null,
+                image: null,
                 product_category: null,
+                categoryIds: [],
             }
         },
         computed: {
@@ -136,6 +144,7 @@
         },
         methods: {
             add: function () {
+                this.getIdCategory();
                 this.$store.dispatch('product/addProduct', {
                     name: this.name,
                     status: this.status,
@@ -143,16 +152,22 @@
                     old_price: this.old_price,
                     detail: this.detail,
                     color: this.color,
-                    categories: this.product_category,
+                    categoryIds: JSON.stringify(this.categoryIds),
+                    image: this.image,
                 });
                 this.$router.push({name: 'products.index'});
+            },
+            uploadFile: function (event, index) {
+                this.image = event.target.files[0];
+            },
+            getIdCategory: function () {
+                this.product_category.map(($item) => {
+                    this.categoryIds.push($item.id);
+                });
             }
         }
     }
 </script>
 
 <style>
-    .form-control {
-        margin-bottom: 5px;
-    }
 </style>
