@@ -160,7 +160,7 @@
                 });
             },
 
-            appendForm () {
+            appendForm: function () {
                 const form = new FormData();
                 form.append('image', this.image);
                 form.append('name', this.name);

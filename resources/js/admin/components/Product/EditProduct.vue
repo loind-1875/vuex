@@ -109,12 +109,33 @@
         },
         methods: {
             edit: function () {
-                this.$store.dispatch('product/editProduct', this.product);
-                this.$router.push({name: 'products.index'});
+                const formData = this.appendForm();
+                console.log('id', this.product.id);
+                
+                this.$store.dispatch('product/editProduct', formData);
+                // this.$router.push({name: 'products.index'});
             },
+
             uploadFile: function (event) {
                 this.product.image = event.target.files[0];
-            }
+            },
+
+            appendForm: function () {
+                const form = new FormData();
+                form.append('image', this.product.image);
+                form.append('name', this.product.name);
+                form.append('status', this.product.status);
+                form.append('price', this.product.price);
+                form.append('old_price', this.product.old_price);
+                form.append('star', this.product.star);
+                form.append('detail', this.product.detail);
+                form.append('color', this.product.color);
+                form.append('categories', this.product.categoryIds);
+                form.append('image', this.product.image);
+                form.append('id', this.product.id);
+
+                return form;
+            },
         }
     }
 </script>

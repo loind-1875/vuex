@@ -110,6 +110,7 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
+        dd(1, $request->all(), $id);
         $product = Product::find($id);
 
         if (!$product) {
