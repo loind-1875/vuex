@@ -2,45 +2,44 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\StoreCategoryRequest;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Response;
 
 class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $categories = Category::paginate(10);
+        $categories = Category::paginate(15);
 
-        return response()->json($categories);
+        return view('admin.category.list', compact('categories'));
     }
 
     /**
      * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        //
+        $categories = Category::all();
+
+        return view('admin.category.create', compact('categories'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param  StoreCategoryRequest  $request
      */
-    public function store(Request $request)
+    public function store(StoreCategoryRequest $request)
     {
-        $category = Category::create($request->all());
+        Category::create($request->all());
 
-        return response()->json(['data' => $category]);
+        return redirect()->route('categories.index')->with('success', 'Thêm thành công');
     }
 
     /**
@@ -51,24 +50,26 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        $category = Category::find($id);
-
-        if (!$category) {
-            return response()->json(['message' => 'Category not found']);
-        }
-
-        return response()->json($category);
+//        $category = Category::find($id);
+//
+//        if (!$category) {
+//            return response()->json(['message' => 'Category not found']);
+//        }
+//
+//        return response()->json($category);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        //
+        $category = Category::find($id);
+        $categories = Category::where('id', '!=', $id)->get();
+
+        return view('admin.category.edit', compact('category', 'categories'));
     }
 
     /**
@@ -76,19 +77,18 @@ class CategoryController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreCategoryRequest $request, $id)
     {
         $category = Category::find($id);
 
         if (!$category) {
-            return response()->json(['message' => 'Category not found']);
+            abort(Response::HTTP_NOT_FOUND);
         }
 
         $category->update($request->all());
 
-        return response()->json($category);
+        return redirect()->route('categories.index')->with('success', ' Sửa thành công');
     }
 
     /**
@@ -102,17 +102,11 @@ class CategoryController extends Controller
         $category = Category::find($id);
 
         if (!$category) {
-            return response()->json(['message' => 'Category not found']);
+            abort(Response::HTTP_NOT_FOUND);
         }
 
         $category->delete();
-        return response()->json(['message' => 'Done']);
-    }
 
-    public function getAll()
-    {
-        $categories = Category::all(['id', 'name']);
-
-        return response()->json($categories);
+        return redirect()->route('categories.index')->with('success', 'Xóa thành công');
     }
 }

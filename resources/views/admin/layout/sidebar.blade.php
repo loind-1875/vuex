@@ -47,18 +47,36 @@
                 </li>
                 <li class="pcoded-hasmenu">
                     <a href="javascript:void(0)" class="waves-effect waves-dark">
-                        <span class="pcoded-micon"><i class="fa fa-product-hunt"></i></span>
+                        <span class="pcoded-micon"><i class="feather icon-package"></i></span>
                         <span class="pcoded-mtext">Danh mục</span>
                     </a>
                     <ul class="pcoded-submenu">
                         <li class="">
-                            <a href="{{ route('products.index') }}" class="waves-effect waves-dark">
+                            <a href="{{ route('categories.index') }}" class="waves-effect waves-dark">
                                 <span class="pcoded-mtext">Danh sách danh mục</span>
                             </a>
                         </li>
                         <li class="">
-                            <a href="{{ route('products.create') }}" class="waves-effect waves-dark">
+                            <a href="{{ route('categories.create') }}" class="waves-effect waves-dark">
                                 <span class="pcoded-mtext">Thêm mới danh mục</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="pcoded-hasmenu">
+                    <a href="javascript:void(0)" class="waves-effect waves-dark">
+                        <span class="pcoded-micon"><i class="fa fa-newspaper-o"></i></span>
+                        <span class="pcoded-mtext">Tin tức</span>
+                    </a>
+                    <ul class="pcoded-submenu">
+                        <li class="">
+                            <a href="{{ route('news.index') }}" class="waves-effect waves-dark">
+                                <span class="pcoded-mtext">Danh sách tin tức</span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="{{ route('news.create') }}" class="waves-effect waves-dark">
+                                <span class="pcoded-mtext">Thêm mới tin tức</span>
                             </a>
                         </li>
                     </ul>

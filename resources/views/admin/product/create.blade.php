@@ -1,5 +1,9 @@
 @extends('admin.layout.main')
 
+@section('title')
+    Tạo mới sản phẩm
+@endsection
+
 @section('content')
     <div class="row">
         <div class="col-sm-12">
@@ -10,40 +14,49 @@
                 <div class="card-block">
                     <div class="row">
                         <div class="col-sm-12 col-xs-6 m-b-30">
-                            <form action="{{ route('products.store') }}" method="POST">
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 col-xs-6 m-b-30">
+                            <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Tên sản phẩm<span>*</span></h4>
-                                    <input type="text" class="form-control" name="name" placeHolder="Nhập tên sản phẩm">
+                                    <input type="text" class="form-control" name="name" placeHolder="Nhập tên sản phẩm" value="{{ old('name') }}" required>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Giá<span>*</span></h4>
-                                    <input type="text" name="price" class="form-control" placeHolder="Nhập giá mới sản phẩm">
+                                    <input type="number" name="price" class="form-control" value="{{ old('name') }}" placeHolder="Nhập giá mới sản phẩm" required>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Ảnh sản phẩm<span>*</span></h4>
-                                    <input type="file" name="image" class="form-control">
+                                    <input type="file" name="images" class="form-control" value="{{ old('name') }}" required>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Danh mục<span>*</span></h4>
-                                    @foreach ($categories as $cate)
-                                        <div class="category-list">
-                                            <div class="category-single border-checkbox-section">
-                                                <div class="border-checkbox-group border-checkbox-group-primary">
-                                                    <input class="border-checkbox" name="category[]" value="{{ $cate->id }}" type="checkbox" id="{{ 'checkbox' . $cate->id }}">
-                                                    <label class="border-checkbox-label" for="{{ 'checkbox' . $cate->id }}">{{ $cate->name }}</label>
-                                                </div>
-                                                @foreach($cate->children as $value)
-                                                    <div class="child-cate">
+                                    <div class="row">
+                                        @foreach ($categories as $cate)
+                                            <div class="col-sm-4">
+                                                <div class="category-list">
+                                                    <div class="category-single border-checkbox-section">
                                                         <div class="border-checkbox-group border-checkbox-group-primary">
-                                                            <input class="border-checkbox" name="category[]" value="{{ $value->id }}" type="checkbox" id="{{ 'checkbox' . $value->id }}">
-                                                            <label class="border-checkbox-label" for="{{ 'checkbox' . $value->id }}">{{ $value->name }}</label>
+                                                            <input class="border-checkbox" name="category[]" value="{{ $cate->id }}" type="checkbox" id="{{ 'checkbox' . $cate->id }}">
+                                                            <label class="border-checkbox-label" for="{{ 'checkbox' . $cate->id }}">{{ $cate->name }}</label>
                                                         </div>
                                                     </div>
-                                                @endforeach
+                                                </div>
                                             </div>
-                                        </div>
-                                    @endforeach
+                                        @endforeach
+                                    </div>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Chi tiết sản phẩm</h4>
@@ -76,6 +89,17 @@
         .category-single .border-checkbox-group.border-checkbox-group-primary {
             margin-bottom: 10px;
         }
+
+        .button-page .card-block ul li {
+            display: list-item;
+            float: none;
+            margin-bottom: 20px;
+        }
+
+        .button-page .card-block ul {
+            list-style-type: disc;
+            padding-left: 25px;
+        }
     </style>
 @endsection
 
@@ -87,6 +111,7 @@
             $('#summernote').summernote({
                 placeholder: 'Nhập chi tiết sản phẩm',
                 height: 350,
+                maximumImageFileSize: 2097152
             });
         });
     </script>

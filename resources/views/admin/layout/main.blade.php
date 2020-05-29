@@ -4,7 +4,7 @@
 <!-- Mirrored from colorlib.com/polygon/admindek/default/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 12 Dec 2019 16:07:52 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
-    <title>Admindek | Admin Template</title>
+    <title>@yield('title')</title>
 
 
     <!--[if lt IE 10]>
@@ -20,10 +20,7 @@
     <meta name="author" content="colorlib" />
 
     <link rel="icon" href="https://colorlib.com/polygon/admindek/files/assets/images/favicon.ico" type="image/x-icon">
-
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:500,700" rel="stylesheet">
-
     <link rel="stylesheet" type="text/css" href="/admin/css/admin.css">
     @yield('style')
 </head>

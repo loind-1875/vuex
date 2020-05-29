@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\EditProductRequest;
+use App\Http\Requests\ProductRequest;
 use App\Models\Category;
 use App\Models\Product;
 use DOMDocument;
@@ -40,7 +42,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $categories = Category::whereNull('parent_id')->with('children')->get();
+        $categories = Category::all();
 
         return view('admin.product.create', compact('categories'));
     }
@@ -51,50 +53,25 @@ class ProductController extends Controller
      * @param  Request  $request
      *
      */
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
-        $dom = new DomDocument();
-        $dom->loadHtml( mb_convert_encoding($request->detail, 'HTML-ENTITIES', "UTF-8"), LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
-
-        $images = $dom->getElementsByTagName('img');
-
-        foreach($images as $img){
-            $src = $img->getAttribute('src');
-
-            // if the img source is 'data-url'
-            if(preg_match('/data:image/', $src)){
-
-                // get the mimetype
-                preg_match('/data:image\/(?<mime>.*?)\;/', $src, $groups);
-                $mimetype = $groups['mime'];
-
-                // Generating a random filename
-                $filename = uniqid();
-                $filepath = "public/images/$filename.$mimetype";
-
-                 Storage::put($filepath, file_get_contents($src));
-
-                $new_src = asset($filepath);
-                $img->removeAttribute('src');
-                $img->setAttribute('src', $new_src);
+        if ($request->detail) {
+            if ($request->detail) {
+                $request->detail = $this->saveDetailPost($request->detail);
             }
         }
 
-        $request->detail = $dom->saveHTML();
-
-        if ($request->hasFile('image')) {
-            $file = $request->file('image');
-            $filename = uniqid();
-            $file->move('storage/public/images', $filename);
-            $request->image = $filename;
+        if ($request->hasFile('images')) {
+            $this->saveImage($request);
         }
+
         $request->merge(['slug' => str_slug($request->name)]);
 
         $product = Product::create($request->all());
 
         $product->categories()->attach($request->category);
 
-        return redirect()->route('products.index');
+        return redirect()->route('products.index')->with('success', 'Thêm thành công');
     }
 
     /**
@@ -118,13 +95,12 @@ class ProductController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return JsonResponse
      */
     public function edit($id)
     {
         $product = Product::find($id)->load('categories');
         $productCategory = $product->categories->pluck('id')->toArray();
-        $categories = Category::whereNull('parent_id')->with('children')->get();
+        $categories = Category::all();
 
         if (!$product) {
             abort(Response::HTTP_NOT_FOUND);
@@ -136,23 +112,32 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  Request  $request
+     * @param  EditProductRequest  $request
      * @param  int  $id
-     * @return JsonResponse
      */
-    public function update(Request $request, $id)
+    public function update(EditProductRequest $request, $id)
     {
-        dd(1, $request->all(), $id);
         $product = Product::find($id);
 
         if (!$product) {
-            return response()->json(['message' => 'Product not found']);
+            abort(Response::HTTP_NOT_FOUND);
         }
-        $categoryIds = array_column($request->categories, 'id');
-        $product->update($request->all());
-        $product->categories()->sync($categoryIds);
 
-        return response()->json($product);
+        if ($request->detail) {
+            $request->detail = $this->saveDetailPost($request->detail);
+        }
+
+        if ($request->hasFile('images')) {
+            $this->saveImage($request);
+        }
+
+        $request->merge(['slug' => str_slug($request->name)]);
+
+        $product->update($request->all());
+
+        $product->categories()->sync($request->category);
+
+        return redirect()->route('products.index')->with('success', 'Sửa thành công');
     }
 
     /**
@@ -170,6 +155,48 @@ class ProductController extends Controller
         }
 
         $product->delete();
-        return response()->json(['message' => 'Done']);
+
+        return redirect()->route('products.index')->with('success', 'Xóa thành công');
+    }
+
+    public function saveDetailPost($detail)
+    {
+        $dom = new DomDocument();
+        $dom->loadHtml(mb_convert_encoding($detail, 'HTML-ENTITIES', "UTF-8"), LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+
+        $images = $dom->getElementsByTagName('img');
+
+        foreach ($images as $img) {
+            $src = $img->getAttribute('src');
+
+            // if the img source is 'data-url'
+            if (preg_match('/data:image/', $src)) {
+
+                // get the mimetype
+                preg_match('/data:image\/(?<mime>.*?)\;/', $src, $groups);
+                $mimetype = $groups['mime'];
+
+                // Generating a random filename
+                $filename = uniqid();
+                $filepath = "public/images/$filename.$mimetype";
+
+                Storage::put($filepath, file_get_contents($src));
+
+                $new_src = asset($filepath);
+                $img->removeAttribute('src');
+                $img->setAttribute('src', $new_src);
+            }
+        }
+
+        return $dom->saveHTML();
+    }
+
+    public function saveImage($request)
+    {
+        $file = $request->file('images');
+        $filename = uniqid() . '_' . preg_replace('/\s+/', '', $file->getClientOriginalName());
+        $request->image = $filename;
+        $file->move('storage/images', $filename);
+        $request->merge(['image' => $filename]);
     }
 }
