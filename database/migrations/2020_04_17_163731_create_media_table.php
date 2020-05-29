@@ -18,6 +18,7 @@ class CreateMediaTable extends Migration
             $table->string('mediaable_type');
             $table->string('mediaable_id');
             $table->string('name');
+            $table->tinyInteger('is_default');
             $table->timestamps();
         });
     }

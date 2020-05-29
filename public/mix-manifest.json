@@ -1,15 +1,6 @@
 {
-    "/client/js/main.js": "/client/js/main.js",
-    "/js/admin/app.js": "/js/admin/app.js",
+    "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
-    "/js/client/app.js": "/js/client/app.js",
-    "/admin/js/categoryCreate.js": "/admin/js/categoryCreate.js",
-    "/admin/js/categoryEdit.js": "/admin/js/categoryEdit.js",
-    "/admin/js/categoryIndex.js": "/admin/js/categoryIndex.js",
-    "/admin/js/productEdit.js": "/admin/js/productEdit.js",
-    "/client/components/home.js": "/client/components/home.js",
     "/admin/css/admin.css": "/admin/css/admin.css",
-    "/admin/js/admin.js": "/admin/js/admin.js",
-    "/client/css/client.css": "/client/css/client.css",
-    "/client/js/client.js": "/client/js/client.js"
+    "/admin/js/admin.js": "/admin/js/admin.js"
 }

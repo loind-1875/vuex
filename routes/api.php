@@ -16,10 +16,3 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-
-
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.'], function () {
-    Route::apiResource('products', 'ProductController');
-    Route::apiResource('categories', 'CategoryController');
-    Route::get('categories-all', 'CategoryController@getAll');
-});

@@ -11,11 +11,7 @@
 |
 */
 
-Route::get('/dashboard', 'AdminController@login');
-
-Route::view('/admin/{any}', 'admin')
-    ->where('any', '.*');
-
-Route::group(['namespace' => 'Client'], function() {
-    Route::get('/', 'ClientController@index');
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
+    Route::get('dashboard', 'AdminController@index');
+    Route::resource('products', 'ProductController');
 });

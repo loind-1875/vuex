@@ -3,9 +3,14 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Product;
+use DOMDocument;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class ProductController extends Controller
 {
@@ -21,50 +26,75 @@ class ProductController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return JsonResponse
+     *
      */
     public function index()
     {
-        $products = Product::paginate(10);
+        $products = Product::paginate(15);
 
-        return response()->json($products);
+        return view('admin.product.list', compact('products'));
     }
 
     /**
      * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        //
+        $categories = Category::whereNull('parent_id')->with('children')->get();
+
+        return view('admin.product.create', compact('categories'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  Request  $request
-     * @return JsonResponse
+     *
      */
     public function store(Request $request)
     {
-        $product = Product::create($request->only([
-            'name',
-            'status',
-            'price',
-            'old_price',
-            'star',
-            'detail',
-            'color',
-        ]));
-        $categoryIds = json_decode($request->categories);
+        $dom = new DomDocument();
+        $dom->loadHtml( mb_convert_encoding($request->detail, 'HTML-ENTITIES', "UTF-8"), LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
 
-        $product->categories()->attach($categoryIds);
+        $images = $dom->getElementsByTagName('img');
 
-        //create image
-        $this->mediaController->saveImage($product, $request->image);
+        foreach($images as $img){
+            $src = $img->getAttribute('src');
 
-        return response()->json(['data' => $product]);
+            // if the img source is 'data-url'
+            if(preg_match('/data:image/', $src)){
+
+                // get the mimetype
+                preg_match('/data:image\/(?<mime>.*?)\;/', $src, $groups);
+                $mimetype = $groups['mime'];
+
+                // Generating a random filename
+                $filename = uniqid();
+                $filepath = "public/images/$filename.$mimetype";
+
+                 Storage::put($filepath, file_get_contents($src));
+
+                $new_src = asset($filepath);
+                $img->removeAttribute('src');
+                $img->setAttribute('src', $new_src);
+            }
+        }
+
+        $request->detail = $dom->saveHTML();
+
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $filename = uniqid();
+            $file->move('storage/public/images', $filename);
+            $request->image = $filename;
+        }
+        $request->merge(['slug' => str_slug($request->name)]);
+
+        $product = Product::create($request->all());
+
+        $product->categories()->attach($request->category);
+
+        return redirect()->route('products.index');
     }
 
     /**
@@ -75,13 +105,13 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        $product = Product::with('categories')->find($id);
-
-        if (!$product) {
-            return response()->json(['message' => 'Product not found']);
-        }
-
-        return response()->json($product);
+//        $product = Product::with('categories')->find($id);
+//
+//        if (!$product) {
+//            return response()->json(['message' => 'Product not found']);
+//        }
+//
+//        return response()->json($product);
     }
 
     /**
@@ -92,13 +122,15 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        $product = Product::find($id);
+        $product = Product::find($id)->load('categories');
+        $productCategory = $product->categories->pluck('id')->toArray();
+        $categories = Category::whereNull('parent_id')->with('children')->get();
 
         if (!$product) {
-            return response()->json(['message' => 'Product not found']);
+            abort(Response::HTTP_NOT_FOUND);
         }
 
-        return response()->json($product);
+        return view('admin.product.edit', compact('product', 'categories', 'productCategory'));
     }
 
     /**
