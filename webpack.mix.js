@@ -41,24 +41,24 @@ mix.js('resources/js/app.js', 'public/js/app.js')
     // .copyDirectory('resources/assets/admin/woff', 'public/admin/woff');
 
     /* ---------------------------client------------------------------ */
-    // .copyDirectory('resources/assets/client/images', 'public/client/images')
-    // .copyDirectory('resources/assets/client/font', 'public/client/font')
+    .copyDirectory('resources/assets/client/images', 'public/client/images')
+    .copyDirectory('resources/assets/client/fonts', 'public/client/fonts')
     // .copyDirectory('resources/assets/client/external', 'public/client/external')
-    // .styles([
-        // 'resources/bootstrap/dist/css/bootstrap.css',
-        // 'resources/assets/client/css/theme.css'
-    // ], 'public/client/css/client.css')
-    // .scripts([
-    //     'resources/assets/client/external/jquery/jquery.min.js',
-    //     'resources/assets/client/external/bootstrap/dist/js/bootstrap.min.js',
-    //     'resources/assets/client/external/slick/slick.min.js',
-    //     'resources/assets/client/external/perfect-scrollbar/perfect-scrollbar.min.js',
-    //     'resources/assets/client/external/panelmenu/panelmenu.js',
-    //     'resources/assets/client/external/instafeed/instafeed.min.js',
-    //     'resources/assets/client/external/rs-plugin/js/jquery.themepunch.tools.min.js',
-    //     'resources/assets/client/external/rs-plugin/js/jquery.themepunch.revolution.min.js',
-    //     'resources/assets/client/external/countdown/jquery.plugin.min.js',
-    //     'resources/assets/client/external/countdown/jquery.countdown.min.js',
-    //     'resources/assets/client/external/lazyLoad/lazyload.min.js',
-    // ], 'public/client/js/client.js')
+    .styles([
+        'resources/assets/client/css/bootstrap.min.css',
+        'resources/assets/client/css/bootstrap-theme.min.css',
+        'resources/assets/client/css/font-awesome.min.css',
+        'resources/assets/client/css/owl.carousel.css',
+        'resources/assets/client/css/owl.theme.default.css',
+        'resources/assets/client/css/plugin.scss.css',
+        'resources/assets/client/css/style.css',
+        'resources/assets/client/css/animate.css',
+    ], 'public/client/css/client.css')
+    .scripts([
+        'resources/assets/client/js/jquery.min.js',
+        'resources/assets/client/js/plugin-menu-mb.js',
+        'resources/assets/client/js/bootstrap.min.js',
+        'resources/assets/client/js/owl.carousel.js',
+        'resources/assets/client/js/wow.min.js',
+    ], 'public/client/js/client.js');
     // .js('resources/assets/client/js/main.js', 'public/client/js/main.js');

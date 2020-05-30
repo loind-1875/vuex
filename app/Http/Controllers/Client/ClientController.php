@@ -9,6 +9,7 @@ class ClientController extends Controller
 {
     public function index()
     {
-        return view('client');
+//        $engine = Product::
+        return view('client.client');
     }
 }

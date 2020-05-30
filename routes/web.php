@@ -17,3 +17,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
     Route::resource('categories', 'CategoryController');
     Route::resource('news', 'NewsController');
 });
+
+Route::group(['namespace' => 'Client'], function () {
+    Route::get('/', 'ClientController@index');
+});
