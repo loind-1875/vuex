@@ -1,3 +1,7 @@
 body {
     font-family: quicksand,sans-serif;
 }
+
+.note-editor .note-editing-area {
+    background-color: white;
+}

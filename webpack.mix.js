@@ -19,6 +19,7 @@ mix.js('resources/js/app.js', 'public/js/app.js')
         'resources/assets/admin/css/feather.css',
         'resources/assets/admin/css/font-awesome.min.css',
         'resources/assets/admin/css/style.css',
+        'resources/assets/admin/css/custom.css',
         // 'resources/assets/admin/css/widget.css',
     ], 'public/admin/css/admin.css')
     .scripts([

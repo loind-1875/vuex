@@ -17,7 +17,6 @@ if (!function_exists('uuid_str')) {
 if (!function_exists('getImage')) {
     function getImage($image)
     {
-//        dd(Storage::get($image));
-        return config('media.image.product') . $image;
+        return config('media.image') . $image;
     }
 }

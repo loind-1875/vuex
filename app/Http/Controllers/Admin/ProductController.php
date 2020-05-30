@@ -12,7 +12,6 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Storage;
-use Intervention\Image\ImageManagerStatic as Image;
 
 class ProductController extends Controller
 {
@@ -56,9 +55,7 @@ class ProductController extends Controller
     public function store(ProductRequest $request)
     {
         if ($request->detail) {
-            if ($request->detail) {
-                $request->detail = $this->saveDetailPost($request->detail);
-            }
+            $request->detail = $this->saveDetailPost($request->detail);
         }
 
         if ($request->hasFile('images')) {
@@ -162,7 +159,7 @@ class ProductController extends Controller
     public function saveDetailPost($detail)
     {
         $dom = new DomDocument();
-        $dom->loadHtml(mb_convert_encoding($detail, 'HTML-ENTITIES', "UTF-8"), LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+        @$dom->loadHtml(mb_convert_encoding($detail, 'HTML-ENTITIES', "UTF-8"), LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
 
         $images = $dom->getElementsByTagName('img');
 
