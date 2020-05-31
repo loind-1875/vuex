@@ -10,10 +10,17 @@ class Category extends Model
         'name',
         'image',
         'parent_id',
+        'slug',
+        'description',
     ];
 
     public function children()
     {
         return $this->hasMany(Category::class, 'parent_id');
+    }
+
+    public function products()
+    {
+        return $this->belongsToMany(Product::class);
     }
 }

@@ -1,7 +1,9 @@
 <footer class="footer-main">
     <!-- back to top -->
     <div class="back-tt">
-        <a href="#" id="back-to-top" class="show"><img src="templates/frontend/resources/images/img-back-top.png"></a>
+        <a href="#" id="back-to-top" class="show">
+            <img src="{{ getImageOther('img-back-top.png') }}">
+        </a>
     </div>
     <div class="wp-footer-tren pd-40">
         <div class="container">

@@ -17,7 +17,7 @@ class CreateProductsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
 //            $table->string('status')->nullable();
-            $table->string('price');
+//            $table->string('price');
 //            $table->string('old_price')->nullable();
 //            $table->string('sku');
             $table->longText('detail')->nullable();

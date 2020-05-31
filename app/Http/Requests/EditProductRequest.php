@@ -25,7 +25,6 @@ class EditProductRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'price' => 'required',
             'images' =>  $this->images ? 'image|mimes:jpeg,png,jpg,gif,svg|max:2048' : 'nullable',
             'category' => 'required'
         ];
@@ -35,7 +34,6 @@ class EditProductRequest extends FormRequest
     {
         return [
             'name.required' => 'Tên là bắt buộc',
-            'price.required' => 'Giá là bắt buộc',
             'images.max' => 'Ảnh tối đa là 2MB',
             'images.mimes' => 'Chỉ được upload file ảnh jpeg, png, bmp, jpg, svg, gif',
             'category.required' => 'Danh mục là bắt buộc',

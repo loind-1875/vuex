@@ -1,7 +1,7 @@
 @extends('admin.layout.main')
 
 @section('title')
-    Tạo mới danh mục
+    Tạo mới tin tuyển dụng
 @endsection
 
 @section('content')
@@ -9,7 +9,7 @@
         <div class="col-sm-12">
             <div class="card">
                 <div class="card-header">
-                    <h5>Tạo danh mục</h5>
+                    <h5>Tạo tin tuyển dụng</h5>
                 </div>
                 <div class="card-block">
                     <div class="row">
@@ -27,32 +27,26 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-12 col-xs-6 m-b-30">
-                            <form action="{{ route('categories.store') }}" method="POST">
+                            <form action="{{ route('recruitment.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="col-sm-12 m-b-30">
-                                    <h4 class="sub-title">Tên danh mục<span>*</span></h4>
-                                    <input type="text" class="form-control" name="name" placeHolder="Nhập tên danh mục" value="{{ old('name') }}" required>
+                                    <h4 class="sub-title">Tiêu đề <span>*</span></h4>
+                                    <input type="text" class="form-control" name="title" placeHolder="Nhập tiêu đề" value="{{ old('name') }}" required>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
-                                    <h4 class="sub-title">Mô tả</h4>
-                                    <input type="text" class="form-control" name="description" placeHolder="Nhập mô tả danh mục" value="{{ old('name') }}" required>
+                                    <h4 class="sub-title">Ảnh bài viết <span>*</span></h4>
+                                    <input type="file" class="form-control" name="images" required>
+                                </div>
+                                <div class="col-sm-12 m-b-30 d-none">
+                                    <input type="text" class="form-control" name="is_recruitment" value="1">
                                 </div>
                                 <div class="col-sm-12 m-b-30">
-                                    <h4 class="sub-title">Danh mục cha (Có thể rỗng)</h4>
-                                    <div class="row">
-                                        @foreach ($categories as $cate)
-                                            <div class="col-sm-4">
-                                                <div class="category-single form-radio">
-                                                    <div class="radio radio-inline">
-                                                        <label>
-                                                            <input type="radio" name="parent_id" value="{{ $cate->id }}">
-                                                            <i class="helper"></i>{{ $cate->name }}
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        @endforeach
-                                    </div>
+                                    <h4 class="sub-title">Tóm tắt<span>*</span></h4>
+                                    <textarea id="short-detail" name="short_detail" class="form-control"></textarea>
+                                </div>
+                                <div class="col-sm-12 m-b-30">
+                                    <h4 class="sub-title">Chi tiết<span>*</span></h4>
+                                    <textarea id="summernote" name="detail" class="form-control"></textarea>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <button class="btn btn-primary waves-effect waves-light" type="submit">Lưu</button>
@@ -67,18 +61,15 @@
 @endsection
 
 @section('style')
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+@endsection
+
+@section('script')
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
     <style>
         h4 span {
             color: red;
             font-size: 22px;
-        }
-
-        .child-cate {
-            margin-left: 22px;
-        }
-
-        .category-single .border-checkbox-group.border-checkbox-group-primary {
-            margin-bottom: 10px;
         }
 
         .button-page .card-block ul li {
@@ -91,5 +82,19 @@
             list-style-type: disc;
             padding-left: 25px;
         }
+
+        #short-detail {
+            height: 250px;
+            min-height: 250px;
+        }
     </style>
+    <script>
+        $(document).ready(function() {
+            $('#summernote').summernote({
+                placeholder: 'Nhập chi tiết sản phẩm',
+                height: 350,
+                maximumImageFileSize: 2097152
+            });
+        });
+    </script>
 @endsection

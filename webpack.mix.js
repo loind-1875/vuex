@@ -43,7 +43,10 @@ mix.js('resources/js/app.js', 'public/js/app.js')
     /* ---------------------------client------------------------------ */
     .copyDirectory('resources/assets/client/images', 'public/client/images')
     .copyDirectory('resources/assets/client/fonts', 'public/client/fonts')
-    // .copyDirectory('resources/assets/client/external', 'public/client/external')
+    .copyDirectory('resources/assets/client/css/main.css', 'public/client/css/main.css')
+    .copyDirectory('resources/assets/client/css/glasscase.css', 'public/client/css/glasscase.css')
+    .copyDirectory('resources/assets/client/js/jquery.glasscase.js', 'public/client/js/jquery.glasscase.js')
+    .copyDirectory('resources/assets/client/js/modernizr.custom.js', 'public/client/js/modernizr.custom.js')
     .styles([
         'resources/assets/client/css/bootstrap.min.css',
         'resources/assets/client/css/bootstrap-theme.min.css',

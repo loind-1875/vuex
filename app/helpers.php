@@ -20,3 +20,38 @@ if (!function_exists('getImage')) {
         return config('media.image') . $image;
     }
 }
+
+if (!function_exists('getImageOther')) {
+    function getImageOther($image)
+    {
+        return asset(config('media.client.other') . $image);
+    }
+}
+
+if (!function_exists('getImageMain')) {
+    function getImageMain($image)
+    {
+        return asset(config('media.client.main') . $image);
+    }
+}
+
+if (!function_exists('getShortDetail')) {
+    function getShortDetail($detail)
+    {
+        return strlen($detail) > 200 ? substr($detail, 0, 300) . '...' : $detail;
+    }
+}
+
+if (!function_exists('getDateCreated')) {
+    function getDateCreated($date)
+    {
+        return \Carbon\Carbon::parse($date)->toDateString();
+    }
+}
+
+if (!function_exists('parseLink')) {
+    function parseLink($item)
+    {
+        return $item->slug . '-' . $item->id;
+    }
+}

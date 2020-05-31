@@ -20,7 +20,7 @@
                 </div>
                 <div class="wp-header-top-main">
                     <div class="animated zoomIn wp-logo1">
-                        <a href="http://congtyhft.com/">
+                        <a href="/">
                             <img src="{{ asset(config('media.client.other') . 'group-3.png') }}" alt="CÔNG TY TNHH TM & DV HÓA CHẤT H.F.T ">
                         </a>
                     </div>
@@ -73,28 +73,28 @@
                         <ul class="nav navbar-nav">
 
                             <li class="">
-                                <a href="index.html">Trang chủ</a>
+                                <a href="/">Trang chủ</a>
                             </li>
                             <li class="">
-                                <a href="gioi-thieu-chung.html">Giới thiệu</a>
+                                <a href="/">Giới thiệu</a>
                             </li>
                             <li class="">
-                                <a href="hoa-chat.html">Hóa Chất</a>
+                                <a href="{{ route('client.category', 'hoa-chat-1') }}">Hóa Chất</a>
                             </li>
                             <li class="">
-                                <a href="dong-co.html">động cơ</a>
+                                <a href="{{ route('client.category', 'dong-co-2') }}">động cơ</a>
                             </li>
                             <li class="">
-                                <a href="tuyen-dung.html">Tuyển Dụng</a>
+                                <a href="{{ route('client.recruitment') }}">Tuyển Dụng</a>
                             </li>
                             <li class="">
-                                <a href="tin-tuc.html">Tin tức</a>
+                                <a href="{{ route('client.news') }}">Tin tức</a>
                             </li>
                             <li class="">
-                                <a href="bao-hanh.html">bảo hành</a>
+                                <a href="{{ route('client.guarantee') }}">bảo hành</a>
                             </li>
                             <li class="">
-                                <a href="lien-he.html">Liên hệ</a>
+                                <a href="{{ route('client.contact') }}">Liên hệ</a>
                             </li>
                         </ul>
                     </div>

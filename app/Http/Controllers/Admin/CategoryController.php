@@ -37,6 +37,7 @@ class CategoryController extends Controller
      */
     public function store(StoreCategoryRequest $request)
     {
+        $request->merge(['slug' => str_slug($request->name)]);
         Category::create($request->all());
 
         return redirect()->route('categories.index')->with('success', 'Thêm thành công');
@@ -86,6 +87,7 @@ class CategoryController extends Controller
             abort(Response::HTTP_NOT_FOUND);
         }
 
+        $request->merge(['slug' => str_slug($request->name)]);
         $category->update($request->all());
 
         return redirect()->route('categories.index')->with('success', ' Sửa thành công');

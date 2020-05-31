@@ -21,6 +21,7 @@ class CreateNewsTable extends Migration
             $table->string('slug');
             $table->string('image');
             $table->integer('view')->default(0);
+            $table->integer('is_recruitment')->default(0);
             $table->timestamps();
         });
     }

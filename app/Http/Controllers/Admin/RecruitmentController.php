@@ -9,9 +9,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Storage;
-use DOMDocument;
+use DomDocument;
 
-class NewsController extends Controller
+class RecruitmentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,9 +20,9 @@ class NewsController extends Controller
      */
     public function index()
     {
-        $news = News::where('is_recruitment', 0)->paginate(15);
+        $recruitments = News::where('is_recruitment', 1)->paginate(10);
 
-        return view('admin.news.list', compact('news'));
+        return view('admin.recruitment.list', compact('recruitments'));
     }
 
     /**
@@ -32,7 +32,7 @@ class NewsController extends Controller
      */
     public function create()
     {
-        return view('admin.news.create');
+        return view('admin.recruitment.create');
     }
 
     /**
@@ -55,7 +55,7 @@ class NewsController extends Controller
 
         News::create($request->all());
 
-        return redirect()->route('news.index')->with('success', 'Thêm thành công');
+        return redirect()->route('recruitment.index')->with('success', 'Thêm thành công');
     }
 
     public function saveImage($request)
@@ -117,13 +117,13 @@ class NewsController extends Controller
      */
     public function edit($id)
     {
-        $news = News::find($id);
+        $recruitment = News::find($id);
 
-        if (!$news) {
+        if (!$recruitment) {
             abort(Response::HTTP_NOT_FOUND);
         }
 
-        return view('admin.news.edit', compact('news'));
+        return view('admin.recruitment.edit', compact('recruitment'));
     }
 
     /**
@@ -135,9 +135,9 @@ class NewsController extends Controller
      */
     public function update(EditNewsRequest $request, $id)
     {
-        $news = News::find($id);
+        $recruitment = News::find($id);
 
-        if (!$news) {
+        if (!$recruitment) {
             abort(Response::HTTP_NOT_FOUND);
         }
 
@@ -151,9 +151,9 @@ class NewsController extends Controller
 
         $request->merge(['slug' => str_slug($request->title)]);
 
-        $news->update($request->all());
+        $recruitment->update($request->all());
 
-        return redirect()->route('news.index')->with('success', ' Sửa thành công');
+        return redirect()->route('recruitment.index')->with('success', ' Sửa thành công');
     }
 
     /**
@@ -164,14 +164,14 @@ class NewsController extends Controller
      */
     public function destroy($id)
     {
-        $news = News::find($id);
+        $recruitment = News::find($id);
 
-        if (!$news) {
+        if (!$recruitment) {
             abort(Response::HTTP_NOT_FOUND);
         }
 
-        $news->delete();
+        $recruitment->delete();
 
-        return redirect()->route('news.index')->with('success', 'Xóa thành công');
+        return redirect()->route('recruitment.index')->with('success', 'Xóa thành công');
     }
 }

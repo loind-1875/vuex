@@ -3,6 +3,10 @@
     "/css/app.css": "/css/app.css",
     "/admin/css/admin.css": "/admin/css/admin.css",
     "/admin/js/admin.js": "/admin/js/admin.js",
+    "/client/css/main.css": "/client/css/main.css",
+    "/client/css/glasscase.css": "/client/css/glasscase.css",
+    "/client/js/jquery.glasscase.js": "/client/js/jquery.glasscase.js",
+    "/client/js/modernizr.custom.js": "/client/js/modernizr.custom.js",
     "/client/css/client.css": "/client/css/client.css",
     "/client/js/client.js": "/client/js/client.js"
 }

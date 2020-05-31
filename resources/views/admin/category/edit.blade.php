@@ -35,6 +35,10 @@
                                     <input type="text" class="form-control" name="name" placeHolder="Nhập tên danh mục" value="{{ $category->name }}" required>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
+                                    <h4 class="sub-title">Mô tả</h4>
+                                    <input type="text" class="form-control" name="description" placeHolder="Nhập mô tả danh mục" value="{{ old('name') }}" required>
+                                </div>
+                                <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Danh mục cha (Có thể rỗng)</h4>
                                     <div class="row">
                                         @foreach ($categories as $cate)

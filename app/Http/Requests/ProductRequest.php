@@ -25,7 +25,6 @@ class ProductRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'price' => 'required',
             'images' => 'required|image|mimes:jpeg,bmp,png|max:2048',
             'category' => 'required'
         ];
@@ -35,7 +34,6 @@ class ProductRequest extends FormRequest
     {
         return [
             'name.required' => 'Tên là bắt buộc',
-            'price.required' => 'Giá là bắt buộc',
             'images.required' => 'Ảnh là bắt buộc',
             'images.max' => 'Ảnh tối đa là 2MB',
             'images.mimes' => 'Chỉ được upload file ảnh jpeg, png, bmp',

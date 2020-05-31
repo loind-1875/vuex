@@ -1,8 +1,7 @@
 @charset "utf-8";
-/*-----bướng style-----*/
 
 body {
-	font-family: 'Roboto', sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
 @font-face {
 	font-family: "Ere";
@@ -118,7 +117,7 @@ h1, h2, h3, h4 {
 	margin-bottom: 10px;
 }
 .hot-line-top::after {
-	content: url(../images/icon-mobile-top.png);
+	content: url(../images/others/icon-mobile-top.png);
 	position: absolute;
 	top: 0px;
 	left: 0px;
@@ -379,7 +378,7 @@ a:hover {
 }
 .doitac-sl .owl-prev, .doitac-sl .owl-next {
 	position: absolute !important;
-	margin: 0px !important; 
+	margin: 0px !important;
 	top: 50% !important;
 	transform: translateY(-50%) !important;
 	background: rgba(0,0,0,0.3) !important;
@@ -428,7 +427,7 @@ a:hover {
 	max-height: 247px;
 }
 .bg-ke {
-	background-image: url(../images/bg-ke.jpg);
+	background-image: url(../images/others/bg-ke.jpg);
 	background-size: cover;
 	background-position: top center;
 }
@@ -508,13 +507,13 @@ a:hover {
 }
 .title-footer h4.tt-ft::before {
 	position: absolute;
-	content: url(../images/icon-ft.png);
+	content: url(../images/others/icon-ft.png);
 	top: 2px;
 	left: 2px;
 }
 .title-footer h4.tt-ft::after {
 	position: absolute;
-	content: url(../images/show-down.png);
+	content: url(../images/others/show-down.png);
 	bottom: -5px;
 	left: 0px;
 }
@@ -776,7 +775,7 @@ a:hover {
 }
 .hot-line-ktv::after {
 	position: absolute;
-	content: url(../images/a.png);
+	content: url(../images/others/a.png);
 	top: 0px;
 	left: 0px;
 }
@@ -914,10 +913,10 @@ a:hover {
 	left: 0px;
 }
 .date-view-ct div:first-child::after {
-	content: url(../images/capnhat_03.png);
+	content: url(../images/others/capnhat_03.png);
 }
 .date-view-ct div:nth-child(2)::after {
-	content: url(../images/view-1.png);
+	content: url(../images/others/view-1.png);
 }
 .co-chu-ct>span {
 	color: #999;
@@ -960,13 +959,13 @@ a:hover {
 	padding-bottom: 0px;
 }
 .control-ct .ctl-prev::after {
-	content: url(../images/11.png);
+	content: url(../images/others/11.png);
 	position: absolute;
 	top: 0px;
 	left: 0px;
 }
 .control-ct .ctl-top::after {
-	content: url(../images/12.png);
+	content: url(../images/others/12.png);
 	position: absolute;
 	top: 0px;
 	left: 5px;
@@ -986,7 +985,7 @@ a:hover {
 	border-bottom: none;
 }
 .wp-tinkhac ul li::after {
-	content: url(../images/tich_03.png);
+	content: url(../images/others/tich_03.png);
 	position: absolute;
 	top: 10px;
 	left: 0px;
@@ -1112,7 +1111,7 @@ a:hover {
 }
 .wp-text-ykkh::after {
 	position: absolute;
-	content: url(../images/boder-yk.png);
+	content: url(../images/others/boder-yk.png);
 	top: 0px;
 	left: 0px;
 	z-index: 3;
@@ -1227,7 +1226,7 @@ ul.ttsp-ctsp {
 .tt-ctsp-002 h4 {
 	height: 40px;
 	line-height: 40px;
-	background-image: url(../images/bg-tt.png);
+	background-image: url(../images/others/bg-tt.png);
 	background-repeat: no-repeat;
 	background-size: contain;
 	border-bottom: 1px solid #0069b4;
@@ -1326,7 +1325,7 @@ ul.ttsp-ctsp {
 	.row.row-edit-dm .col-md-3, .row.row-edit-ctsp .col-md-6 {
 		padding: 0px 10px;
 	}
-	.wp-list-why .col-md-4:nth-child(1) .wp-item-why, .wp-list-why .col-md-4:nth-child(2) .wp-item-why, 
+	.wp-list-why .col-md-4:nth-child(1) .wp-item-why, .wp-list-why .col-md-4:nth-child(2) .wp-item-why,
 	.wp-list-why .col-md-4:nth-child(3) .wp-item-why {
 		margin-bottom: 30px;
 	}

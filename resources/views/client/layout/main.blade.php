@@ -41,13 +41,22 @@
           content="hóa chất là gì, hóa chất công nghiệp, định nghĩa hóa chất, bán hóa chất công nghiệp, hóa chất thí nghiệm, công ty hóa chất, mua hóa chất thí nghiệm, hóa chất công nghiệp là gì"/>
     <meta name="twitter:image"
           content="index.html"/>
-    <link rel="icon" href="uploads/images/group-3.png" type="image/png" sizes="30x30">
+    <link rel="icon" href="{{ getImageOther('group-3.png') }}" type="image/png" sizes="30x30">
 
     <!--load css js của trang-->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i&amp;subset=vietnamese" rel="stylesheet">
-    <link rel="stylesheet" href="client/css/client.css">
-    <script src="client/js/client.js"></script>
+    <link rel="stylesheet" href="/client/css/client.css">
+    <script src="/client/js/client.js"></script>
+    <style>
+        .no-content {
+            font-size: 17px;
+            text-align: center;
+            margin: 20px;
+        }
+    </style>
+    @yield('style')
 </head>
 <body>
 <div class="page-body"> <!-- div body -->
@@ -89,14 +98,14 @@
 
         var BASE_URL = '/';
 
-        function setActive() {
-            var aObj = document.getElementById('menu2').getElementsByTagName('a');
-            for (i = 0; i < aObj.length; i++) {
-                if (aObj[i].href == document.location.href)
-                    aObj[i].className = 'is-active';
-            }
-        }
-        window.onload = setActive;
+        // function setActive() {
+        //     var aObj = document.getElementById('menu2').getElementsByTagName('a');
+        //     for (i = 0; i < aObj.length; i++) {
+        //         if (aObj[i].href == document.location.href)
+        //             aObj[i].className = 'is-active';
+        //     }
+        // }
+        // window.onload = setActive;
 
         <!-- js menu sidebar danh mục sản phẩm -->
         var acc = document.getElementsByClassName("accordion");

@@ -34,10 +34,10 @@
                                     <h4 class="sub-title">Tên sản phẩm<span>*</span></h4>
                                     <input type="text" class="form-control" name="name" placeHolder="Nhập tên sản phẩm" value="{{ $product->name }}" required>
                                 </div>
-                                <div class="col-sm-12 m-b-30">
-                                    <h4 class="sub-title">Giá<span>*</span></h4>
-                                    <input type="number" name="price" class="form-control" placeHolder="Nhập giá sản phẩm" value="{{ $product->price }}"  required>
-                                </div>
+{{--                                <div class="col-sm-12 m-b-30">--}}
+{{--                                    <h4 class="sub-title">Giá<span>*</span></h4>--}}
+{{--                                    <input type="number" name="price" class="form-control" placeHolder="Nhập giá sản phẩm" value="{{ $product->price }}"  required>--}}
+{{--                                </div>--}}
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Ảnh sản phẩm<span>*</span></h4>
                                     <img src="{{ getImage($product->image) }}" alt="" class="img m-b-10">

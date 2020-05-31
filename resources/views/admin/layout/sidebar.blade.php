@@ -81,6 +81,24 @@
                         </li>
                     </ul>
                 </li>
+                <li class="pcoded-hasmenu">
+                    <a href="javascript:void(0)" class="waves-effect waves-dark">
+                        <span class="pcoded-micon"><i class="fa fa-newspaper-o"></i></span>
+                        <span class="pcoded-mtext">Tin tuyển dụng</span>
+                    </a>
+                    <ul class="pcoded-submenu">
+                        <li class="">
+                            <a href="{{ route('recruitment.index') }}" class="waves-effect waves-dark">
+                                <span class="pcoded-mtext">Danh sách tin tuyển dụng</span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="{{ route('recruitment.create') }}" class="waves-effect waves-dark">
+                                <span class="pcoded-mtext">Thêm mới tin tuyển dụng</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
 
             </ul>
         </div>
