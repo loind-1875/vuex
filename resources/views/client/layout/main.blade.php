@@ -55,6 +55,50 @@
             text-align: center;
             margin: 20px;
         }
+        .header-top-bar {
+            text-align: center;
+            margin-top: 15px;
+        }
+        .header-top-bar li {
+            display: inline-block;
+            margin-right: 60px;
+            text-align: left;
+        }
+        .item-info {
+            overflow: auto;
+        }
+        .item-info img {
+            float: left;
+        }
+        .item-text-info {
+            font-size: 16px;
+            float: right;
+            margin-left: 16px;
+        }
+        .company-name {
+            font-size: 16pt;
+            line-height: 24.5333px;
+            font-family: "Times New Roman", serif;
+            background-image: initial;
+            background-position: initial;
+            background-size: initial;
+            background-repeat: initial;
+            background-attachment: initial;
+            background-origin: initial;
+            background-clip: initial;
+        }
+        .company {
+            margin-bottom: 15px;
+        }
+        .wp-text-gt li {
+            list-style: disc;
+        }
+        ul.company-address p {
+            margin-bottom: 10px;
+        }
+        ul.company-address {
+            font-size: 17px;
+        }
     </style>
     @yield('style')
 </head>

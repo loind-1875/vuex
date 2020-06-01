@@ -54,27 +54,33 @@
                 </div>
                 <div class="wp-gt">
                     <div class="row">
-                        <div class="col-md-6 col-sm-12 col-xs-12 wow fadeInLeft" data-wow-duration="1.6s">
+                        <div class="col-md-4 col-sm-12 col-xs-12 wow fadeInLeft" data-wow-duration="1.6s">
                             <div class="wp-img-gt">
                                 <a href="gioi-thieu-chung.html">
                                     <img src="{{ asset(config('media.client.other') . 'untitled-12.png') }}" alt="Giới thiệu chung">
                                 </a>
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12 col-xs-12 wow fadeInRight" data-wow-duration="1.6s">
+                        <div class="col-md-8 col-sm-12 col-xs-12 wow fadeInRight" data-wow-duration="1.6s">
                             <div class="wp-text-gt">
-                                <p style="text-align: center;"><b style="text-align: justify;"><i><span style="font-size: 16pt; line-height: 24.5333px; font-family: &quot;Times New Roman&quot;, serif; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;">Công ty TNHH Thương Mại Và Dịch Vụ Hóa Chất H.F.T</span></i></b></p>
-
-                                <p>Văn phòng Hà Nội: Phòng 1006, tòa nhà hỗn hợp sông Đà, 131 Trần Phú, Văn Quán, Hà Đông, Hà Nội</p>
-
-                                <p>Tel:&nbsp;(+84) 024.3354.2250</p>
-
-                                <p>Văn phòng HCM:&nbsp;Số 111/8/2/72 đường Trục, phường 13, quận Bình Thạnh, Hồ Chí Minh</p>
-
-                                <p>Tel:&nbsp;</p>
-
-                                <p>&nbsp;</p>                                    <br>
-                                <a href="gioi-thieu-chung.html" class="btn btn-xt">Xem chi tiết</a>
+                                <p class="company">
+                                    <b>
+                                        <i>
+                                            <span class="company-name">
+                                                Công ty TNHH Thương Mại Và Dịch Vụ Hóa Chất H.F.T
+                                            </span>
+                                        </i>
+                                    </b>
+                                </p>
+                                <ul class="company-address">
+                                    <li><p>Văn phòng Hà Nội: Phòng 1006, tòa nhà sông Đà, 131 Trần Phú, Văn Quán, Hà Đông, Hà Nội</p></li>
+                                    <p>Tel:&nbsp;(+84) 024.3354.2250</p>
+                                   <li>
+                                       <p>Văn phòng HCM:&nbsp;Số 111/8/2/72 đường Trục, phường 13, quận Bình Thạnh, Hồ Chí Minh</p>
+                                   </li>
+                                    <p>Tel:&nbsp;</p>
+                                    <a href="gioi-thieu-chung.html" class="btn btn-xt">Xem chi tiết</a>
+                                </ul>
                             </div>
                         </div>
                     </div>

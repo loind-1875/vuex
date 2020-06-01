@@ -1,4 +1,37 @@
 <header class="">
+    <div class="row">
+        <div class="header-top-bar">
+            <ul>
+                <li>
+                    <div class="item-info">
+                        <img src="{{ getImageOther('icon1.png') }}" alt="">
+                        <div class="item-text-info">
+                            <p>Giao hàng</p>
+                            <p>Toàn quốc</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="item-info">
+                        <img src="{{ getImageOther('icon2.png') }}" alt="">
+                        <div class="item-text-info">
+                            <p>Hỗ trợ</p>
+                            <p>Trực tuyến 24/7</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="item-info">
+                        <img src="{{ getImageOther('icon3.png') }}" alt="">
+                        <div class="item-text-info">
+                            <p>Đảm bảo</p>
+                            <p>Chất lượng</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
     <div class="wp-header-pc hidden-sm hidden-xs">
         <div class="header-top" style="margin-bottom: 10px;">
             <div class="container">
@@ -85,13 +118,13 @@
                                 <a href="{{ route('client.category', 'dong-co-2') }}">động cơ</a>
                             </li>
                             <li class="">
-                                <a href="{{ route('client.recruitment') }}">Tuyển Dụng</a>
-                            </li>
-                            <li class="">
                                 <a href="{{ route('client.news') }}">Tin tức</a>
                             </li>
                             <li class="">
                                 <a href="{{ route('client.guarantee') }}">bảo hành</a>
+                            </li>
+                            <li class="">
+                                <a href="{{ route('client.recruitment') }}">Tuyển Dụng</a>
                             </li>
                             <li class="">
                                 <a href="{{ route('client.contact') }}">Liên hệ</a>
