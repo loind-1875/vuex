@@ -1,7 +1,7 @@
 <nav class="navbar header-navbar pcoded-header">
     <div class="navbar-wrapper">
         <div class="navbar-logo">
-            <a href="index.html">
+            <a href="/">
                 <img class="img-fluid" src="png/logo.png" alt="Theme-Logo" />
             </a>
             <a class="mobile-menu" id="mobile-collapse" href="#!">
@@ -16,20 +16,27 @@
                 <li class="user-profile header-notification">
                     <div class="dropdown-primary dropdown">
                         <div class="dropdown-toggle" data-toggle="dropdown">
-{{--                            <img src="jpg/avatar-4.jpg" class="img-radius" alt="User-Profile-Image">--}}
-                            <span>{{ Auth::check() && Auth::user()->name }}</span>
+                            <span>{{ Auth::check() ? Auth::user()->name : '' }}</span>
                             <i class="feather icon-chevron-down"></i>
                         </div>
                         <ul class="show-notification profile-notification dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
                             <li>
-                                <a href="#!">
+                                <a href="{{ route('admin.setting') }}">
                                     <i class="feather icon-settings"></i> Settings
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
-                                    <i class="feather icon-user"></i> Profile
-                                </a>
+
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        <i class="fa fa-sign-out"></i>
+                                        Đăng xuất
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
                             </li>
                         </ul>
                     </div>

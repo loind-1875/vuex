@@ -17,6 +17,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
     Route::resource('categories', 'CategoryController');
     Route::resource('news', 'NewsController');
     Route::resource('recruitment', 'RecruitmentController');
+    Route::get('settings', 'AdminController@settings')->name('admin.setting');
+    Route::put('settings', 'AdminController@updateSettings')->name('update.setting');
 });
 
 Route::group(['namespace' => 'Client'], function () {
@@ -29,3 +31,7 @@ Route::group(['namespace' => 'Client'], function () {
     Route::get('danh-muc/{slug}', 'ClientController@detailCategory')->name('client.category');
     Route::get('san-pham/{slug}', 'ClientController@detailProduct')->name('client.product');
 });
+
+Auth::routes(['register' => false]);
+
+Route::get('/home', 'HomeController@index')->name('home');

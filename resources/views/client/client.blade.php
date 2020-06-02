@@ -56,7 +56,7 @@
                     <div class="row">
                         <div class="col-md-4 col-sm-12 col-xs-12 wow fadeInLeft" data-wow-duration="1.6s">
                             <div class="wp-img-gt">
-                                <a href="gioi-thieu-chung.html">
+                                <a href="#">
                                     <img src="{{ asset(config('media.client.other') . 'untitled-12.png') }}" alt="Giới thiệu chung">
                                 </a>
                             </div>
@@ -79,7 +79,7 @@
                                        <p>Văn phòng HCM:&nbsp;Số 111/8/2/72 đường Trục, phường 13, quận Bình Thạnh, Hồ Chí Minh</p>
                                    </li>
                                     <p>Tel:&nbsp;</p>
-                                    <a href="gioi-thieu-chung.html" class="btn btn-xt">Xem chi tiết</a>
+                                    <a href="#" class="btn btn-xt">Xem chi tiết</a>
                                 </ul>
                             </div>
                         </div>
@@ -319,7 +319,7 @@
                                     <img src="{{ asset(config('media.client.other') . 'icon-1.png') }}" alt="Đội ngũ nhân sự">
                                 </div>
                                 <div class="text-why">
-                                    <h4><a href="doi-ngu-nhan-su.html">Đội ngũ nhân sự</a></h4>
+                                    <h4><a href="#">Đội ngũ nhân sự</a></h4>
 
                                     <p><p style="text-align: justify;"><span style="font-size:14px;"><span style="font-family:arial,helvetica,sans-serif;">Đội ngũ trẻ trung, chuyên nghiệp, chuyên môn tốt, chúng tôi chắc chắn đem đến sự hài lòng cho quý khách hàng.</span></span></p>
 
@@ -334,7 +334,7 @@
                                     <img src="{{ asset(config('media.client.other') . 'icon-2.png') }}" alt="NĂNG LỰC TÀI CHÍNH">
                                 </div>
                                 <div class="text-why">
-                                    <h4><a href="nang-luc-tai-chinh-a136.html">NĂNG LỰC TÀI CHÍNH</a></h4>
+                                    <h4><a href="#">NĂNG LỰC TÀI CHÍNH</a></h4>
 
                                     <p><p style="text-align: justify;"><span style="font-size:14px;"><span style="font-family:arial,helvetica,sans-serif;">Năng lực đủ đáp ứng những dự án lớn, quy mô, vững chắc tạo&nbsp;sự tin tưởng cho đối tác</span></span></p></p>
                                 </div>
@@ -347,7 +347,7 @@
                                     <img src="{{ asset(config('media.client.other') . 'nha-cung-cap.png') }}" alt="NHÀ CUNG CẤP">
                                 </div>
                                 <div class="text-why">
-                                    <h4><a href="nha-cung-cap-a134.html">NHÀ CUNG CẤP</a></h4>
+                                    <h4><a href="#">NHÀ CUNG CẤP</a></h4>
 
                                     <p><p style="text-align: justify;"><span style="font-size:14px;"><span style="font-family:arial,helvetica,sans-serif;">Là những tên tuổi lớn và uy tín đứng đầu tại nhiều quốc gia trên thế giới.</span></span></p></p>
                                 </div>
@@ -361,7 +361,7 @@
                                     <img src="{{ asset(config('media.client.other') . 'icon-3.png') }}" alt="LUÔN VÌ QUYỀN LỢI KHÁCH HÀNG">
                                 </div>
                                 <div class="text-why">
-                                    <h4><a href="luon-vi-quyen-loi-khach-hang-a135.html">LUÔN VÌ QUYỀN LỢI KHÁCH HÀNG</a></h4>
+                                    <h4><a href="#">LUÔN VÌ QUYỀN LỢI KHÁCH HÀNG</a></h4>
 
                                     <p><p style="text-align: justify;"><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">Thành công của khách hàng chính là thành công của chúng tôi</span></span></p></p>
                                 </div>
@@ -374,7 +374,7 @@
                                     <img src="{{ asset(config('media.client.other') . 'icon-5.png') }}" alt="MÔI TRƯỜNG LÀM VIỆC">
                                 </div>
                                 <div class="text-why">
-                                    <h4><a href="moi-truong-lam-viec-a133.html">MÔI TRƯỜNG LÀM VIỆC</a></h4>
+                                    <h4><a href="#">MÔI TRƯỜNG LÀM VIỆC</a></h4>
 
                                     <p><p style="text-align: justify;"><span style="font-size:14px;"><span style="font-family:arial,helvetica,sans-serif;">Với môi trường làm việc trẻ trung, năng động,&nbsp;chuyên nghiệp, chúng tôi sẽ không làm bạn thất vọng.</span></span></p></p>
                                 </div>
@@ -387,7 +387,7 @@
                                     <img src="{{ asset(config('media.client.other') . 'icon-6.png') }}" alt="SẢN PHẨM">
                                 </div>
                                 <div class="text-why">
-                                    <h4><a href="san-pham-a132.html">SẢN PHẨM</a></h4>
+                                    <h4><a href="#">SẢN PHẨM</a></h4>
 
                                     <p><p style="text-align: justify;"><span style="font-size:14px;"><span style="font-family:arial,helvetica,sans-serif;">Sản phẩm đến từ các&nbsp;thương hiệu lớn ở nhiều quốc gia;&nbsp;chất lượng,&nbsp;giá cả luôn cạnh tranh</span></span></p></p>
                                 </div>
@@ -409,35 +409,23 @@
                 </div>
                 <div class="wp-ttsk">
                     <div class="row">
-                        <div class="col-md-4 col-sm-6 col-xs-12 wow fadeInLeft"
-                             data-wow-duration="1.6s">
-                            <div class="wp-item-ttsk">
-                                <div class="img-ttsk">
-                                    <a href="ho-tro-khach-hang.html"><img src="templates/not-found.png"
-                                                                          alt="ho tro khach hang"
-                                                                          style="height: 244px"></a>
-                                </div>
-                                <div class="text-ttsk bg-ke">
-                                    <h4><a href="ho-tro-khach-hang.html">ho tro khach hang</a></h4>
+                        @foreach ($news as $new)
+                            <div class="col-md-4 col-sm-6 col-xs-12 wow fadeInLeft item"
+                                 data-wow-duration="1.6s">
+                                <div class="wp-item-ttsk">
+                                    <div class="img-ttsk">
+                                        <a href="{{ route('client.news', parseLink($new)) }}">
+                                            <img src="{{ getImage($new->image) }}" alt="{{ $new->title }}" style="height: 244px">
+                                        </a>
+                                    </div>
+                                    <div class="text-ttsk bg-ke">
+                                        <h4><a href="{{ route('client.news', parseLink($new)) }}">{{ $new->title }}</a></h4>
 
-                                    <p><p>ewwe</p></p>
+                                        <p>{{ getShortDetail($new->short_detail) }}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="col-md-4 col-sm-12 col-xs-12 wow fadeInRight" data-wow-duration="1.6s">
-                            <div class="wp-ttsk-khac bg-ke">
-                                <h4 class="tt-khac">Tin tức khác</h4>
-
-                                <div class="wp-list-ttkhac">
-                                </div>
-                                <div class="xemthem-ttkhac">
-                                    <span class="xt-ttk">Xem thêm thông tin khác</span>
-                                    <span><a href="tin-tuc.html" class="btn btn-ttkhac"><i
-                                                class="fa fa-angle-right"></i></a></span>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

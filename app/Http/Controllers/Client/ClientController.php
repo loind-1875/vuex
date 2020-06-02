@@ -7,13 +7,14 @@ use App\Models\News;
 use App\Models\Product;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
-use Illuminate\Support\Facades\Cookie;
 
 class ClientController extends Controller
 {
     public function index()
     {
-        return view('client.client');
+        $news = News::where('is_recruitment', 0)->take(3)->latest()->get();
+
+        return view('client.client', compact('news'));
     }
 
     public function news()
@@ -81,7 +82,6 @@ class ClientController extends Controller
 
     public function detailProduct($slug)
     {
-        dd($request->cookie('name'));
         $id = last(explode('-', $slug));
 
         $product = Product::find($id);
@@ -93,11 +93,9 @@ class ClientController extends Controller
 
         $otherProducts = Product::where('id', '!=', $id)->take(8)->get();
 
-        $cookie = cookie('products', $id, 10);
-
         return view(
             'client.product-detail',
             compact('product', 'categories', 'otherProducts')
-        )->withCookie($cookie);
+        );
     }
 }

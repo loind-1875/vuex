@@ -13,6 +13,7 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js/app.js')
     .sass('resources/sass/app.scss', 'public/css')
+    .copyDirectory('resources/assets/admin/css/pages.css', 'public/admin/css/pages.css')
     .styles([
         'resources/assets/admin/css/bootstrap.min.css',
         'resources/assets/admin/css/waves.min.css',
