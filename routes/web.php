@@ -11,7 +11,7 @@
 |
 */
 
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'admin'], function() {
     Route::get('dashboard', 'AdminController@index');
     Route::resource('products', 'ProductController');
     Route::resource('categories', 'CategoryController');

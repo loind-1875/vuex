@@ -142,7 +142,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
-                <form class="md-float-material form-material" method="POST" action="{{ route('login') }}">
+                <form class="md-float-material form-material" method="POST" action="{{ route('login') }}" autocomplete="false">
                     @csrf
                     <div class="auth-box card">
                         <div class="card-block">

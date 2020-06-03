@@ -129,6 +129,11 @@
                             <li class="">
                                 <a href="{{ route('client.contact') }}">Liên hệ</a>
                             </li>
+                            @if (Auth::check())
+                                <li class="">
+                                    <a href="{{ route('products.index') }}">Quản trị</a>
+                                </li>
+                            @endif
                         </ul>
                     </div>
                 </div>
