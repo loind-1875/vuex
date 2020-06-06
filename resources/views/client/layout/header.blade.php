@@ -33,7 +33,7 @@
         </div>
     </div>
     <div class="wp-header-pc hidden-sm hidden-xs">
-        <div class="header-top" style="margin-bottom: 10px;">
+        <div class="header-top">
             <div class="container">
                 <div class="wp-social">
                     <div class="list-social animated bounceIn">
@@ -65,7 +65,7 @@
                             <div class="hot-line-top">
                                 <p>HOTLINE</p>
                                 <h4>
-                                    <a href="tel:01237281293">01237281293</a>
+                                    <a href="tel:(+84) 024.33542250">(+84) 024.33542250</a>
                                 </h4>
                             </div>
                             <div class="search-top">

@@ -130,7 +130,7 @@ h1, h2, h3, h4 {
 	line-height: 1;
 }
 .hot-line-top h4 a {
-	font-size: 20px;
+	font-size: 14px;
 	color: #ff0000;
 	font-family: "Ere";
 }
@@ -1507,3 +1507,12 @@ ul.ttsp-ctsp {
 	}
 }
 /*hết css menu mobile*/
+
+.company-info-detail {
+    font-size: 17px;
+    line-height: 30px;
+}
+
+.company-info-detail p {
+    margin-bottom: 15px;
+}

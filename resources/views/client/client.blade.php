@@ -54,249 +54,66 @@
                 </div>
                 <div class="wp-gt">
                     <div class="row">
-                        <div class="col-md-4 col-sm-12 col-xs-12 wow fadeInLeft" data-wow-duration="1.6s">
-                            <div class="wp-img-gt">
-                                <a href="#">
-                                    <img src="{{ asset(config('media.client.other') . 'untitled-12.png') }}" alt="Giới thiệu chung">
-                                </a>
-                            </div>
+                        <div class="col-xs-12 col-sm-12 wow fadeInLeft company-info-detail">
+                            <p>
+                                <b>
+                                    Công ty TNHH Thương Mại Và Dịch Vụ Hóa Chất H.F.T xin gửi đến Quý khách hàng lời chúc Sức khoẻ, Thành công và Thịnh vượng!
+                                </b>
+                            </p>
+                            <p>
+                                <b>Công ty TNHH Thương Mại Và Dịch Vụ Hóa Chất H.F.T</b> được thành lập vào ngày 15/01/2008, trải qua hơn 10 năm hoạt động và phát triển, Công ty chúng tôi luôn tự hào là một trong những đơn vị luôn mang tới cho khách hàng sự yên tâm về chất lượng, hợp lý về giá cả và hài lòng về cung cách làm việc cũng như thái độ phục vụ.
+                            </p>
+                            <p><b>Lĩnh vực hoạt động</b></p>
+                            <p><b>H.F.T</b> chúng tôi kinh doanh về hai lĩnh vực: Hóa chất và sản xuất, lắp ráp động cơ xe máy điện, xe đạp điện.</p>
+                            <p>
+                                <b>* Hóa chất:</b> Chuyên cung cấp các dòng nguyên liệu, phụ gia chính để phục vụ cho ngành công nghiệp sản xuất Sơn nói chung và và các ngành sản xuất có sử dụng đến các nguyên liệu, phụ gia sơn nói riêng như: ngành sản xuất mực in, da giày, cao su…Sản phẩm của Công ty chúng tôi là những sản phẩm đã có mặt trên thị trường rất nhiều nước bởi đã đáp ứng được các tiêu chí mà người mua mong muốn. Một số thương hiệu của các nhà sản xuất hoá chất chúng tôi đang hợp tác như: Taiga Additives, 3D Bio-Chem, Color Valley Technology, Titanos, Zuxing, Kecai Pigments…Các đối tác lớn của Công ty chúng tôi trải dài từ Bắc vào Nam như: Công ty TNHH Nippon Paint Việt Nam, Công ty Cổ phần sơn Hải Phòng, Công ty TNHH sản xuất sơn Phoenix (Việt Nam), Công ty TNHH Công Nghiệp Brilliant, Công ty TNHH Daigaku (Việt Nam), Công ty TNHH Thương mại Dịch vụ Sản xuất Hải Thành Công…
+                            </p>
+                            <p>
+                                <b>* Sản xuất, lắp ráp Động cơ xe máy điện, xe đạp điện được đồng bộ hóa với IC chuyên dụng:</b> Khách hàng của H.F.T là các nhà sản xuất, lắp ráp xe máy điện, xe đạp điện trong nước. Sản phẩm của chúng tôi đều là những sản phẩm chất lượng cao, kiểu dáng, mẫu mã đa dạng và phong phú, phù hợp với thị hiếu, nhu cầu của người tiêu dùng theo từng thời điểm. H.F.T luôn sẵn sàng tư vấn, cung cấp đến Quý khách hàng những mẫu động cơ mới và được ưa chuộng nhất hiện nay. Bên cạnh đó, H.F.T còn là đơn vị chuyên gia công sản xuất các mẫu động cơ với thiết kế theo yêu cầu của khách hàng nhằm tạo kiểu dáng độc đáo, duy nhất, tạo nên thương hiệu của Quý khách hàng trên thị trường.
+                            </p>
+                            <p>Các Sản phẩm của chúng tôi luôn đi kèm với chế độ bảo hành, bảo trì với mong muốn luôn mang lại sự yên tâm cho khách hàng khi sử dụng.</p>
+                            <p><b>Đội ngũ nhân lực</b></p>
+                            <p>Công ty chúng tôi luôn tự hào có đội ngũ nhân nhân viên kinh doanh và chuyên viên tư vấn tận tình với nhiều năm kinh nghiệm trong lĩnh vực hoá chất và lĩnh vực sản xuất, lắp ráp động cơ xe máy điện xe đạp điện. Đến với H.F.T Quý khách hàng sẽ được tư vấn thông tin sản phẩm một cách đầy đủ, cung cấp tài liệu thông số kỹ thuật cũng như hỗ trợ chuyên môn cho Quý khách. Đội ngũ nhân viên của chúng tôi luôn sẵn sàng phục vụ và sẽ mang lại giải pháp toàn diện và tối ưu cho Quý khách.</p>
+                             <p><b>Phương châm & Mục tiêu</b></p>
+                            <p>
+                                Phương châm của chúng tôi “CHẤT LƯỢNG LÀ HÀNG ĐẦU - GIÁ CẢ CẠNH TRANH, SỰ HÀI LÒNG CỦA QUÝ KHÁCH HÀNG LÀ THÀNH CÔNG CỦA CHÚNG TÔI” luôn luôn được đặt lên hàng đầu. Với mong muốn đem lại lợi ích cao nhất cho khách hàng, H.F.T không ngừng tìm kiếm, sáng tạo và phát triển các sản phẩm mới, sản phẩm chất lượng nhằm đáp ứng nhu cầu ngày càng cao của khách hàng.
+                            </p>
+                            <p><b>Hợp tác cùng phát triển</b></p>
+                            <p>
+                                <b>H.F.T</b> đang ngày càng khẳng định thương hiệu và lòng tin với khách hàng qua từng đối tác. Chúng tôi cam kết cung cấp hàng hoá chất lượng, đầy đủ và đúng thời hạn cho Quý khách với chính sách hợp tác lâu dài, đôi bên cùng có lợi và cùng nhau phát triển.
+                                Sự thành công của chúng tôi chính là sự hài lòng của khách hàng. H.F.T xin chân thành cảm ơn Quý khách hàng đã tin tưởng các sản phẩm của chúng tôi trong thời gian qua. Chúng tôi mong nhận được sự quan tâm và hợp tác của Quý khách hàng.
+                            </p>
+                            <b>Trân Trọng!</b>
                         </div>
-                        <div class="col-md-8 col-sm-12 col-xs-12 wow fadeInRight" data-wow-duration="1.6s">
-                            <div class="wp-text-gt">
-                                <p class="company">
-                                    <b>
-                                        <i>
-                                            <span class="company-name">
-                                                Công ty TNHH Thương Mại Và Dịch Vụ Hóa Chất H.F.T
-                                            </span>
-                                        </i>
-                                    </b>
-                                </p>
-                                <ul class="company-address">
-                                    <li><p>Văn phòng Hà Nội: Phòng 1006, tòa nhà sông Đà, 131 Trần Phú, Văn Quán, Hà Đông, Hà Nội</p></li>
-                                    <p>Tel:&nbsp;(+84) 024.3354.2250</p>
-                                   <li>
-                                       <p>Văn phòng HCM:&nbsp;Số 111/8/2/72 đường Trục, phường 13, quận Bình Thạnh, Hồ Chí Minh</p>
-                                   </li>
-                                    <p>Tel:&nbsp;</p>
-                                    <a href="#" class="btn btn-xt">Xem chi tiết</a>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="sec-b2 bg-e5 pd-40">
-        <div class="container">
-            <div class="wp-hoachat">
-                <div class="title-sec text-center wow fadeInUp" data-wow-duration="1.6s">
-                    <h3 style="color: red">Hóa Chất</h3>
-                </div>
-                <div class="wp-list-sp-hc">
-                    <div class="wp-list-sp wow fadeInUp" data-wow-duration="1.6s">
-                        <div class="product-sl owl-carousel owl-theme">
-                            <div class="item">
-                                <div class="wp-sp">
-                                    <div class="wp-img-sp">
-                                        <a href="phu-gia-san-xuat-son.html">
-                                            <img src="{{ asset(config('media.client.home') . 'not-found.png') }}" alt="Phụ gia sản xuất sơn">
-                                        </a>
-                                    </div>
-                                    <div class="text-sp">
-                                        <h4 class="ten-sp"><a href="phu-gia-san-xuat-son.html">Phụ gia sản xuất sơn</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="wp-sp">
-                                    <div class="wp-img-sp">
-                                        <a href="carmay.html">
-                                            <img src="uploads/images/san-pham/hoa-chat/carmay/cm-b/cm-b-dau-19/cm-b-19502d/a.html" alt="Carmay">
-                                        </a>
-                                    </div>
-                                    <div class="text-sp">
-                                        <h4 class="ten-sp"><a href="carmay.html">Carmay</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="wp-sp">
-                                    <div class="wp-img-sp">
-                                        <a href="nhu-nhom.html">
-                                            <img src="uploads/images/slide/hoa-chat/nhu-nhom.jpg" alt="Nhũ Nhôm">
-                                        </a>
-                                    </div>
-                                    <div class="text-sp">
-                                        <h4 class="ten-sp"><a href="nhu-nhom.html">Nhũ Nhôm</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="wp-sp">
-                                    <div class="wp-img-sp">
-                                        <a href="bot-dong.html">
-                                            <img src="uploads/images/slide/hoa-chat/bot-dong.jpg" alt="Bột đồng">
-                                        </a>
-                                    </div>
-                                    <div class="text-sp">
-                                        <h4 class="ten-sp"><a href="bot-dong.html">Bột đồng</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="wp-sp">
-                                    <div class="wp-img-sp">
-                                        <a href="bot-mau.html">
-                                            <img src="uploads/images/slide/hoa-chat/bot-mau.jpg" alt="Bột màu">
-                                        </a>
-                                    </div>
-                                    <div class="text-sp">
-                                        <h4 class="ten-sp"><a href="bot-mau.html">Bột màu</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="wp-sp">
-                                    <div class="wp-img-sp">
-                                        <a href="mau-nhuom.html">
-                                            <img src="uploads/images/slide/hoa-chat/mau-nhuom.jpg" alt="Màu nhuộm">
-                                        </a>
-                                    </div>
-                                    <div class="text-sp">
-                                        <h4 class="ten-sp"><a href="mau-nhuom.html">Màu nhuộm</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="wp-doitac-hc">
-                    <div class="wp-doitac">
-                        <div class="title-dt wow fadeInUp" data-wow-duration="1.6s">
-                            <h3><span>Đối tác</span></h3>
-                        </div>
-                        <div class="wp-slider-dt wow fadeInUp" data-wow-duration="1.6s">
-                            <div class="doitac-sl owl-carousel owl-theme">
-
-
-                                <div class="item">
-                                    <div class="wp-item-dt">
-                                        <a href="javascript:void()">
-                                            <img src="uploads/images/logo/dt-hoa-chat/nippon-2.jpg"
-                                                 alt="">
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div class="item">
-                                    <div class="wp-item-dt">
-                                        <a href="javascript:void()">
-                                            <img src="uploads/images/logo/dt-hoa-chat/son-hai-phong-1.jpg"
-                                                 alt="">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    {{--    doi tac--}}
-    <section class="sec-b2 bg-e5 pd-40">
-        <div class="container">
-            <div class="wp-hoachat">
-                <div class="title-sec text-center wow fadeInUp" data-wow-duration="1.6s">
-                    <h3 style="color: red">Động Cơ</h3>
-                </div>
-                <div class="wp-list-sp-hc">
-                    <div class="wp-list-sp wow fadeInUp" data-wow-duration="1.6s">
-                        <div class="product-sl owl-carousel owl-theme">
-                            <div class="item">
-                                <div class="wp-sp">
-                                    <div class="wp-img-sp">
-                                        <a href="dong-co-lien-vanh-sau.html">
-                                            <img src="uploads/.thumbs/images/san-pham/dong-co/dong-co-lien-vanh-sau.jpg" alt="Động cơ liền vành sau">
-                                        </a>
-                                    </div>
-                                    <div class="text-sp">
-                                        <h4 class="ten-sp"><a href="dong-co-lien-vanh-sau.html">Động cơ liền vành sau</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="wp-sp">
-                                    <div class="wp-img-sp">
-                                        <a href="khien-xe-dien.html">
-                                            <img src="uploads/.thumbs/images/san-pham/dong-co/112-khien.jpg" alt="Khiển xe điện">
-                                        </a>
-                                    </div>
-                                    <div class="text-sp">
-                                        <h4 class="ten-sp"><a href="khien-xe-dien.html">Khiển xe điện</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="wp-sp">
-                                    <div class="wp-img-sp">
-                                        <a href="phanh-sau.html">
-                                            <img src="uploads/.thumbs/images/san-pham/dong-co/12-sau.jpg" alt="Phanh sau">
-                                        </a>
-                                    </div>
-                                    <div class="text-sp">
-                                        <h4 class="ten-sp"><a href="phanh-sau.html">Phanh sau</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="wp-sp">
-                                    <div class="wp-img-sp">
-                                        <a href="phu-kien-khac.html">
-                                            <img src="uploads/.thumbs/images/san-pham/dong-co/phu-kien.jpg" alt="Phụ kiện khác">
-                                        </a>
-                                    </div>
-                                    <div class="text-sp">
-                                        <h4 class="ten-sp"><a href="phu-kien-khac.html">Phụ kiện khác</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="wp-doitac-hc">
-                    <div class="wp-doitac">
-                        <div class="title-dt wow fadeInUp" data-wow-duration="1.6s">
-                            <h3><span>Đối tác</span></h3>
-                        </div>
-                        <div class="wp-slider-dt wow fadeInUp" data-wow-duration="1.6s">
-                            <div class="doitac-sl owl-carousel owl-theme">
-
-                                <div class="item">
-                                    <div class="wp-item-dt">
-                                        <a href="javascript:void()">
-                                            <img src="{{ asset(config('media.client.other') . 'dtp(1).png') }}"
-                                                 alt="">
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div class="item">
-                                    <div class="wp-item-dt">
-                                        <a href="javascript:void()">
-                                            <img src="{{ asset(config('media.client.other') . 'before-all.jpg') }}"
-                                                 alt="">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+{{--                        <div class="col-md-4 col-sm-12 col-xs-12 wow fadeInLeft" data-wow-duration="1.6s">--}}
+{{--                            <div class="wp-img-gt">--}}
+{{--                                <a href="#">--}}
+{{--                                    <img src="{{ asset(config('media.client.other') . 'untitled-12.png') }}" alt="Giới thiệu chung">--}}
+{{--                                </a>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-md-8 col-sm-12 col-xs-12 wow fadeInRight" data-wow-duration="1.6s">--}}
+{{--                            <div class="wp-text-gt">--}}
+{{--                                <p class="company">--}}
+{{--                                    <b>--}}
+{{--                                        <i>--}}
+{{--                                            <span class="company-name">--}}
+{{--                                                Công ty TNHH Thương Mại Và Dịch Vụ Hóa Chất H.F.T--}}
+{{--                                            </span>--}}
+{{--                                        </i>--}}
+{{--                                    </b>--}}
+{{--                                </p>--}}
+{{--                                <ul class="company-address">--}}
+{{--                                    <li><p>Văn phòng Hà Nội: Phòng 1006, tòa nhà sông Đà, 131 Trần Phú, Văn Quán, Hà Đông, Hà Nội</p></li>--}}
+{{--                                    <p>Tel:&nbsp;(+84) 024.3354.2250</p>--}}
+{{--                                   <li>--}}
+{{--                                       <p>Văn phòng HCM:&nbsp;Số 111/8/2/72 đường Trục, phường 13, quận Bình Thạnh, Hồ Chí Minh</p>--}}
+{{--                                       <p>Tel:&nbsp;(+84) 028.35533922</p>--}}
+{{--                                   </li>--}}
+{{--                                    <a href="#" class="btn btn-xt">Xem chi tiết</a>--}}
+{{--                                </ul>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
                     </div>
                 </div>
             </div>
