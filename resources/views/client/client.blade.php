@@ -231,12 +231,12 @@
                                  data-wow-duration="1.6s">
                                 <div class="wp-item-ttsk">
                                     <div class="img-ttsk">
-                                        <a href="{{ route('client.news', parseLink($new)) }}">
+                                        <a href="{{ route('client.news.detail', parseLink($new)) }}">
                                             <img src="{{ getImage($new->image) }}" alt="{{ $new->title }}" style="height: 244px">
                                         </a>
                                     </div>
                                     <div class="text-ttsk bg-ke">
-                                        <h4><a href="{{ route('client.news', parseLink($new)) }}">{{ $new->title }}</a></h4>
+                                        <h4><a href="{{ route('client.news.detail', parseLink($new)) }}">{{ $new->title }}</a></h4>
 
                                         <p>{{ getShortDetail($new->short_detail) }}</p>
                                     </div>
