@@ -4,14 +4,15 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\EditNewsRequest;
 use App\Http\Requests\NewsRequest;
-use App\Models\News;
+use App\Models\Post;
+use App\Models\PostTranslation;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Storage;
 use DOMDocument;
 
-class NewsController extends Controller
+class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,9 +21,9 @@ class NewsController extends Controller
      */
     public function index()
     {
-        $news = News::where('is_recruitment', 0)->paginate(15);
+        $news = Post::where('is_recruitment', 0)->paginate(15);
 
-        return view('admin.news.list', compact('news'));
+        return view('admin.post.list', compact('news'));
     }
 
     /**
@@ -32,7 +33,7 @@ class NewsController extends Controller
      */
     public function create()
     {
-        return view('admin.news.create');
+        return view('admin.post.create');
     }
 
     /**
@@ -43,19 +44,37 @@ class NewsController extends Controller
      */
     public function store(NewsRequest $request)
     {
-        if ($request->detail) {
-            $request->detail = $this->saveDetailPost($request->detail);
-        }
+        $data= $request->only(['vi', 'en', 'cn']);
+        $titleVi = array_get($request->only('vi'), 'title', null);
+        $slug = str_slug($titleVi);
 
         if ($request->hasFile('images')) {
             $this->saveImage($request);
         }
 
-        $request->merge(['slug' => str_slug($request->title)]);
+        $post = Post::create([
+            'image' => $request->image,
+            'slug' => $slug
+        ]);
 
-        News::create($request->all());
 
-        return redirect()->route('news.index')->with('success', 'Thêm thành công');
+        foreach ($data as $key => $item) {
+            $detail = array_get($item, 'detail', null);
+
+            if ($detail) {
+                $detail = $this->saveDetailPost($detail);
+            }
+
+            PostTranslation::create([
+                'title' => array_get($item, 'title', null),
+                'detail' => $detail,
+                'short_detail' => array_get($item, 'short_detail', null),
+                'locale' => $key,
+                'post_id' => $post->id
+            ]);
+        }
+
+        return redirect()->route('posts.index')->with('success', 'Thêm thành công');
     }
 
     public function saveImage($request)
@@ -117,13 +136,13 @@ class NewsController extends Controller
      */
     public function edit($id)
     {
-        $news = News::find($id);
+        $news = Post::find($id);
 
         if (!$news) {
             abort(Response::HTTP_NOT_FOUND);
         }
 
-        return view('admin.news.edit', compact('news'));
+        return view('admin.post.edit', compact('news'));
     }
 
     /**
@@ -135,7 +154,7 @@ class NewsController extends Controller
      */
     public function update(EditNewsRequest $request, $id)
     {
-        $news = News::find($id);
+        $news = Post::find($id);
 
         if (!$news) {
             abort(Response::HTTP_NOT_FOUND);
@@ -153,7 +172,7 @@ class NewsController extends Controller
 
         $news->update($request->all());
 
-        return redirect()->route('news.index')->with('success', ' Sửa thành công');
+        return redirect()->route('posts.index')->with('success', ' Sửa thành công');
     }
 
     /**
@@ -164,7 +183,7 @@ class NewsController extends Controller
      */
     public function destroy($id)
     {
-        $news = News::find($id);
+        $news = Post::find($id);
 
         if (!$news) {
             abort(Response::HTTP_NOT_FOUND);
@@ -172,6 +191,6 @@ class NewsController extends Controller
 
         $news->delete();
 
-        return redirect()->route('news.index')->with('success', 'Xóa thành công');
+        return redirect()->route('posts.index')->with('success', 'Xóa thành công');
     }
 }

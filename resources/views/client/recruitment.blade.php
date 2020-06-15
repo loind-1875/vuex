@@ -37,7 +37,7 @@
                                 @foreach($recruitments as $recruitment)
                                 <div class="wp-item-tt-page">
                                     <div class="wp-img-ttpage">
-                                        <a href="{{ route('client.news.detail', parseLink($recruitment)) }}">
+                                        <a href="{{ route('client.post.detail', parseLink($recruitment)) }}">
                                             <img
                                                 src="{{ getImage($recruitment->image) }}"
                                                 alt="anh tin tuc"
@@ -46,7 +46,7 @@
                                     </div>
                                     <div class="wp-text-ttpage">
                                         <h4>
-                                            <a href="{{ route('client.news.detail', parseLink($recruitment)) }}">{{ $recruitment->title }}</a>
+                                            <a href="{{ route('client.post.detail', parseLink($recruitment)) }}">{{ $recruitment->title }}</a>
                                         </h4>
 
                                         <p class="date-view">

@@ -1,7 +1,7 @@
 @extends('admin.layout.main')
 
 @section('title')
-    Tạo mới tin tức
+    Sửa tin tức
 @endsection
 
 @section('content')
@@ -9,7 +9,7 @@
         <div class="col-sm-12">
             <div class="card">
                 <div class="card-header">
-                    <h5>Tạo tin tức</h5>
+                    <h5>Sửa tin tức</h5>
                 </div>
                 <div class="card-block">
                     <div class="row">
@@ -27,19 +27,24 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-12 col-xs-6 m-b-30">
-                            <form action="{{ route('news.store') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('posts.update', $news->id) }}" method="POST" enctype="multipart/form-data">
                                 @csrf
+                                @method('PUT')
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Tiêu đề <span>*</span></h4>
-                                    <input type="text" class="form-control" name="title" placeHolder="Nhập tiêu đề" value="{{ old('name') }}" required>
+                                    <input type="text" class="form-control" name="title" placeHolder="Nhập tiêu đề" value="{{ $news->title }}" required>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Ảnh bài viết <span>*</span></h4>
-                                    <input type="file" class="form-control" name="images" required>
+                                    <img src="{{ getImage($news->image) }}" alt="" class="img m-b-10">
+                                    <input type="file" class="form-control" name="images">
                                 </div>
+
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Tóm tắt<span>*</span></h4>
-                                    <textarea id="short-detail" name="short_detail" class="form-control"></textarea>
+                                    <textarea id="short-detail" name="short_detail" class="form-control" rows="8" cols="20">
+                                        {{ $news->short_detail }}
+                                    </textarea>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Chi tiết<span>*</span></h4>
@@ -69,20 +74,13 @@
             font-size: 22px;
         }
 
-        .button-page .card-block ul li {
-            display: list-item;
-            float: none;
-            margin-bottom: 20px;
-        }
-
-        .button-page .card-block ul {
-            list-style-type: disc;
-            padding-left: 25px;
+        img {
+            max-width: 100%;
         }
 
         #short-detail {
-            height: 250px;
-            min-height: 250px;
+            /*height: 250px;*/
+            /*min-height: 250px;*/
         }
     </style>
     <script>
@@ -92,6 +90,8 @@
                 height: 350,
                 maximumImageFileSize: 2097152
             });
+            $('#summernote').summernote('code', {!! json_encode($news->detail) !!});
+            $('textarea#short-detail').html($('textarea#short-detail').html().trim());
         });
     </script>
 @endsection

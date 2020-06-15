@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Client;
 
 use App\Models\Category;
-use App\Models\News;
+use App\Models\Post;
 use App\Models\Product;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
@@ -12,7 +12,7 @@ class ClientController extends Controller
 {
     public function index()
     {
-        $news = News::where('is_recruitment', 0)->take(3)->latest()->get();
+        $news = Post::where('is_recruitment', 0)->take(3)->latest()->get();
 
         return view('client.client', compact('news'));
     }
@@ -21,15 +21,15 @@ class ClientController extends Controller
     {
         $categories = $this->getCategories();
 
-        $news = News::where('is_recruitment', 0)->paginate(15);
+        $news = Post::where('is_recruitment', 0)->paginate(15);
 
-        return view('client.news', compact('news', 'categories'));
+        return view('client.post', compact('news', 'categories'));
     }
 
     public function recruitment()
     {
         $categories = $this->getCategories();
-        $recruitments = News::where('is_recruitment', 1)->paginate(15);
+        $recruitments = Post::where('is_recruitment', 1)->paginate(15);
 
         return view('client.recruitment', compact('recruitments', 'categories'));
     }
@@ -47,14 +47,14 @@ class ClientController extends Controller
     public function newsDetail($slug)
     {
         $id = last(explode('-', $slug));
-        $article = News::find($id);
+        $article = Post::find($id);
         $categories = $this->getCategories();
 
         if (!$article) {
             abort(Response::HTTP_NOT_FOUND);
         }
 
-        return view('client.news-detail', compact('article', 'categories'));
+        return view('client.post-detail', compact('article', 'categories'));
     }
 
     public function getCategories()

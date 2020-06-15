@@ -37,7 +37,7 @@
                                 @foreach($news as $new)
                                 <div class="wp-item-tt-page">
                                 <div class="wp-img-ttpage">
-                                    <a href="{{ route('client.news.detail', parseLink($new)) }}">
+                                    <a href="{{ route('client.post.detail', parseLink($new)) }}">
                                         <img
                                             src="{{ getImage($new->image) }}"
                                             alt="anh tin tuc"
@@ -46,7 +46,7 @@
                                 </div>
                                 <div class="wp-text-ttpage">
                                     <h4>
-                                        <a href="{{ route('client.news.detail', parseLink($new)) }}">{{ $new->title }}</a>
+                                        <a href="{{ route('client.post.detail', parseLink($new)) }}">{{ $new->title }}</a>
                                     </h4>
 
                                     <p class="date-view">

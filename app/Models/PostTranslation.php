@@ -4,15 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class News extends Model
+class PostTranslation extends Model
 {
     protected $fillable = [
         'title',
-        'detail',
-        'view',
-        'slug',
-        'image',
         'short_detail',
-        'is_recruitment',
+        'detail',
+        'post_id',
+        'locale',
     ];
 }

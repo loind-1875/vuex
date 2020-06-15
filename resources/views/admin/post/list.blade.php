@@ -38,10 +38,10 @@
                                             <td scope="row" align="center">{{ $index + 1 }}</td>
                                             <td>{{ $new->title }}</td>
                                             <td align="center">
-                                                <a href="{{ route('news.edit', $new->id) }}" class="btn btn-primary btn-sm">
+                                                <a href="{{ route('posts.edit', $new->id) }}" class="btn btn-primary btn-sm">
                                                     <i class="fa fa-pencil-square-o"></i>
                                                 </a>
-                                                <form action="{{ route('news.destroy', $new->id) }}" method="POST" style="display: inline-block;">
+                                                <form action="{{ route('posts.destroy', $new->id) }}" method="POST" style="display: inline-block;">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button

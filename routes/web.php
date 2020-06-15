@@ -15,7 +15,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'admi
     Route::get('dashboard', 'AdminController@index');
     Route::resource('products', 'ProductController');
     Route::resource('categories', 'CategoryController');
-    Route::resource('news', 'NewsController');
+    Route::resource('posts', 'PostController');
     Route::resource('recruitment', 'RecruitmentController');
     Route::get('settings', 'AdminController@settings')->name('admin.setting');
     Route::put('settings', 'AdminController@updateSettings')->name('update.setting');
@@ -23,11 +23,11 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'admi
 
 Route::group(['namespace' => 'Client'], function () {
     Route::get('/', 'ClientController@index');
-    Route::get('tin-tuc', 'ClientController@news')->name('client.news');
+    Route::get('tin-tuc', 'ClientController@post')->name('client.post');
     Route::get('tuyen-dung', 'ClientController@recruitment')->name('client.recruitment');
     Route::get('lien-he', 'ClientController@contact')->name('client.contact');
     Route::get('bao-hanh', 'ClientController@guarantee')->name('client.guarantee');
-    Route::get('tin-tuc/{slug}', 'ClientController@newsDetail')->name('client.news.detail');
+    Route::get('tin-tuc/{slug}', 'ClientController@newsDetail')->name('client.post.detail');
     Route::get('danh-muc/{slug}', 'ClientController@detailCategory')->name('client.category');
     Route::get('san-pham/{slug}', 'ClientController@detailProduct')->name('client.product');
 });

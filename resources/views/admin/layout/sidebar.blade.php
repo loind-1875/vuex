@@ -46,12 +46,12 @@
                     </a>
                     <ul class="pcoded-submenu">
                         <li class="">
-                            <a href="{{ route('news.index') }}" class="waves-effect waves-dark">
+                            <a href="{{ route('posts.index') }}" class="waves-effect waves-dark">
                                 <span class="pcoded-mtext">Danh sách tin tức</span>
                             </a>
                         </li>
                         <li class="">
-                            <a href="{{ route('news.create') }}" class="waves-effect waves-dark">
+                            <a href="{{ route('posts.create') }}" class="waves-effect waves-dark">
                                 <span class="pcoded-mtext">Thêm mới tin tức</span>
                             </a>
                         </li>

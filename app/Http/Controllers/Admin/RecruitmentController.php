@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\EditNewsRequest;
 use App\Http\Requests\NewsRequest;
-use App\Models\News;
+use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
@@ -20,7 +20,7 @@ class RecruitmentController extends Controller
      */
     public function index()
     {
-        $recruitments = News::where('is_recruitment', 1)->paginate(10);
+        $recruitments = Post::where('is_recruitment', 1)->paginate(10);
 
         return view('admin.recruitment.list', compact('recruitments'));
     }
@@ -53,7 +53,7 @@ class RecruitmentController extends Controller
 
         $request->merge(['slug' => str_slug($request->title)]);
 
-        News::create($request->all());
+        Post::create($request->all());
 
         return redirect()->route('recruitment.index')->with('success', 'Thêm thành công');
     }
@@ -117,7 +117,7 @@ class RecruitmentController extends Controller
      */
     public function edit($id)
     {
-        $recruitment = News::find($id);
+        $recruitment = Post::find($id);
 
         if (!$recruitment) {
             abort(Response::HTTP_NOT_FOUND);
@@ -135,7 +135,7 @@ class RecruitmentController extends Controller
      */
     public function update(EditNewsRequest $request, $id)
     {
-        $recruitment = News::find($id);
+        $recruitment = Post::find($id);
 
         if (!$recruitment) {
             abort(Response::HTTP_NOT_FOUND);
@@ -164,7 +164,7 @@ class RecruitmentController extends Controller
      */
     public function destroy($id)
     {
-        $recruitment = News::find($id);
+        $recruitment = Post::find($id);
 
         if (!$recruitment) {
             abort(Response::HTTP_NOT_FOUND);
