@@ -1,405 +1,626 @@
 @extends('client.layout.main')
 
-@section('title')
-    HFT Hóa Chất và Động cơ
-@endsection
-
 @section('content')
-    <section class="slider-main">
-        <div class="wp-slider-home">
-            <div id="slider-home" class="owl-carousel owl-theme">
-                <div class="item">
-                    <div class="item-slider-home">
-                        <div class="wp-img">
-                            <a href="#">
-                                <img src="{{ asset(config('media.client.other') . 'slide-1.png') }}" alt="">
-                            </a>
+    <div class="slider-container rev_slider_wrapper" style="height: 670px;">
+        <div id="revolutionSlider" class="slider rev_slider" data-version="5.4.8" data-plugin-revolution-slider data-plugin-options="{'delay': 9000, 'gridwidth': 1170, 'gridheight': 670, 'disableProgressBar': 'on', 'responsiveLevels': [4096,1200,992,500], 'parallax': { 'type': 'scroll', 'origo': 'enterpoint', 'speed': 1000, 'levels': [2,3,4,5,6,7,8,9,12,50], 'disable_onmobile': 'on' }, 'navigation' : {'arrows': { 'enable': true }, 'bullets': {'enable': true, 'style': 'bullets-style-1', 'h_align': 'center', 'v_align': 'bottom', 'space': 7, 'v_offset': 70, 'h_offset': 0}}}">
+            <ul>
+                <li data-transition="fade">
+                    <img src="img/slides/slide-bg.jpg"
+                         alt=""
+                         data-bgposition="center center"
+                         data-bgfit="cover"
+                         data-bgrepeat="no-repeat"
+                         class="rev-slidebg">
+
+                    <div class="tp-caption tp-resizeme"
+                         data-frames='[{"delay":1000,"speed":2000,"frame":"0","from":"opacity:0;x:100%;y:-100%;","to":"o:1;x:0;y:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
+                         data-type="image"
+                         data-x="right"
+                         data-y="top"
+                         data-width="['auto']"
+                         data-height="['auto']"
+                         data-basealign="slide"><img src="img/slides/slide-devices.jpg" alt=""></div>
+
+                    <div class="tp-caption tp-resizeme"
+                         data-frames='[{"delay":1500,"speed":2000,"frame":"0","from":"opacity:0;x:-100%;y:-100%;","to":"o:1;x:0;y:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
+                         data-type="image"
+                         data-x="left"
+                         data-y="center"
+                         data-width="['auto']"
+                         data-height="['auto']"
+                         data-basealign="slide"><img src="img/slides/slide-laptop.jpg" alt=""></div>
+
+                    <div class="tp-caption tp-resizeme rs-parallaxlevel-7"
+                         data-frames='[{"delay":2500,"speed":1500,"frame":"0","from":"opacity:0;x:-50%;y:-50%;","to":"opacity:1;x:0;y:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
+                         data-type="image"
+                         data-x="-500"
+                         data-y="-700"
+                         data-width="['auto']"
+                         data-height="['auto']"
+                         data-basealign="slide"><img src="img/slides/slide-parallax-porto-symbol.png" alt=""></div>
+
+                    <div class="tp-caption"
+                         data-x="center" data-hoffset="['-150','-150','-150','-240']"
+                         data-y="center" data-voffset="['-50','-50','-50','-75']"
+                         data-start="1000"
+                         data-transform_in="x:[-300%];opacity:0;s:500;"
+                         data-transform_idle="opacity:0.2;s:500;"><img src="img/slides/slide-title-border.png" alt=""></div>
+
+                    <div class="tp-caption text-color-light font-weight-normal"
+                         data-x="center"
+                         data-y="center" data-voffset="['-50','-50','-50','-75']"
+                         data-start="700"
+                         data-fontsize="['22','22','22','40']"
+                         data-lineheight="['25','25','25','45']"
+                         data-transform_in="y:[-50%];opacity:0;s:500;">DO YOU NEED A NEW</div>
+
+                    <div class="tp-caption d-none d-md-block"
+                         data-frames='[{"delay":2400,"speed":500,"frame":"0","from":"opacity:0;x:10%;","to":"opacity:1;x:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
+                         data-x="center" data-hoffset="['80','80','80','135']"
+                         data-y="center" data-voffset="['-33','-33','-33','-55']"><img src="img/slides/slide-blue-line.png" alt=""></div>
+
+                    <div class="tp-caption"
+                         data-x="center" data-hoffset="['150','150','150','240']"
+                         data-y="center" data-voffset="['-50','-50','-50','-75']"
+                         data-start="1000"
+                         data-transform_in="x:[300%];opacity:0;s:500;"
+                         data-transform_idle="opacity:0.2;s:500;"><img src="img/slides/slide-title-border.png" alt=""></div>
+
+                    <div class="tp-caption font-weight-extra-bold text-color-light negative-ls-2"
+                         data-frames='[{"delay":1000,"speed":2000,"frame":"0","from":"sX:1.5;opacity:0;fb:20px;","to":"o:1;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
+                         data-x="center"
+                         data-y="center"
+                         data-fontsize="['50','50','50','90']"
+                         data-lineheight="['55','55','55','95']">WEB DESIGN?</div>
+
+                    <div class="tp-caption font-weight-light"
+                         data-frames='[{"from":"opacity:0;","speed":300,"to":"o:1;","delay":2000,"split":"chars","splitdelay":0.05,"ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+                         data-x="center"
+                         data-y="center" data-voffset="['40','40','40','80']"
+                         data-fontsize="['18','18','18','50']"
+                         data-lineheight="['20','20','20','55']"
+                         style="color: #b5b5b5;">Check out our options and features</div>
+
+                </li>
+                <li class="slide-overlay" data-transition="fade">
+                    <img src="img/slides/slide-bg-2.jpg"
+                         alt=""
+                         data-bgposition="center center"
+                         data-bgfit="cover"
+                         data-bgrepeat="no-repeat"
+                         class="rev-slidebg">
+
+                    <div class="tp-caption"
+                         data-x="center" data-hoffset="['-170','-170','-170','-350']"
+                         data-y="center" data-voffset="['-50','-50','-50','-75']"
+                         data-start="1000"
+                         data-transform_in="x:[-300%];opacity:0;s:500;"
+                         data-transform_idle="opacity:0.2;s:500;"><img src="img/slides/slide-title-border.png" alt=""></div>
+
+                    <div class="tp-caption text-color-light font-weight-normal"
+                         data-x="center"
+                         data-y="center" data-voffset="['-50','-50','-50','-75']"
+                         data-start="700"
+                         data-fontsize="['16','16','16','40']"
+                         data-lineheight="['25','25','25','45']"
+                         data-transform_in="y:[-50%];opacity:0;s:500;">WE WORK HARD AND PORTO HAS</div>
+
+                    <div class="tp-caption"
+                         data-x="center" data-hoffset="['170','170','170','350']"
+                         data-y="center" data-voffset="['-50','-50','-50','-75']"
+                         data-start="1000"
+                         data-transform_in="x:[300%];opacity:0;s:500;"
+                         data-transform_idle="opacity:0.2;s:500;"><img src="img/slides/slide-title-border.png" alt=""></div>
+
+                    <div class="tp-caption font-weight-extra-bold text-color-light negative-ls-1"
+                         data-frames='[{"delay":1000,"speed":2000,"frame":"0","from":"sX:1.5;opacity:0;fb:20px;","to":"o:1;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
+                         data-x="center"
+                         data-y="center"
+                         data-fontsize="['50','50','50','90']"
+                         data-lineheight="['55','55','55','95']">THE BEST DESIGN</div>
+
+                    <div class="tp-caption font-weight-light ws-normal text-center"
+                         data-frames='[{"from":"opacity:0;","speed":300,"to":"o:1;","delay":2000,"split":"chars","splitdelay":0.05,"ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+                         data-x="center"
+                         data-y="center" data-voffset="['60','60','60','105']"
+                         data-width="['530','530','530','1100']"
+                         data-fontsize="['18','18','18','40']"
+                         data-lineheight="['26','26','26','45']"
+                         style="color: #b5b5b5;">Trusted by over <strong class="text-color-light">30,000</strong> satisfied users, Porto is a huge success in the one of largest world's MarketPlace.</div>
+
+                </li>
+                <li class="slide-overlay slide-overlay-primary" data-transition="fade">
+                    <img src="img/slides/slide-bg-6.jpg"
+                         alt=""
+                         data-bgposition="center center"
+                         data-bgfit="cover"
+                         data-bgrepeat="no-repeat"
+                         class="rev-slidebg">
+
+                    <div class="tp-caption"
+                         data-x="center" data-hoffset="['-145','-145','-145','-320']"
+                         data-y="center" data-voffset="['-80','-80','-80','-130']"
+                         data-start="1000"
+                         data-transform_in="x:[-300%];opacity:0;s:500;"
+                         data-transform_idle="opacity:0.2;s:500;"><img src="img/slides/slide-title-border.png" alt=""></div>
+
+                    <div class="tp-caption text-color-light font-weight-normal"
+                         data-x="center"
+                         data-y="center" data-voffset="['-80','-80','-80','-130']"
+                         data-start="700"
+                         data-fontsize="['16','16','16','40']"
+                         data-lineheight="['25','25','25','45']"
+                         data-transform_in="y:[-50%];opacity:0;s:500;">WE CREATE DESIGNS, WE ARE</div>
+
+                    <div class="tp-caption"
+                         data-x="center" data-hoffset="['145','145','145','320']"
+                         data-y="center" data-voffset="['-80','-80','-80','-130']"
+                         data-start="1000"
+                         data-transform_in="x:[300%];opacity:0;s:500;"
+                         data-transform_idle="opacity:0.2;s:500;"><img src="img/slides/slide-title-border.png" alt=""></div>
+
+                    <div class="tp-caption font-weight-extra-bold text-color-light"
+                         data-frames='[{"delay":1300,"speed":1000,"frame":"0","from":"opacity:0;x:-50%;","to":"opacity:0.7;x:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
+                         data-x="center" data-hoffset="['-155','-155','-155','-255']"
+                         data-y="center"
+                         data-fontsize="['145','145','145','250']"
+                         data-lineheight="['150','150','150','260']">P</div>
+
+                    <div class="tp-caption font-weight-extra-bold text-color-light"
+                         data-frames='[{"delay":1500,"speed":1000,"frame":"0","from":"opacity:0;x:-50%;","to":"opacity:0.7;x:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
+                         data-x="center" data-hoffset="['-80','-80','-80','-130']"
+                         data-y="center"
+                         data-fontsize="['145','145','145','250']"
+                         data-lineheight="['150','150','150','260']">O</div>
+
+                    <div class="tp-caption font-weight-extra-bold text-color-light"
+                         data-frames='[{"delay":1700,"speed":1000,"frame":"0","from":"opacity:0;x:-50%;","to":"opacity:0.7;x:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
+                         data-x="center"
+                         data-y="center"
+                         data-fontsize="['145','145','145','250']"
+                         data-lineheight="['150','150','150','260']">R</div>
+
+                    <div class="tp-caption font-weight-extra-bold text-color-light"
+                         data-frames='[{"delay":1900,"speed":1000,"frame":"0","from":"opacity:0;x:-50%;","to":"opacity:0.7;x:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
+                         data-x="center" data-hoffset="['65','65','65','115']"
+                         data-y="center"
+                         data-fontsize="['145','145','145','250']"
+                         data-lineheight="['150','150','150','260']">T</div>
+
+                    <div class="tp-caption font-weight-extra-bold text-color-light"
+                         data-frames='[{"delay":2100,"speed":1000,"frame":"0","from":"opacity:0;x:-50%;","to":"opacity:0.7;x:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
+                         data-x="center" data-hoffset="['139','139','139','240']"
+                         data-y="center"
+                         data-fontsize="['145','145','145','250']"
+                         data-lineheight="['150','150','150','260']">O</div>
+
+                    <div class="tp-caption font-weight-light text-color-light"
+                         data-frames='[{"from":"opacity:0;","speed":300,"to":"o:1;","delay":2300,"split":"chars","splitdelay":0.05,"ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+                         data-x="center"
+                         data-y="center" data-voffset="['85','85','85','140']"
+                         data-fontsize="['18','18','18','40']"
+                         data-lineheight="['26','26','26','45']">The best choice for your new website</div>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="row text-center pt-3">
+            <div class="col-md-10 mx-md-auto">
+                <h1 class="word-rotator slide font-weight-bold text-8 mb-3 appear-animation" data-appear-animation="fadeInUpShorter">
+                    <span>Porto is </span>
+                    <span class="word-rotator-words bg-dark">
+									<b class="is-visible">incredibly</b>
+									<b>especially</b>
+									<b>extremely</b>
+								</span>
+                    <span> beautiful and fully responsive.</span>
+                </h1>
+                <p class="lead appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="300">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum, nulla vel pellentesque consequat, ante nulla hendrerit arcu, ac tincidunt mauris lacus sed leo.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200">
+        <div class="home-concept mt-5">
+            <div class="container">
+
+                <div class="row text-center">
+                    <span class="sun"></span>
+                    <span class="cloud"></span>
+                    <div class="col-lg-2 ml-lg-auto">
+                        <div class="process-image">
+                            <img src="img/home/home-concept-item-1.png" alt="" />
+                            <strong>Strategy</strong>
                         </div>
-                        <div class="wp-caption-slider">
-                            <div class="text-slider">
-                                <span class="ff-emib"><b class="ff-emih"></b></span><br>
-                                <b class="size-36 ff-emibb"></b>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="process-image process-image-on-middle">
+                            <img src="img/home/home-concept-item-2.png" alt="" />
+                            <strong>Planning</strong>
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="process-image">
+                            <img src="img/home/home-concept-item-3.png" alt="" />
+                            <strong>Build</strong>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 ml-lg-auto">
+                        <div class="project-image">
+                            <div id="fcSlideshow" class="fc-slideshow">
+                                <ul class="fc-slides">
+                                    <li><a href="portfolio-single-wide-slider.html"><img class="img-responsive" src="img/projects/project-home-1.jpg" alt="" /></a></li>
+                                    <li><a href="portfolio-single-wide-slider.html"><img class="img-responsive" src="img/projects/project-home-2.jpg" alt="" /></a></li>
+                                    <li><a href="portfolio-single-wide-slider.html"><img class="img-responsive" src="img/projects/project-home-3.jpg" alt="" /></a></li>
+                                </ul>
+                            </div>
+                            <strong class="our-work">Our Work</strong>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container mb-5 pb-4">
+
+        <div class="row">
+            <div class="col mb-4">
+                <hr class="my-5">
+            </div>
+        </div>
+
+        <div class="row pb-3">
+            <div class="col-lg-8">
+                <h2 class="font-weight-normal text-7">Our <strong class="font-weight-extra-bold">Features</strong></h2>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="feature-box feature-box-style-2">
+                            <div class="feature-box-icon">
+                                <i class="icons icon-support text-color-primary"></i>
+                            </div>
+                            <div class="feature-box-info">
+                                <h4 class="font-weight-bold text-4 mb-0">Customer Support</h4>
+                                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa</p>
+                            </div>
+                        </div>
+                        <div class="feature-box feature-box-style-2">
+                            <div class="feature-box-icon">
+                                <i class="icons icon-doc text-color-primary"></i>
+                            </div>
+                            <div class="feature-box-info">
+                                <h4 class="font-weight-bold text-4 mb-0">HTML5 / CSS3 / JS</h4>
+                                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa</p>
+                            </div>
+                        </div>
+                        <div class="feature-box feature-box-style-2">
+                            <div class="feature-box-icon">
+                                <i class="icons icon-social-google text-color-primary"></i>
+                            </div>
+                            <div class="feature-box-info">
+                                <h4 class="font-weight-bold text-4 mb-0">500+ Google Fonts</h4>
+                                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa</p>
+                            </div>
+                        </div>
+                        <div class="feature-box feature-box-style-2">
+                            <div class="feature-box-icon">
+                                <i class="icons icon-pencil text-color-primary"></i>
+                            </div>
+                            <div class="feature-box-info">
+                                <h4 class="font-weight-bold text-4 mb-0">Colors</h4>
+                                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="feature-box feature-box-style-2">
+                            <div class="feature-box-icon">
+                                <i class="icons icon-layers text-color-primary"></i>
+                            </div>
+                            <div class="feature-box-info">
+                                <h4 class="font-weight-bold text-4 mb-0">Sliders</h4>
+                                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa</p>
+                            </div>
+                        </div>
+                        <div class="feature-box feature-box-style-2">
+                            <div class="feature-box-icon">
+                                <i class="icons icon-user text-color-primary"></i>
+                            </div>
+                            <div class="feature-box-info">
+                                <h4 class="font-weight-bold text-4 mb-0">Icons</h4>
+                                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa</p>
+                            </div>
+                        </div>
+                        <div class="feature-box feature-box-style-2">
+                            <div class="feature-box-icon">
+                                <i class="icons icon-menu text-color-primary"></i>
+                            </div>
+                            <div class="feature-box-info">
+                                <h4 class="font-weight-bold text-4 mb-0">Buttons</h4>
+                                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa</p>
+                            </div>
+                        </div>
+                        <div class="feature-box feature-box-style-2">
+                            <div class="feature-box-icon">
+                                <i class="icons icon-screen-desktop text-color-primary"></i>
+                            </div>
+                            <div class="feature-box-info">
+                                <h4 class="font-weight-bold text-4 mb-0">Lightbox</h4>
+                                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="item">
-                    <div class="item-slider-home">
-                        <div class="wp-img">
-                            <a href="#">
-                                <img src="{{ asset(config('media.client.other') . 'slide-4.png') }}" alt="">
-                            </a>
+            </div>
+            <div class="col-lg-4">
+                <h2 class="font-weight-normal text-6">and more...</h2>
+
+                <div class="accordion accordion-modern" id="accordion">
+                    <div class="card card-default">
+                        <div class="card-header">
+                            <h4 class="card-title m-0">
+                                <a class="accordion-toggle text-color-dark font-weight-bold" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                    <i class="icons icon-diamond text-color-primary"></i>
+                                    Creative Websites
+                                </a>
+                            </h4>
                         </div>
-                        <div class="wp-caption-slider">
-                            <div class="text-slider">
-                                <span class="ff-emib"><b class="ff-emih"></b></span><br>
-                                <b class="size-36 ff-emibb"></b>
+                        <div id="collapseOne" class="collapse show">
+                            <div class="card-body text-2">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blanorem ipsum dolor sit amet, consecte.</p>
+                                <p class="mb-0">Adipiscing elit phasellus blanit ma... <a href="#" class="d-block text-color-dark font-weight-semibold pt-4">read more <i class="fas fa-angle-right position-relative top-1 ml-1"></i></a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-default">
+                        <div class="card-header">
+                            <h4 class="card-title m-0">
+                                <a class="accordion-toggle text-color-dark font-weight-bold" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                    <i class="icons icon-bubble text-color-primary"></i>
+                                    Contact Forms
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo" class="collapse">
+                            <div class="card-body text-2">
+                                <p class="mb-0">Donec tellus massa, tristique sit amet condimentum vel, facilisis quis sapien.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-default">
+                        <div class="card-header">
+                            <h4 class="card-title m-0">
+                                <a class="accordion-toggle text-color-dark font-weight-bold" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                                    <i class="icons icon-grid text-color-primary"></i>
+                                    Portfolio Pages
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree" class="collapse">
+                            <div class="card-body text-2">
+                                <p class="mb-0">Donec tellus massa, tristique sit amet condimentum vel, facilisis quis sapien.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <h1 class="hidden">HFT Hóa Chất và Động cơ </h1>
+        <hr class="solid my-5">
 
-    <section class="sec-b1 pd-40">
-        <div class="container">
-            <div class="wp-sec-gt">
-                <div class="title-sec text-center wow fadeInUp" data-wow-duration="1.6s">
-                    <h3>Giới thiệu chung</h3>
+        <div class="row text-center pt-4">
+            <div class="col">
+                <h2 class="word-rotator slide font-weight-bold text-8 mb-2">
+                    <span>We're not the only ones </span>
+                    <span class="word-rotator-words bg-primary">
+									<b class="is-visible">excited</b>
+									<b>happy</b>
+								</span>
+                    <span> about Porto Template...</span>
+                </h2>
+                <h4 class="text-primary lead tall text-4">30,000 CUSTOMERS IN 100 COUNTRIES USE PORTO TEMPLATE. MEET OUR CUSTOMERS.</h4>
+            </div>
+        </div>
 
-                    <p class="sologan-title text-center">Tiêu chí - Tầm nhìn - Sứ mệnh</p>
+        <div class="row text-center mt-5">
+            <div class="owl-carousel owl-theme carousel-center-active-item" data-plugin-options="{'responsive': {'0': {'items': 1}, '476': {'items': 1}, '768': {'items': 5}, '992': {'items': 7}, '1200': {'items': 7}}, 'autoplay': true, 'autoplayTimeout': 3000, 'dots': false}">
+                <div>
+                    <img class="img-fluid" src="img/logos/logo-1.png" alt="">
                 </div>
-                <div class="wp-gt">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12 wow fadeInLeft company-info-detail">
-                            <p>
-                                <b>
-                                    Công ty TNHH Thương Mại Và Dịch Vụ Hóa Chất H.F.T xin gửi đến Quý khách hàng lời chúc Sức khoẻ, Thành công và Thịnh vượng!
-                                </b>
-                            </p>
-                            <p>
-                                <b>Công ty TNHH Thương Mại Và Dịch Vụ Hóa Chất H.F.T</b> được thành lập vào ngày 15/01/2008, trải qua hơn 10 năm hoạt động và phát triển, Công ty chúng tôi luôn tự hào là một trong những đơn vị luôn mang tới cho khách hàng sự yên tâm về chất lượng, hợp lý về giá cả và hài lòng về cung cách làm việc cũng như thái độ phục vụ.
-                            </p>
-                            <p><b>Lĩnh vực hoạt động</b></p>
-                            <p><b>H.F.T</b> chúng tôi kinh doanh về hai lĩnh vực: Hóa chất và sản xuất, lắp ráp động cơ xe máy điện, xe đạp điện.</p>
-                            <p>
-                                <b>* Hóa chất:</b> Chuyên cung cấp các dòng nguyên liệu, phụ gia chính để phục vụ cho ngành công nghiệp sản xuất Sơn nói chung và và các ngành sản xuất có sử dụng đến các nguyên liệu, phụ gia sơn nói riêng như: ngành sản xuất mực in, da giày, cao su…Sản phẩm của Công ty chúng tôi là những sản phẩm đã có mặt trên thị trường rất nhiều nước bởi đã đáp ứng được các tiêu chí mà người mua mong muốn. Một số thương hiệu của các nhà sản xuất hoá chất chúng tôi đang hợp tác như: Taiga Additives, 3D Bio-Chem, Color Valley Technology, Titanos, Zuxing, Kecai Pigments…Các đối tác lớn của Công ty chúng tôi trải dài từ Bắc vào Nam như: Công ty TNHH Nippon Paint Việt Nam, Công ty Cổ phần sơn Hải Phòng, Công ty TNHH sản xuất sơn Phoenix (Việt Nam), Công ty TNHH Công Nghiệp Brilliant, Công ty TNHH Daigaku (Việt Nam), Công ty TNHH Thương mại Dịch vụ Sản xuất Hải Thành Công…
-                            </p>
-                            <p>
-                                <b>* Sản xuất, lắp ráp Động cơ xe máy điện, xe đạp điện được đồng bộ hóa với IC chuyên dụng:</b> Khách hàng của H.F.T là các nhà sản xuất, lắp ráp xe máy điện, xe đạp điện trong nước. Sản phẩm của chúng tôi đều là những sản phẩm chất lượng cao, kiểu dáng, mẫu mã đa dạng và phong phú, phù hợp với thị hiếu, nhu cầu của người tiêu dùng theo từng thời điểm. H.F.T luôn sẵn sàng tư vấn, cung cấp đến Quý khách hàng những mẫu động cơ mới và được ưa chuộng nhất hiện nay. Bên cạnh đó, H.F.T còn là đơn vị chuyên gia công sản xuất các mẫu động cơ với thiết kế theo yêu cầu của khách hàng nhằm tạo kiểu dáng độc đáo, duy nhất, tạo nên thương hiệu của Quý khách hàng trên thị trường.
-                            </p>
-                            <p>Các Sản phẩm của chúng tôi luôn đi kèm với chế độ bảo hành, bảo trì với mong muốn luôn mang lại sự yên tâm cho khách hàng khi sử dụng.</p>
-                            <p><b>Đội ngũ nhân lực</b></p>
-                            <p>Công ty chúng tôi luôn tự hào có đội ngũ nhân nhân viên kinh doanh và chuyên viên tư vấn tận tình với nhiều năm kinh nghiệm trong lĩnh vực hoá chất và lĩnh vực sản xuất, lắp ráp động cơ xe máy điện xe đạp điện. Đến với H.F.T Quý khách hàng sẽ được tư vấn thông tin sản phẩm một cách đầy đủ, cung cấp tài liệu thông số kỹ thuật cũng như hỗ trợ chuyên môn cho Quý khách. Đội ngũ nhân viên của chúng tôi luôn sẵn sàng phục vụ và sẽ mang lại giải pháp toàn diện và tối ưu cho Quý khách.</p>
-                             <p><b>Phương châm & Mục tiêu</b></p>
-                            <p>
-                                Phương châm của chúng tôi “CHẤT LƯỢNG LÀ HÀNG ĐẦU - GIÁ CẢ CẠNH TRANH, SỰ HÀI LÒNG CỦA QUÝ KHÁCH HÀNG LÀ THÀNH CÔNG CỦA CHÚNG TÔI” luôn luôn được đặt lên hàng đầu. Với mong muốn đem lại lợi ích cao nhất cho khách hàng, H.F.T không ngừng tìm kiếm, sáng tạo và phát triển các sản phẩm mới, sản phẩm chất lượng nhằm đáp ứng nhu cầu ngày càng cao của khách hàng.
-                            </p>
-                            <p><b>Hợp tác cùng phát triển</b></p>
-                            <p>
-                                <b>H.F.T</b> đang ngày càng khẳng định thương hiệu và lòng tin với khách hàng qua từng đối tác. Chúng tôi cam kết cung cấp hàng hoá chất lượng, đầy đủ và đúng thời hạn cho Quý khách với chính sách hợp tác lâu dài, đôi bên cùng có lợi và cùng nhau phát triển.
-                                Sự thành công của chúng tôi chính là sự hài lòng của khách hàng. H.F.T xin chân thành cảm ơn Quý khách hàng đã tin tưởng các sản phẩm của chúng tôi trong thời gian qua. Chúng tôi mong nhận được sự quan tâm và hợp tác của Quý khách hàng.
-                            </p>
-                            <b>Trân Trọng!</b>
-                        </div>
-{{--                        <div class="col-md-4 col-sm-12 col-xs-12 wow fadeInLeft" data-wow-duration="1.6s">--}}
-{{--                            <div class="wp-img-gt">--}}
-{{--                                <a href="#">--}}
-{{--                                    <img src="{{ asset(config('media.client.other') . 'untitled-12.png') }}" alt="Giới thiệu chung">--}}
-{{--                                </a>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="col-md-8 col-sm-12 col-xs-12 wow fadeInRight" data-wow-duration="1.6s">--}}
-{{--                            <div class="wp-text-gt">--}}
-{{--                                <p class="company">--}}
-{{--                                    <b>--}}
-{{--                                        <i>--}}
-{{--                                            <span class="company-name">--}}
-{{--                                                Công ty TNHH Thương Mại Và Dịch Vụ Hóa Chất H.F.T--}}
-{{--                                            </span>--}}
-{{--                                        </i>--}}
-{{--                                    </b>--}}
-{{--                                </p>--}}
-{{--                                <ul class="company-address">--}}
-{{--                                    <li><p>Văn phòng Hà Nội: Phòng 1006, tòa nhà sông Đà, 131 Trần Phú, Văn Quán, Hà Đông, Hà Nội</p></li>--}}
-{{--                                    <p>Tel:&nbsp;(+84) 024.3354.2250</p>--}}
-{{--                                   <li>--}}
-{{--                                       <p>Văn phòng HCM:&nbsp;Số 111/8/2/72 đường Trục, phường 13, quận Bình Thạnh, Hồ Chí Minh</p>--}}
-{{--                                       <p>Tel:&nbsp;(+84) 028.35533922</p>--}}
-{{--                                   </li>--}}
-{{--                                    <a href="#" class="btn btn-xt">Xem chi tiết</a>--}}
-{{--                                </ul>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-                    </div>
+                <div>
+                    <img class="img-fluid" src="img/logos/logo-2.png" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid" src="img/logos/logo-3.png" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid" src="img/logos/logo-4.png" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid" src="img/logos/logo-5.png" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid" src="img/logos/logo-6.png" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid" src="img/logos/logo-4.png" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid" src="img/logos/logo-2.png" alt="">
                 </div>
             </div>
         </div>
-    </section>
 
-    {{--    why choose me--}}
-    <section class="sec-b4 bg-e5 pd-40">
-        <div class="container">
-            <div class="wp-why">
-                <div class="title-sec text-center wow fadeInUp" data-wow-duration="1.6s">
-                    <h3>TẠI SAO CHỌN CHÚNG TÔI</h3>
-                </div>
-                <div class="wp-list-why">
-                    <div class="row">
-                        <div class="col-md-4 col-sm-6 col-xs-12 wow fadeInLeft"
-                             data-wow-duration="1.6s">
-                            <div class="wp-item-why bg-ff">
-                                <div class="img-why">
-                                    <img src="{{ asset(config('media.client.other') . 'icon-1.png') }}" alt="Đội ngũ nhân sự">
-                                </div>
-                                <div class="text-why">
-                                    <h4><a href="#">Đội ngũ nhân sự</a></h4>
+    </div>
 
-                                    <p><p style="text-align: justify;"><span style="font-size:14px;"><span style="font-family:arial,helvetica,sans-serif;">Đội ngũ trẻ trung, chuyên nghiệp, chuyên môn tốt, chúng tôi chắc chắn đem đến sự hài lòng cho quý khách hàng.</span></span></p>
-
-                                    <p>&nbsp;</p></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 col-xs-12 wow fadeInLeft"
-                             data-wow-duration="1.6s">
-                            <div class="wp-item-why bg-ff">
-                                <div class="img-why">
-                                    <img src="{{ asset(config('media.client.other') . 'icon-2.png') }}" alt="NĂNG LỰC TÀI CHÍNH">
-                                </div>
-                                <div class="text-why">
-                                    <h4><a href="#">NĂNG LỰC TÀI CHÍNH</a></h4>
-
-                                    <p><p style="text-align: justify;"><span style="font-size:14px;"><span style="font-family:arial,helvetica,sans-serif;">Năng lực đủ đáp ứng những dự án lớn, quy mô, vững chắc tạo&nbsp;sự tin tưởng cho đối tác</span></span></p></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 col-xs-12 wow fadeInLeft"
-                             data-wow-duration="1.6s">
-                            <div class="wp-item-why bg-ff">
-                                <div class="img-why">
-                                    <img src="{{ asset(config('media.client.other') . 'nha-cung-cap.png') }}" alt="NHÀ CUNG CẤP">
-                                </div>
-                                <div class="text-why">
-                                    <h4><a href="#">NHÀ CUNG CẤP</a></h4>
-
-                                    <p><p style="text-align: justify;"><span style="font-size:14px;"><span style="font-family:arial,helvetica,sans-serif;">Là những tên tuổi lớn và uy tín đứng đầu tại nhiều quốc gia trên thế giới.</span></span></p></p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4 col-sm-6 col-xs-12 wow fadeInRight"
-                             data-wow-duration="1.6s">
-                            <div class="wp-item-why bg-ff">
-                                <div class="img-why">
-                                    <img src="{{ asset(config('media.client.other') . 'icon-3.png') }}" alt="LUÔN VÌ QUYỀN LỢI KHÁCH HÀNG">
-                                </div>
-                                <div class="text-why">
-                                    <h4><a href="#">LUÔN VÌ QUYỀN LỢI KHÁCH HÀNG</a></h4>
-
-                                    <p><p style="text-align: justify;"><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">Thành công của khách hàng chính là thành công của chúng tôi</span></span></p></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 col-xs-12 wow fadeInRight"
-                             data-wow-duration="1.6s">
-                            <div class="wp-item-why bg-ff">
-                                <div class="img-why">
-                                    <img src="{{ asset(config('media.client.other') . 'icon-5.png') }}" alt="MÔI TRƯỜNG LÀM VIỆC">
-                                </div>
-                                <div class="text-why">
-                                    <h4><a href="#">MÔI TRƯỜNG LÀM VIỆC</a></h4>
-
-                                    <p><p style="text-align: justify;"><span style="font-size:14px;"><span style="font-family:arial,helvetica,sans-serif;">Với môi trường làm việc trẻ trung, năng động,&nbsp;chuyên nghiệp, chúng tôi sẽ không làm bạn thất vọng.</span></span></p></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 col-xs-12 wow fadeInRight"
-                             data-wow-duration="1.6s">
-                            <div class="wp-item-why bg-ff">
-                                <div class="img-why">
-                                    <img src="{{ asset(config('media.client.other') . 'icon-6.png') }}" alt="SẢN PHẨM">
-                                </div>
-                                <div class="text-why">
-                                    <h4><a href="#">SẢN PHẨM</a></h4>
-
-                                    <p><p style="text-align: justify;"><span style="font-size:14px;"><span style="font-family:arial,helvetica,sans-serif;">Sản phẩm đến từ các&nbsp;thương hiệu lớn ở nhiều quốc gia;&nbsp;chất lượng,&nbsp;giá cả luôn cạnh tranh</span></span></p></p>
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="sec-b5 bg-ff pd-40">
-        <div class="container">
-            <div class="wp-tintuc">
-                <div class="title-sec text-center wow fadeInUp" data-wow-duration="1.6s">
-                    <h3>Tin tức</h3>
-                </div>
-                <div class="wp-ttsk">
-                    <div class="row">
-                        @foreach ($news as $new)
-                            <div class="col-md-4 col-sm-6 col-xs-12 wow fadeInLeft item"
-                                 data-wow-duration="1.6s">
-                                <div class="wp-item-ttsk">
-                                    <div class="img-ttsk">
-                                        <a href="{{ route('client.news.detail', parseLink($new)) }}">
-                                            <img src="{{ getImage($new->image) }}" alt="{{ $new->title }}" style="height: 244px">
-                                        </a>
+    <section class="section section-custom-map appear-animation" data-appear-animation="fadeInUpShorter">
+        <section class="section section-default section-footer">
+            <div class="container">
+                <div class="row mt-5 appear-animation" data-appear-animation="fadeInUpShorter">
+                    <div class="col-lg-6">
+                        <div class="recent-posts mb-5">
+                            <h2 class="font-weight-normal text-6 mb-4"><strong class="font-weight-extra-bold">Latest</strong> Posts</h2>
+                            <div class="owl-carousel owl-theme dots-title mb-0" data-plugin-options="{'items': 1, 'autoHeight': true, 'autoplay': true, 'autoplayTimeout': 8000}">
+                                <div class="row">
+                                    <div class="col-lg-6 mb-4 mb-lg-0">
+                                        <article>
+                                            <div class="row">
+                                                <div class="col-auto pr-0">
+                                                    <div class="date">
+                                                        <span class="day font-weight-extra-bold">15</span>
+                                                        <span class="month text-1">JAN</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col pl-1">
+                                                    <h4 class="text-primary text-4"><a class="d-block" href="blog-post.html">Lorem ipsum dolor sit amet, consectetur</a></h4>
+                                                    <p class="pr-4 mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                    <a href="https://preview.oklerthemes.com/" class="read-more text-color-dark font-weight-semibold text-2">read more <i class="fas fa-angle-right position-relative top-1 ml-1"></i></a>
+                                                </div>
+                                            </div>
+                                        </article>
                                     </div>
-                                    <div class="text-ttsk bg-ke">
-                                        <h4><a href="{{ route('client.news.detail', parseLink($new)) }}">{{ $new->title }}</a></h4>
-
-                                        <p>{{ getShortDetail($new->short_detail) }}</p>
+                                    <div class="col-lg-6">
+                                        <article>
+                                            <div class="row">
+                                                <div class="col-auto pr-0">
+                                                    <div class="date">
+                                                        <span class="day font-weight-extra-bold">14</span>
+                                                        <span class="month text-1">JAN</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col pl-1">
+                                                    <h4 class="text-primary text-4"><a class="d-block" href="blog-post.html">Lorem ipsum dolor sit amet, consectetur</a></h4>
+                                                    <p class="pr-4 mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                    <a href="https://preview.oklerthemes.com/" class="read-more text-color-dark font-weight-semibold text-2">read more <i class="fas fa-angle-right position-relative top-1 ml-1"></i></a>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6 mb-4 mb-lg-0">
+                                        <article>
+                                            <div class="row">
+                                                <div class="col-auto pr-0">
+                                                    <div class="date">
+                                                        <span class="day font-weight-extra-bold">13</span>
+                                                        <span class="month text-1">JAN</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col pl-1">
+                                                    <h4 class="text-primary text-4"><a class="d-block" href="blog-post.html">Lorem ipsum dolor sit amet, consectetur</a></h4>
+                                                    <p class="pr-4 mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                    <a href="https://preview.oklerthemes.com/" class="read-more text-color-dark font-weight-semibold text-2">read more <i class="fas fa-angle-right position-relative top-1 ml-1"></i></a>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <article>
+                                            <div class="row">
+                                                <div class="col-auto pr-0">
+                                                    <div class="date">
+                                                        <span class="day font-weight-extra-bold">12</span>
+                                                        <span class="month text-1">JAN</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col pl-1">
+                                                    <h4 class="text-primary text-4"><a class="d-block" href="blog-post.html">Lorem ipsum dolor sit amet, consectetur</a></h4>
+                                                    <p class="pr-4 mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                    <a href="https://preview.oklerthemes.com/" class="read-more text-color-dark font-weight-semibold text-2">read more <i class="fas fa-angle-right position-relative top-1 ml-1"></i></a>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6 mb-4 mb-lg-0">
+                                        <article>
+                                            <div class="row">
+                                                <div class="col-auto pr-0">
+                                                    <div class="date">
+                                                        <span class="day font-weight-extra-bold">11</span>
+                                                        <span class="month text-1">JAN</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col pl-1">
+                                                    <h4 class="text-primary text-4"><a href="blog-post.html">Lorem ipsum dolor sit amet, consectetur</a></h4>
+                                                    <p class="pr-4 mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                    <a href="https://preview.oklerthemes.com/" class="read-more text-color-dark font-weight-semibold text-2">read more <i class="fas fa-angle-right position-relative top-1 ml-1"></i></a>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <article>
+                                            <div class="row">
+                                                <div class="col-auto pr-0">
+                                                    <div class="date">
+                                                        <span class="day font-weight-extra-bold">10</span>
+                                                        <span class="month text-1">JAN</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col pl-1">
+                                                    <h4 class="text-primary text-4"><a href="blog-post.html">Lorem ipsum dolor sit amet, consectetur</a></h4>
+                                                    <p class="pr-4 mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                    <a href="https://preview.oklerthemes.com/" class="read-more text-color-dark font-weight-semibold text-2">read more <i class="fas fa-angle-right position-relative top-1 ml-1"></i></a>
+                                                </div>
+                                            </div>
+                                        </article>
                                     </div>
                                 </div>
                             </div>
-                        @endforeach
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <h2 class="font-weight-normal text-6 mb-4"><strong class="font-weight-extra-bold">What</strong> Client’s Say</h2>
+                        <div class="row">
+                            <div class="owl-carousel owl-theme dots-title dots-title-pos-2 mb-0" data-plugin-options="{'items': 1, 'autoHeight': true}">
+                                <div>
+                                    <div class="col">
+                                        <div class="testimonial testimonial-primary">
+                                            <blockquote>
+                                                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit vehicula est, in consequat.</p>
+                                            </blockquote>
+                                            <div class="testimonial-arrow-down"></div>
+                                            <div class="testimonial-author">
+                                                <div class="testimonial-author-thumbnail">
+                                                    <img src="img/clients/client-1.jpg" class="rounded-circle" alt="">
+                                                </div>
+                                                <p><strong>John Doe</strong><span>Okler</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="col">
+                                        <div class="testimonial testimonial-primary">
+                                            <blockquote>
+                                                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit vehicula est, in consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit vehicula est, in consequat.</p>
+                                            </blockquote>
+                                            <div class="testimonial-arrow-down"></div>
+                                            <div class="testimonial-author">
+                                                <div class="testimonial-author-thumbnail">
+                                                    <img src="img/clients/client-1.jpg" class="rounded-circle" alt="">
+                                                </div>
+                                                <p><strong>John Doe</strong><span>Okler</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     </section>
-@endsection
-
-@section('script')
-    <!-- js slider main -->
-    <script type="text/javascript">
-        $('#slider-home').owlCarousel({
-            loop: true,
-            margin: 0,
-            nav: true,
-            autoplay: true,
-            autoplayTimeout: 5000,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                600: {
-                    items: 1
-                },
-                1000: {
-                    items: 1
-                }
-            }
-        })
-    </script>
-
-    <!-- js slider đối tác -->
-    <script type="text/javascript">
-        $('.doitac-sl').owlCarousel({
-            loop: true,
-            margin: 10,
-            nav: true,
-            autoplay: true,
-            autoplayTimeout: 5000,
-            responsive: {
-                0: {
-                    items: 2
-                },
-                600: {
-                    items: 4
-                },
-                1000: {
-                    items: 6
-                }
-            }
-        })
-    </script>
-    <script type="text/javascript">
-        $('.product-sl').owlCarousel({
-            loop: true,
-            margin: 10,
-            nav: false,
-            dots:false,
-            autoplay: true,
-            autoplayTimeout: 5000,
-            responsive: {
-                0: {
-                    items: 2
-                },
-                600: {
-                    items: 3
-                },
-                1000: {
-                    items: 4
-                }
-            }
-        })
-    </script>
-
-
-    <!-- js slider ý kiến khách hàng -->
-    <script type="text/javascript">
-        $('.ykkh-sl').owlCarousel({
-            loop:false,
-            margin:5,
-            nav:true,
-            autoplay:true,
-            autoplayTimeout: 5000,
-            responsive:{
-                0:{
-                    items:1
-                },
-                600:{
-                    items:1
-                },
-                1000:{
-                    items:1
-                }
-            }
-        })
-    </script>
-    <!-- js slider chi tiết sản phẩm -->
-    <script type="text/javascript">
-        $('#img-zoom').owlCarousel({
-            loop: false,
-            margin: 5,
-            nav:true,
-            responsive:{
-                0:{
-                    items:2
-                },
-                600:{
-                    items:2
-                },
-                1000:{
-                    items:3
-                }
-            }
-        })
-    </script>
-    <!-- js slider sp đã xem -->
-    <script type="text/javascript">
-        $('#sl-spdaxem').owlCarousel({
-            loop: false,
-            margin: 20,
-            nav:true,
-            responsive:{
-                0:{
-                    items:2
-                },
-                600:{
-                    items:3
-                },
-                1000:{
-                    items:4
-                }
-            }
-        })
-    </script>
-    <!-- js slider sp khac -->
-    <script type="text/javascript">
-        $('#sl-spkhac').owlCarousel({
-            loop: false,
-            margin: 20,
-            nav:true,
-            responsive:{
-                0:{
-                    items:2
-                },
-                600:{
-                    items:3
-                },
-                1000:{
-                    items:4
-                }
-            }
-        })
-    </script>
-    <!-- js show search mobile -->
-    <script>
-        $("#click-search-mb").click(function () {
-            $(".fr-search-mb").slideToggle("fast", function () {
-            });
-        });
-    </script>
 @endsection

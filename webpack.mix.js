@@ -42,27 +42,53 @@ mix.js('resources/js/app.js', 'public/js/app.js')
     // .copyDirectory('resources/assets/admin/woff', 'public/admin/woff');
 
     /* ---------------------------client------------------------------ */
-    .copyDirectory('resources/assets/client/images', 'public/client/images')
+    .copyDirectory('resources/assets/client/vendor', 'public/client/vendor')
     .copyDirectory('resources/assets/client/fonts', 'public/client/fonts')
-    .copyDirectory('resources/assets/client/css/main.css', 'public/client/css/main.css')
-    .copyDirectory('resources/assets/client/css/glasscase.css', 'public/client/css/glasscase.css')
-    .copyDirectory('resources/assets/client/js/jquery.glasscase.js', 'public/client/js/jquery.glasscase.js')
-    .copyDirectory('resources/assets/client/js/modernizr.custom.js', 'public/client/js/modernizr.custom.js')
+    .copyDirectory('resources/assets/client/webfonts', 'public/client/webfonts')
+    // .copyDirectory('resources/assets/client/css/glasscase.css', 'public/client/css/glasscase.css')
+    // .copyDirectory('resources/assets/client/js/jquery.glasscase.js', 'public/client/js/jquery.glasscase.js')
+    // .copyDirectory('resources/assets/client/js/modernizr.custom.js', 'public/client/js/modernizr.custom.js')
     .styles([
-        'resources/assets/client/css/bootstrap.min.css',
-        'resources/assets/client/css/bootstrap-theme.min.css',
-        'resources/assets/client/css/font-awesome.min.css',
-        'resources/assets/client/css/owl.carousel.css',
-        'resources/assets/client/css/owl.theme.default.css',
-        'resources/assets/client/css/plugin.scss.css',
-        'resources/assets/client/css/style.css',
-        'resources/assets/client/css/animate.css',
+        'resources/assets/client/vendor/bootstrap/css/bootstrap.min.css',
+        'resources/assets/client/vendor/fontawesome-free/css/all.min.css',
+        'resources/assets/client/vendor/animate/animate.min.css',
+        'resources/assets/client/vendor/simple-line-icons/css/simple-line-icons.min.css',
+        'resources/assets/client/vendor/owl.carousel/assets/owl.carousel.min.css',
+        'resources/assets/client/owl.carousel/assets/owl.theme.default.min.css',
+        'resources/assets/client/vendor/magnific-popup/magnific-popup.min.css',
+        'resources/assets/client/css/theme.css',
+        'resources/assets/client/css/theme-elements.css',
+        'resources/assets/client/css/css/theme-blog.css',
+        'resources/assets/client/css/theme-shop.css',
+        'resources/assets/client/vendor/rs-plugin/css/settings.css',
+        'resources/assets/client/vendor/rs-plugin/css/layers.css',
+        'resources/assets/client/vendor/rs-plugin/css/navigation.css',
+        'resources/assets/client/vendor/circle-flip-slideshow/css/component.css',
+        'resources/assets/client/css/default.css',
+        'resources/assets/client/css/custom.css',
     ], 'public/client/css/client.css')
     .scripts([
-        'resources/assets/client/js/jquery.min.js',
-        'resources/assets/client/js/plugin-menu-mb.js',
-        'resources/assets/client/js/bootstrap.min.js',
-        'resources/assets/client/js/owl.carousel.js',
-        'resources/assets/client/js/wow.min.js',
+        'resources/assets/client/vendor/modernizr/modernizr.min.js',
+        'resources/assets/client/vendor/jquery/jquery.min.js',
+        'resources/assets/client/vendor/jquery.appear/jquery.appear.min.js',
+        'resources/assets/client/vendor/jquery.easing/jquery.easing.min.js',
+        'resources/assets/client/vendor/jquery.cookie/jquery.cookie.min.js',
+        // 'resources/assets/client/master/style-switcher/style.switcher.js',
+        'resources/assets/client/vendor/popper/umd/popper.min.js',
+        'resources/assets/client/vendor/bootstrap/js/bootstrap.min.js',
+        'resources/assets/client/vendor/common/common.min.js',
+        'resources/assets/client/vendor/jquery.validation/jquery.validate.min.js',
+        'resources/assets/client/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js',
+        'resources/assets/client/vendor/jquery.gmap/jquery.gmap.min.js',
+        'resources/assets/client/vendor/jquery.lazyload/jquery.lazyload.min.js',
+        'resources/assets/client/vendor/isotope/jquery.isotope.min.js',
+        'resources/assets/client/vendor/owl.carousel/owl.carousel.min.js',
+        'resources/assets/client/vendor/magnific-popup/jquery.magnific-popup.min.js',
+        'resources/assets/client/js/theme.js',
+        'resources/assets/client/vendor/rs-plugin/js/jquery.themepunch.tools.min.js',
+        'resources/assets/client/vendor/rs-plugin/js/jquery.themepunch.revolution.min.js',
+        'resources/assets/client/vendor/circle-flip-slideshow/js/jquery.flipshow.min.js',
+        'resources/assets/client/js/views/view.home.js',
+        'resources/assets/client/js/theme.init.js',
     ], 'public/client/js/client.js');
     // .js('resources/assets/client/js/main.js', 'public/client/js/main.js');
