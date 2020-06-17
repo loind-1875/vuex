@@ -47,15 +47,21 @@
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Tóm tắt (VI)<span>*</span></h4>
-                                    <textarea id="short-detail" name="vi[short_detail]" value="{{ old('vi[short_detail]') }}" placeHolder="Nhập tóm tắt" class="form-control"></textarea>
+                                    <textarea id="short-detail" name="vi[short_detail]" placeHolder="Nhập tóm tắt" class="form-control">
+                                        {{ old('vi[short_detail]') }}
+                                    </textarea>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Tóm tắt (EN)<span>*</span></h4>
-                                    <textarea id="short-detail" name="en[short_detail]" value="{{ old('en[short_detail]') }}" placeHolder="Nhập tóm tắt" class="form-control"></textarea>
+                                    <textarea id="short-detail" name="en[short_detail]" placeHolder="Nhập tóm tắt" class="form-control">
+                                        {{ old('en[short_detail]') }}
+                                    </textarea>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Tóm tắt (CN)<span>*</span></h4>
-                                    <textarea id="short-detail" name="cn[short_detail]" value="{{ old('cn[short_detail]"') }}" placeHolder="Nhập tóm tắt" class="form-control"></textarea>
+                                    <textarea id="short-detail" name="cn[short_detail]" placeHolder="Nhập tóm tắt" class="form-control">
+                                        {{ old('cn[short_detail]') }}
+                                    </textarea>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Chi tiết (VI)<span>*</span></h4>
@@ -68,6 +74,14 @@
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Chi tiết (CN)<span>*</span></h4>
                                     <textarea id="summernote2" name="cn[detail]" class="form-control"></textarea>
+                                </div>
+                                <div class="col-sm-12 m-b-30">
+                                    <div class="category-single border-checkbox-section">
+                                        <div class="border-checkbox-group border-checkbox-group-primary">
+                                            <input class="border-checkbox" name="is_recruitment" value="1" type="checkbox" id="checkbox1">
+                                            <label class="border-checkbox-label" for="checkbox1">Tin tuyển dụng</label>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <button class="btn btn-primary waves-effect waves-light" type="submit">Lưu</button>
@@ -104,10 +118,10 @@
             padding-left: 25px;
         }
 
-        #short-detail {
+       /* #short-detail {
             height: 250px;
             min-height: 250px;
-        }
+        }*/
     </style>
     <script>
         $(document).ready(function() {

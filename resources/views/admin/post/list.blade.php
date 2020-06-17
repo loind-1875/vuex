@@ -9,7 +9,7 @@
         <div class="col-sm-12">
             <div class="card">
                 <div class="card-header">
-                    <h5>Danh sách tin tức </h5>
+                    <h5>Danh sách tin tức và tuyển dụng </h5>
                 </div>
                 <div class="row">
                     <div class="col-sm-12 p-30">
@@ -22,6 +22,9 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-12 col-xl-12">
+                        <div class="pl-4">
+                                <a href="{{ route('posts.create') }}" class="btn btn-primary">Thêm mới</a>
+                        </div>
                         <div class="card-block table-border-style">
                             <div class="table-responsive">
                                 <table class="table table-bordered table-hover">
@@ -29,6 +32,7 @@
                                     <tr>
                                         <th width="50px" align="center">#</th>
                                         <th align="center">Tiêu đề</th>
+                                        <th width="100px" align="center">Tin tuyển dụng</th>
                                         <th width="100px" align="center">Thao tác</th>
                                     </tr>
                                     </thead>
@@ -37,6 +41,14 @@
                                         <tr>
                                             <td scope="row" align="center">{{ $index + 1 }}</td>
                                             <td>{{ $new->title }}</td>
+                                            <td align="center">
+                                                <div class="category-single border-checkbox-section">
+                                                    <div class="border-checkbox-group border-checkbox-group-primary">
+                                                        <input class="border-checkbox" name="is_recruitment" value="1" {{ $new->is_recruitment == 1 ? 'checked' : ''}} type="checkbox" id="checkbox1" disabled>
+                                                        <label class="border-checkbox-label" for="checkbox1"></label>
+                                                    </div>
+                                                </div>
+                                            </td>
                                             <td align="center">
                                                 <a href="{{ route('posts.edit', $new->id) }}" class="btn btn-primary btn-sm">
                                                     <i class="fa fa-pencil-square-o"></i>

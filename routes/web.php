@@ -16,7 +16,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'admi
     Route::resource('products', 'ProductController');
     Route::resource('categories', 'CategoryController');
     Route::resource('posts', 'PostController');
-    Route::resource('recruitment', 'RecruitmentController');
+    // Route::resource('recruitment', 'RecruitmentController');
     Route::get('settings', 'AdminController@settings')->name('admin.setting');
     Route::put('settings', 'AdminController@updateSettings')->name('update.setting');
 });

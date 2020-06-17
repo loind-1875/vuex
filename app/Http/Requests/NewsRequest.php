@@ -24,34 +24,34 @@ class NewsRequest extends FormRequest
     public function rules()
     {
         return [
-//            'vi.*.title' => 'required',
-//            'en.*.title' => 'required',
-//            'cn.*.title' => 'required',
-//            'vi.*.detail' => 'required',
-//            'en.*.detail' => 'required',
-//            'cn.*.detail' => 'required',
-//            'vi.*.short_detail' => 'required',
-//            'en.*.short_detail' => 'required',
-//            'cn.*.short_detail' => 'required',
-//            'images' => 'required|image|mimes:jpeg,bmp,png|max:2048',
+            'vi.title' => 'required',
+            'en.title' => 'required',
+            'cn.title' => 'required',
+            'vi.detail' => 'required',
+            'en.detail' => 'required',
+            'cn.detail' => 'required',
+            'vi.short_detail' => 'required',
+            'en.short_detail' => 'required',
+            'cn.short_detail' => 'required',
+            'images' => 'required|image|mimes:jpeg,bmp,png|max:2048',
         ];
     }
 
     public function messages()
     {
         return [
-//            'title_vi.required' => 'Tiêu đề việt là bắt buộc',
-//            'title_en.required' => 'Tiêu đề anh là bắt buộc',
-//            'title_cn.required' => 'Tiêu đề trung là bắt buộc',
-//            'detail_vi.required' => 'Chi tiết việt bắt buộc',
-//            'detail_en.required' => 'Chi tiết anh bắt buộc',
-//            'detail_cn.required' => 'Chi tiết trung bắt buộc',
-//            'short_detail_vi' => 'Tóm tắt việt là bắt buộc',
-//            'short_detail_en' => 'Tóm tắt anh là bắt buộc',
-//            'short_detail_cn' => 'Tóm tắt trung là bắt buộc',
-//            'images.required' => 'Ảnh là bắt buộc',
-//            'images.max' => 'Ảnh tối đa là 2MB',
-//            'images.mimes' => 'Chỉ được upload file ảnh jpeg, png, bmp',
+            'vi.title.required' => 'Tiêu đề tiếng việt là bắt buộc',
+            'en.title.required' => 'Tiêu đề tiếng anh là bắt buộc',
+            'cn.title.required' => 'Tiêu đề tiếng trung là bắt buộc',
+            'vi.detail.required' => 'Chi tiết tiếng việt bắt buộc',
+            'en.detail.required' => 'Chi tiết tiếng anh bắt buộc',
+            'cn.detail.required' => 'Chi tiết tiếng trung bắt buộc',
+            'vi.short_detail.required' => 'Tóm tắt tiếng việt là bắt buộc',
+            'en.short_detail.required' => 'Tóm tắt tiếng anh là bắt buộc',
+            'cn.short_detail.required' => 'Tóm tắt tiếng trung là bắt buộc',
+            'images.required' => 'Ảnh là bắt buộc',
+            'images.max' => 'Ảnh tối đa là 2MB',
+            'images.mimes' => 'Chỉ được upload file ảnh jpeg, png, bmp',
         ];
     }
 }

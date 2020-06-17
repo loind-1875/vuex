@@ -14,49 +14,37 @@ use DOMDocument;
 
 class PostController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        $news = Post::where('is_recruitment', 0)->paginate(15);
+        $news = Post::paginate(15);
 
         return view('admin.post.list', compact('news'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         return view('admin.post.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(NewsRequest $request)
     {
         $data= $request->only(['vi', 'en', 'cn']);
-        $titleVi = array_get($request->only('vi'), 'title', null);
+        $titleVi = array_get($request->vi, 'title', null);
         $slug = str_slug($titleVi);
 
         if ($request->hasFile('images')) {
             $this->saveImage($request);
         }
 
+        if ($request->is_recruitment == null) {
+            $request->merge(['is_recruitment' => 0]);
+        }
+
         $post = Post::create([
             'image' => $request->image,
-            'slug' => $slug
+            'slug' => $slug,
+            'is_recruitment' => $request->is_recruitment
         ]);
-
 
         foreach ($data as $key => $item) {
             $detail = array_get($item, 'detail', null);
@@ -117,26 +105,15 @@ class PostController extends Controller
 
         return $dom->saveHTML();
     }
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        $news = Post::find($id);
+        $news = Post::with('vi', 'en', 'cn')->find($id);
 
         if (!$news) {
             abort(Response::HTTP_NOT_FOUND);
@@ -145,42 +122,43 @@ class PostController extends Controller
         return view('admin.post.edit', compact('news'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(EditNewsRequest $request, $id)
     {
         $news = Post::find($id);
+
+        if ($request->is_recruitment == null) {
+            $request->merge(['is_recruitment' => 0]);
+        }
 
         if (!$news) {
             abort(Response::HTTP_NOT_FOUND);
         }
 
-        if ($request->detail) {
-            $request->detail = $this->saveDetailPost($request->detail);
-        }
+        $titleVi = array_get($request->vi, 'title', null);
+        $slug = str_slug($titleVi);
 
         if ($request->hasFile('images')) {
             $this->saveImage($request);
         }
 
-        $request->merge(['slug' => str_slug($request->title)]);
-
         $news->update($request->all());
+
+        $data= $request->only(['vi', 'en', 'cn']);
+
+        foreach ($data as $item) {
+            $detail = array_get($item, 'detail', null);
+
+            if ($detail) {
+                $detail = $this->saveDetailPost($detail);
+            }
+
+            $postTranslation = PostTranslation::find($item['id']);
+            $postTranslation->update($item);
+        }
 
         return redirect()->route('posts.index')->with('success', ' Sửa thành công');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         $news = Post::find($id);
@@ -188,6 +166,8 @@ class PostController extends Controller
         if (!$news) {
             abort(Response::HTTP_NOT_FOUND);
         }
+
+        $news->postTranslations()->delete();
 
         $news->delete();
 
