@@ -54,21 +54,15 @@
 
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Tóm tắt (VI)<span>*</span></h4>
-                                    <textarea id="short-detail" name="vi[short_detail]" placeHolder="Nhập tóm tắt" class="form-control short-detail">
-                                        {{ $news->vi->short_detail }}
-                                    </textarea>
+                                    <textarea id="short-detail" name="vi[short_detail]" placeHolder="Nhập tóm tắt" class="form-control short-detail">{{ $news->vi->short_detail }}</textarea>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Tóm tắt (EN)<span>*</span></h4>
-                                    <textarea id="short-detail1" name="en[short_detail]" placeHolder="Nhập tóm tắt" class="form-control short-detail">
-                                        {{ $news->en->short_detail }}
-                                    </textarea>
+                                    <textarea id="short-detail1" name="en[short_detail]" placeHolder="Nhập tóm tắt" class="form-control short-detail">{{ $news->en->short_detail }}</textarea>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Tóm tắt (CN)<span>*</span></h4>
-                                    <textarea id="short-detail2" name="cn[short_detail]"  placeHolder="Nhập tóm tắt" class="form-control short-detail">
-                                        {{ $news->cn->short_detail }}
-                                    </textarea>
+                                    <textarea id="short-detail2" name="cn[short_detail]"  placeHolder="Nhập tóm tắt" class="form-control short-detail">{{ $news->cn->short_detail }}</textarea>
                                 </div>
 
                                 <div class="col-sm-12 m-b-30">
@@ -160,9 +154,6 @@
             $('#summernote').summernote('code', {!! json_encode($news->vi->detail) !!});
             $('#summernote1').summernote('code', {!! json_encode($news->en->detail) !!});
             $('#summernote2').summernote('code', {!! json_encode($news->cn->detail) !!});
-            $('textarea#short-detail').html($('textarea#short-detail').html().trim());
-            $('textarea#short-detail1').html($('textarea#short-detail1').html().trim());
-            $('textarea#short-detail2').html($('textarea#short-detail2').html().trim());
         });
     </script>
 @endsection

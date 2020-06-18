@@ -47,21 +47,15 @@
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Tóm tắt (VI)<span>*</span></h4>
-                                    <textarea id="short-detail" name="vi[short_detail]" placeHolder="Nhập tóm tắt" class="form-control">
-                                        {{ old('vi[short_detail]') }}
-                                    </textarea>
+                                    <textarea id="short-detail" name="vi[short_detail]" placeHolder="Nhập tóm tắt" class="form-control">{{ old('vi[short_detail]') }}</textarea>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Tóm tắt (EN)<span>*</span></h4>
-                                    <textarea id="short-detail" name="en[short_detail]" placeHolder="Nhập tóm tắt" class="form-control">
-                                        {{ old('en[short_detail]') }}
-                                    </textarea>
+                                    <textarea id="short-detail" name="en[short_detail]" placeHolder="Nhập tóm tắt" class="form-control">{{ old('en[short_detail]') }}</textarea>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Tóm tắt (CN)<span>*</span></h4>
-                                    <textarea id="short-detail" name="cn[short_detail]" placeHolder="Nhập tóm tắt" class="form-control">
-                                        {{ old('cn[short_detail]') }}
-                                    </textarea>
+                                    <textarea id="short-detail" name="cn[short_detail]" placeHolder="Nhập tóm tắt" class="form-control">{{ old('cn[short_detail]') }}</textarea>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Chi tiết (VI)<span>*</span></h4>

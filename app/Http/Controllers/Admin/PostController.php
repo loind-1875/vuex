@@ -81,7 +81,7 @@ class PostController extends Controller
 
         $images = $dom->getElementsByTagName('img');
 
-        foreach ($images as $img) {
+        foreach ($images as $k => $img) {
             $src = $img->getAttribute('src');
 
             // if the img source is 'data-url'
@@ -91,16 +91,25 @@ class PostController extends Controller
                 preg_match('/data:image\/(?<mime>.*?)\;/', $src, $groups);
                 $mimetype = $groups['mime'];
 
-                // Generating a random filename
-                $filename = uniqid();
-                $filepath = "public/images/$filename.$mimetype";
+                $data = $img->getAttribute('src');
+                list($type, $data) = explode(';', $data);
 
-                Storage::put($filepath, file_get_contents($src));
+                list(, $data) = explode(',', $data);
 
-                $new_src = asset($filepath);
+                $data = base64_decode($data);
+
+                $uniq = uniqid();
+                $image_name= '/storage/images/' . time() . $uniq . '.' . $mimetype;
+
+                $path = public_path() . $image_name;
+
+                file_put_contents($path, $data);
+
                 $img->removeAttribute('src');
-                $img->setAttribute('src', $new_src);
+
+                $img->setAttribute('src', $image_name);
             }
+
         }
 
         return $dom->saveHTML();
