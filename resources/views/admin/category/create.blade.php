@@ -30,29 +30,28 @@
                             <form action="{{ route('categories.store') }}" method="POST">
                                 @csrf
                                 <div class="col-sm-12 m-b-30">
-                                    <h4 class="sub-title">Tên danh mục<span>*</span></h4>
-                                    <input type="text" class="form-control" name="name" placeHolder="Nhập tên danh mục" value="{{ old('name') }}" required>
+                                    <h4 class="sub-title">Tên danh mục (VI)<span>*</span></h4>
+                                    <input type="text" class="form-control" name="vi[name]" placeHolder="Nhập tên danh mục" value="{{ old('vi[name]') }}" required>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
-                                    <h4 class="sub-title">Mô tả</h4>
-                                    <input type="text" class="form-control" name="description" placeHolder="Nhập mô tả danh mục" value="{{ old('name') }}" required>
+                                    <h4 class="sub-title">Tên danh mục (EN)<span>*</span></h4>
+                                    <input type="text" class="form-control" name="en[name]" placeHolder="Nhập tên danh mục" value="{{ old('en[name]') }}" required>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
-                                    <h4 class="sub-title">Danh mục cha (Có thể rỗng)</h4>
-                                    <div class="row">
-                                        @foreach ($categories as $cate)
-                                            <div class="col-sm-4">
-                                                <div class="category-single form-radio">
-                                                    <div class="radio radio-inline">
-                                                        <label>
-                                                            <input type="radio" name="parent_id" value="{{ $cate->id }}">
-                                                            <i class="helper"></i>{{ $cate->name }}
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        @endforeach
-                                    </div>
+                                    <h4 class="sub-title">Tên danh mục (CN)<span>*</span></h4>
+                                    <input type="text" class="form-control" name="cn[name]" placeHolder="Nhập tên danh mục" value="{{ old('cn[name]') }}" required>
+                                </div>
+                                <div class="col-sm-12 m-b-30">
+                                    <h4 class="sub-title">Mô tả (VI)<span>*</span></h4>
+                                    <textarea name="vi[description]" id="des" cols="30" rows="10" placeHolder="Nhập mô tả danh mục"  class="form-control" required>{{ old('vi[description]') }}</textarea>
+                                </div>
+                                <div class="col-sm-12 m-b-30">
+                                    <h4 class="sub-title">Mô tả (EN)<span>*</span></h4>
+                                    <textarea name="en[description]" id="" cols="30" rows="10" placeHolder="Nhập mô tả danh mục"  class="form-control" required>{{ old('en[description]') }}</textarea>
+                                </div>
+                                <div class="col-sm-12 m-b-30">
+                                    <h4 class="sub-title">Mô tả (CN)<span>*</span></h4>
+                                    <textarea name="cn[description]" id="" cols="30" rows="10" placeHolder="Nhập mô tả danh mục"  class="form-control" required>{{ old('cn[description]') }}</textarea>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <button class="btn btn-primary waves-effect waves-light" type="submit">Lưu</button>

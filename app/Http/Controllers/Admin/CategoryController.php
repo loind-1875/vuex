@@ -7,6 +7,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
+use App\Models\CategoryTranslation;
 
 class CategoryController extends Controller
 {
@@ -25,9 +26,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        $categories = Category::all();
-
-        return view('admin.category.create', compact('categories'));
+        return view('admin.category.create');
     }
 
     /**
@@ -37,8 +36,20 @@ class CategoryController extends Controller
      */
     public function store(StoreCategoryRequest $request)
     {
-        $request->merge(['slug' => str_slug($request->name)]);
-        Category::create($request->all());
+        $titleVi = $request->vi['name'];
+        $request->merge(['slug' => str_slug($titleVi)]);
+        $category = Category::create($request->all());
+
+        $data = $request->only(['vi', 'cn']);
+
+        foreach($data as $key => $item) {
+            CategoryTranslation::create([
+                'name' => $item['name'],
+                'description' => $item['description'],
+                'category_id' => $category->id,
+                'locale' => $key,
+            ]);
+        }
 
         return redirect()->route('categories.index')->with('success', 'Thêm thành công');
     }
@@ -67,10 +78,13 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        $category = Category::find($id);
-        $categories = Category::where('id', '!=', $id)->get();
+        $category = Category::with('vi', 'en', 'cn')->find($id);
 
-        return view('admin.category.edit', compact('category', 'categories'));
+        if (!$category) {
+            abort(Response::HTTP_NOT_FOUND);
+        }
+
+        return view('admin.category.edit', compact('category'));
     }
 
     /**
@@ -87,8 +101,17 @@ class CategoryController extends Controller
             abort(Response::HTTP_NOT_FOUND);
         }
 
-        $request->merge(['slug' => str_slug($request->name)]);
+        $titleVi = $request->vi['name'];
+        $request->merge(['slug' => str_slug($titleVi)]);
+
         $category->update($request->all());
+
+        $data = $request->only(['vi', 'en', 'cn']);
+
+        foreach ($data as $key => $value) {
+            $categoryTranslation = CategoryTranslation::findOrFail($value['id']);
+            $categoryTranslation->update($value);
+        }
 
         return redirect()->route('categories.index')->with('success', ' Sửa thành công');
     }
@@ -103,9 +126,12 @@ class CategoryController extends Controller
     {
         $category = Category::find($id);
 
+
         if (!$category) {
             abort(Response::HTTP_NOT_FOUND);
         }
+
+        $category->categoryTranslations()->delete();
 
         $category->delete();
 

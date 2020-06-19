@@ -31,78 +31,32 @@
                                 @csrf
                                 @method('PUT')
                                 <div class="col-sm-12 m-b-30">
-                                    <h4 class="sub-title">Tên danh mục<span>*</span></h4>
-                                    <input type="text" class="form-control" name="name" placeHolder="Nhập tên danh mục" value="{{ $category->name }}" required>
+                                    <h4 class="sub-title">Tên danh mục (VI)<span>*</span></h4>
+                                    <input type="text" class="form-control" name="vi[name]" placeHolder="Nhập tên danh mục" value="{{ $category->vi->name }}" required>
+                                    <input type="hidden" name="vi[id]" value="{{ $category->vi->id }}">
                                 </div>
                                 <div class="col-sm-12 m-b-30">
-                                    <h4 class="sub-title">Mô tả</h4>
-                                    <input type="text" class="form-control" name="description" placeHolder="Nhập mô tả danh mục" value="{{ old('name') }}" required>
+                                    <h4 class="sub-title">Tên danh mục (EN)<span>*</span></h4>
+                                    <input type="hidden" name="en[id]" value="{{ $category->en->id }}">
+                                    <input type="text" class="form-control" name="en[name]" placeHolder="Nhập tên danh mục" value="{{ $category->en->name }}" required>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
-                                    <h4 class="sub-title">Danh mục cha (Có thể rỗng)</h4>
-                                    <div class="row">
-                                        @foreach ($categories as $cate)
-                                            <div class="col-sm-4">
-                                                <div class="category-list form-radio">
-                                                <div class="category-single">
-                                                    <div class="radio radio-inline">
-                                                        <label>
-                                                            <input
-                                                                type="radio"
-                                                                name="parent_id"
-                                                                value="{{ $cate->id }}"
-                                                                {{ $cate->id === $category->parent_id ? 'checked' : '' }}
-                                                            >
-                                                            <i class="helper"></i>
-                                                            {{ $cate->name }}
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            </div>
-                                        @endforeach
-                                    </div>
+                                    <h4 class="sub-title">Tên danh mục (CN)<span>*</span></h4>
+                                    <input type="hidden" name="cn[id]" value="{{ $category->cn->id }}">
+                                    <input type="text" class="form-control" name="cn[name]" placeHolder="Nhập tên danh mục" value="{{ $category->cn->name }}" required>
                                 </div>
-
-{{--                                <div class="col-sm-12 m-b-30">--}}
-{{--                                    <h4 class="sub-title">Danh mục cha<span>*</span></h4>--}}
-{{--                                    <div class="123">--}}
-{{--                                        @foreach ($categories as $cate)--}}
-{{--                                            <div class="category-list form-radio">--}}
-{{--                                                <div class="category-single">--}}
-{{--                                                    <div class="radio radio-inline">--}}
-{{--                                                        <label>--}}
-{{--                                                            <input--}}
-{{--                                                                    type="radio"--}}
-{{--                                                                    name="parent_id"--}}
-{{--                                                                    value="{{ $cate->id }}"--}}
-{{--                                                                    {{ $cate->id === $category->id ? 'checked' : '' }}--}}
-{{--                                                            >--}}
-{{--                                                            <i class="helper"></i>{{ $cate->name }}--}}
-{{--                                                        </label>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                                @foreach($cate->children as $value)--}}
-{{--                                                    <div class="child-cate">--}}
-{{--                                                        <div class="border-checkbox-group border-checkbox-group-primary">--}}
-{{--                                                            <div class="radio radio-inline">--}}
-{{--                                                                <label>--}}
-{{--                                                                    <input--}}
-{{--                                                                            type="radio"--}}
-{{--                                                                            name="parent_id"--}}
-{{--                                                                            value="{{ $value->id }}"--}}
-{{--                                                                            {{ $value->id === $category->id ? 'checked' : '' }}--}}
-{{--                                                                    >--}}
-{{--                                                                    <i class="helper"></i>{{ $value->name }}--}}
-{{--                                                                </label>--}}
-{{--                                                            </div>--}}
-{{--                                                        </div>--}}
-{{--                                                    </div>--}}
-{{--                                                @endforeach--}}
-{{--                                            </div>--}}
-{{--                                        @endforeach--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
+                                <div class="col-sm-12 m-b-30">
+                                    <h4 class="sub-title">Mô tả (VI)<span>*</span></h4>
+                                    <textarea name="vi[description]" id="des" cols="30" rows="10" placeHolder="Nhập mô tả danh mục"  class="form-control" required>{{ $category->vi->description }}</textarea>
+                                </div>
+                                <div class="col-sm-12 m-b-30">
+                                    <h4 class="sub-title">Mô tả (EN)<span>*</span></h4>
+                                    <textarea name="en[description]" id="" cols="30" rows="10" placeHolder="Nhập mô tả danh mục"  class="form-control" required>{{ $category->en->description }}</textarea>
+                                </div>
+                                <div class="col-sm-12 m-b-30">
+                                    <h4 class="sub-title">Mô tả (CN)<span>*</span></h4>
+                                    <textarea name="cn[description]" id="" cols="30" rows="10" placeHolder="Nhập mô tả danh mục"  class="form-control" required>{{ $category->cn->description }}</textarea>
+                                </div>
                                 <div class="col-sm-12 m-b-30">
                                     <button class="btn btn-primary waves-effect waves-light" type="submit">Lưu</button>
                                 </div>

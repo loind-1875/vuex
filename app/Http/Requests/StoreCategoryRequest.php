@@ -24,14 +24,18 @@ class StoreCategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
+            'vi.name' => 'required',
+            'en.name' => 'required',
+            'cn.name' => 'required',
         ];
     }
 
     public function messages()
     {
         return [
-            'name.required' => 'Tên là bắt buộc',
+            'vi.name.required' => 'Tên tiếng việt là bắt buộc',
+            'en.name.required' => 'Tên tiếng anh là bắt buộc',
+            'cn.name.required' => 'Tên tiếng trung là bắt buộc',
         ];
     }
 }

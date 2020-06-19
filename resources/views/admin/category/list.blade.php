@@ -22,45 +22,52 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-12 col-xl-12">
+                        <div class="pl-4">
+                                <a href="{{ route('categories.create') }}" class="btn btn-primary">Thêm mới</a>
+                        </div>
                         <div class="card-block table-border-style">
-                            <div class="table-responsive">
-                                <table class="table table-bordered table-hover">
-                                    <thead>
-                                    <tr>
-                                        <th width="50px" align="center">#</th>
-                                        <th align="center">Tên</th>
-                                        <th width="100px" align="center">Thao tác</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    @foreach ($categories as $index => $category)
+                            @if (count($categories))
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-hover">
+                                        <thead>
                                         <tr>
-                                            <td scope="row" align="center">{{ $index + 1 }}</td>
-                                            <td>{{ $category->name }}</td>
-                                            <td align="center">
-                                                <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-primary btn-sm">
-                                                    <i class="fa fa-pencil-square-o"></i>
-                                                </a>
-                                                <form action="{{ route('categories.destroy', $category->id) }}" method="POST" style="display: inline-block;">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button
-                                                            class="btn btn-danger btn-sm"
-                                                            type="submit"
-                                                            onclick="return confirm(' Bạn có chắc chắn?');"
-                                                    >
-                                                        <i class="fa fa-trash"></i>
-                                                    </button>
-                                                </form>
-                                            </td>
+                                            <th width="50px" align="center">#</th>
+                                            <th align="center">Tên</th>
+                                            <th width="100px" align="center">Thao tác</th>
                                         </tr>
-                                    @endforeach
-                                    </tbody>
-                                </table>
-                                <div class="m-t-15">
-                                    {{ $categories->links() }}
+                                        </thead>
+                                        <tbody>
+                                        @foreach ($categories as $index => $category)
+                                            <tr>
+                                                <td scope="row" align="center">{{ $index + 1 }}</td>
+                                                <td>{{ $category->name }}</td>
+                                                <td align="center">
+                                                    <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-primary btn-sm">
+                                                        <i class="fa fa-pencil-square-o"></i>
+                                                    </a>
+                                                    <form action="{{ route('categories.destroy', $category->id) }}" method="POST" style="display: inline-block;">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button
+                                                                class="btn btn-danger btn-sm"
+                                                                type="submit"
+                                                                onclick="return confirm(' Bạn có chắc chắn?');"
+                                                        >
+                                                            <i class="fa fa-trash"></i>
+                                                        </button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                        </tbody>
+                                    </table>
+                                    <div class="m-t-15">
+                                        {{ $categories->links() }}
+                                    </div>
                                 </div>
-                            </div>
+                            @else
+                                <p class="text-center">Không có danh mục nào</p>
+                            @endif
                         </div>
                     </div>
                 </div>
