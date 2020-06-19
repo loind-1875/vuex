@@ -31,13 +31,20 @@
                                 @method('PUT')
                                 @csrf
                                 <div class="col-sm-12 m-b-30">
-                                    <h4 class="sub-title">Tên sản phẩm<span>*</span></h4>
-                                    <input type="text" class="form-control" name="name" placeHolder="Nhập tên sản phẩm" value="{{ $product->name }}" required>
+                                    <h4 class="sub-title">Tên sản phẩm (VI)<span>*</span></h4>
+                                    <input type="hidden" name="vi[id]" value="{{ $product->vi->id }}">
+                                    <input type="text" class="form-control" name="vi[name]" placeHolder="Nhập tên sản phẩm" value="{{ $product->vi->name }}" required>
                                 </div>
-{{--                                <div class="col-sm-12 m-b-30">--}}
-{{--                                    <h4 class="sub-title">Giá<span>*</span></h4>--}}
-{{--                                    <input type="number" name="price" class="form-control" placeHolder="Nhập giá sản phẩm" value="{{ $product->price }}"  required>--}}
-{{--                                </div>--}}
+                                <div class="col-sm-12 m-b-30">
+                                    <h4 class="sub-title">Tên sản phẩm (EN)<span>*</span></h4>
+                                    <input type="hidden" name="en[id]" value="{{ $product->en->id }}">
+                                    <input type="text" class="form-control" name="en[name]" placeHolder="Nhập tên sản phẩm" value="{{ $product->en->name }}" required>
+                                </div>
+                                <div class="col-sm-12 m-b-30">
+                                    <h4 class="sub-title">Tên sản phẩm (CN)<span>*</span></h4>
+                                    <input type="hidden" name="cn[id]" value="{{ $product->cn->id }}">
+                                    <input type="text" class="form-control" name="cn[name]" placeHolder="Nhập tên sản phẩm" value="{{ $product->cn->name }}" required>
+                                </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Ảnh sản phẩm<span>*</span></h4>
                                     <img src="{{ getImage($product->image) }}" alt="" class="img m-b-10">
@@ -68,8 +75,16 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
-                                    <h4 class="sub-title">Chi tiết sản phẩm</h4>
-                                    <textarea id="summernote" name="detail" class="form-control"></textarea>
+                                    <h4 class="sub-title">Chi tiết sản phẩm (VI) </h4>
+                                    <textarea id="summernote" name="vi[detail]" class="form-control"></textarea>
+                                </div>
+                                <div class="col-sm-12 m-b-30">
+                                    <h4 class="sub-title">Chi tiết sản phẩm (EN) </h4>
+                                    <textarea id="summernote1" name="en[detail]" class="form-control"></textarea>
+                                </div>
+                                <div class="col-sm-12 m-b-30">
+                                    <h4 class="sub-title">Chi tiết sản phẩm (CN) </h4>
+                                    <textarea id="summernote2" name="cn[detail]" class="form-control"></textarea>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <button class="btn btn-primary waves-effect waves-light" type="submit">Lưu</button>
@@ -125,7 +140,20 @@
                 height: 350,
                 maximumImageFileSize: 2097152
             });
-            $('#summernote').summernote('code', {!! json_encode($product->detail) !!});
+            $('#summernote1').summernote({
+                placeholder: 'Nhập chi tiết sản phẩm',
+                height: 350,
+                maximumImageFileSize: 2097152
+            });
+            $('#summernote2').summernote({
+                placeholder: 'Nhập chi tiết sản phẩm',
+                height: 350,
+                maximumImageFileSize: 2097152
+            });
+
+            $('#summernote').summernote('code', {!! json_encode($product->vi->detail) !!});
+            $('#summernote1').summernote('code', {!! json_encode($product->en->detail) !!});
+            $('#summernote2').summernote('code', {!! json_encode($product->cn->detail) !!});
         });
     </script>
 @endsection

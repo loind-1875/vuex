@@ -18,7 +18,7 @@ class CreateProductTranslationsTable extends Migration
             $table->integer('product_id')->unsigned();
             $table->string('locale')->index();
             $table->string('name');
-            $table->string('detail')->nullable();
+            $table->longText('detail')->nullable();
             $table->unique(['product_id','locale']);
             $table->timestamps();
         });

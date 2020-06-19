@@ -27,16 +27,21 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-12 col-xs-6 m-b-30">
+                            @if (count($categories))
                             <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="col-sm-12 m-b-30">
-                                    <h4 class="sub-title">Tên sản phẩm<span>*</span></h4>
-                                    <input type="text" class="form-control" name="name" placeHolder="Nhập tên sản phẩm" value="{{ old('name') }}" required>
+                                    <h4 class="sub-title">Tên sản phẩm (VI)<span>*</span></h4>
+                                    <input type="text" class="form-control" name="vi[name]" placeHolder="Nhập tên sản phẩm" value="{{ old('vi[name]') }}" required>
                                 </div>
-{{--                                <div class="col-sm-12 m-b-30">--}}
-{{--                                    <h4 class="sub-title">Giá<span>*</span></h4>--}}
-{{--                                    <input type="number" name="price" class="form-control" value="{{ old('name') }}" placeHolder="Nhập giá mới sản phẩm" required>--}}
-{{--                                </div>--}}
+                                <div class="col-sm-12 m-b-30">
+                                    <h4 class="sub-title">Tên sản phẩm (EN)<span>*</span></h4>
+                                    <input type="text" class="form-control" name="en[name]" placeHolder="Nhập tên sản phẩm" value="{{ old('en[name]') }}" required>
+                                </div>
+                                <div class="col-sm-12 m-b-30">
+                                    <h4 class="sub-title">Tên sản phẩm (CN)<span>*</span></h4>
+                                    <input type="text" class="form-control" name="cn[name]" placeHolder="Nhập tên sản phẩm" value="{{ old('cn[name]') }}" required>
+                                </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Ảnh sản phẩm<span>*</span></h4>
                                     <input type="file" name="images" class="form-control" value="{{ old('name') }}" required>
@@ -59,13 +64,24 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
-                                    <h4 class="sub-title">Chi tiết sản phẩm</h4>
-                                    <textarea id="summernote" name="detail" class="form-control"></textarea>
+                                    <h4 class="sub-title">Chi tiết sản phẩm (VI) <span>*</span></h4>
+                                    <textarea id="summernote" name="vi[detail]" class="form-control"></textarea>
+                                </div>
+                                <div class="col-sm-12 m-b-30">
+                                    <h4 class="sub-title">Chi tiết sản phẩm (EN) <span>*</span></h4>
+                                    <textarea id="summernote1" name="en[detail]" class="form-control"></textarea>
+                                </div>
+                                <div class="col-sm-12 m-b-30">
+                                    <h4 class="sub-title">Chi tiết sản phẩm (CN) <span>*</span></h4>
+                                    <textarea id="summernote2" name="cn[detail]" class="form-control"></textarea>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <button class="btn btn-primary waves-effect waves-light" type="submit">Lưu</button>
                                 </div>
                             </form>
+                            @else
+                                <p class="text-center">Bạn cần tạo danh mục trước <a href="{{ route('categories.create') }}" class="text-danger">Tạo mới</a></p>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -109,6 +125,16 @@
     <script>
         $(document).ready(function() {
             $('#summernote').summernote({
+                placeholder: 'Nhập chi tiết sản phẩm',
+                height: 350,
+                maximumImageFileSize: 2097152
+            });
+            $('#summernote1').summernote({
+                placeholder: 'Nhập chi tiết sản phẩm',
+                height: 350,
+                maximumImageFileSize: 2097152
+            });
+            $('#summernote2').summernote({
                 placeholder: 'Nhập chi tiết sản phẩm',
                 height: 350,
                 maximumImageFileSize: 2097152

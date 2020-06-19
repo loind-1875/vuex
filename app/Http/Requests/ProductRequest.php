@@ -24,7 +24,9 @@ class ProductRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
+            'vi.name' => 'required',
+            'en.name' => 'required',
+            'cn.name' => 'required',
             'images' => 'required|image|mimes:jpeg,bmp,png|max:2048',
             'category' => 'required'
         ];
@@ -33,7 +35,9 @@ class ProductRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => 'Tên là bắt buộc',
+            'vi.name.required' => 'Tên tiếng việt là bắt buộc',
+            'en.name.required' => 'Tên tiếng anh là bắt buộc',
+            'cn.name.required' => 'Tên tiếng trung là bắt buộc',
             'images.required' => 'Ảnh là bắt buộc',
             'images.max' => 'Ảnh tối đa là 2MB',
             'images.mimes' => 'Chỉ được upload file ảnh jpeg, png, bmp',

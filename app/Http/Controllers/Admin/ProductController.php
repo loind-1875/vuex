@@ -7,6 +7,7 @@ use App\Http\Requests\EditProductRequest;
 use App\Http\Requests\ProductRequest;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\ProductTranslation;
 use DOMDocument;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -54,19 +55,34 @@ class ProductController extends Controller
      */
     public function store(ProductRequest $request)
     {
-        if ($request->detail) {
-            $request->detail = $this->saveDetailPost($request->detail);
-        }
-
         if ($request->hasFile('images')) {
             $this->saveImage($request);
         }
 
-        $request->merge(['slug' => str_slug($request->name)]);
+        $titleVi = array_get($request->vi, 'name', null);
+        $slug = str_slug($titleVi);
+
+        $request->merge(['slug' => $slug]);
 
         $product = Product::create($request->all());
-
         $product->categories()->attach($request->category);
+
+        $data = $request->only(['vi', 'cn']);
+
+        foreach ($data as $key => $value) {
+            $detail = array_get($value, 'detail', null);
+
+            if ($detail) {
+                $detail = $this->saveDetailPost($value['detail']);
+            }
+
+            ProductTranslation::create([
+                'name' => $value['name'],
+                'detail' => $detail,
+                'locale' => $key,
+                'product_id' => $product->id,
+            ]);
+        }
 
         return redirect()->route('products.index')->with('success', 'Thêm thành công');
     }
@@ -95,7 +111,7 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        $product = Product::find($id)->load('categories');
+        $product = Product::with('vi', 'en', 'cn', 'categories')->find($id);
         $productCategory = $product->categories->pluck('id')->toArray();
         $categories = Category::all();
 
@@ -120,19 +136,31 @@ class ProductController extends Controller
             abort(Response::HTTP_NOT_FOUND);
         }
 
-        if ($request->detail) {
-            $request->detail = $this->saveDetailPost($request->detail);
-        }
 
         if ($request->hasFile('images')) {
             $this->saveImage($request);
         }
 
-        $request->merge(['slug' => str_slug($request->name)]);
+        $titleVi = array_get($request->vi, 'name', null);
+        $slug = str_slug($titleVi);
+        $request->merge(['slug' => $slug]);
 
         $product->update($request->all());
 
         $product->categories()->sync($request->category);
+
+        $data= $request->only(['vi', 'en', 'cn']);
+
+        foreach ($data as $key => $value) {
+            $detail = array_get($value, 'detail', null);
+
+            if ($detail) {
+                $detail = $this->saveDetailPost($detail);
+            }
+
+            $productTranslation = ProductTranslation::findOrFail($value['id']);
+            $productTranslation->update($value);
+        }
 
         return redirect()->route('products.index')->with('success', 'Sửa thành công');
     }
@@ -163,7 +191,7 @@ class ProductController extends Controller
 
         $images = $dom->getElementsByTagName('img');
 
-        foreach ($images as $img) {
+        foreach ($images as $k => $img) {
             $src = $img->getAttribute('src');
 
             // if the img source is 'data-url'
@@ -173,17 +201,26 @@ class ProductController extends Controller
                 preg_match('/data:image\/(?<mime>.*?)\;/', $src, $groups);
                 $mimetype = $groups['mime'];
 
-                // Generating a random filename
-                $filename = uniqid();
-                $filepath = "public/images/$filename.$mimetype";
+                $data = $img->getAttribute('src');
+                list($type, $data) = explode(';', $data);
 
-                Storage::put($filepath, file_get_contents($src));
+                list(, $data) = explode(',', $data);
 
-                $new_src = asset($filepath);
+                $data = base64_decode($data);
+
+                $uniq = uniqid();
+                $image_name= '/storage/images/' . time() . $uniq . '.' . $mimetype;
+
+                $path = public_path() . $image_name;
+
+                file_put_contents($path, $data);
+
                 $img->removeAttribute('src');
-                $img->setAttribute('src', $new_src);
+
+                $img->setAttribute('src', $image_name);
             }
         }
+
 
         return $dom->saveHTML();
     }
