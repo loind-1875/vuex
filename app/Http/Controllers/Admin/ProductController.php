@@ -179,6 +179,9 @@ class ProductController extends Controller
             return response()->json(['message' => 'Product not found']);
         }
 
+        $product->categories()->detach();
+        $product->productTranslations()->delete();
+
         $product->delete();
 
         return redirect()->route('products.index')->with('success', 'Xóa thành công');
