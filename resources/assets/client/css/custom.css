@@ -1,1 +1,9 @@
 /* Add here all your CSS customizations */
+
+#footer .list.list-icons.list-icons-style-3 li > [class*="fa-"]:first-child {
+    line-height: 15px;
+}
+
+#footer .footer-ribbon {
+    margin: -19px 0 0 0;
+}
