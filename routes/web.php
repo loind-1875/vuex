@@ -21,7 +21,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'admi
     Route::put('settings', 'AdminController@updateSettings')->name('update.setting');
 });
 
-Route::group(['namespace' => 'Client'], function () {
+Route::group(['middleware' => 'locale', 'namespace' => 'Client'], function () {
     Route::get('/', 'ClientController@index');
     Route::get('tin-tuc', 'ClientController@post')->name('client.post');
     Route::get('tuyen-dung', 'ClientController@recruitment')->name('client.recruitment');
@@ -30,6 +30,7 @@ Route::group(['namespace' => 'Client'], function () {
     Route::get('tin-tuc/{slug}', 'ClientController@newsDetail')->name('client.post.detail');
     Route::get('danh-muc/{slug}', 'ClientController@detailCategory')->name('client.category');
     Route::get('san-pham/{slug}', 'ClientController@detailProduct')->name('client.product');
+    Route::get('change-language/{language}', 'ClientController@changeLanguage')->name('client.change_language');
 });
 
 Auth::routes(['register' => false]);

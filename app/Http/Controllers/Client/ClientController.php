@@ -98,4 +98,11 @@ class ClientController extends Controller
             compact('product', 'categories', 'otherProducts')
         );
     }
+
+    public function changeLanguage($language)
+    {
+        \Session::put('website_language', $language);
+
+        return redirect()->back();
+    }
 }

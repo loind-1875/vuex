@@ -217,11 +217,7 @@
         <div class="row pb-3">
             <div class="col-lg-12">
                 <div class="col text-center">
-                    <h2 class="font-weight-semibold text-6 mb-0">Tại sao chọn chúng tôi</h2>
-                    <p class="lead text-4 pt-2 font-weight-normal">
-                        Porto comes with several elements options, it's easy to customize<br>
-                        and create the content of your website's pages.
-                    </p>
+                    <h2 class="font-weight-semibold text-6 mb-0">{{ __('home.choose_me') }}</h2>
                 </div>
                 <div class="featured-boxes featured-boxes-style-3 featured-boxes-flat">
                     <div class="row">
@@ -230,10 +226,11 @@
                                 <div class="box-content box-content-border-0">
                                     <i class="icon-featured far fa-check-square"></i>
                                     <h4 class="font-weight-normal text-5 mt-3">
-                                        Chất lượng Tốt
+                                        {{ __('home.quality') }}
                                     </h4>
                                     <p class="mb-2 mt-2 text-2">
-                                        Tạo ra được những sản phẩm tốt nhất ngay trên đất nước Việt Nam và cho chính người Việt Nam sử dụng.
+                                        Tạo ra được những sản phẩm tốt nhất ngay trên đất nước Việt Nam
+                                        và cho chính người Việt Nam sử dụng.
                                     </p>
                                 </div>
                             </div>
@@ -243,10 +240,10 @@
                                 <div class="box-content box-content-border-0">
                                     <i class="icon-featured fas fa-location-arrow"></i>
                                     <h4 class="font-weight-normal text-5 mt-3">
-                                        Công nghệ
+                                        {{ __('home.technology') }}
                                     </h4>
                                     <p class="mb-2 mt-2 text-2">
-                                        Luôn chú trọng việc học hỏi, áp dụng những cải tiến kĩ thuật công nghệ  mới vào sản phẩm của mình
+                                        {{ __('home.tech_detail') }}
                                     </p>
                                 </div>
                             </div>
@@ -256,11 +253,10 @@
                                 <div class="box-content box-content-border-0">
                                     <i class="icon-featured far fa-heart"></i>
                                     <h4 class="font-weight-normal text-5 mt-3">
-                                        Niềm tin
+                                        {{ __('home.trust') }}
                                     </h4>
                                     <p class="mb-2 mt-2 text-2">
-                                        Với tiêu chí đặt sự an toàn của người tiêu dùng và quyền lợi khách hàng làm kim chỉ nam cho mọi
-                                        chính sách phát triển sản phẩm và dịch vụ của Công ty.
+                                        {{ __('home.trust_detail') }}
                                     </p>
                                 </div>
                             </div>
@@ -269,10 +265,9 @@
                             <div class="featured-box featured-box-secondary featured-box-effect-3">
                                 <div class="box-content box-content-border-0">
                                     <i class="icon-featured fas fa-tools"></i>
-                                    <h4 class="font-weight-normal text-5 mt-3">Bảo hành</h4>
+                                    <h4 class="font-weight-normal text-5 mt-3">{{ __('home.warranty') }}</h4>
                                     <p class="mb-2 mt-2 text-2">
-                                        Bộ phận bảo hành luôn sẵn sàng tiếp nhận mọi thắc mắc, vấn đề khách hàng  gặp phải trong suốt
-                                        quá trình đồng hành và sử dụng sản phẩm của H.F.T
+                                        {{ __('home.warranty_detail') }}
                                     </p>
                                 </div>
                             </div>
@@ -281,7 +276,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 
     <section class="section section-default border-0 appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="750">
@@ -300,31 +294,22 @@
                 </div>
                 <div class="col-md-6">
                     <div class="overflow-hidden mb-2">
-                        <h2 class="text-color-dark font-weight-normal text-5 mb-0 pt-0 mt-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="1200">
-                            Về Chúng tôi
+                        <h2 class="text-color-dark text-center font-weight-normal text-5 mb-0 pt-0 mt-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="1200">
+                            {{ __('home.about_us') }}
                         </h2>
                     </div>
                     <p class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1400">
-                        <strong>Công ty TNHH Thương Mại Và Dịch Vụ Hóa Chất H.F.T</strong>
-                        được thành lập vào ngày 15/01/2008. Trải qua hơn 10 năm hoạt động,
-                        phát triển trong lĩnh vực hóa chất và sản xuất, lắp ráp động cơ xe đạp điện,
-                        xe máy điện,  H.F.T đã vạch ra cho mình hướng đi đồng điệu với nhu cầu phát
-                        triển của hầu hết các Quốc gia trên thế giới.
+                        <strong>{{ __('home.company.name') }}</strong>
+                        {{ __('home.company.detail1') }}
                     </p>
                     <p class="mb-0 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1600">
-                        <strong>H.F.T </strong>tự hào là một trong những đơn vị sản xuất động cơ xe máy điện,
-                        xe đạp điện tốt nhất trên thị trường hiện nay, góp phần bảo vệ môi trường
-                        sống cho thế hệ con em trong tương lai cũng như sát cánh cùng những doanh
-                        nghiệp sản xuất xe điện phát triển bền vững và lớn mạnh không ngừng.
+                        {{ __('home.company.detail2') }}
                     </p>
-                    <p class="mb-0 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1800">
-                        Trong lĩnh vực hóa chất, <strong>H.F.T</strong> chuyên cung cấp các loại phụ gia cho ngành
-                        sản xuất sơn như: Sơn sàn, sơn tàu biển, sơn ô tô, sơn trên kính,...
-                        và phục vụ cho một số ngành như sản xuất mực in, da giày, cao su,…
+                    <p class="mb-0 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1600">
+                        {{ __('home.company.detail3') }}
                     </p>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -332,16 +317,13 @@
         <div class="row">
             <div class="col">
                 <div class="col text-center">
-                    <h2 class="font-weight-semibold text-6 mb-0">Động cơ bán chạy</h2>
-                    <p class="lead text-4 pt-2 font-weight-normal">
-                        Porto comes with several elements options, it's easy to customize<br>
-                        and create the content of your website's pages.
-                    </p>
+                    <h2 class="font-weight-semibold text-6 mb-0"> {{ __('home.engine') }}</h2>
+                    <p class="lead text-4 pt-2 font-weight-normal"></p>
                 </div>
                 <div class="masonry-loader masonry-loader-loaded">
                     <div class="row products product-thumb-info-list">
                         <div class="owl-carousel owl-theme manual" id="carousel">
-                            
+
                             <div class="product">
                                 <span class="product-thumb-info border-0">
                                     <a href="shop-product-sidebar-left.html">
@@ -411,16 +393,13 @@
         <div class="row">
             <div class="col">
                 <div class="col text-center">
-                    <h2 class="font-weight-semibold text-6 mb-0">Hóa chất bán chạy</h2>
-                    <p class="lead text-4 pt-2 font-weight-normal">
-                        Porto comes with several elements options, it's easy to customize<br>
-                        and create the content of your website's pages.
-                    </p>
+                    <h2 class="font-weight-semibold text-6 mb-0">{{ __('home.chemistry') }}</h2>
+                    <p class="lead text-4 pt-2 font-weight-normal"></p>
                 </div>
                 <div class="masonry-loader masonry-loader-loaded">
                     <div class="row products product-thumb-info-list">
                         <div class="owl-carousel owl-theme manual dots-morphing" id="carousel2">
-                            
+
                             <div class="product">
                                 <span class="product-thumb-info border-0">
                                     <a href="shop-product-sidebar-left.html">
@@ -483,20 +462,15 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
 
     <section class="section appear-animation" data-appear-animation="fadeInUpShorter">
-            
+
             <div class="container">
                 <div class="col text-center">
-                    <h2 class="font-weight-semibold text-6 mb-0">Tin tức mới</h2>
-                    <p class="lead text-4 pt-2 font-weight-normal">
-                        Porto comes with several elements options, it's easy to customize<br>
-                        and create the content of your website's pages.
-                    </p>
+                    <h2 class="font-weight-semibold text-6 mb-0">{{ __('home.news') }}</h2>
                 </div>
                 <div class="row mt-5 appear-animation" data-appear-animation="fadeInUpShorter">
                     <div class="col-lg-4 mb-4">

@@ -15,10 +15,40 @@
                     <div class="header-row pt-3">
                         <nav class="header-nav-top">
                             <ul class="nav nav-pills">
-                                <li class="nav-item nav-item-left-border nav-item-left-border-remove nav-item-left-border-md-show">
-                                    <span class="ws-nowrap">
-                                        <i class="fas fa-phone"></i> 0123.728.1293
-                                    </span>
+                                <li class="nav-item dropdown nav-item-left-border d-none d-sm-block nav-item-left-border-remove nav-item-left-border-md-show">
+                                    @if (Session::get('website_language') === 'vn')
+                                        <a class="nav-link" href="#" role="button" id="dropdownLanguage" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <img src="img/blank.gif" class="flag flag-vn" alt="Việt Nam" />
+                                            Việt Nam
+                                            <i class="fas fa-angle-down"></i>
+                                        </a>
+                                    @elseif (Session::get('website_language') === 'en')
+                                        <a class="nav-link" href="#" role="button" id="dropdownLanguage" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <img src="img/blank.gif" class="flag flag-us" alt="English" />
+                                            English
+                                            <i class="fas fa-angle-down"></i>
+                                        </a>
+                                    @else
+                                        <a class="nav-link" href="#" role="button" id="dropdownLanguage" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <img src="img/blank.gif" class="flag flag-cn" alt="China" />
+                                            China
+                                            <i class="fas fa-angle-down"></i>
+                                        </a>
+                                    @endif
+                                    <div class="dropdown-menu" aria-labelledby="dropdownLanguage">
+                                        <a class="dropdown-item" href="{!! route('client.change_language', ['vn']) !!}">
+                                            <img src="img/blank.gif" class="flag flag-vn" alt="Việt Nam" />
+                                            Việt Nam
+                                        </a>
+                                        <a class="dropdown-item" href="{!! route('client.change_language', ['en']) !!}">
+                                            <img src="img/blank.gif" class="flag flag-us" alt="English" />
+                                            English
+                                        </a>
+                                        <a class="dropdown-item" href="{!! route('client.change_language', ['cn']) !!}">
+                                            <img src="img/blank.gif" class="flag flag-cn" alt="China" />
+                                            China
+                                        </a>
+                                    </div>
                                 </li>
                             </ul>
                         </nav>
@@ -47,47 +77,42 @@
                                     <ul class="nav nav-pills" id="mainNav">
                                         <li class="dropdown">
                                             <a class="dropdown-item dropdown-toggle active" href="index.html">
-                                                Trang chủ
+                                                {{ __('home.header.home') }}
                                             </a>
                                         </li>
                                         <li class="dropdown dropdown-mega">
                                             <a class="dropdown-item dropdown-toggle" href="elements.html">
-                                                Giới thiệu
+                                                {{ __('home.header.about') }}
                                             </a>
                                         </li>
                                         <li class="dropdown dropdown-mega">
                                             <a class="dropdown-item dropdown-toggle" href="elements.html">
-                                                Hóa chất
+                                                {{ __('home.header.chemistry') }}
                                             </a>
                                         </li>
                                         <li class="dropdown dropdown-mega">
                                             <a class="dropdown-item dropdown-toggle" href="elements.html">
-                                                Động cơ
+                                                {{ __('home.header.engine') }}
                                             </a>
                                         </li>
                                         <li class="dropdown dropdown-mega">
                                             <a class="dropdown-item dropdown-toggle" href="elements.html">
-                                                Tuyển dụng
+                                                {{ __('home.header.recruitment') }}
                                             </a>
                                         </li>
                                         <li class="dropdown dropdown-mega">
                                             <a class="dropdown-item dropdown-toggle" href="elements.html">
-                                                Tin tức
+                                                {{ __('home.header.news') }}
                                             </a>
                                         </li>
                                         <li class="dropdown dropdown-mega">
                                             <a class="dropdown-item dropdown-toggle" href="elements.html">
-                                                Liên hệ
+                                                {{ __('home.header.contact') }}
                                             </a>
                                         </li>
                                     </ul>
                                 </nav>
                             </div>
-                            <ul class="header-social-icons social-icons d-none d-sm-block">
-                                <li class="social-icons-facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                                <li class="social-icons-twitter"><a href="http://www.twitter.com/" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a></li>
-                                <li class="social-icons-linkedin"><a href="http://www.linkedin.com/" target="_blank" title="Linkedin"><i class="fab fa-linkedin-in"></i></a></li>
-                            </ul>
                             <button class="btn header-btn-collapse-nav" data-toggle="collapse" data-target=".header-nav-main nav">
                                 <i class="fas fa-bars"></i>
                             </button>

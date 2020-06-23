@@ -1,42 +1,34 @@
 <footer id="footer" class="m-0">
     <div class="container">
         <div class="footer-ribbon">
-            <span>Get in Touch</span>
+            <span>{{ __('home.contact') }}</span>
         </div>
         <div class="row py-5">
             <div class="col-lg-3 appear-animation animated fadeIn appear-animation-visible" data-appear-animation="fadeIn" data-appear-animation-delay="800" data-plugin-options="{'accY': -200}" style="animation-delay: 800ms;">
-                <h4>Văn phòng Hà Nội</h4>
+                <h4>{{ __('home.footer.hanoi') }}</h4>
                 <ul class="list list-icons list-icons-style-3">
                     <li>
                         <i class="fas fa-map-marker-alt top-6"></i>
-                        <strong>Địa chỉ:</strong> Phòng 1006, tòa nhà hỗn hợp sông Đà, 131 Trần Phú, Văn Quán, Hà Đông, Hà Nội
+                        <strong>{{ __('home.footer.office_address') }}:</strong>
+                        {{ __('home.footer.office_address_detail') }}
                     </li>
                     <li>
                         <i class="fas fa-phone top-6"></i>
-                        <strong>Phone:</strong> (+84) 024.33542250
-                    </li>
-                    <li>
-                        <i class="fas fa-envelope top-6"></i>
-                        <strong>Email:</strong>
-                        <a href="mailto:mail@example.com">mail@example.com</a>
+                        <strong>{{ __('home.footer.tel') }}:</strong> (+84) 024.33542250
                     </li>
                 </ul>
             </div>
             <div class="col-lg-3 appear-animation animated fadeIn appear-animation-visible" data-appear-animation="fadeIn" data-appear-animation-delay="1000" data-plugin-options="{'accY': -200}" style="animation-delay: 1000ms;">
-                <h4>Văn phòng Hồ Chí Minh </h4>
+                <h4>{{ __('home.footer.hcm') }}</h4>
                 <ul class="list list-icons list-icons-style-3">
                     <li>
                         <i class="fas fa-map-marker-alt top-6"></i>
-                        <strong>Địa chỉ:</strong> 1Số 111/8/2/72 đường Trục, phường 13, quận Bình Thạnh, Hồ Chí Minh
+                        <strong>{{ __('home.footer.office_address') }}:</strong>
+                        {{ __('home.footer.office_address_detail2') }}
                     </li>
                     <li>
                         <i class="fas fa-phone top-6"></i>
-                        <strong>Phone:</strong> (+84) 028.35533922
-                    </li>
-                    <li>
-                        <i class="fas fa-envelope top-6"></i>
-                        <strong>Email:</strong>
-                        <a href="mailto:mail@example.com">mail@example.com</a>
+                        <strong>{{ __('home.footer.tel') }}:</strong> (+84) 028.35533922
                     </li>
                 </ul>
             </div>
@@ -57,9 +49,11 @@
             <div class="col-md-6 col-lg-3 appear-animation animated fadeIn appear-animation-visible" data-appear-animation="fadeIn" data-appear-animation-delay="1400" data-plugin-options="{'accY': -200}" style="animation-delay: 1400ms;">
                 <h5 class="text-3 mb-3">FOLLOW US</h5>
                 <ul class="social-icons">
-                    <li class="social-icons-facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                    <li class="social-icons-twitter"><a href="http://www.twitter.com/" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a></li>
-                    <li class="social-icons-linkedin"><a href="http://www.linkedin.com/" target="_blank" title="Linkedin"><i class="fab fa-linkedin-in"></i></a></li>
+                    <li class="social-icons-facebook">
+                        <a href="https://www.facebook.com/hongphucthang/" target="_blank" title="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
