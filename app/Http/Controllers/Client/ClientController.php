@@ -14,7 +14,15 @@ class ClientController extends Controller
     {
         $news = Post::where('is_recruitment', 0)->take(3)->latest()->get();
 
-        return view('client.client', compact('news'));
+        $engine = Category::with(['products' => function($q) {
+            $q->take(6)->latest();
+        }])->where('id', 2)->first();
+
+        $chemistry = Category::with(['products' => function($q) {
+            $q->take(6)->latest();
+        }])->where('id', 1)->first();
+
+        return view('client.client', compact('news', 'chemistry', 'engine'));
     }
 
     public function news()
@@ -59,7 +67,7 @@ class ClientController extends Controller
 
     public function getCategories()
     {
-        $categories = Category::where('parent_id', null)->with('children.children')->get();
+        $categories = Category::all();
 
         return $categories;
     }
@@ -91,11 +99,15 @@ class ClientController extends Controller
         }
         $categories = $this->getCategories();
 
-        $otherProducts = Product::where('id', '!=', $id)->take(8)->get();
+        $engine = Category::find(2);
+
+        $chemistry = Category::find(1);
+
+        $otherProducts = Product::where('id', '!=', $id)->take(4)->get();
 
         return view(
             'client.product-detail',
-            compact('product', 'categories', 'otherProducts')
+            compact('product', 'categories', 'otherProducts', 'chemistry', 'engine')
         );
     }
 

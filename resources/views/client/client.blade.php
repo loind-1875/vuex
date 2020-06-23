@@ -1,5 +1,9 @@
 @extends('client.layout.main')
 
+@section('title')
+    {{ __('home.company.name') }}
+@endsection
+
 @section('content')
     <div class="slider-container rev_slider_wrapper" style="height: 670px;">
         <div id="revolutionSlider" class="slider rev_slider" data-version="5.4.8" data-plugin-revolution-slider data-plugin-options="{'delay': 9000, 'gridwidth': 1170, 'gridheight': 670, 'disableProgressBar': 'on', 'responsiveLevels': [4096,1200,992,500], 'parallax': { 'type': 'scroll', 'origo': 'enterpoint', 'speed': 1000, 'levels': [2,3,4,5,6,7,8,9,12,50], 'disable_onmobile': 'on' }, 'navigation' : {'arrows': { 'enable': true }, 'bullets': {'enable': true, 'style': 'bullets-style-1', 'h_align': 'center', 'v_align': 'bottom', 'space': 7, 'v_offset': 70, 'h_offset': 0}}}">
@@ -323,66 +327,22 @@
                 <div class="masonry-loader masonry-loader-loaded">
                     <div class="row products product-thumb-info-list">
                         <div class="owl-carousel owl-theme manual" id="carousel">
-
-                            <div class="product">
-                                <span class="product-thumb-info border-0">
-                                    <a href="shop-product-sidebar-left.html">
-                                        <span class="product-thumb-info-image">
-                                            <img alt="" class="img-fluid" src="img/projects/project-34.jpg">
-                                        </span>
-                                    </a>
-                                    <span class="product-thumb-info-content product-thumb-info-content pl-0 bg-color-light">
-                                        <a href="shop-product-sidebar-left.html">
-                                            <h4 class="text-4 text-primary text-center">Photo Camera</h4>
+                            @foreach ($engine->products as $item)
+                                <div class="product">
+                                    <span class="product-thumb-info border-0">
+                                        <a href="{{ route('client.product', parseLink($item)) }}">
+                                            <span class="product-thumb-info-image">
+                                                <img alt="" class="img-fluid" src="{{ getImage($item->image) }}">
+                                            </span>
                                         </a>
-                                    </span>
-                                </span>
-                            </div>
-
-                            <div class="product">
-                                <span class="product-thumb-info border-0">
-                                    <a href="shop-product-sidebar-left.html">
-                                        <span class="product-thumb-info-image">
-                                            <img alt="" class="img-fluid" src="img/projects/project-34.jpg">
+                                        <span class="product-thumb-info-content product-thumb-info-content pl-0 bg-color-light">
+                                            <a href="{{ route('client.product', parseLink($item)) }}">
+                                                <h4 class="text-4 text-primary text-center">{{ $item->name }}</h4>
+                                            </a>
                                         </span>
-                                    </a>
-                                    <span class="product-thumb-info-content product-thumb-info-content pl-0 bg-color-light">
-                                        <a href="shop-product-sidebar-left.html">
-                                            <h4 class="text-4 text-primary text-center">Photo Camera</h4>
-                                        </a>
                                     </span>
-                                </span>
-                            </div>
-
-                            <div class="product">
-                                <span class="product-thumb-info border-0">
-                                    <a href="shop-product-sidebar-left.html">
-                                        <span class="product-thumb-info-image">
-                                            <img alt="" class="img-fluid" src="img/projects/project-34.jpg">
-                                        </span>
-                                    </a>
-                                    <span class="product-thumb-info-content product-thumb-info-content pl-0 bg-color-light">
-                                        <a href="shop-product-sidebar-left.html">
-                                            <h4 class="text-4 text-primary text-center">Photo Camera</h4>
-                                        </a>
-                                    </span>
-                                </span>
-                            </div>
-
-                            <div class="product">
-                                <span class="product-thumb-info border-0">
-                                    <a href="shop-product-sidebar-left.html">
-                                        <span class="product-thumb-info-image">
-                                            <img alt="" class="img-fluid" src="img/projects/project-34.jpg">
-                                        </span>
-                                    </a>
-                                    <span class="product-thumb-info-content product-thumb-info-content pl-0 bg-color-light">
-                                        <a href="shop-product-sidebar-left.html">
-                                            <h4 class="text-4 text-primary text-center">Photo Camera</h4>
-                                        </a>
-                                    </span>
-                                </span>
-                            </div>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -399,66 +359,22 @@
                 <div class="masonry-loader masonry-loader-loaded">
                     <div class="row products product-thumb-info-list">
                         <div class="owl-carousel owl-theme manual dots-morphing" id="carousel2">
-
-                            <div class="product">
-                                <span class="product-thumb-info border-0">
-                                    <a href="shop-product-sidebar-left.html">
-                                        <span class="product-thumb-info-image">
-                                            <img alt="" class="img-fluid" src="img/projects/project-34.jpg">
-                                        </span>
-                                    </a>
-                                    <span class="product-thumb-info-content product-thumb-info-content pl-0 bg-color-light">
-                                        <a href="shop-product-sidebar-left.html">
-                                            <h4 class="text-4 text-primary text-center">Photo Camera</h4>
+                            @foreach ($chemistry->products as $ches)
+                                <div class="product">
+                                    <span class="product-thumb-info border-0">
+                                        <a href="{{ route('client.product', parseLink($ches)) }}">
+                                            <span class="product-thumb-info-image">
+                                                <img alt="" class="img-fluid" src="{{ getImage($ches->image) }}">
+                                            </span>
                                         </a>
-                                    </span>
-                                </span>
-                            </div>
-
-                            <div class="product">
-                                <span class="product-thumb-info border-0">
-                                    <a href="shop-product-sidebar-left.html">
-                                        <span class="product-thumb-info-image">
-                                            <img alt="" class="img-fluid" src="img/projects/project-34.jpg">
+                                        <span class="product-thumb-info-content product-thumb-info-content pl-0 bg-color-light">
+                                            <a href="{{ route('client.product', parseLink($ches)) }}">
+                                                <h4 class="text-4 text-primary text-center">{{ $ches->name }}</h4>
+                                            </a>
                                         </span>
-                                    </a>
-                                    <span class="product-thumb-info-content product-thumb-info-content pl-0 bg-color-light">
-                                        <a href="shop-product-sidebar-left.html">
-                                            <h4 class="text-4 text-primary text-center">Photo Camera</h4>
-                                        </a>
                                     </span>
-                                </span>
-                            </div>
-
-                            <div class="product">
-                                <span class="product-thumb-info border-0">
-                                    <a href="shop-product-sidebar-left.html">
-                                        <span class="product-thumb-info-image">
-                                            <img alt="" class="img-fluid" src="img/projects/project-34.jpg">
-                                        </span>
-                                    </a>
-                                    <span class="product-thumb-info-content product-thumb-info-content pl-0 bg-color-light">
-                                        <a href="shop-product-sidebar-left.html">
-                                            <h4 class="text-4 text-primary text-center">Photo Camera</h4>
-                                        </a>
-                                    </span>
-                                </span>
-                            </div>
-
-                            <div class="product">
-                                <span class="product-thumb-info border-0">
-                                    <a href="shop-product-sidebar-left.html">
-                                        <span class="product-thumb-info-image">
-                                            <img alt="" class="img-fluid" src="img/projects/project-34.jpg">
-                                        </span>
-                                    </a>
-                                    <span class="product-thumb-info-content product-thumb-info-content pl-0 bg-color-light">
-                                        <a href="shop-product-sidebar-left.html">
-                                            <h4 class="text-4 text-primary text-center">Photo Camera</h4>
-                                        </a>
-                                    </span>
-                                </span>
-                            </div>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -468,77 +384,37 @@
 
     <section class="section appear-animation" data-appear-animation="fadeInUpShorter">
 
+        <section class=" appear-animation" data-appear-animation="fadeInUpShorter">
+            
             <div class="container">
                 <div class="col text-center">
                     <h2 class="font-weight-semibold text-6 mb-0">{{ __('home.news') }}</h2>
                 </div>
                 <div class="row mt-5 appear-animation" data-appear-animation="fadeInUpShorter">
-                    <div class="col-lg-4 mb-4">
-                        <article class="post post-large pb-5">
-                            <div class="post-image">
-                                <a href="blog-post.html">
-                                    <img src="img/blog/medium/blog-11.jpg" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="">
-                                </a>
-                            </div>
-                            <div class="post-date">
-                                <span class="day">15</span>
-                                <span class="month">Jan</span>
-                            </div>
-                            <div class="post-content">
-                                <h4>
-                                    <a href="blog-post.html" class="text-decoration-none">This is a stardard post with preview image</a>
-                                </h4>
-                                <p class="mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur aliquam nisi ultricies nisi luctus, sed fermentum.</p>
-                                <a href="blog-post.html" class="btn btn-light text-uppercase text-primary text-1 py-2 px-3 mb-1 mt-2">
-                                    <strong>READ MORE</strong><i class="fas fa-chevron-right text-2 pl-2"></i>
-                                </a>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-lg-4 mb-4">
-                        <article class="post post-large pb-5">
-                            <div class="post-image">
-                                <a href="blog-post.html">
-                                    <img src="img/blog/medium/blog-11.jpg" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="">
-                                </a>
-                            </div>
-                            <div class="post-date">
-                                <span class="day">15</span>
-                                <span class="month">Jan</span>
-                            </div>
-                            <div class="post-content">
-                                <h4>
-                                    <a href="blog-post.html" class="text-decoration-none">This is a stardard post with preview image</a>
-                                </h4>
-                                <p class="mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur aliquam nisi ultricies nisi luctus, sed fermentum.</p>
-                                <a href="blog-post.html" class="btn btn-light text-uppercase text-primary text-1 py-2 px-3 mb-1 mt-2">
-                                    <strong>READ MORE</strong><i class="fas fa-chevron-right text-2 pl-2"></i>
-                                </a>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-lg-4 mb-4">
-                        <article class="post post-large pb-5">
-                            <div class="post-image">
-                                <a href="blog-post.html">
-                                    <img src="img/blog/medium/blog-11.jpg" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="">
-                                </a>
-                            </div>
-                            <div class="post-date">
-                                <span class="day">15</span>
-                                <span class="month">Jan</span>
-                            </div>
-                            <div class="post-content">
-                                <h4>
-                                    <a href="blog-post.html" class="text-decoration-none">This is a stardard post with preview image</a>
-                                </h4>
-                                <p class="mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur aliquam nisi ultricies nisi luctus, sed fermentum.</p>
-                                <a href="blog-post.html" class="btn btn-light text-uppercase text-primary text-1 py-2 px-3 mb-1 mt-2">
-                                    <strong>READ MORE</strong><i class="fas fa-chevron-right text-2 pl-2"></i>
-                                </a>
-                            </div>
-                        </article>
-                    </div>
+                    @foreach ($news as $item)
+                        <div class="col-lg-4 mb-4">
+                            <article class="post post-large pb-5">
+                                <div class="post-image">
+                                    <a href="{{ route('client.post_detail', parseLink($item)) }}">
+                                        <img src="{{ getImage($item->image) }}" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="">
+                                    </a>
+                                </div>
+                                <div class="post-date">
+                                    <span class="day">15</span>
+                                    <span class="month">Jan</span>
+                                </div>
+                                <div class="post-content">
+                                    <h4>
+                                        <a href="{{ route('client.post_detail', parseLink($item)) }}" class="text-decoration-none">{{ $item->title }}</a>
+                                    </h4>
+                                    <p class="mb-1">{{ $item->short_detail }}</p>
+                                    <a href="{{ route('client.post_detail', parseLink($item)) }}" class="btn btn-light text-uppercase text-primary text-1 py-2 px-3 mb-1 mt-2">
+                                        <strong>READ MORE</strong><i class="fas fa-chevron-right text-2 pl-2"></i>
+                                    </a>
+                                </div>
+                            </article>
+                        </div>
+                    @endforeach
                 </div>
             </div>
 

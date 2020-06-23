@@ -31,7 +31,7 @@ return [
         'office_address_detail2' => '324 Binh Loi, Ward 13, Binh Thanh District, Ho Chi Minh City, Vietnam.',
     ],
     'header' => [
-        'home' => 'Trang chủ',
+        'home' => 'Home',
         'about' => 'About us',
         'chemistry' => 'Chemistry',
         'engine' => 'Engine',

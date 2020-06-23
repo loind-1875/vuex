@@ -27,7 +27,7 @@ Route::group(['middleware' => 'locale', 'namespace' => 'Client'], function () {
     Route::get('tuyen-dung', 'ClientController@recruitment')->name('client.recruitment');
     Route::get('lien-he', 'ClientController@contact')->name('client.contact');
     Route::get('bao-hanh', 'ClientController@guarantee')->name('client.guarantee');
-    Route::get('tin-tuc/{slug}', 'ClientController@newsDetail')->name('client.post.detail');
+    Route::get('tin-tuc/{slug}', 'ClientController@newsDetail')->name('client.post_detail');
     Route::get('danh-muc/{slug}', 'ClientController@detailCategory')->name('client.category');
     Route::get('san-pham/{slug}', 'ClientController@detailProduct')->name('client.product');
     Route::get('change-language/{language}', 'ClientController@changeLanguage')->name('client.change_language');

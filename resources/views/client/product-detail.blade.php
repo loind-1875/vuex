@@ -5,176 +5,156 @@
 @endsection
 
 @section('content')
-    <section class="banner-page wow fadeInUp" data-wow-duration="1.6s"
-             style="background-image: url({{ getImageOther('banner-gt.jpg') }});">
-        <div class="container">
-            <div class="wp-tt-bread-page">
-                <h2 class="title-page">{{ $product->name }}</h2>
-                <div class="wp-bread-page">
-                    <div class="bread-page">
-                        <ul>
-                            <li><a href="/">Trang chủ</a></li>
-                            <li>Sản phẩm</li>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <aside class="sidebar">
+                    <h5 class="font-weight-bold pt-3">Categories</h5>
+                        <ul class="nav nav-list flex-column">
+                            <li class="nav-item"><a class="nav-link" href="#">Arts & Crafts</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Automotive</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Baby</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Books</a></li>
+                        </ul>
+                <div class="row mb-5">
+                    <div class="col">
+                        <h5 class="font-weight-bold pt-5">Top Rated Products</h5>
+                        <ul class="simple-post-list">
+                            <li>
+                                <div class="post-image">
+                                    <div class="d-block">
+                                        <a href="shop-product-sidebar-left.html">
+                                            <img alt="" width="60" height="60" class="img-fluid" src="img/products/product-grey-1.jpg">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="post-info">
+                                    <a href="shop-product-sidebar-left.html">Photo Camera</a>
+                                    <div class="post-meta text-dark font-weight-semibold">
+                                        $299
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post-image">
+                                    <div class="d-block">
+                                        <a href="shop-product-sidebar-left.html">
+                                            <img alt="" width="60" height="60" class="img-fluid" src="img/products/product-grey-4.jpg">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="post-info">
+                                    <a href="shop-product-sidebar-left.html">Luxury bag</a>
+                                    <div class="post-meta text-dark font-weight-semibold">
+                                        $199
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post-image">
+                                    <div class="d-block">
+                                        <a href="shop-product-sidebar-left.html">
+                                            <img alt="" width="60" height="60" class="img-fluid" src="img/products/product-grey-8.jpg">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="post-info">
+                                    <a href="shop-product-sidebar-left.html">Military Rucksack</a>
+                                    <div class="post-meta text-dark font-weight-semibold">
+                                        $49
+                                    </div>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </div>
+                </aside>
             </div>
-        </div>
-    </section>
+            <div class="col-lg-9">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="owl-carousel owl-theme" data-plugin-options="{'items': 1, 'margin': 10}">
+                            <div>
+                                <img alt="" height="300" class="img-fluid" src="{{ getImage($product->image) }}">
+                            </div>
+                        </div>
+                    </div>
 
-    <section class="content-chitiet-sp content-page content-tintuc pd-40">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-9 col-sm-12 col-xs-12">
-                    <div class="wp-content-ctsp">
-                        <div class="row row-edit-ctsp">
-                            <div class="col-md-6 col-sm-12 col-xs-12">
-                                <input type="hidden" id="__VIEWxSTATE"/>
-                                <ul id='zoom1' class='gc-start'>
-                                    <li>
-                                        <img src="{{ getImage($product->image) }}" alt="{{ $product->name }}"/>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-md-6 col-sm-12 col-xs-12">
-                                <div class="wp-text-ctsp1">
-                                    <h1>{{ $product->name }}</h1>
-                                    <p>{{ $product->name }}</p>
+                    <div class="col-lg-6">
+                        <div class="summary entry-summary">
+                            <h1 class="mb-0 font-weight-bold text-7">{{ $product->name }}</h1>
+
+                            <div class="pb-0 clearfix">
+                                <div title="Rated 3 out of 5" class="float-left">
+                                    <input type="text" class="d-none" value="3" title="" data-plugin-star-rating data-plugin-options="{'displayOnly': true, 'color': 'primary', 'size':'xs'}">
                                 </div>
                             </div>
+
+                            <p class="mb-5">{{ $product->detail }} </p>
+
+                            <div class="product-meta">
+                                <span class="posted-in">Categories: <a rel="tag" href="#">Accessories</a>, <a rel="tag" href="#">Bags</a>.</span>
+                            </div>
+
                         </div>
-                        </div>
-                        <div class="wp-mota-ctsp">
-                            <div class="tt-ctsp-002">
-                                <h4>Chi tiết sản phẩm</h4>
-                            </div>
-                            <div class="text-ctsp-d">
-                                <p>{!! $product->detail !!}</p>
-                            </div>
-                        </div>
-                        <div class="sp-khac-ctsp">
-                            <div class="tt-ctsp-002">
-                                <h4>Sản phẩm khác</h4>
-                            </div>
-                            <div class="wp-list-cpkhac">
-                                <div id="sl-spkhac" class="owl-carousel owl-theme">
-                                    @foreach($otherProducts as $other)
-                                        <div class="item">
-                                            <div class="wp-item-sl-spkhac">
-                                                <div class="item-sl-spkhac">
-                                                    <div class="wp-sp wp-sp-danhmuc">
-                                                        <div class="wp-img-sp">
-                                                            <a href="{{ route('client.product', parseLink($other)) }}">
-                                                                <img src="{{ getImage($other->image) }}" alt="{{ $other->name }}" >
-                                                            </a>
-                                                        </div>
-                                                        <div class="text-sp">
-                                                            <h4 class="ten-sp">
-                                                                <a href="{{ route('client.product', parseLink($other)) }}">{{ $other->name }}</a>
-                                                            </h4>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    @endforeach
-                                </div>
-                            </div>
-                        </div>
-                        <div class="sp-khac-ctsp">
-                            <div class="tt-ctsp-002">
-                                <h4>Sản phẩm đã xem</h4>
-                            </div>
-                            <div class="wp-list-cpkhac">
-                                <div id="sl-spdaxem" class="owl-carousel owl-theme">
-                                    <div class="item">
-                                        <div class="wp-item-sl-spkhac">
-                                            <div class="item-sl-spkhac">
-                                                <div class="wp-sp wp-sp-danhmuc">
-                                                    <div class="wp-img-sp">
-                                                        <a href="cp-a-0975ad.html"> <img src="templates/not-found.png" alt="CP-A 0975AD" > </a>
-                                                    </div>
-                                                    <div class="text-sp">
-                                                        <h4 class="ten-sp"><a href="cp-a-0975ad.html">CP-A 0975AD</a></h4> </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="tabs tabs-product mb-2">
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item active">
+                                    <a class="nav-link py-3 px-4" href="#productDescription" data-toggle="tab">Description</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content p-0">
+                                <div class="tab-pane p-4 active" id="productDescription">
+                                    {{ $product->detail }}
                                 </div>
                             </div>
                         </div>
                     </div>
-            @include('client.layout.side-bar')
                 </div>
+
+                <hr class="solid my-5">
+
+                <h4 class="mb-3">Related <strong>Products</strong></h4>
+                <div class="masonry-loader masonry-loader-showing">
+                    <div class="row products product-thumb-info-list mt-3" data-plugin-masonry data-plugin-options="{'layoutMode': 'fitRows'}">
+                        @foreach ($otherProducts as $pro)
+                        <div class="col-12 col-sm-6 col-lg-3 product">
+                            <span class="product-thumb-info border-0">
+                                <a href="{{ route('client.product', parseLink($pro)) }}">
+                                    <span class="product-thumb-info-image">
+                                        <img alt="" class="img-fluid" src="{{ getImage($pro->image) }} ">
+                                    </span>
+                                </a>
+                                <span class="product-thumb-info-content product-thumb-info-content pl-0 bg-color-light">
+                                    <a href="{{ route('client.product', parseLink($pro)) }}">
+                                        <h4 class="text-4 text-primary">{{ $pro->name }}</h4>
+                                    </a>
+                                </span>
+                            </span>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+
+            </div>
         </div>
-    </section>
+    </div>
 
 @endsection
 
 @section('style')
-    <link rel="stylesheet" href="/client/css/glasscase.css">
     <style>
-        .gc-start img {
-            max-width: 100%;
-        }
-        .wp-text-ctsp1 h1 {
-            text-align: center;
-        }
+
     </style>
 @endsection
 
 @section('script')
-    <script src="/client/js/modernizr.custom.js"></script>
-    <script src="/client/js/jquery.glasscase.js"></script>
-    <script>
-        $(document).ready(function () {
-            $(function () {
-                //ZOOM
-                $("#zoom1").glassCase({
-                    'widthDisplay': 500,
-                    'heightDisplay': 315,
-                    'nrThumbsPerRow': 3,
-                    'isSlowZoom': true,
-                    'colorIcons': '#F15129',
-                    'colorActiveThumb': '#F15129'
-                });
-                <!-- js slider sp đã xem -->
-                    $('#sl-spdaxem').owlCarousel({
-                        loop: false,
-                        margin: 20,
-                        nav:true,
-                        responsive:{
-                            0:{
-                                items:2
-                            },
-                            600:{
-                                items:3
-                            },
-                            1000:{
-                                items:4
-                            }
-                        }
-                    })
-                // <!-- js slider sp khac -->
-                $('#sl-spkhac').owlCarousel({
-                loop: false,
-                margin: 20,
-                nav:true,
-                responsive:{
-                    0:{
-                        items:2
-                    },
-                    600:{
-                        items:3
-                    },
-                    1000:{
-                        items:4
-                    }
-                }
-            })
-                });
-        });
-    </script>
-        }
-    </script>
+
 @endsection
