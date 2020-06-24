@@ -16,15 +16,6 @@ use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
-    protected $mediaController;
-
-    public function __construct(
-        MediaController $mediaController
-    )
-    {
-        $this->mediaController = $mediaController;
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -79,6 +70,7 @@ class ProductController extends Controller
             ProductTranslation::create([
                 'name' => $value['name'],
                 'detail' => $detail,
+                'description' => $value['description'],
                 'locale' => $key,
                 'product_id' => $product->id,
             ]);

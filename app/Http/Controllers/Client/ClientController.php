@@ -27,19 +27,33 @@ class ClientController extends Controller
 
     public function news()
     {
-        $categories = $this->getCategories();
+        $engine = Category::find(2);
 
-        $news = Post::where('is_recruitment', 0)->paginate(15);
+        $chemistry = Category::find(1);
 
-        return view('client.post', compact('news', 'categories'));
+        $news = Post::where('is_recruitment', 0)->latest()->paginate(18);
+
+        return view('client.news', compact('news', 'engine', 'chemistry'));
     }
 
     public function recruitment()
     {
         $categories = $this->getCategories();
-        $recruitments = Post::where('is_recruitment', 1)->paginate(15);
+        $engine = Category::find(2);
+        $chemistry = Category::find(1);
+        $recruitments = Post::where('is_recruitment', 1)->latest()->paginate(10);
+        $random = Post::where('is_recruitment', 1)->inRandomOrder()->get();
 
-        return view('client.recruitment', compact('recruitments', 'categories'));
+        return view(
+            'client.recruitment',
+            compact(
+                'recruitments',
+                'categories',
+                'engine',
+                'chemistry',
+                'random'
+            )
+        );
     }
 
     public function contact()
@@ -55,14 +69,28 @@ class ClientController extends Controller
     public function newsDetail($slug)
     {
         $id = last(explode('-', $slug));
-        $article = Post::find($id);
+        $news = Post::find($id);
         $categories = $this->getCategories();
 
-        if (!$article) {
+        $engine = Category::find(2);
+
+        $chemistry = Category::find(1);
+        $recently = Post::where('is_recruitment', 0)->take(6)->latest()->get();
+
+        if (!$news) {
             abort(Response::HTTP_NOT_FOUND);
         }
 
-        return view('client.post-detail', compact('article', 'categories'));
+        return view(
+            'client.news-detail',
+            compact(
+                'news',
+                'categories',
+                'engine',
+                'chemistry',
+                'recently'
+            )
+        );
     }
 
     public function getCategories()
@@ -76,16 +104,35 @@ class ClientController extends Controller
     {
         $id = last(explode('-', $slug));
 
-        $category = Category::with('children')->find($id);
+        $category = Category::find($id);
 
         if (!$category) {
             abort(Response::HTTP_NOT_FOUND);
         }
 
-        $products = $category->products()->paginate(2);
         $categories = $this->getCategories();
 
-        return view('client.category', compact('products', 'category', 'categories'));
+        $engine = Category::find(2);
+
+        $chemistry = Category::find(1);
+
+        $newProduct = Product::take(3)->latest()->get();
+
+        $products = $category->products()->paginate(24);
+
+        $categories = $this->getCategories();
+
+        return view('
+            client.category',
+            compact(
+                'products',
+                'category',
+                'categories',
+                'engine',
+                'chemistry',
+                'newProduct'
+            )
+        );
     }
 
     public function detailProduct($slug)

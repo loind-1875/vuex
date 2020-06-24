@@ -55,3 +55,24 @@ if (!function_exists('parseLink')) {
         return $item->slug . '-' . $item->id;
     }
 }
+
+if (!function_exists('getMonth')) {
+    function getMonth(\Carbon\Carbon $date)
+    {
+        return strtoupper($date->format('M'));
+    }
+}
+
+if (!function_exists('getDay')) {
+    function getDay(\Carbon\Carbon $date)
+    {
+        return $date->day;
+    }
+}
+
+if (!function_exists('formatDate')) {
+    function formatDate(\Carbon\Carbon $date)
+    {
+        return $date->toDateString();
+    }
+}

@@ -75,6 +75,18 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
+                                    <h4 class="sub-title">Mô tả (VI)</h4>
+                                    <textarea name="vi[short_detail]" id="des" cols="30" rows="10" placeHolder="Nhập mô tả ngắn sản phẩm"  class="form-control">{{ $product->vi->short_detail }}</textarea>
+                                </div>
+                                <div class="col-sm-12 m-b-30">
+                                    <h4 class="sub-title">Mô tả (EN)</h4>
+                                    <textarea name="en[short_detail]" id="" cols="30" rows="10" placeHolder="Nhập mô tả ngắn sản phẩm"  class="form-control">{{ $product->en->short_detail }}</textarea>
+                                </div>
+                                <div class="col-sm-12 m-b-30">
+                                    <h4 class="sub-title">Mô tả (CN)</h4>
+                                    <textarea name="cn[short_detail]" id="" cols="30" rows="10" placeHolder="Nhập mô tả ngắn sản phẩm"  class="form-control">{{ $product->cn->short_detail }}</textarea>
+                                </div>
+                                <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Chi tiết sản phẩm (VI) </h4>
                                     <textarea id="summernote" name="vi[detail]" class="form-control"></textarea>
                                 </div>

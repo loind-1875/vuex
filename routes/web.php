@@ -23,7 +23,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'admi
 
 Route::group(['middleware' => 'locale', 'namespace' => 'Client'], function () {
     Route::get('/', 'ClientController@index');
-    Route::get('tin-tuc', 'ClientController@post')->name('client.post');
+    Route::get('tin-tuc', 'ClientController@news')->name('client.post');
     Route::get('tuyen-dung', 'ClientController@recruitment')->name('client.recruitment');
     Route::get('lien-he', 'ClientController@contact')->name('client.contact');
     Route::get('bao-hanh', 'ClientController@guarantee')->name('client.guarantee');
@@ -35,4 +35,4 @@ Route::group(['middleware' => 'locale', 'namespace' => 'Client'], function () {
 
 Auth::routes(['register' => false]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');

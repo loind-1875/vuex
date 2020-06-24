@@ -10,7 +10,7 @@ class Product extends Model implements TranslatableContract
 {
     use Translatable;
 
-    public $translatedAttributes = ['name', 'detail'];
+    public $translatedAttributes = ['name', 'detail', 'short_detail'];
 
     protected $fillable = [
         'slug',

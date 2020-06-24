@@ -5,145 +5,95 @@
 @endsection
 
 @section('content')
-    <section class="banner-page wow fadeInUp" data-wow-duration="1.6s"
-             style="background-image: url({{ getImageOther('banner-gt.jpg') }});">
         <div class="container">
-            <div class="wp-tt-bread-page">
-                <h2 class="title-page">{{ $category->name }}</h2>
-                <div class="wp-bread-page">
-                    <div class="bread-page">
-                        <ul>
-                            <li><a href="/">Trang chủ</a></li>
-                            <li>{{ $category->name }}</li>
+         <section class="page-header page-header-modern bg-color-light-scale-1 page-header-md">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-12 align-self-center p-static order-2 text-center">
+
+                        <h1 class="text-dark font-weight-bold text-8 mt-4">{{ __('home.category') }}</h1>
+                    </div>
+
+                    <div class="col-md-12 align-self-center order-1">
+
+                        <ul class="breadcrumb d-block text-center">
+                            <li><a href="/">{{ __('home.header.home') }}</a></li>
+                            <li class="active">{{ __('home.category') }}</li>
                         </ul>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <h1 class="hidden">{{ $category->name }}</h1>
-
-    <section class="content-danhsach content-page content-tintuc pd-40">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-9 col-sm-12 col-xs-12 wow fadeInRight" data-wow-duration="1.6s">
-                    <div class="wp-list-danhmuc wp-list-danhsach">
-                        <div class="wp-item-danhmuc-sp wp-list-danhsach-001">
-                            <div class="title-danhmuc-dm">
-                                <h3>{{ $category->name }}</h3>
-                            </div>
-{{--                            <div class="product-filter">--}}
-{{--                                <form action="http://congtyhft.tamphat.edu.vn/tim-kiem-nang-cao.html" method="get" class="form uk-form" id="filterform">--}}
-{{--                                    <div class="uk-grid uk-grid-collapse uk-flex-middle">--}}
-
-{{--                                        <div class="uk-width-xlarge-5-5">--}}
-{{--                                            <div class="uk-grid lib-grid-5">--}}
-{{--                                                <div class="uk-width-small-1-2 uk-width-medium-1-4 uk-width-xlarge-2-10">--}}
-{{--                                                    <select name="cataloguesid" class="form-select uk-width-1-1" id="cataloguesid">--}}
-{{--                                                        <option value="0">[Chọn danh mục]</option>--}}
-{{--                                                        <option value="92" selected="selected">Hóa Chất</option>--}}
-{{--                                                        <option value="107">Carmay Thường</option>--}}
-{{--                                                        <option value="94">Phụ gia sản xuất sơn</option>--}}
-{{--                                                        <option value="112">Phụ gia ổn định bề mặt</option>--}}
-{{--                                                        <option value="108">Carmay Biến Sắc</option>--}}
-{{--                                                        <option value="95">Carmay</option>--}}
-{{--                                                        <option value="102">Phụ gia chống lắng</option>--}}
-{{--                                                        <option value="96">Nhũ Nhôm</option>--}}
-{{--                                                        <option value="99">Bột đồng</option>--}}
-{{--                                                        <option value="97">Bột màu</option>--}}
-{{--                                                        <option value="111">Phụ gia phân tán</option>--}}
-{{--                                                        <option value="98">Màu nhuộm</option>--}}
-{{--                                                        <option value="100">Phụ gia tăng bám dính</option>--}}
-{{--                                                    </select>--}}
-{{--                                                </div>--}}
-{{--                                                <div class="uk-width-small-1-2 uk-width-medium-1-4 uk-width-xlarge-2-10">--}}
-{{--                                                    <select name="attr[]" class="uk-width-1-1 form-select" id="static">--}}
-{{--                                                        <option value="0">Trạng thái</option>--}}
-{{--                                                        <option  value="46">Dung Dịch</option>--}}
-{{--                                                        <option  value="47">Bột</option>--}}
-{{--                                                    </select>--}}
-{{--                                                </div>--}}
-{{--                                                <div class="uk-width-small-1-2 uk-width-medium-1-4 uk-width-xlarge-2-10">--}}
-{{--                                                    <select name="attr[]" class="uk-width-1-1 form-select" id="color">--}}
-{{--                                                        <option value="0">Màu sắc</option>--}}
-{{--                                                        <option  value="48">Màu xanh dương</option>--}}
-{{--                                                        <option  value="49">Màu xanh lá</option>--}}
-{{--                                                        <option  value="50">Màu đỏ</option>--}}
-{{--                                                        <option  value="51">Màu vàng</option>--}}
-{{--                                                        <option  value="52">Màu đen</option>--}}
-{{--                                                        <option  value="60">Màu bạc</option>--}}
-{{--                                                        <option  value="61">Màu tím</option>--}}
-{{--                                                    </select>--}}
-{{--                                                </div>--}}
-{{--                                                <div class="uk-width-small-1-2 uk-width-medium-1-4 uk-width-xlarge-2-10">--}}
-{{--                                                    <select name="attr[]" class="uk-width-1-1 form-select" id="size">--}}
-{{--                                                        <option value="0">Kích thước</option>--}}
-{{--                                                    </select>--}}
-{{--                                                </div>--}}
-{{--                                                <div class="uk-width-small-1-2 uk-width-medium-1-4 uk-width-xlarge-1-10">--}}
-{{--                                                    <input type="submit" value="Tìm kiếm" name="submit" class="btn-submit uk-width-1-1" />--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </form>--}}
-{{--                                <script type="text/javascript">--}}
-{{--                                    $(function(){--}}
-{{--                                        $('#filterform').on('submit',function(){--}}
-{{--                                            var cataloguesid = $('#cataloguesid').val();--}}
-{{--                                            var thuonghieu = $('#static').val();--}}
-{{--                                            var khoanggia = $('#color').val();--}}
-{{--                                            var size = $('#size').val();--}}
-{{--                                            if(cataloguesid == 0 && thuonghieu == 0 && khoanggia == 0&& size == 0) {--}}
-{{--                                                alert('Bạn phải nhập ít nhất 1 thông tin để tìm kiếm');--}}
-{{--                                                return false;--}}
-{{--                                            }--}}
-{{--                                        });--}}
-{{--                                    });--}}
-{{--                                </script>--}}
-{{--                            </div>--}}
-                            <!-- .product-filter -->
-                            <p>{{ $category->description }}</p>
-                            <div class="wp-list-sp-dm wp-list-danhsach">
-                                <div class="row row-edit-dm">
-                                    @if (count($products) > 0)
-                                        @foreach ($products as $product)
-                                        <div class="col-md-3 col-sm-6 col-xs-6">
-                                        <div class="wp-sp wp-sp-danhmuc">
-                                            <div class="wp-img-sp">
-                                                <a href="{{ route('client.product', parseLink($product)) }}">
-                                                    <img src="{{ getImage($product->image) }}" alt="{{ $product->name }}">
-                                                </a>
-                                            </div>
-                                            <div class="text-sp">
-                                                <h4 class="ten-sp">
-                                                    <a href="{{ route('client.product', parseLink($product)) }}">
-                                                        {{ $product->name }}
-                                                    </a>
-                                                </h4>
-                                            </div>
+        </section>
+        <div class="row">
+            <div class="col-lg-3">
+                <aside class="sidebar">
+                    <h5 class="font-weight-bold pt-3">{{ __('home.categories') }}</h5>
+                        <ul class="nav nav-list flex-column">
+                            @foreach ($categories as $category)
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">{{ $category->name }}</a>
+                                </li>
+                            @endforeach
+                        </ul>
+                <div class="row mb-5">
+                    <div class="col">
+                        <h5 class="font-weight-bold pt-5">{{ __('home.new_product') }}</h5>
+                        <ul class="simple-post-list">
+                            @foreach ($newProduct as $pro)
+                                <li>
+                                    <div class="post-image">
+                                        <div class="d-block">
+                                            <a href="{{ route('client.product', parseLink($pro)) }}">
+                                                <img alt="" width="60" height="60" class="img-fluid" src="{{ getImage($pro->image) }}">
+                                            </a>
                                         </div>
                                     </div>
-                                    @endforeach
-                                    @else
-                                        <p class="no-content">Không có sản phẩm nào</p>
-                                    @endif
-                                </div>
-                                <div class="phantrang">
-                                    <div class="pagination">
-                                        {{ $products->links() }}
+                                    <div class="post-info">
+                                        <a href="{{ route('client.product', parseLink($pro)) }}">{{ $pro->name }}</a>
                                     </div>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+                </aside>
+            </div>
+            
+            <div class="col-lg-9">
+                <div class="masonry-loader masonry-loader-showing">
+                    <div class="row products product-thumb-info-list" data-plugin-masonry data-plugin-options="{'layoutMode': 'fitRows'}">
+                        @if (count($products))
+                            @foreach ($products as $product)
+                                <div class="col-sm-6 col-lg-4 product">
+                                    <span class="product-thumb-info border-0">
+                                        <a href="{{ route('client.product', parseLink($product)) }}">
+                                            <span class="product-thumb-info-image">
+                                                <img alt="" class="img-fluid" src="{{ getImage($product->image) }}">
+                                            </span>
+                                        </a>
+                                        <span class="product-thumb-info-content product-thumb-info-content pl-0 bg-color-light">
+                                            <a href="{{ route('client.product', parseLink($product)) }}">
+                                                <h4 class="text-4 text-primary">{{ $product->name }}</h4>
+                                            </a>
+                                        </span>
+                                    </span>
                                 </div>
-                            </div>
+                            @endforeach
+                        @else
+                            <p class="text-center">{{ __('home.no_product') }}</p>
+                        @endif
+                    </div>
+                    <div class="row">
+                        <div class="col mt-4">
+                            {{ $products->links() }}
                         </div>
                     </div>
                 </div>
-                @include('client.layout.side-bar')
             </div>
         </div>
-    </section><!--end-->
+    </div>
 @endsection
 
 @section('style')
-    <link rel="stylesheet" href="/client/css/main.css">
 @endsection

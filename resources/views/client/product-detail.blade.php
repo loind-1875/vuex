@@ -6,10 +6,29 @@
 
 @section('content')
     <div class="container">
+         <section class="page-header page-header-modern bg-color-light-scale-1 page-header-md">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-12 align-self-center p-static order-2 text-center">
+
+                        <h1 class="text-dark font-weight-bold text-8 mt-4">{{ __('home.product_detail') }}</h1>
+                    </div>
+
+                    <div class="col-md-12 align-self-center order-1">
+
+                        <ul class="breadcrumb d-block text-center">
+                            <li><a href="/">{{ __('home.header.home') }}</a></li>
+                            <li class="active">{{ __('home.product') }}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
         <div class="row">
             <div class="col-lg-3">
                 <aside class="sidebar">
-                    <h5 class="font-weight-bold pt-3">Categories</h5>
+                    <h5 class="font-weight-bold pt-3">{{ __('home.categories') }}</h5>
                         <ul class="nav nav-list flex-column">
                             @foreach ($categories as $category)
                                 <li class="nav-item">
@@ -19,7 +38,7 @@
                         </ul>
                 <div class="row mb-5">
                     <div class="col">
-                        <h5 class="font-weight-bold pt-5">Top Rated Products</h5>
+                        <h5 class="font-weight-bold pt-5">{{ __('home.new_product') }}</h5>
                         <ul class="simple-post-list">
                             @foreach ($newProduct as $pro)
                                 <li>
@@ -40,6 +59,7 @@
                 </div>
                 </aside>
             </div>
+
             <div class="col-lg-9">
                 <div class="row">
                     <div class="col-lg-6">
@@ -59,12 +79,14 @@
                                     <input type="text" class="d-none" value="3" title="" data-plugin-star-rating data-plugin-options="{'displayOnly': true, 'color': 'primary', 'size':'xs'}">
                                 </div>
                             </div>
-
+                            <div class="product-meta mt-4">
+                                <p>{{ $product->short_detail }}</p>
+                            </div>
                             <div class="product-meta mt-4">
                                 <span class="posted-in">
-                                    Categories:
+                                    {{ __('home.categories') }}:
                                     @foreach ($product->categories as $cate)
-                                        <a rel="tag" href="#">{{ $cate->name }}</a>,
+                                        <a rel="tag" href="{{ route('client.category', parseLink($cate)) }}">{{ $cate->name }}</a>,
                                     @endforeach
                                 </span>
                             </div>
@@ -80,7 +102,7 @@
                         <div class="tabs tabs-product mb-2">
                             <ul class="nav nav-tabs">
                                 <li class="nav-item active">
-                                    <a class="nav-link py-3 px-4" href="#productDescription" data-toggle="tab">Description</a>
+                                    <a class="nav-link py-3 px-4" href="#productDescription" data-toggle="tab">{{ __('home.detail') }}</a>
                                 </li>
                             </ul>
                             <div class="tab-content p-0">
@@ -94,7 +116,7 @@
 
                 <hr class="solid my-5">
 
-                <h4 class="mb-3">Related <strong>Products</strong></h4>
+                <h4 class="mb-3">{{ __('home.other_product') }}</h4>
                 <div class="masonry-loader masonry-loader-showing">
                     <div class="row products product-thumb-info-list mt-3" data-plugin-masonry data-plugin-options="{'layoutMode': 'fitRows'}">
                         @foreach ($otherProducts as $pro)
@@ -115,7 +137,6 @@
                         @endforeach
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

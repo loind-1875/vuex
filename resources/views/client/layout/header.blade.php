@@ -76,7 +76,7 @@
                                 <nav class="collapse">
                                     <ul class="nav nav-pills" id="mainNav">
                                         <li class="dropdown">
-                                            <a class="dropdown-item dropdown-toggle active" href="index.html">
+                                            <a class="dropdown-item dropdown-toggle active" href="/">
                                                 {{ __('home.header.home') }}
                                             </a>
                                         </li>
@@ -86,27 +86,27 @@
                                             </a>
                                         </li>
                                         <li class="dropdown dropdown-mega">
-                                            <a class="dropdown-item dropdown-toggle" href="elements.html">
+                                            <a class="dropdown-item dropdown-toggle" href="{{ route('client.category', parseLink($chemistry)) }}">
                                                 {{ $chemistry->name }}
                                             </a>
                                         </li>
                                         <li class="dropdown dropdown-mega">
-                                            <a class="dropdown-item dropdown-toggle" href="elements.html">
+                                            <a class="dropdown-item dropdown-toggle" href="{{ route('client.category', parseLink($engine)) }}">
                                                 {{ $engine->name }}
                                             </a>
                                         </li>
                                         <li class="dropdown dropdown-mega">
-                                            <a class="dropdown-item dropdown-toggle" href="elements.html">
+                                            <a class="dropdown-item dropdown-toggle" href="{{ route('client.recruitment') }}">
                                                 {{ __('home.header.recruitment') }}
                                             </a>
                                         </li>
                                         <li class="dropdown dropdown-mega">
-                                            <a class="dropdown-item dropdown-toggle" href="elements.html">
+                                            <a class="dropdown-item dropdown-toggle" href="{{ route('client.post') }}">
                                                 {{ __('home.header.news') }}
                                             </a>
                                         </li>
                                         <li class="dropdown dropdown-mega">
-                                            <a class="dropdown-item dropdown-toggle" href="elements.html">
+                                            <a class="dropdown-item dropdown-toggle" href="{{ route('client.contact') }}">
                                                 {{ __('home.header.contact') }}
                                             </a>
                                         </li>

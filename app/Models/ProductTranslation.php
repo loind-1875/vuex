@@ -11,5 +11,6 @@ class ProductTranslation extends Model
         'detail',
         'locale',
         'product_id',
+        'short_detail',
     ];
 }

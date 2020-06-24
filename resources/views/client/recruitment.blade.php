@@ -1,77 +1,113 @@
 @extends('client.layout.main')
 
 @section('title')
-    Tin tuyển dụng
+    {{ __('home.recruitment') }}
 @endsection
 
 @section('content')
-    <section class="banner-page wow fadeInUp" data-wow-duration="1.6s"
-             style="background-image: url({{ asset(config('media.client.other') . 'banner-gt.jpg') }});">
+    <section class="page-header page-header-modern bg-color-light-scale-1 page-header-md">
         <div class="container">
-            <div class="wp-tt-bread-page">
-                <h2 class="title-page">Tin tuyển dụng</h2>
-
-                <div class="wp-bread-page">
-                    <div class="bread-page">
-                        <ul>
-                            <li><a href="/">Trang chủ</a></li>
-                            <li>Tin tuyển dụng</li>
-                        </ul>
-                    </div>
+            <div class="row">
+                <div class="col-md-12 align-self-center p-static order-2 text-center">
+                    <h1 class="text-dark font-weight-bold text-8 mt-3">{{ __('home.detail_news') }}</h1>
+                </div>
+                <div class="col-md-12 align-self-center order-1">
+                    <ul class="breadcrumb d-block text-center">
+                        <li><a href="/"></a>{{ __('home.header.home') }}</li>
+                        <li class="active">{{ __('home.header.news') }}</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
-
-    <section class="content-page content-tintuc pd-40">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-9 col-sm-12 col-xs-12 wow fadeInRight" data-wow-duration="1.6s">
-
-                    <div class="wp-tintuc-content">
-                        <div class="tt-paget-tt">
-                            <h3>Tin tuyển dụng</h3>
-                        </div>
-                        <div class="wp-list-tintuc-page">
-                            @if (count($recruitments))
-                                @foreach($recruitments as $recruitment)
-                                <div class="wp-item-tt-page">
-                                    <div class="wp-img-ttpage">
-                                        <a href="{{ route('client.post.detail', parseLink($recruitment)) }}">
-                                            <img
-                                                src="{{ getImage($recruitment->image) }}"
-                                                alt="anh tin tuc"
-                                            >
-                                        </a>
-                                    </div>
-                                    <div class="wp-text-ttpage">
-                                        <h4>
-                                            <a href="{{ route('client.post.detail', parseLink($recruitment)) }}">{{ $recruitment->title }}</a>
-                                        </h4>
-
-                                        <p class="date-view">
-                                            <span>{{ getDateCreated($recruitment->created_at) }}</span>
-                                        </p>
-
-                                        <p class="text-ttpage">
-                                            {{ getShortDetail($recruitment->short_detail) }}
-                                        </p>
-                                    </div>
-                                </div>
-                            @endforeach
-                            @else
-                                <p class="no-content">Chưa có tin tuyển dụng nào</p>
-                            @endif
-                        </div>
-                        <div class="phantrang">
-                            {{ $recruitments->links() }}
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-lg-3">
+                <aside class="sidebar">
+                    <div class="tabs tabs-dark mb-4 pb-2">
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item active">
+                                <a class="nav-link show active text-1 font-weight-bold text-uppercase" href="#popularPosts" data-toggle="tab">
+                                    {{ __('home.random') }}
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="popularPosts">
+                                <ul class="simple-post-list">
+                                    @if (count($random))
+                                        @foreach ($random as $n)
+                                        <li>
+                                            <div class="post-image">
+                                                <div class="img-thumbnail img-thumbnail-no-borders d-block">
+                                                    <a href="{{ route('client.post_detail', parseLink($n)) }}">
+                                                        <img src="{{ getImage($n->image) }}" width="50" height="50" alt="">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="post-info">
+                                                <a href="{{ route('client.post_detail', parseLink($n)) }}">
+                                                    {{ $n->title }}
+                                                </a>
+                                                <div class="post-meta">
+                                                    {{ formatDate($n->updated_at) }}
+                                                </div>
+                                            </div>
+                                        </li>
+                                    @endforeach
+                                    @else
+                                        <li><p>{{ __('home.no_data') }}</p></li>
+                                    @endif
+                                </ul>
+                            </div>
                         </div>
                     </div>
+                </aside>
+            </div>
+            <div class="col-lg-9">
+                <div class="blog-posts">
+                    @if (count($recruitments))
+                        @foreach($recruitments as $rec)
+                            <article class="post post-medium">
+                                <div class="row mb-3">
+                                    <div class="col-lg-5">
+                                        <div class="post-image">
+                                            <a href="{{ route('client.post_detail', parseLink($rec)) }}">
+                                                <img src="{{ getImage($rec->image) }}" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="{{ $rec->title }}" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7">
+                                        <div class="post-content">
+                                            <h2 class="font-weight-semibold pt-4 pt-lg-0 text-5 line-height-4 mb-2">
+                                                <a href="{{ route('client.post_detail', parseLink($rec)) }}">{{ $rec->title }}</a>
+                                            </h2>
+                                            <p class="mb-0">
+                                                {{ $rec->short_detail }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="post-meta">
+                                            <span><i class="far fa-calendar-alt"></i> {{ formatDate($rec->updated_at) }}</span>
+                                            <span class="d-block d-sm-inline-block float-sm-right mt-3 mt-sm-0">
+                                                <a href="{{ route('client.post_detail', parseLink($rec)) }}" class="btn btn-xs btn-light text-1 text-uppercase"></a>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        @endforeach
+                            <div class="page-link mt-4 mb-4">
+                                {{ $recruitments->links() }}
+                            </div>
+                    @else
+                    <p class="text-center">{{ __('home.no_data') }}</p>
+                    @endif
                 </div>
-
-                @include('client.layout.side-bar')
             </div>
         </div>
-    </section><!--end-->
 
 @endsection

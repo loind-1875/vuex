@@ -48,4 +48,20 @@ return [
         'contact' => 'Liên hệ',
     ],
 
+    'product' => 'Sản phẩm',
+    'product_detail' => 'Chi tiết sản phẩm',
+    'categories' => 'Danh mục',
+    'new_product' => 'Sản phẩm mới',
+    'detail' => 'Chi tiết',
+    'other_product' => 'Sản phẩm khác ',
+    'no_product' => 'Không có sản phẩm nào',
+    'category' => 'Danh mục',
+    'list_news' => 'Danh sách tin tức',
+    'detail_news' => 'Chi tiết tin tức',
+    'related_news' => 'Tin tức gần đây',
+    'read_more' => 'Xem thêm',
+    'random' => 'Tin ngẫu nhiên',
+    'recruitment' => 'Tin tuyển dụng',
+    'no_data' => 'Không có dữ liệu',
+
 ];

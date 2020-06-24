@@ -299,7 +299,7 @@
                 <div class="col-md-6">
                     <div class="overflow-hidden mb-2">
                         <h2 class="text-color-dark text-center font-weight-normal text-5 mb-0 pt-0 mt-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="500">
-                            {{ __('home.about_us') }}
+                            {{ __('home.header.about') }}
                         </h2>
                     </div>
                     <p class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500">
@@ -321,7 +321,7 @@
         <div class="row">
             <div class="col">
                 <div class="col text-center" data-appear-animation="fadeInRight">
-                    <h2 class="font-weight-semibold text-6 mb-0"> {{ __('home.engine') }}</h2>
+                    <h2 class="font-weight-semibold text-6 mb-0"> {{ __('home.header.engine') }}</h2>
                     <p class="lead text-4 pt-2 font-weight-normal"></p>
                 </div>
                 <div class="masonry-loader masonry-loader-loaded" data-appear-animation="fadeInLeft">
@@ -355,7 +355,7 @@
         <div class="row">
             <div class="col">
                 <div class="col text-center" data-appear-animation="fadeInLeft">
-                    <h2 class="font-weight-semibold text-6 mb-0">{{ __('home.chemistry') }}</h2>
+                    <h2 class="font-weight-semibold text-6 mb-0">{{ __('home.header.chemistry') }}</h2>
                     <p class="lead text-4 pt-2 font-weight-normal"></p>
                 </div>
                 <div class="masonry-loader masonry-loader-loaded" data-appear-animation="fadeInRight">
@@ -387,12 +387,10 @@
     </div>
 
     <section class="section appear-animation" data-appear-animation="fadeInUpShorter">
-
         <section class=" appear-animation" data-appear-animation="fadeInUpShorter">
-            
             <div class="container">
                 <div class="col text-center">
-                    <h2 class="font-weight-semibold text-6 mb-0">{{ __('home.news') }}</h2>
+                    <h2 class="font-weight-semibold text-6 mb-0">{{ __('home.header.news') }}</h2>
                 </div>
                 <div class="row mt-5 appear-animation" data-appear-animation="fadeInUpShorter">
                     @foreach ($news as $item)
@@ -404,8 +402,8 @@
                                     </a>
                                 </div>
                                 <div class="post-date">
-                                    <span class="day">15</span>
-                                    <span class="month">Jan</span>
+                                    <span class="day">{{ getDay($item->updated_at) }}</span>
+                                    <span class="month">{{ getMonth($item->updated_at) }}</span>
                                 </div>
                                 <div class="post-content">
                                     <h4>
@@ -413,7 +411,8 @@
                                     </h4>
                                     <p class="mb-1">{{ $item->short_detail }}</p>
                                     <a href="{{ route('client.post_detail', parseLink($item)) }}" class="btn btn-light text-uppercase text-primary text-1 py-2 px-3 mb-1 mt-2">
-                                        <strong>READ MORE</strong><i class="fas fa-chevron-right text-2 pl-2"></i>
+                                        <strong>{{ __('home.read_more') }}</strong>
+                                        <i class="fas fa-chevron-right text-2 pl-2"></i>
                                     </a>
                                 </div>
                             </article>
