@@ -92,11 +92,12 @@ class ClientController extends Controller
     {
         $id = last(explode('-', $slug));
 
-        $product = Product::find($id);
+        $product = Product::with('categories')->find($id);
 
         if (!$product) {
             abort(Response::HTTP_NOT_FOUND);
         }
+
         $categories = $this->getCategories();
 
         $engine = Category::find(2);
@@ -105,9 +106,18 @@ class ClientController extends Controller
 
         $otherProducts = Product::where('id', '!=', $id)->take(4)->get();
 
+        $newProduct = Product::take(3)->latest()->get();
+
         return view(
             'client.product-detail',
-            compact('product', 'categories', 'otherProducts', 'chemistry', 'engine')
+            compact(
+                'product',
+                'categories',
+                'otherProducts',
+                'chemistry',
+                'engine',
+                'newProduct',
+            )
         );
     }
 

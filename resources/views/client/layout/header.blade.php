@@ -6,7 +6,7 @@
                     <div class="header-row">
                         <div class="header-logo">
                             <a href="index.html">
-                                <img alt="Porto" width="100" height="48" data-sticky-width="82" data-sticky-height="40" data-sticky-top="25" src="/img/logo.png">
+                                <img alt="Porto" width="100" height="48" data-sticky-width="82" data-sticky-height="40" data-sticky-top="25" src="client/img/logo.png">
                             </a>
                         </div>
                     </div>
@@ -18,34 +18,34 @@
                                 <li class="nav-item dropdown nav-item-left-border d-none d-sm-block nav-item-left-border-remove nav-item-left-border-md-show">
                                     @if (Session::get('website_language') === 'cn')
                                        <a class="nav-link" href="#" role="button" id="dropdownLanguage" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <img src="{{ asset('img/blank.gif') }}" class="flag flag-cn" alt="China" />
+                                            <img src="{{ asset('client/img/blank.gif') }}" class="flag flag-cn" alt="China" />
                                             China
                                             <i class="fas fa-angle-down"></i>
                                         </a>
                                     @elseif (Session::get('website_language') === 'en')
                                         <a class="nav-link" href="#" role="button" id="dropdownLanguage" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <img src="{{ asset('img/blank.gif') }}" class="flag flag-us" alt="English" />
+                                            <img src="{{ asset('client/img/blank.gif') }}" class="flag flag-us" alt="English" />
                                             English
                                             <i class="fas fa-angle-down"></i>
                                         </a>
                                     @else
                                         <a class="nav-link" href="#" role="button" id="dropdownLanguage" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <img src="{{ asset('img/blank.gif') }}" class="flag flag-vn" alt="Việt Nam" />
+                                            <img src="{{ asset('client/img/blank.gif') }}" class="flag flag-vn" alt="Việt Nam" />
                                             Việt Nam
                                             <i class="fas fa-angle-down"></i>
                                         </a>
                                     @endif
                                     <div class="dropdown-menu" aria-labelledby="dropdownLanguage">
                                         <a class="dropdown-item" href="{!! route('client.change_language', ['vi']) !!}">
-                                            <img src="{{ asset('img/blank.gif') }}" class="flag flag-vn" alt="Việt Nam" />
+                                            <img src="{{ asset('client/img/blank.gif') }}" class="flag flag-vn" alt="Việt Nam" />
                                             Việt Nam
                                         </a>
                                         <a class="dropdown-item" href="{!! route('client.change_language', ['en']) !!}">
-                                            <img src="{{ asset('img/blank.gif') }}" class="flag flag-us" alt="English" />
+                                            <img src="{{ asset('client/img/blank.gif') }}" class="flag flag-us" alt="English" />
                                             English
                                         </a>
                                         <a class="dropdown-item" href="{!! route('client.change_language', ['cn']) !!}">
-                                            <img src="{{ asset('img/blank.gif') }}" class="flag flag-cn" alt="China" />
+                                            <img src="{{ asset('client/img/blank.gif') }}" class="flag flag-cn" alt="China" />
                                             China
                                         </a>
                                     </div>

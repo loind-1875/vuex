@@ -11,60 +11,30 @@
                 <aside class="sidebar">
                     <h5 class="font-weight-bold pt-3">Categories</h5>
                         <ul class="nav nav-list flex-column">
-                            <li class="nav-item"><a class="nav-link" href="#">Arts & Crafts</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Automotive</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Baby</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Books</a></li>
+                            @foreach ($categories as $category)
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">{{ $category->name }}</a>
+                                </li>
+                            @endforeach
                         </ul>
                 <div class="row mb-5">
                     <div class="col">
                         <h5 class="font-weight-bold pt-5">Top Rated Products</h5>
                         <ul class="simple-post-list">
-                            <li>
-                                <div class="post-image">
-                                    <div class="d-block">
-                                        <a href="shop-product-sidebar-left.html">
-                                            <img alt="" width="60" height="60" class="img-fluid" src="img/products/product-grey-1.jpg">
-                                        </a>
+                            @foreach ($newProduct as $pro)
+                                <li>
+                                    <div class="post-image">
+                                        <div class="d-block">
+                                            <a href="{{ route('client.product', parseLink($pro)) }}">
+                                                <img alt="" width="60" height="60" class="img-fluid" src="{{ getImage($pro->image) }}">
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="post-info">
-                                    <a href="shop-product-sidebar-left.html">Photo Camera</a>
-                                    <div class="post-meta text-dark font-weight-semibold">
-                                        $299
+                                    <div class="post-info">
+                                        <a href="{{ route('client.product', parseLink($pro)) }}">{{ $pro->name }}</a>
                                     </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="post-image">
-                                    <div class="d-block">
-                                        <a href="shop-product-sidebar-left.html">
-                                            <img alt="" width="60" height="60" class="img-fluid" src="img/products/product-grey-4.jpg">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="post-info">
-                                    <a href="shop-product-sidebar-left.html">Luxury bag</a>
-                                    <div class="post-meta text-dark font-weight-semibold">
-                                        $199
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="post-image">
-                                    <div class="d-block">
-                                        <a href="shop-product-sidebar-left.html">
-                                            <img alt="" width="60" height="60" class="img-fluid" src="img/products/product-grey-8.jpg">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="post-info">
-                                    <a href="shop-product-sidebar-left.html">Military Rucksack</a>
-                                    <div class="post-meta text-dark font-weight-semibold">
-                                        $49
-                                    </div>
-                                </div>
-                            </li>
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
@@ -90,10 +60,13 @@
                                 </div>
                             </div>
 
-                            <p class="mb-5">{{ $product->detail }} </p>
-
-                            <div class="product-meta">
-                                <span class="posted-in">Categories: <a rel="tag" href="#">Accessories</a>, <a rel="tag" href="#">Bags</a>.</span>
+                            <div class="product-meta mt-4">
+                                <span class="posted-in">
+                                    Categories:
+                                    @foreach ($product->categories as $cate)
+                                        <a rel="tag" href="#">{{ $cate->name }}</a>,
+                                    @endforeach
+                                </span>
                             </div>
 
                         </div>
@@ -112,7 +85,7 @@
                             </ul>
                             <div class="tab-content p-0">
                                 <div class="tab-pane p-4 active" id="productDescription">
-                                    {{ $product->detail }}
+                                    {!! $product->detail !!}
                                 </div>
                             </div>
                         </div>
