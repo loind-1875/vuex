@@ -327,22 +327,24 @@
                 <div class="masonry-loader masonry-loader-loaded">
                     <div class="row products product-thumb-info-list">
                         <div class="owl-carousel owl-theme manual" id="carousel">
-                            @foreach ($engine->products as $item)
-                                <div class="product">
-                                    <span class="product-thumb-info border-0">
-                                        <a href="{{ route('client.product', parseLink($item)) }}">
-                                            <span class="product-thumb-info-image">
-                                                <img alt="" class="img-fluid" src="{{ getImage($item->image) }}">
-                                            </span>
-                                        </a>
-                                        <span class="product-thumb-info-content product-thumb-info-content pl-0 bg-color-light">
+                            @if (!empty($engine->products))
+                                @foreach ($engine->products as $item)
+                                    <div class="product">
+                                        <span class="product-thumb-info border-0">
                                             <a href="{{ route('client.product', parseLink($item)) }}">
-                                                <h4 class="text-4 text-primary text-center">{{ $item->name }}</h4>
+                                                <span class="product-thumb-info-image">
+                                                    <img alt="" class="img-fluid" src="{{ getImage($item->image) }}">
+                                                </span>
                                             </a>
+                                            <span class="product-thumb-info-content product-thumb-info-content pl-0 bg-color-light">
+                                                <a href="{{ route('client.product', parseLink($item)) }}">
+                                                    <h4 class="text-4 text-primary text-center">{{ $item->name }}</h4>
+                                                </a>
+                                            </span>
                                         </span>
-                                    </span>
-                                </div>
-                            @endforeach
+                                    </div>
+                                @endforeach
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -359,22 +361,24 @@
                 <div class="masonry-loader masonry-loader-loaded">
                     <div class="row products product-thumb-info-list">
                         <div class="owl-carousel owl-theme manual dots-morphing" id="carousel2">
-                            @foreach ($chemistry->products as $ches)
-                                <div class="product">
-                                    <span class="product-thumb-info border-0">
-                                        <a href="{{ route('client.product', parseLink($ches)) }}">
-                                            <span class="product-thumb-info-image">
-                                                <img alt="" class="img-fluid" src="{{ getImage($ches->image) }}">
-                                            </span>
-                                        </a>
-                                        <span class="product-thumb-info-content product-thumb-info-content pl-0 bg-color-light">
+                            @if (!empty($chemistry->products))
+                                @foreach ($chemistry->products as $ches)
+                                    <div class="product">
+                                        <span class="product-thumb-info border-0">
                                             <a href="{{ route('client.product', parseLink($ches)) }}">
-                                                <h4 class="text-4 text-primary text-center">{{ $ches->name }}</h4>
+                                                <span class="product-thumb-info-image">
+                                                    <img alt="" class="img-fluid" src="{{ getImage($ches->image) }}">
+                                                </span>
                                             </a>
+                                            <span class="product-thumb-info-content product-thumb-info-content pl-0 bg-color-light">
+                                                <a href="{{ route('client.product', parseLink($ches)) }}">
+                                                    <h4 class="text-4 text-primary text-center">{{ $ches->name }}</h4>
+                                                </a>
+                                            </span>
                                         </span>
-                                    </span>
-                                </div>
-                            @endforeach
+                                    </div>
+                                @endforeach
+                            @endif
                         </div>
                     </div>
                 </div>

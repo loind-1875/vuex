@@ -4,7 +4,6 @@
     "/admin/css/pages.css": "/admin/css/pages.css",
     "/admin/css/admin.css": "/admin/css/admin.css",
     "/admin/js/admin.js": "/admin/js/admin.js",
-    "/client/img/flags.png": "/client/img/flags.png",
     "/client/css/client.css": "/client/css/client.css",
     "/client/js/client.js": "/client/js/client.js"
 }

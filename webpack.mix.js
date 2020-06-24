@@ -45,7 +45,7 @@ mix.js('resources/js/app.js', 'public/js/app.js')
     .copyDirectory('resources/assets/client/vendor', 'public/client/vendor')
     .copyDirectory('resources/assets/client/fonts', 'public/client/fonts')
     .copyDirectory('resources/assets/client/webfonts', 'public/client/webfonts')
-    .copy('resources/assets/client/images/flags.png', 'public/client/img/flags.png')
+    .copyDirectory('resources/assets/client/img', 'public/img')
     // .copyDirectory('resources/assets/client/js/jquery.glasscase.js', 'public/client/js/jquery.glasscase.js')
     // .copyDirectory('resources/assets/client/js/modernizr.custom.js', 'public/client/js/modernizr.custom.js')
     .styles([
