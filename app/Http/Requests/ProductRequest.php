@@ -28,7 +28,8 @@ class ProductRequest extends FormRequest
             'en.name' => 'required',
             'cn.name' => 'required',
             'images' => 'required|image|mimes:jpeg,bmp,png|max:2048',
-            'category' => 'required'
+            'category' => 'required',
+            'star' => 'required|min:0|max:5',
         ];
     }
 
@@ -42,6 +43,7 @@ class ProductRequest extends FormRequest
             'images.max' => 'Ảnh tối đa là 2MB',
             'images.mimes' => 'Chỉ được upload file ảnh jpeg, png, bmp',
             'category.required' => 'Danh mục là bắt buộc',
+            'star.required' => 'Số sao là bắt buộc',
         ];
     }
 }

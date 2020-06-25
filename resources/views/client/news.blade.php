@@ -1,7 +1,7 @@
 @extends('client.layout.main')
 
 @section('title')
-    {{ __('home.news') }}
+    {{ __('home.header.news') }}
 @endsection
 
 @section('content')

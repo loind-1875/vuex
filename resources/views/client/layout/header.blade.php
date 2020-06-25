@@ -81,7 +81,7 @@
                                             </a>
                                         </li>
                                         <li class="dropdown dropdown-mega">
-                                            <a class="dropdown-item dropdown-toggle" href="elements.html">
+                                            <a class="dropdown-item dropdown-toggle" href="{{ route('client.about') }}">
                                                 {{ __('home.header.about') }}
                                             </a>
                                         </li>

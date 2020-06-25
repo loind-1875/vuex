@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Client;
 
 use App\Models\Category;
+use App\Models\Contact;
 use App\Models\Post;
 use App\Models\Product;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 class ClientController extends Controller
@@ -27,9 +29,9 @@ class ClientController extends Controller
 
     public function news()
     {
-        $engine = Category::find(2);
+        $engine = Category::findOrFail(2);
 
-        $chemistry = Category::find(1);
+        $chemistry = Category::findOrFail(1);
 
         $news = Post::where('is_recruitment', 0)->latest()->paginate(18);
 
@@ -58,12 +60,20 @@ class ClientController extends Controller
 
     public function contact()
     {
-        return view('client.contact');
+        $engine = Category::findOrFail(2);
+
+        $chemistry = Category::findOrFail(1);
+
+        return view('client.contact', compact('engine', 'chemistry'));
     }
 
-    public function guarantee()
+    public function about()
     {
+        $engine = Category::findOrFail(2);
 
+        $chemistry = Category::findOrFail(1);
+
+        return view('client.about', compact('engine', 'chemistry'));
     }
 
     public function newsDetail($slug)
@@ -166,6 +176,13 @@ class ClientController extends Controller
                 'newProduct'
             )
         );
+    }
+
+    public function sendContact(Request $request)
+    {
+        Contact::create($request->all());
+
+        return redirect()->back()->with('success', 'Gửi thành công');
     }
 
     public function changeLanguage($language)

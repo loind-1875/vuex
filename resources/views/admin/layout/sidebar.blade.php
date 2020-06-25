@@ -57,6 +57,12 @@
                         </li>
                     </ul>
                 </li>
+                <li class="pcoded-hasmenu {{ Request::segment(2) === 'contacts' ? 'pcoded-trigger' : '' }}">
+                    <a href="{{ route('contacts.index') }}" class="waves-effect waves-dark">
+                        <span class="pcoded-micon"><i class="fa fa-users"></i></span>
+                        <span class="pcoded-mtext">Danh sách liên hệ</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

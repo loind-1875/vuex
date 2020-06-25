@@ -73,10 +73,14 @@
                     <div class="col-lg-6">
                         <div class="summary entry-summary">
                             <h1 class="mb-0 font-weight-bold text-7">{{ $product->name }}</h1>
-
                             <div class="pb-0 clearfix">
                                 <div title="Rated 3 out of 5" class="float-left">
-                                    <input type="text" class="d-none" value="3" title="" data-plugin-star-rating data-plugin-options="{'displayOnly': true, 'color': 'primary', 'size':'xs'}">
+                                    <input
+                                        type="text"
+                                        class="d-none"
+                                        value="{{ $product->star }}"
+                                        title=""
+                                        data-plugin-star-rating data-plugin-options="{'displayOnly': true, 'color': 'primary', 'size':'xs'}">
                                 </div>
                             </div>
                             <div class="product-meta mt-4">
@@ -150,5 +154,6 @@
 @endsection
 
 @section('script')
-
+    <script>
+    </script>
 @endsection

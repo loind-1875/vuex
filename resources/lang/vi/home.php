@@ -21,6 +21,12 @@ return [
                         inox, nhựa,... Sản phẩm của H.F.T là những sản phẩm đã có mặt trên thị trường
                         nhiều năm, được tuyển chọn từ những nhà cung cấp lớn và có uy tín trên thị trường.',
         'detail3' => 'H.F.T luôn luôn cam kết mang tới cho khách hàng sự yên tâm về chất lượng, hợp lý về giá cả và hài lòng về cung cách làm việc cũng như thái độ phục vụ.',
+        'we' => 'Chúng tôi',
+        'create' => 'Tạo ra',
+        'build' => 'Xây dựng',
+        'develop' => 'Phát triển',
+        'vision' => 'H.F.T luôn luôn cam kết mang tới cho khách hàng sự yên tâm về chất lượng, hợp lý về giá cả và hài lòng về cung cách làm việc cũng như thái độ phục vụ.',
+        'solutions' => 'Giải pháp',
 
     ],
     'about_us' => 'Về Chúng tôi',
@@ -63,5 +69,11 @@ return [
     'random' => 'Tin ngẫu nhiên',
     'recruitment' => 'Tin tuyển dụng',
     'no_data' => 'Không có dữ liệu',
-
+    'we_are' => 'Công ty H.F.T',
+    'contact_us' => [
+        'name' => 'Họ tên',
+        'email' => 'Email',
+        'phone' => 'Số điện thoại',
+        'message' => 'Lời nhắn',
+    ],
 ];

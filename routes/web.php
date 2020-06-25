@@ -19,6 +19,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'admi
     // Route::resource('recruitment', 'RecruitmentController');
     Route::get('settings', 'AdminController@settings')->name('admin.setting');
     Route::put('settings', 'AdminController@updateSettings')->name('update.setting');
+    Route::resource('contacts', 'ContactController')->only(['index', 'destroy']);
 });
 
 Route::group(['middleware' => 'locale', 'namespace' => 'Client'], function () {
@@ -26,10 +27,12 @@ Route::group(['middleware' => 'locale', 'namespace' => 'Client'], function () {
     Route::get('tin-tuc', 'ClientController@news')->name('client.post');
     Route::get('tuyen-dung', 'ClientController@recruitment')->name('client.recruitment');
     Route::get('lien-he', 'ClientController@contact')->name('client.contact');
+    Route::get('gioi-thieu', 'ClientController@about')->name('client.about');
     Route::get('bao-hanh', 'ClientController@guarantee')->name('client.guarantee');
     Route::get('tin-tuc/{slug}', 'ClientController@newsDetail')->name('client.post_detail');
     Route::get('danh-muc/{slug}', 'ClientController@detailCategory')->name('client.category');
     Route::get('san-pham/{slug}', 'ClientController@detailProduct')->name('client.product');
+    Route::post('contact', 'ClientController@sendContact')->name('client.send_contact');
     Route::get('change-language/{language}', 'ClientController@changeLanguage')->name('client.change_language');
 });
 

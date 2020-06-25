@@ -46,6 +46,10 @@
                                     <input type="text" class="form-control" name="cn[name]" placeHolder="Nhập tên sản phẩm" value="{{ $product->cn->name }}" required>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
+                                    <h4 class="sub-title">Sao<span>*</span></h4>
+                                    <input type="number" min="0" max="5" class="form-control" name="star" value="{{ $product->star }}" placeHolder="Nhập số sao của sản phẩm" required>
+                                </div>
+                                <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Ảnh sản phẩm<span>*</span></h4>
                                     <img src="{{ getImage($product->image) }}" alt="" class="img m-b-10">
                                     <input type="file" name="images" class="form-control">

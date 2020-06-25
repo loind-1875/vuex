@@ -15,6 +15,7 @@ class Product extends Model implements TranslatableContract
     protected $fillable = [
         'slug',
         'image',
+        'star',
     ];
 
     public function categories()
