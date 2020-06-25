@@ -70,7 +70,7 @@ class ProductController extends Controller
             ProductTranslation::create([
                 'name' => $value['name'],
                 'detail' => $detail,
-                'description' => $value['description'],
+                'short_detail' => $value['short_detail'],
                 'locale' => $key,
                 'product_id' => $product->id,
             ]);

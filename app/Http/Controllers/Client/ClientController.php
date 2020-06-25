@@ -163,7 +163,7 @@ class ClientController extends Controller
                 'otherProducts',
                 'chemistry',
                 'engine',
-                'newProduct',
+                'newProduct'
             )
         );
     }
