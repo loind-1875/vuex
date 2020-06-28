@@ -1,14 +1,15 @@
 <?php
 
 return [
-    'choose_me' => 'Why choose us',
+    'choose_me' => '为什么选择我们',
     'quality' => '质量',
+    'quality_detail' => '创造越南最好的产品，并供越南人民使用。',
     'technology' => '技术',
-    'tech_detail' => 'Always concentrate on studying and applying new technical and technological innovations on our products',
+    'tech_detail' => '始终专注于在我们的产品上研究和应用新的技术创新',
     'trust' => '相信',
-    'trust_detail' => 'Consumers’ safety, customer’s rights and benefits are considered as a guideline for every product and service’s development strategies',
+    'trust_detail' => '消费者的安全，客户的权利和利益被视为每种产品和服务开发策略的指南',
     'warranty' => '保证',
-    'warranty_detail' => 'Be always ready to receive any queries, solve any problems that customers face during the process of using HFT \'s product',
+    'warranty_detail' => '随时准备接收任何疑问，解决客户在使用HFT产品过程中遇到的任何问题',
     'about_us' => '关于我们',
     'company' => [
         'name' => 'H.F.T 化工贸易服务有限公司',
@@ -67,5 +68,20 @@ return [
         'email' => '电子邮件',
         'phone' => '电话',
         'message' => '信息',
+        'send' => '发送',
+    ],
+    'slide' => [
+        'company' => '化工服务贸易有限公司',
+        'chosen' => '为您的最佳选择！',
+        'we_provider' => '我们专注于供应',
+        'engine' => '发动机',
+        'engine_slogan' => '自豪地成为当今市场上最好的电动摩托车和电动自行车电机制造单位之一',
+        'quality' => '最好的质量',
+        'quality_slogan' => 'H.F.T发动机与一些著名的电动汽车品牌相关，例如BEFORE ALL，DUONG TIEN PHAT，OSAKAR，VINA THAI，MICHI BIKE等...',
+        'chemistry' => '化学',
+        'chemistry_slogan' => 'H.F.T的产品是已在市场上销售多年并从主要供应商中选择的产品',
+        'trust_slogan' => 'H.F.T始终致力于在质量，合理的价格以及对他们的工作方式和服务态度的满意方面为客户提供高枕无忧的服务。',
+        'trust' => '满意',
+        'caring' => '带到',
     ],
 ];

@@ -3,6 +3,7 @@
 return [
     'choose_me' => 'Why choose us',
     'quality' => 'Quality',
+    'quality_detail' => 'To create the best products in Vietnam and for the Vietnamese people to use.',
     'technology' => 'Technology',
     'tech_detail' => 'Always concentrate on studying and applying new technical and technological innovations on our products',
     'trust' => 'Trust',
@@ -66,5 +67,20 @@ return [
         'email' => 'Email',
         'phone' => 'Phone',
         'message' => 'Message',
+        'send' => 'Send',
+    ],
+    'slide' => [
+        'company' => 'Chemical Services And Trading Co. Ltd.',
+        'chosen' => 'The best choice for you!',
+        'we_provider' => 'We specialize in the supply',
+        'engine' => 'Engine',
+        'engine_slogan' => 'Proud to be one of the best electric motorbike and electric bicycle motor manufacturing units on the market today',
+        'quality' => 'The best quality',
+        'quality_slogan' => 'H.F.T engine is associated with some famous electric vehicle brands such as BEFORE ALL, DUONG TIEN PHAT, OSAKAR, VINA THAI, MICHI BIKE.....',
+        'chemistry' => 'Chemistry',
+        'chemistry_slogan' => 'H.F.T\'s products are products that have been in the market for many years and selected from major suppliers',
+        'trust_slogan' => 'H.F.T is always committed to providing customers with peace of mind in terms of quality, reasonable prices and satisfaction with the way they work and the attitude of service.',
+        'trust' => 'Satisfied',
+        'caring' => 'Bring to the',
     ],
 ];

@@ -5,7 +5,9 @@
 @endsection
 
 @section('content')
-    <section class="page-header page-header-modern page-header-background page-header-background-md overlay overlay-color-dark overlay-show overlay-op-7" style="background-image: url(img/page-header/page-header-about-us.jpg);">
+    <section class="page-header page-header-modern page-header-background page-header-background-md overlay overlay-color-dark overlay-show overlay-op-7"
+         style="background-image: url({{ asset('/client/img/slides/5.jpg') }}); background-position: bottom;"
+    >
         <div class="container">
             <div class="row mt-5">
                 <div class="col-md-12 align-self-center p-static order-2 text-center">

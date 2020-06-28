@@ -5,7 +5,9 @@
 @endsection
 
 @section('content')
-    <section class="page-header page-header-modern page-header-background page-header-background-md overlay overlay-color-dark overlay-show overlay-op-7" style="background-image: url(img/page-header/page-header-about-us.jpg);">
+    <section class="page-header page-header-modern page-header-background page-header-background-md overlay overlay-color-dark overlay-show overlay-op-7"
+         style="background-image: url({{ asset('/client/img/slides/5.jpg') }}); background-position: bottom;"
+    >
         <div class="container">
             <div class="row mt-5">
                 <div class="col-md-12 align-self-center p-static order-2 text-center">
@@ -14,7 +16,7 @@
                 </div>
                 <div class="col-md-12 align-self-center order-1">
                     <ul class="breadcrumb breadcrumb-light d-block text-center">
-                        <li><a href="#">{{ __('home.header.home') }}</a></li>
+                        <li><a href="/">{{ __('home.header.home') }}</a></li>
                         <li class="active">{{ __('home.header.contact') }}</li>
                     </ul>
                 </div>
@@ -70,7 +72,7 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group col">
-                            <input type="submit" value="Send Message" class="btn btn-primary btn-modern" data-loading-text="Loading...">
+                            <input type="submit" value="{{ __('home.contact_us.send') }}" class="btn btn-primary btn-modern" data-loading-text="Loading...">
                         </div>
                     </div>
                 </form>

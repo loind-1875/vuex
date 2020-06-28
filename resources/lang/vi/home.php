@@ -3,6 +3,7 @@
 return [
     'choose_me' => 'Tại sao chọn chúng tôi',
     'quality' => 'Chất lượng',
+    'quality_detail' => 'Tạo ra được những sản phẩm tốt nhất ngay trên đất nước Việt Nam và cho chính người Việt Nam sử dụng.',
     'technology' => 'Công nghệ',
     'tech_detail' => 'Luôn chú trọng việc học hỏi, áp dụng những cải tiến kĩ thuật, công nghệ  mới vào sản phẩm của mình',
     'trust' => 'Niềm tin',
@@ -16,7 +17,7 @@ return [
                         lắp ráp động cơ xe đạp điện, xe máy điện. H.F.T  tự hào được đánh giá là một
                         trong những đơn vị sản xuất động cơ xe máy điện, xe đạp điện tốt nhất trên thị trường hiện nay.',
         'detail2' => 'Trong lĩnh vực hóa chất, H.F.T chuyên cung cấp các loại
-                        phụ gia cho ngành sản xuất sơn như:Sơn trên gỗ, sơn sàn, sơn tàu biển, sơn ô tô,
+                        phụ gia cho ngành sản xuất sơn như: Sơn trên gỗ, sơn sàn, sơn tàu biển, sơn ô tô,
                         sơn xe máy, sơn trên kính, sơn tấm lợp và sơn trên các chất liệu như săt, thép,
                         inox, nhựa,... Sản phẩm của H.F.T là những sản phẩm đã có mặt trên thị trường
                         nhiều năm, được tuyển chọn từ những nhà cung cấp lớn và có uy tín trên thị trường.',
@@ -75,5 +76,20 @@ return [
         'email' => 'Email',
         'phone' => 'Số điện thoại',
         'message' => 'Lời nhắn',
+        'send' => 'Gửi',
+    ],
+    'slide' => [
+        'company' => 'Công ty TNHH Thương Mại Và Dịch Vụ Hóa Chất',
+        'chosen' => 'Sự lựa chọn tốt nhất dành cho bạn!',
+        'we_provider' => 'Chúng tôi chuyên cung cấp',
+        'engine' => 'Động cơ',
+        'engine_slogan' => 'Tự hào là một trong những đơn vị sản xuất động cơ xe máy điện, xe đạp điện tốt nhất trên thị trường hiện nay',
+        'quality' => 'Chất lượng hàng đầu',
+        'quality_slogan' => 'Động cơ H.F.T gắn liền với một số thương hiệu xe điện nổi tiếng như BEFORE ALL, DƯƠNG TIẾN PHÁT, OSAKAR, VINA THÁi, MICHI BIKE,.....',
+        'chemistry' => 'Hóa chất',
+        'chemistry_slogan' => 'Sản phẩm của H.F.T là những sản phẩm đã có mặt trên thị trường nhiều năm và được tuyển chọn từ những nhà cung cấp lớn',
+        'trust_slogan' => 'H.F.T luôn luôn cam kết mang tới cho khách hàng sự yên tâm về chất lượng, hợp lý về giá cả và hài lòng về cung cách làm việc cũng như thái độ phục vụ.',
+        'trust' => 'Hài lòng',
+        'caring' => 'Mang đến sự',
     ],
 ];
