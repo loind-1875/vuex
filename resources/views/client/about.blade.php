@@ -28,15 +28,16 @@
         <div class="row pt-5">
             <div class="col">
                 <div class="row text-center pb-5">
-                    <div class="col-md-9 mx-md-auto">
+                    <div class="col-md-10 mx-md-auto">
                         <div class="overflow-hidden mb-3">
                             <h1 class="word-rotator slide font-weight-bold text-8 mb-0 appear-animation" data-appear-animation="maskUp">
-                                <span>{{ __('home.company.name') }}, {{ __('home.company.we') }} </span>
+                                <p>{{ __('home.company.name') }} </p>
+                                <span>{{ __('home.company.we') }}</span>
                                 <span class="word-rotator-words bg-primary">
-                                      <b class="is-visible">{{ __('home.company.create') }}</b>
-                                        <b>{{ __('home.company.develop') }}</b>
-                                        <b>{{ __('home.company.build') }}</b>
-                                    </span>
+                                    <b class="is-visible">{{ __('home.company.create') }}</b>
+                                    <b>{{ __('home.company.develop') }}</b>
+                                    <b>{{ __('home.company.build') }}</b>
+                                </span>
                                 <span> {{ __('home.company.solutions') }}</span>
                             </h1>
                         </div>
@@ -50,16 +51,16 @@
 
                 <div class="row mt-3 mb-5">
                     <div class="col-md-4 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="800">
-                        <h3 class="font-weight-bold text-4 mb-2">Our Mission</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum, nulla vel pellentesque consequat, ante nulla hendrerit arcu.</p>
+                        <h3 class="font-weight-bold text-4 mb-2">{{ __('home.company.our_mission') }}</h3>
+                        <p>{{ __('home.company.our_mission_detail') }}</p>
                     </div>
                     <div class="col-md-4 appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="600">
-                        <h3 class="font-weight-bold text-4 mb-2">Our Vision</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nulla vel pellentesque consequat, ante nulla hendrerit arcu.</p>
+                        <h3 class="font-weight-bold text-4 mb-2">{{ __('home.company.our_vision') }}</h3>
+                        <p>{{ __('home.company.our_mission_detail') }}.</p>
                     </div>
                     <div class="col-md-4 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="800">
-                        <h3 class="font-weight-bold text-4 mb-2">Why Us</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum, nulla vel consequat, ante nulla hendrerit arcu.</p>
+                        <h3 class="font-weight-bold text-4 mb-2">{{ __('home.company.why_us') }}</h3>
+                        <p>{{ __('home.company.why_us_detail') }}</p>
                     </div>
                 </div>
 
@@ -71,15 +72,36 @@
     <section class="section section-height-3 bg-color-grey-scale-1 m-0 border-0">
         <div class="container">
             <div class="row align-items-center justify-content-center">
-                <div class="col-lg-6 pb-sm-4 pb-lg-0 pr-lg-5 mb-sm-5 mb-lg-0">
-                    <h2 class="text-color-dark font-weight-normal text-6 mb-2">Who <strong class="font-weight-extra-bold">We Are</strong></h2>
-                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit massa enim. Nullam id varius nunc. </p>
-                    <p class="pr-5 mr-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc. Vivamus bibendum magna ex, et faucibus lacus venenatis eget</p>
-                </div>
-                <div class="col-sm-8 col-md-6 col-lg-4 offset-sm-4 offset-md-4 offset-lg-2 mt-sm-5" style="top: 1.7rem;">
-                    <img src="img/generic/generic-corporate-3-1.jpg" class="img-fluid position-absolute d-none d-sm-block appear-animation" data-appear-animation="expandIn" data-appear-animation-delay="300" style="top: 10%; left: -50%;" alt="" />
-                    <img src="img/generic/generic-corporate-3-2.jpg" class="img-fluid position-absolute d-none d-sm-block appear-animation" data-appear-animation="expandIn" style="top: -33%; left: -29%;" alt="" />
-                    <img src="img/generic/generic-corporate-3-3.jpg" class="img-fluid position-relative appear-animation mb-2" data-appear-animation="expandIn" data-appear-animation-delay="600" alt="" />
+                <div class="col-lg-12 pb-sm-4 pb-lg-0 pr-lg-5 mb-sm-5 mb-lg-0 about-us-page">
+                    <h3 class="text-center">Về chúng tôi</h3>
+                    <p>
+                        Công ty TNHH Thương Mại Và Dịch Vụ Hóa Chất H.F.T được thành lập vào ngày 15/01/2008. Trải qua hơn 10 năm hoạt động,
+                        phát triển trong lĩnh vực hóa chất và sản xuất, lắp ráp động cơ xe đạp điện, xe máy điện,
+                        H.F.T đã vạch ra cho mình hướng đi đồng điệu với nhu cầu phát triển của hầu hết các Quốc
+                        gia trên thế giới. Hiện nay Chính phủ luôn khuyến khích và tạo điều kiện để các doanh
+                        nghiệp phát triển những sản phẩm mang tính thân thiện với thiên nhiên, bảo vệ môi trường
+                        sống cho thế hệ sau này. Chính vì vậy mà những sản phẩm chạy bằng năng lượng điện ngày
+                        càng được ưa chuộng và sử dụng phổ thông hơn với mục tiêu trong tương lai có thể thay
+                        thế dần các loại động cơ chạy bằng xăng, dầu,.. H.F.T  tự hào là một trong những đơn
+                        vị sản xuất động cơ xe máy điện, xe đạp điện tốt nhất trên thị trường hiện nay, góp
+                        phần bảo vệ môi trường sống cho thế hệ con em trong tương lai cũng như sát cánh cùng
+                        những doanh nghiệp sản xuất xe điện phát triển bền vững và lớn mạnh không ngừng.
+                        Động cơ H.F.T gắn liền với một số thương hiệu xe điện nổi tiếng như BEFORE ALL, DƯƠNG TIẾN PHÁT, OSAKAR, VINA THÁi, MICHI BIKE,.....
+                    </p>
+                    <p>
+                        Trong lĩnh vực hóa chất, H.F.T chuyên cung cấp các loại phụ gia cho ngành sản xuất sơn như: Sơn sàn,
+                        sơn tàu biển, sơn ô tô, sơn trên kính,... và phục vụ cho một số ngành như sản xuất mực in, da giày,
+                        cao su,… Sản phẩm của H.F.T là những sản phẩm đã có mặt trên thị trường nhiều năm và được tuyển chọn
+                        từ những nhà cung cấp lớn. Có thể nhắc tới một số thương hiệu nổi tiếng như: Taiga Additives, 3D Bio-Chem,
+                        Color Valley Technology, Titanos, Zuxing, Kecai Pigments…Sản phẩm hóa chất của H.F.T đã nhận được sự tin
+                        tưởng và gắn bó của những doanh nghiệp lớn tại Việt Nam như: Công ty TNHH Nippon Paint Việt Nam, Công
+                        ty Cổ phần sơn Hải Phòng, Công ty TNHH sản xuất sơn Phoenix (Việt Nam), Công ty TNHH Công Nghiệp
+                        Brilliant, Công ty TNHH Daigaku (Việt Nam), Công ty TNHH Thương mại Dịch vụ Sản xuất Hải Thành Công ...
+                    </p>
+                    <p>
+                        <strong>H.F.T  luôn luôn cam kết mang tới cho khách hàng sự yên tâm về chất lượng, hợp lý về giá cả và hài lòng
+                            về cung cách làm việc cũng như thái độ phục vụ. </strong>
+                    </p>
                 </div>
             </div>
         </div>

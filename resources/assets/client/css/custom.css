@@ -47,3 +47,8 @@ html .featured-box-secondary h4 {
         content: unset;
     }
 }
+
+.about-us-page p {
+    font-size: 1.2em;
+    line-height: 2em;
+}
