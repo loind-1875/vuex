@@ -7,6 +7,7 @@ use App\Models\Contact;
 use App\Models\Post;
 use App\Models\Product;
 use App\Http\Controllers\Controller;
+use App\Models\ProductTranslation;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -190,5 +191,27 @@ class ClientController extends Controller
         \Session::put('website_language', $language);
 
         return redirect()->back();
+    }
+
+    public function searchProduct(Request $request)
+    {
+        $lan = \Session::get('website_language');
+
+        if (empty($lan)) {
+            $lan = 'vi';
+        }
+
+        $keyword = $request->keyword;
+
+        $result = ProductTranslation::where('name', 'like', '%' . $keyword . '%')
+            ->where('locale', $lan)
+            ->with('product', 'product.categories')
+            ->get();
+
+        $engine = Category::find(2);
+
+        $chemistry = Category::find(1);
+
+        return view('client.search', compact('result', 'engine', 'chemistry', 'keyword'));
     }
 }

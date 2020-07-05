@@ -33,7 +33,7 @@ return [
         'our_vision' => 'Mục tiêu của chúng tôi',
         'our_vision_detail' => 'H.F.T – không chỉ tạo ra sản phẩm tốt- chúng tôi còn cố gắng tạo dựng niềm tin cho thị trường Việt Nam!',
         'why_us' => 'Tại sao chọn chúng tôi',
-        'why_us_detail' => 'H.F.T với tiêu chí đặt sự an toàn của người tiêu dùng và quyền lợi khách hàng làm kim chỉ nam cho mọi chính sách phát triển sản phẩm và dịch vụ của Công ty.',
+        'why_us_detail' => '.',
     ],
     'about_us' => 'Về Chúng tôi',
     'engine' => 'Động cơ',
@@ -43,7 +43,7 @@ return [
     'footer' => [
         'hanoi' => 'Hà Nội',
         'address' => 'Địa chỉ',
-        'office_address' => 'Văn phòng giao dịc',
+        'office_address' => 'Văn phòng giao dịch',
         'address_detail' => '104B-A3 Kim Giang, phường Kim Giang, quận Thanh Xuân, TP Hà Nội, Việt Nam',
         'office_address_detail' => '131 Trần Phú, Hà Đông, Hà Nội, Việt Nam',
         'tel' => 'SĐT',
@@ -95,5 +95,11 @@ return [
         'trust_slogan' => 'H.F.T luôn luôn cam kết mang tới cho khách hàng sự yên tâm về chất lượng, hợp lý về giá cả và hài lòng về cung cách làm việc cũng như thái độ phục vụ.',
         'trust' => 'Hài lòng',
         'caring' => 'Mang đến sự',
+    ],
+    'search' => [
+        'index' => 'Tìm kiếm',
+        'search_result_for' => 'Kết quả tìm kiếm cho',
+        'show_result_for' => 'Hiển thị kết quả cho',
+        'result_found' => 'kết quả tìm thấy',
     ],
 ];

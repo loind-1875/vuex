@@ -89,4 +89,10 @@ return [
         'trust' => '满意',
         'caring' => '带到',
     ],
+    'search' => [
+        'index' => '搜索',
+        'search_result_for' => '搜寻结果',
+        'show_result_for' => '显示结果',
+        'result_found' => '找到结果',
+    ],
 ];

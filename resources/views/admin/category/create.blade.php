@@ -42,16 +42,16 @@
                                     <input type="text" class="form-control" name="cn[name]" placeHolder="Nhập tên danh mục" value="{{ old('cn[name]') }}" required>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
-                                    <h4 class="sub-title">Mô tả (VI)<span>*</span></h4>
-                                    <textarea name="vi[description]" id="des" cols="30" rows="10" placeHolder="Nhập mô tả danh mục"  class="form-control" required>{{ old('vi[description]') }}</textarea>
+                                    <h4 class="sub-title">Mô tả (VI)</h4>
+                                    <textarea name="vi[description]" id="des" cols="30" rows="10" placeHolder="Nhập mô tả danh mục"  class="form-control">{{ old('vi[description]') }}</textarea>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
-                                    <h4 class="sub-title">Mô tả (EN)<span>*</span></h4>
-                                    <textarea name="en[description]" id="" cols="30" rows="10" placeHolder="Nhập mô tả danh mục"  class="form-control" required>{{ old('en[description]') }}</textarea>
+                                    <h4 class="sub-title">Mô tả (EN)</h4>
+                                    <textarea name="en[description]" id="" cols="30" rows="10" placeHolder="Nhập mô tả danh mục"  class="form-control">{{ old('en[description]') }}</textarea>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
-                                    <h4 class="sub-title">Mô tả (CN)<span>*</span></h4>
-                                    <textarea name="cn[description]" id="" cols="30" rows="10" placeHolder="Nhập mô tả danh mục"  class="form-control" required>{{ old('cn[description]') }}</textarea>
+                                    <h4 class="sub-title">Mô tả (CN)</h4>
+                                    <textarea name="cn[description]" id="" cols="30" rows="10" placeHolder="Nhập mô tả danh mục"  class="form-control">{{ old('cn[description]') }}</textarea>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <button class="btn btn-primary waves-effect waves-light" type="submit">Lưu</button>

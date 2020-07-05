@@ -32,7 +32,7 @@
                         <ul class="nav nav-list flex-column">
                             @foreach ($categories as $category)
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">{{ $category->name }}</a>
+                                    <a class="nav-link" href="{{ route('client.category', parseLink($category)) }}">{{ $category->name }}</a>
                                 </li>
                             @endforeach
                         </ul>

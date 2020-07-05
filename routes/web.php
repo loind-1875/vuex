@@ -33,6 +33,7 @@ Route::group(['middleware' => 'locale', 'namespace' => 'Client'], function () {
     Route::get('danh-muc/{slug}', 'ClientController@detailCategory')->name('client.category');
     Route::get('san-pham/{slug}', 'ClientController@detailProduct')->name('client.product');
     Route::post('contact', 'ClientController@sendContact')->name('client.send_contact');
+    Route::get('search', 'ClientController@searchProduct')->name('client.search');
     Route::get('change-language/{language}', 'ClientController@changeLanguage')->name('client.change_language');
 });
 

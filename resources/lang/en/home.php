@@ -89,4 +89,10 @@ return [
         'trust' => 'Satisfied',
         'caring' => 'Bring to the',
     ],
+    'search' => [
+        'index' => 'Search',
+        'search_result_for' => 'Search result for',
+        'show_result_for' => 'Show result for',
+        'result_found' => 'result found',
+    ],
 ];

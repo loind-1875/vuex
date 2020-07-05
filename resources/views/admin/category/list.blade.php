@@ -45,17 +45,19 @@
                                                     <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-primary btn-sm">
                                                         <i class="fa fa-pencil-square-o"></i>
                                                     </a>
-                                                    <form action="{{ route('categories.destroy', $category->id) }}" method="POST" style="display: inline-block;">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button
-                                                                class="btn btn-danger btn-sm"
-                                                                type="submit"
-                                                                onclick="return confirm(' Bạn có chắc chắn?');"
-                                                        >
-                                                            <i class="fa fa-trash"></i>
-                                                        </button>
-                                                    </form>
+                                                    @if (!in_array($category->id, [1, 2]))
+                                                        <form action="{{ route('categories.destroy', $category->id) }}" method="POST" style="display: inline-block;">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button
+                                                                    class="btn btn-danger btn-sm"
+                                                                    type="submit"
+                                                                    onclick="return confirm(' Bạn có chắc chắn?');"
+                                                            >
+                                                                <i class="fa fa-trash"></i>
+                                                            </button>
+                                                        </form>
+                                                    @endif
                                                 </td>
                                             </tr>
                                         @endforeach

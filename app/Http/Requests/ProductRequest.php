@@ -30,6 +30,9 @@ class ProductRequest extends FormRequest
             'images' => 'required|image|mimes:jpeg,bmp,png|max:2048',
             'category' => 'required',
             'star' => 'required|min:0|max:5',
+            'vi.short_detail' => 'max:500',
+            'cn.short_detail' => 'max:500',
+            'en.short_detail' => 'max:500',
         ];
     }
 
@@ -44,6 +47,9 @@ class ProductRequest extends FormRequest
             'images.mimes' => 'Chỉ được upload file ảnh jpeg, png, bmp',
             'category.required' => 'Danh mục là bắt buộc',
             'star.required' => 'Số sao là bắt buộc',
+            'vi.short_detail.max' => 'Mô tả tối đa chỉ 500 kí tự',
+            'cn.short_detail.max' => 'Mô tả tối đa chỉ 500 kí tự',
+            'en.short_detail.max' => 'Mô tả tối đa chỉ 500 kí tự',
         ];
     }
 }

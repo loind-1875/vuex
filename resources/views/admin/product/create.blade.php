@@ -32,23 +32,23 @@
                                 @csrf
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Tên sản phẩm (VI)<span>*</span></h4>
-                                    <input type="text" class="form-control" name="vi[name]" placeHolder="Nhập tên sản phẩm" value="{{ old('vi[name]') }}" required>
+                                    <input type="text" class="form-control" name="vi[name]" placeHolder="Nhập tên sản phẩm" value="{{ old('vi.name') }}" required>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Tên sản phẩm (EN)<span>*</span></h4>
-                                    <input type="text" class="form-control" name="en[name]" placeHolder="Nhập tên sản phẩm" value="{{ old('en[name]') }}" required>
+                                    <input type="text" class="form-control" name="en[name]" placeHolder="Nhập tên sản phẩm" value="{{ old('en.name') }}" required>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Tên sản phẩm (CN)<span>*</span></h4>
-                                    <input type="text" class="form-control" name="cn[name]" placeHolder="Nhập tên sản phẩm" value="{{ old('cn[name]') }}" required>
+                                    <input type="text" class="form-control" name="cn[name]" placeHolder="Nhập tên sản phẩm" value="{{ old('cn.name') }}" required>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Sao<span>*</span></h4>
-                                    <input type="number" min="0" max="5" class="form-control" name="star" placeHolder="Nhập số sao của sản phẩm" required>
+                                    <input type="number" min="0" max="5" class="form-control" name="star" value="{{ old('star') }}" placeHolder="Nhập số sao của sản phẩm" required>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Ảnh sản phẩm<span>*</span></h4>
-                                    <input type="file" name="images" class="form-control" value="{{ old('name') }}" required>
+                                    <input type="file" name="images" class="form-control" value="{{ old('images') }}" required>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Danh mục<span>*</span></h4>
@@ -69,15 +69,15 @@
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Mô tả (VI)</h4>
-                                    <textarea name="vi[short_detail]" id="des" cols="30" rows="10" placeHolder="Nhập mô tả ngắn sản phẩm"  class="form-control">{{ old('vi[short_detail]') }}</textarea>
+                                    <textarea name="vi[short_detail]" id="des" cols="30" rows="10" placeHolder="Nhập mô tả ngắn sản phẩm"  class="form-control">{{ old('vi.short_detail') }}</textarea>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Mô tả (EN)</h4>
-                                    <textarea name="en[short_detail]" id="" cols="30" rows="10" placeHolder="Nhập mô tả ngắn sản phẩm"  class="form-control">{{ old('en[short_detail]') }}</textarea>
+                                    <textarea name="en[short_detail]" id="" cols="30" rows="10" placeHolder="Nhập mô tả ngắn sản phẩm"  class="form-control">{{ old('en.short_detail') }}</textarea>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Mô tả (CN)</h4>
-                                    <textarea name="cn[short_detail]" id="" cols="30" rows="10" placeHolder="Nhập mô tả ngắn sản phẩm"  class="form-control">{{ old('cn[short_detail]') }}</textarea>
+                                    <textarea name="cn[short_detail]" id="" cols="30" rows="10" placeHolder="Nhập mô tả ngắn sản phẩm"  class="form-control">{{ old('cn.short_detail') }}</textarea>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Chi tiết sản phẩm (VI) <span>*</span></h4>

@@ -142,30 +142,6 @@
                          data-bgrepeat="no-repeat"
                          class="rev-slidebg">
 
-{{--                    <div class="tp-caption"--}}
-{{--                         data-x="center" data-hoffset="['-170','-170','-170','-350']"--}}
-{{--                         data-y="center" data-voffset="['-50','-50','-50','-75']"--}}
-{{--                         data-start="1000"--}}
-{{--                         data-transform_in="x:[-300%];opacity:0;s:500;"--}}
-{{--                         data-transform_idle="opacity:0.2;s:500;">--}}
-{{--                        <img src="/client/img/slides/slide-title-border.png" alt=""></div>--}}
-
-{{--                    <div class="tp-caption text-color-light font-weight-normal"--}}
-{{--                         data-x="center"--}}
-{{--                         data-y="center" data-voffset="['-50','-50','-50','-75']"--}}
-{{--                         data-start="700"--}}
-{{--                         data-fontsize="['16','16','16','40']"--}}
-{{--                         data-lineheight="['25','25','25','45']"--}}
-{{--                         data-transform_in="y:[-50%];opacity:0;s:500;">WE WORK HARD AND PORTO HAS</div>--}}
-
-{{--                    <div class="tp-caption"--}}
-{{--                         data-x="center" data-hoffset="['170','170','170','350']"--}}
-{{--                         data-y="center" data-voffset="['-50','-50','-50','-75']"--}}
-{{--                         data-start="1000"--}}
-{{--                         data-transform_in="x:[300%];opacity:0;s:500;"--}}
-{{--                         data-transform_idle="opacity:0.2;s:500;">--}}
-{{--                        <img src="/client/img/slides/slide-title-border.png" alt=""></div>--}}
-
                     <div class="tp-caption font-weight-extra-bold text-color-light negative-ls-1"
                          data-frames='[{"delay":1000,"speed":2000,"frame":"0","from":"sX:1.5;opacity:0;fb:20px;","to":"o:1;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
                          data-x="center"

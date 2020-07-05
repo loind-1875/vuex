@@ -13,4 +13,9 @@ class ProductTranslation extends Model
         'product_id',
         'short_detail',
     ];
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
 }

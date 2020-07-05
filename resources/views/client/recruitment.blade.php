@@ -37,24 +37,24 @@
                                 <ul class="simple-post-list">
                                     @if (count($random))
                                         @foreach ($random as $n)
-                                        <li>
-                                            <div class="post-image">
-                                                <div class="img-thumbnail img-thumbnail-no-borders d-block">
+                                            <li>
+                                                <div class="post-image">
+                                                    <div class="img-thumbnail img-thumbnail-no-borders d-block">
+                                                        <a href="{{ route('client.post_detail', parseLink($n)) }}">
+                                                            <img src="{{ getImage($n->image) }}" width="50" height="50" alt="">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="post-info">
                                                     <a href="{{ route('client.post_detail', parseLink($n)) }}">
-                                                        <img src="{{ getImage($n->image) }}" width="50" height="50" alt="">
+                                                        {{ $n->title }}
                                                     </a>
+                                                    <div class="post-meta">
+                                                        {{ formatDate($n->updated_at) }}
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="post-info">
-                                                <a href="{{ route('client.post_detail', parseLink($n)) }}">
-                                                    {{ $n->title }}
-                                                </a>
-                                                <div class="post-meta">
-                                                    {{ formatDate($n->updated_at) }}
-                                                </div>
-                                            </div>
-                                        </li>
-                                    @endforeach
+                                            </li>
+                                        @endforeach
                                     @else
                                         <li><p>{{ __('home.no_data') }}</p></li>
                                     @endif
@@ -93,7 +93,9 @@
                                         <div class="post-meta">
                                             <span><i class="far fa-calendar-alt"></i> {{ formatDate($rec->updated_at) }}</span>
                                             <span class="d-block d-sm-inline-block float-sm-right mt-3 mt-sm-0">
-                                                <a href="{{ route('client.post_detail', parseLink($rec)) }}" class="btn btn-xs btn-light text-1 text-uppercase"></a>
+                                                <a href="{{ route('client.post_detail', parseLink($rec)) }}" class="btn btn-xs btn-light text-1 text-uppercase">
+                                                    {{ __('home.read_more') }}
+                                                </a>
                                             </span>
                                         </div>
                                     </div>

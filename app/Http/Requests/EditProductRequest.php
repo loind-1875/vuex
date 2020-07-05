@@ -28,7 +28,10 @@ class EditProductRequest extends FormRequest
             'en.name' => 'required',
             'cn.name' => 'required',
             'images' =>  $this->images ? 'image|mimes:jpeg,png,jpg,gif,svg|max:2048' : 'nullable',
-            'category' => 'required'
+            'category' => 'required',
+            'vi.short_detail' => 'max:500',
+            'cn.short_detail' => 'max:500',
+            'en.short_detail' => 'max:500',
         ];
     }
 
@@ -41,6 +44,9 @@ class EditProductRequest extends FormRequest
             'images.max' => 'Ảnh tối đa là 2MB',
             'images.mimes' => 'Chỉ được upload file ảnh jpeg, png, bmp, jpg, svg, gif',
             'category.required' => 'Danh mục là bắt buộc',
+            'vi.short_detail.max' => 'Mô tả tối đa chỉ 500 kí tự',
+            'cn.short_detail.max' => 'Mô tả tối đa chỉ 500 kí tự',
+            'en.short_detail.max' => 'Mô tả tối đa chỉ 500 kí tự',
         ];
     }
 }
