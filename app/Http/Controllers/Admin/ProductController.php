@@ -128,8 +128,11 @@ class ProductController extends Controller
             abort(Response::HTTP_NOT_FOUND);
         }
 
-
         if ($request->hasFile('images')) {
+            if (file_exists('storage/images/' . $product->image)) {
+                unlink('storage/images/' . $product->image);
+            }
+
             $this->saveImage($request);
         }
 
@@ -166,6 +169,10 @@ class ProductController extends Controller
     public function destroy($id)
     {
         $product = Product::find($id);
+
+        if (file_exists('storage/images/' . $product->image)) {
+            unlink('storage/images/' . $product->image);
+        }
 
         if (!$product) {
             return response()->json(['message' => 'Product not found']);

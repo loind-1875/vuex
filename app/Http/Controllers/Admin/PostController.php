@@ -145,8 +145,13 @@ class PostController extends Controller
 
         $titleVi = array_get($request->vi, 'title', null);
         $slug = str_slug($titleVi);
+        $request->merge(['slug' => $slug]);
 
         if ($request->hasFile('images')) {
+            if (file_exists('storage/images/' . $news->image)) {
+                unlink('storage/images/' . $news->image);
+            }
+
             $this->saveImage($request);
         }
 
@@ -155,13 +160,13 @@ class PostController extends Controller
         $data= $request->only(['vi', 'en', 'cn']);
 
         foreach ($data as $item) {
+            $postTranslation = PostTranslation::find($item['id']);
             $detail = array_get($item, 'detail', null);
 
             if ($detail) {
                 $detail = $this->saveDetailPost($detail);
             }
 
-            $postTranslation = PostTranslation::find($item['id']);
             $postTranslation->update($item);
         }
 
@@ -174,6 +179,10 @@ class PostController extends Controller
 
         if (!$news) {
             abort(Response::HTTP_NOT_FOUND);
+        }
+
+        if (file_exists('storage/images/' . $news->image)) {
+            unlink('storage/images/' . $news->image);
         }
 
         $news->postTranslations()->delete();
