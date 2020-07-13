@@ -45,7 +45,7 @@
                                     <div class="post-image">
                                         <div class="d-block">
                                             <a href="{{ route('client.product', parseLink($pro)) }}">
-                                                <img alt="" width="60" height="60" class="img-fluid" src="{{ getImage($pro->image) }}">
+                                                <img alt="" width="60" height="60" class="img-fluid" src="{{ ($pro->image) }}">
                                             </a>
                                         </div>
                                     </div>
@@ -69,7 +69,7 @@
                                     <span class="product-thumb-info border-0">
                                         <a href="{{ route('client.product', parseLink($product)) }}">
                                             <span class="product-thumb-info-image">
-                                                <img alt="" class="img-fluid" src="{{ getImage($product->image) }}">
+                                                <img alt="" class="img-fluid" src="{{ ($product->image) }}">
                                             </span>
                                         </a>
                                         <span class="product-thumb-info-content product-thumb-info-content pl-0 bg-color-light">

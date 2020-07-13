@@ -33,7 +33,7 @@ class NewsRequest extends FormRequest
             'vi.short_detail' => 'required',
             'en.short_detail' => 'required',
             'cn.short_detail' => 'required',
-            'images' => 'required|image|mimes:jpeg,bmp,png|max:2048',
+            'image' => 'required',
         ];
     }
 
@@ -50,8 +50,6 @@ class NewsRequest extends FormRequest
             'en.short_detail.required' => 'Tóm tắt tiếng anh là bắt buộc',
             'cn.short_detail.required' => 'Tóm tắt tiếng trung là bắt buộc',
             'images.required' => 'Ảnh là bắt buộc',
-            'images.max' => 'Ảnh tối đa là 2MB',
-            'images.mimes' => 'Chỉ được upload file ảnh jpeg, png, bmp',
         ];
     }
 }

@@ -33,7 +33,8 @@
                                         <tr>
                                             <th width="50px" align="center">#</th>
                                             <th align="center">Tên</th>
-                                            <th align="center">Giá</th>
+                                            <th width="50px" align="center">Sao</th>
+                                            <th align="center">Danh mục</th>
                                             <th width="100px" align="center">Thao tác</th>
                                         </tr>
                                         </thead>
@@ -42,7 +43,13 @@
                                                 <tr>
                                                     <td scope="row" align="center">{{ $index + 1 }}</td>
                                                     <td>{{ $product->name }}</td>
-                                                    <td>{{ $product->price }}</td>
+                                                    <td>{{ $product->star }}</td>
+                                                    <td>
+                                                        @foreach ($product->categories as $cate)
+                                                            <span>{{ $cate->name }}</span>
+                                                            @if (!$loop->last),@endif
+                                                        @endforeach
+                                                    </td>
                                                     <td align="center">
                                                         <a href="{{ route('products.edit', $product->id) }}" class="btn btn-primary btn-sm">
                                                             <i class="fa fa-pencil-square-o"></i>
@@ -58,6 +65,9 @@
                                                                 <i class="fa fa-trash"></i>
                                                             </button>
                                                         </form>
+                                                        <a target="_blank" href="{{ route('client.product', parseLink($product)) }}" class="btn btn-success btn-sm">
+                                                            <i class="fa fa-eye"></i>
+                                                        </a>
                                                     </td>
                                                 </tr>
                                             @endforeach

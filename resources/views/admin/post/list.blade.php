@@ -65,6 +65,9 @@
                                                             <i class="fa fa-trash"></i>
                                                         </button>
                                                     </form>
+                                                    <a target="_blank" href="{{ route('client.post_detail', parseLink($new)) }}" class="btn btn-success btn-sm">
+                                                        <i class="fa fa-eye"></i>
+                                                    </a>
                                                 </td>
                                             </tr>
                                         @endforeach

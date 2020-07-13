@@ -41,7 +41,7 @@
                                                 <div class="post-image">
                                                     <div class="img-thumbnail img-thumbnail-no-borders d-block">
                                                         <a href="{{ route('client.post_detail', parseLink($n)) }}">
-                                                            <img src="{{ getImage($n->image) }}" width="50" height="50" alt="">
+                                                            <img src="{{ ($n->image) }}" width="50" height="50" alt="">
                                                         </a>
                                                     </div>
                                                 </div>
@@ -73,7 +73,7 @@
                                     <div class="col-lg-5">
                                         <div class="post-image">
                                             <a href="{{ route('client.post_detail', parseLink($rec)) }}">
-                                                <img src="{{ getImage($rec->image) }}" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="{{ $rec->title }}" />
+                                                <img src="{{ ($rec->image) }}" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="{{ $rec->title }}" />
                                             </a>
                                         </div>
                                     </div>
@@ -102,11 +102,11 @@
                                 </div>
                             </article>
                         @endforeach
-                            <div class="page-link mt-4 mb-4">
+                            <div class="mt-4 mb-4">
                                 {{ $recruitments->links() }}
                             </div>
                     @else
-                    <p class="text-center">{{ __('home.no_data') }}</p>
+                        <p class="text-center">{{ __('home.no_data') }}</p>
                     @endif
                 </div>
             </div>

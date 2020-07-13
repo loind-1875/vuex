@@ -41,7 +41,7 @@
                                                 <div class="post-image">
                                                     <div class="img-thumbnail img-thumbnail-no-borders d-block">
                                                         <a href="{{ route('client.post_detail', parseLink($n)) }}">
-                                                            <img src="{{ getImage($n->image) }}" width="50" height="50" alt="">
+                                                            <img src="{{ $n->image }}" width="50" height="50" alt="">
                                                         </a>
                                                     </div>
                                                 </div>
@@ -70,7 +70,7 @@
                     <article class="post post-large blog-single-post border-0 m-0 p-0">
                         <div class="post-image ml-0">
                             <a href="#">
-                                <img src="{{ getImage($news->image) }}" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="{{ $news->title }}" />
+                                <img src="{{ ($news->image) }}" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="{{ $news->title }}" />
                             </a>
                         </div>
 

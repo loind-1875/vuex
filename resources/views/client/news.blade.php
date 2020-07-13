@@ -38,7 +38,7 @@
                                     <article class="post post-medium border-0 pb-0 mb-5">
                                         <div class="post-image">
                                             <a href="{{ route('client.post_detail', parseLink($n)) }}">
-                                                <img src="{{ getImage($n->image) }}" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />
+                                                <img src="{{ ($n->image) }}" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />
                                             </a>
                                         </div>
 

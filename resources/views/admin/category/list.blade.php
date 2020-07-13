@@ -58,6 +58,9 @@
                                                             </button>
                                                         </form>
                                                     @endif
+                                                    <a target="_blank" href="{{ route('client.category', parseLink($category)) }}" class="btn btn-success btn-sm">
+                                                        <i class="fa fa-eye"></i>
+                                                    </a>
                                                 </td>
                                             </tr>
                                         @endforeach

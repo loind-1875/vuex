@@ -51,8 +51,13 @@
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Ảnh sản phẩm<span>*</span></h4>
-                                    <img src="{{ getImage($product->image) }}" alt="" class="img m-b-10">
-                                    <input type="file" name="images" class="form-control">
+                                    <span class="input-group-btn">
+                                        <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
+                                            <i class="fa fa-picture-o"></i> Choose
+                                        </a>
+                                   </span>
+                                    <input id="thumbnail" class="form-control" type="text" name="image" required value="{{ $product->image }}">
+                                    <img id="holder" style="margin-top:15px;max-height:200px;" src="{{ $product->image }}">
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Danh mục<span>*</span></h4>
@@ -92,15 +97,15 @@
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Chi tiết sản phẩm (VI) </h4>
-                                    <textarea id="summernote" name="vi[detail]" class="form-control"></textarea>
+                                    <textarea id="summernote" name="vi[detail]" class="form-control">{{ $product->vi->detail }}</textarea>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Chi tiết sản phẩm (EN) </h4>
-                                    <textarea id="summernote1" name="en[detail]" class="form-control"></textarea>
+                                    <textarea id="summernote1" name="en[detail]" class="form-control">{{ $product->en->detail }}</textarea>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Chi tiết sản phẩm (CN) </h4>
-                                    <textarea id="summernote2" name="cn[detail]" class="form-control"></textarea>
+                                    <textarea id="summernote2" name="cn[detail]" class="form-control">{{ $product->cn->detail }}</textarea>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <button class="btn btn-primary waves-effect waves-light" type="submit">Lưu</button>
@@ -147,29 +152,22 @@
 @endsection
 
 @section('script')
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
-
+    <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
+    <script>
+        var options = {
+            filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+            filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
+            filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+            filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
+        };
+    </script>
+    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
     <script>
         $(document).ready(function() {
-            $('#summernote').summernote({
-                placeholder: 'Nhập chi tiết sản phẩm',
-                height: 350,
-                maximumImageFileSize: 2097152
-            });
-            $('#summernote1').summernote({
-                placeholder: 'Nhập chi tiết sản phẩm',
-                height: 350,
-                maximumImageFileSize: 2097152
-            });
-            $('#summernote2').summernote({
-                placeholder: 'Nhập chi tiết sản phẩm',
-                height: 350,
-                maximumImageFileSize: 2097152
-            });
-
-            $('#summernote').summernote('code', {!! json_encode($product->vi->detail) !!});
-            $('#summernote1').summernote('code', {!! json_encode($product->en->detail) !!});
-            $('#summernote2').summernote('code', {!! json_encode($product->cn->detail) !!});
+            $('#lfm').filemanager('image');
+            CKEDITOR.replace('summernote', options);
+            CKEDITOR.replace('summernote1', options);
+            CKEDITOR.replace('summernote2', options);
         });
     </script>
 @endsection

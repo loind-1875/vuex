@@ -48,7 +48,12 @@
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Ảnh sản phẩm<span>*</span></h4>
-                                    <input type="file" name="images" class="form-control" value="{{ old('images') }}" required>
+                                    <span class="input-group-btn">
+                                        <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
+                                            <i class="fa fa-picture-o"></i> Choose
+                                        </a>
+                                   </span>
+                                    <input id="thumbnail" class="form-control" type="text" name="image" required value="{{ old('image') }}">
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Danh mục<span>*</span></h4>
@@ -80,15 +85,15 @@
                                     <textarea name="cn[short_detail]" id="" cols="30" rows="10" placeHolder="Nhập mô tả ngắn sản phẩm"  class="form-control">{{ old('cn.short_detail') }}</textarea>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
-                                    <h4 class="sub-title">Chi tiết sản phẩm (VI) <span>*</span></h4>
+                                    <h4 class="sub-title">Chi tiết sản phẩm (VI)</h4>
                                     <textarea id="summernote" name="vi[detail]" class="form-control"></textarea>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
-                                    <h4 class="sub-title">Chi tiết sản phẩm (EN) <span>*</span></h4>
+                                    <h4 class="sub-title">Chi tiết sản phẩm (EN)</h4>
                                     <textarea id="summernote1" name="en[detail]" class="form-control"></textarea>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
-                                    <h4 class="sub-title">Chi tiết sản phẩm (CN) <span>*</span></h4>
+                                    <h4 class="sub-title">Chi tiết sản phẩm (CN)</h4>
                                     <textarea id="summernote2" name="cn[detail]" class="form-control"></textarea>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
@@ -136,25 +141,22 @@
 @endsection
 
 @section('script')
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
-
+    <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
+    <script>
+        var options = {
+            filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+            filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
+            filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+            filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
+        };
+    </script>
+    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
     <script>
         $(document).ready(function() {
-            $('#summernote').summernote({
-                placeholder: 'Nhập chi tiết sản phẩm',
-                height: 350,
-                maximumImageFileSize: 2097152
-            });
-            $('#summernote1').summernote({
-                placeholder: 'Nhập chi tiết sản phẩm',
-                height: 350,
-                maximumImageFileSize: 2097152
-            });
-            $('#summernote2').summernote({
-                placeholder: 'Nhập chi tiết sản phẩm',
-                height: 350,
-                maximumImageFileSize: 2097152
-            });
+            $('#lfm').filemanager('image');
+            CKEDITOR.replace('summernote', options);
+            CKEDITOR.replace('summernote1', options);
+            CKEDITOR.replace('summernote2', options);
         });
     </script>
 @endsection
