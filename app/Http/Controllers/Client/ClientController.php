@@ -18,11 +18,11 @@ class ClientController extends Controller
         $news = Post::where('is_recruitment', 0)->take(3)->latest()->get();
 
         $engine = Category::with(['products' => function($q) {
-            $q->take(6)->latest();
+            $q->where('public', 1)->where('show_home', 1)->take(6)->latest();
         }])->where('id', 2)->first();
 
         $chemistry = Category::with(['products' => function($q) {
-            $q->take(6)->latest();
+            $q->where('public', 1)->where('show_home', 1)->take(6)->latest();
         }])->where('id', 1)->first();
 
         return view('client.client', compact('news', 'chemistry', 'engine'));
@@ -127,9 +127,9 @@ class ClientController extends Controller
 
         $chemistry = Category::find(1);
 
-        $newProduct = Product::take(3)->latest()->get();
+        $newProduct = Product::where('public', 1)->take(3)->latest()->get();
 
-        $products = $category->products()->paginate(24);
+        $products = $category->publicProducts()->latest()->paginate(24);
 
         $categories = $this->getCategories();
 
@@ -162,9 +162,9 @@ class ClientController extends Controller
 
         $chemistry = Category::find(1);
 
-        $otherProducts = Product::where('id', '!=', $id)->take(4)->get();
+        $otherProducts = Product::where('id', '!=', $id)->where('public', 1)->take(4)->get();
 
-        $newProduct = Product::take(3)->latest()->get();
+        $newProduct = Product::take(3)->where('public', 1)->latest()->get();
 
         return view(
             'client.product-detail',
@@ -205,6 +205,7 @@ class ClientController extends Controller
 
         $result = ProductTranslation::where('name', 'like', '%' . $keyword . '%')
             ->where('locale', $lan)
+            ->where('public', 1)
             ->with('product', 'product.categories')
             ->get();
 

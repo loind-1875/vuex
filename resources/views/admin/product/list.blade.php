@@ -33,8 +33,10 @@
                                         <tr>
                                             <th width="50px" align="center">#</th>
                                             <th align="center">Tên</th>
-                                            <th width="50px" align="center">Sao</th>
                                             <th align="center">Danh mục</th>
+                                            <th width="50px" align="center">Sao</th>
+                                            <th align="center">Public</th>
+                                            <th align="center">Show</th>
                                             <th width="100px" align="center">Thao tác</th>
                                         </tr>
                                         </thead>
@@ -43,12 +45,28 @@
                                                 <tr>
                                                     <td scope="row" align="center">{{ $index + 1 }}</td>
                                                     <td>{{ $product->name }}</td>
-                                                    <td>{{ $product->star }}</td>
                                                     <td>
                                                         @foreach ($product->categories as $cate)
                                                             <span>{{ $cate->name }}</span>
                                                             @if (!$loop->last),@endif
                                                         @endforeach
+                                                    </td>
+                                                    <td align="center">{{ $product->star }}</td>
+                                                    <td align="center">
+                                                        <div class="category-single border-checkbox-section">
+                                                            <div class="border-checkbox-group border-checkbox-group-primary">
+                                                                <input class="border-checkbox" name="is_recruitment" value="1" {{ $product->public == 1 ? 'checked' : ''}} type="checkbox" id="checkbox1" disabled>
+                                                                <label class="border-checkbox-label" for="checkbox1"></label>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td align="center">
+                                                        <div class="category-single border-checkbox-section">
+                                                            <div class="border-checkbox-group border-checkbox-group-primary">
+                                                                <input class="border-checkbox" name="is_recruitment" value="1" {{ $product->show_home == 1 ? 'checked' : ''}} type="checkbox" id="checkbox2" disabled>
+                                                                <label class="border-checkbox-label" for="checkbox2"></label>
+                                                            </div>
+                                                        </div>
                                                     </td>
                                                     <td align="center">
                                                         <a href="{{ route('products.edit', $product->id) }}" class="btn btn-primary btn-sm">

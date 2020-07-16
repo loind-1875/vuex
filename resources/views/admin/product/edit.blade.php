@@ -108,6 +108,48 @@
                                     <textarea id="summernote2" name="cn[detail]" class="form-control">{{ $product->cn->detail }}</textarea>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
+                                    <div class="form-group row has-success">
+                                        <label class="col-sm-2">Public</label>
+                                        <div class="col-sm-10">
+                                            <div class="form-radio">
+                                                <div class="radio radiofill radio-primary radio-inline">
+                                                    <label>
+                                                        <input type="radio" name="public" value="1" data-bv-field="public" {{ $product->public == 1 ? 'checked' : '' }} />
+                                                        <i class="helper"></i>Show
+                                                    </label>
+                                                </div>
+                                                <div class="radio radiofill radio-primary radio-inline">
+                                                    <label>
+                                                        <input type="radio" name="public" value="0" data-bv-field="public" {{ $product->public == 0 ? 'checked' : '' }} />
+                                                        <i class="helper"></i>Ẩn
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 m-b-30">
+                                    <div class="form-group row has-success">
+                                        <label class="col-sm-2">Hiển thị trang chủ</label>
+                                        <div class="col-sm-10">
+                                            <div class="form-radio">
+                                                <div class="radio radiofill radio-primary radio-inline">
+                                                    <label>
+                                                        <input type="radio" name="show_home" value="1" data-bv-field="public" {{ $product->show_home == 1 ? 'checked' : '' }} />
+                                                        <i class="helper"></i>Show
+                                                    </label>
+                                                </div>
+                                                <div class="radio radiofill radio-primary radio-inline">
+                                                    <label>
+                                                        <input type="radio" name="show_home" value="0" data-bv-field="public" {{ $product->show_home == 0 ? 'checked' : '' }} />
+                                                        <i class="helper"></i>Ẩn
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 m-b-30">
                                     <button class="btn btn-primary waves-effect waves-light" type="submit">Lưu</button>
                                 </div>
                             </form>
@@ -120,7 +162,6 @@
 @endsection
 
 @section('style')
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
     <style>
         h4 span {
             color: red;

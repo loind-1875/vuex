@@ -97,6 +97,48 @@
                                     <textarea id="summernote2" name="cn[detail]" class="form-control"></textarea>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
+                                    <div class="form-group row has-success">
+                                        <label class="col-sm-2">Public</label>
+                                        <div class="col-sm-10">
+                                            <div class="form-radio">
+                                                <div class="radio radiofill radio-primary radio-inline">
+                                                    <label>
+                                                        <input type="radio" name="public" value="1" data-bv-field="public" checked />
+                                                        <i class="helper"></i>Show
+                                                    </label>
+                                                </div>
+                                                <div class="radio radiofill radio-primary radio-inline">
+                                                    <label>
+                                                        <input type="radio" name="public" value="0" data-bv-field="public" />
+                                                        <i class="helper"></i>Ẩn
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 m-b-30">
+                                    <div class="form-group row has-success">
+                                        <label class="col-sm-2">Hiển thị trang chủ</label>
+                                        <div class="col-sm-10">
+                                            <div class="form-radio">
+                                                <div class="radio radiofill radio-primary radio-inline">
+                                                    <label>
+                                                        <input type="radio" name="show_home" value="1" data-bv-field="public" checked />
+                                                        <i class="helper"></i>Show
+                                                    </label>
+                                                </div>
+                                                <div class="radio radiofill radio-primary radio-inline">
+                                                    <label>
+                                                        <input type="radio" name="show_home" value="0" data-bv-field="public" />
+                                                        <i class="helper"></i>Ẩn
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 m-b-30">
                                     <button class="btn btn-primary waves-effect waves-light" type="submit">Lưu</button>
                                 </div>
                             </form>

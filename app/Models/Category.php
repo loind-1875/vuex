@@ -37,12 +37,24 @@ class Category extends Model implements TranslatableContract
     {
         return $this->categoryTranslation()->where('locale', 'vi');
     }
+
     public function en()
     {
         return $this->categoryTranslation()->where('locale', 'en');
     }
+
     public function cn()
     {
         return $this->categoryTranslation()->where('locale', 'cn');
+    }
+
+    public function publicProducts()
+    {
+        return $this->products()->where('public', 1);
+    }
+
+    public function homeproducts()
+    {
+        return $this->products()->where('public', 1)->where('show_home', 1);
     }
 }
