@@ -28,7 +28,7 @@
                         <div class="card-block table-border-style">
                             @if (count($products))
                                 <div class="table-responsive">
-                                    <table class="table table-bordered table-hover">
+                                    <table class="table table-bordered table-hover" id="datatable">
                                         <thead>
                                         <tr>
                                             <th width="50px" align="center">#</th>
@@ -36,7 +36,7 @@
                                             <th align="center">Danh mục</th>
                                             <th width="50px" align="center">Sao</th>
                                             <th align="center">Public</th>
-                                            <th align="center">Show</th>
+                                            <th align="center">Show Home</th>
                                             <th width="100px" align="center">Thao tác</th>
                                         </tr>
                                         </thead>
@@ -92,7 +92,7 @@
                                         </tbody>
                                     </table>
                                     <div class="m-t-15">
-                                        {{ $products->links() }}
+                                        
                                     </div>
                                 </div>
                             @else
@@ -107,6 +107,7 @@
 @endsection
 
 @section('style')
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
     <style>
         .card {
             margin-bottom: 100px;
@@ -125,4 +126,13 @@
             margin-bottom: 0;
         }
     </style>
+@endsection
+
+@section('script')
+    <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready( function () {
+            $('#datatable').DataTable();
+        });
+    </script>
 @endsection
