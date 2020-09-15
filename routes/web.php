@@ -20,6 +20,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'admi
     Route::get('settings', 'AdminController@settings')->name('admin.setting');
     Route::put('settings', 'AdminController@updateSettings')->name('update.setting');
     Route::resource('contacts', 'ContactController')->only(['index', 'destroy']);
+    Route::get('setting-home', 'SettingController@index')->name('settings.show');
+    Route::put('settings-home', 'SettingController@update')->name('settings.store');
+    Route::resource('sliders', 'SliderController');
 });
 
 Route::group(['middleware' => 'locale', 'namespace' => 'Client'], function () {
