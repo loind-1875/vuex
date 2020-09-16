@@ -8,6 +8,7 @@ use App\Models\Post;
 use App\Models\Product;
 use App\Http\Controllers\Controller;
 use App\Models\ProductTranslation;
+use App\Models\Slider;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -25,7 +26,9 @@ class ClientController extends Controller
             $q->where('public', 1)->where('show_home', 1)->take(6)->latest();
         }])->where('id', 1)->first();
 
-        return view('client.client', compact('news', 'chemistry', 'engine'));
+        $sliders = Slider::orderByDesc('order')->get();
+
+        return view('client.client', compact('news', 'chemistry', 'engine', 'sliders'));
     }
 
     public function news()
