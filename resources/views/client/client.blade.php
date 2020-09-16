@@ -1,7 +1,7 @@
 @extends('client.layout.main')
 
 @section('title')
-    {{ __('home.company.name') }}
+    {{ ($settings[0]['value']) }}
 @endsection
 
 @section('content')
@@ -356,16 +356,9 @@
                             {{ __('home.header.about') }}
                         </h2>
                     </div>
-                    <p class="appear-animation mb-0" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500">
-                        <strong>{{ __('home.company.name') }}</strong>
-                        {{ __('home.company.detail1') }}
-                    </p>
-                    <p class="mb-0 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="700">
-                        {{ __('home.company.detail2') }}
-                    </p>
-                    <p class="mb-0 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="900">
-                        <strong>{{ __('home.company.detail3') }}</strong>
-                    </p>
+                    <div class="appear-animation mb-0" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500">
+                        {!! $settings[1]['value'] !!}
+                    </div>
                 </div>
             </div>
         </div>

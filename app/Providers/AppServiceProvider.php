@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use Schema;
 use DB;
 use App\Models\Category;
+use App\Models\Setting;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -30,8 +31,10 @@ class AppServiceProvider extends ServiceProvider
 
         $chemistry = Category::find(2);
         $engine = Category::find(1);
+        $settings = Setting::get();
 
         \View::share('engine', $engine);
         \View::share('chemistry', $chemistry);
+        \View::share('settings', $settings);
     }
 }

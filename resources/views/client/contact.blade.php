@@ -1,7 +1,15 @@
 @extends('client.layout.main')
 
 @section('title')
-    {{ __('home.header.about') }}
+    {{ __('home.header.contact') }}
+@endsection
+
+@section('meta')
+    <meta property="og:url" content="{{ route('client.contact') }}">
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="{{ __('home.header.contact') }}" />
+    <meta property="og:image" content="{{ $settings[6]['banner1'] }}">
+    <meta property="og:description" content="{{ __('home.header.contact') }}">
 @endsection
 
 @section('content')

@@ -4,6 +4,14 @@
     {{ $product->name }}
 @endsection
 
+@section('meta')
+    <meta property="og:url" content="{{ route('client.product', parseLink($product)) }}">
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="{{ $product->name }}" />
+    <meta property="og:image" content="{{ $product->image }}">
+    <meta property="og:description" content="{{ strip_tags($product->short_detail) ?? $product->name }}">
+@endsection
+
 @section('content')
     <div class="container">
          <section class="page-header page-header-modern bg-color-light-scale-1 page-header-md">

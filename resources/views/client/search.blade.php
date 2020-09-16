@@ -4,6 +4,14 @@
     {{ __('home.search.index') }}
 @endsection
 
+@section('meta')
+    <meta property="og:url" content="{{ route('client.recruitment') }}">
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="{{ __('home.search.index') }}" />
+    <meta property="og:image" content="{{ $settings[6]['banner1'] }}">
+    <meta property="og:description" content="{{ __('home.search.index') }}">
+@endsection
+
 @section('content')
     <section class="page-header page-header-modern page-header-background page-header-background-md overlay overlay-color-dark overlay-show overlay-op-7"
              style="background-image: url({{ asset('/client/img/slides/5.jpg') }}); background-position: bottom;"

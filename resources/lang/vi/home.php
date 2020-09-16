@@ -33,7 +33,7 @@ return [
         'our_vision' => 'Mục tiêu của chúng tôi',
         'our_vision_detail' => 'H.F.T – không chỉ tạo ra sản phẩm tốt- chúng tôi còn cố gắng tạo dựng niềm tin cho thị trường Việt Nam!',
         'why_us' => 'Tại sao chọn chúng tôi',
-        'why_us_detail' => '.',
+        'why_us_detail' => 'H.F.T với tiêu chí đặt sự an toàn của người tiêu dùng và quyền lợi khách hàng làm kim chỉ nam cho mọi chính sách phát triển sản phẩm và dịch vụ của Công ty.',
     ],
     'about_us' => 'Về Chúng tôi',
     'engine' => 'Động cơ',
