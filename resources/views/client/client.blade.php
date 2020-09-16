@@ -1,7 +1,7 @@
 @extends('client.layout.main')
 
 @section('title')
-    {{ ($settings[0]['value']) }}
+    {{ ($settings[0]['detail']) }}
 @endsection
 
 @section('content')
@@ -343,10 +343,10 @@
                 <div class="col-md-6 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="300">
                     <div class="owl-carousel owl-theme nav-inside mb-0" data-plugin-options="{'items': 1, 'margin': 10, 'animateOut': 'fadeOut', 'autoplay': true, 'autoplayTimeout': 6000, 'loop': true}">
                         <div>
-                            <img alt="" class="img-fluid" src="/client/img/generic/generic-corporate-3-2-full.jpg">
+                            <img alt="" class="img-fluid" src="{{ $settings[6]['value'] }}">
                         </div>
                         <div>
-                            <img alt="" class="img-fluid" src="/client/img/generic/generic-corporate-3-3-full.jpg">
+                            <img alt="" class="img-fluid" src="{{ $settings[7]['value'] }}">
                         </div>
                     </div>
                 </div>
@@ -357,7 +357,7 @@
                         </h2>
                     </div>
                     <div class="appear-animation mb-0" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500">
-                        {!! $settings[1]['value'] !!}
+                        {!! $settings[1]['detail'] !!}
                     </div>
                 </div>
             </div>

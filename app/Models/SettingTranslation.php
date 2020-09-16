@@ -9,6 +9,6 @@ class SettingTranslation extends Model
     protected $fillable = [
         'setting_id',
         'locale',
-        'value',
+        'detail',
     ];
 }

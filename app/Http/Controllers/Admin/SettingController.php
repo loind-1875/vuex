@@ -22,7 +22,9 @@ class SettingController extends Controller
             'logo',
             'favicon',
             'email',
-            'phone'
+            'phone',
+            'banner1',
+            'banner2',
         ]);
 
         $trans = $request->only([
@@ -47,7 +49,7 @@ class SettingController extends Controller
                     ->first();
 
                 $settingTran->update([
-                    'value' => $value
+                    'detail' => $value
                 ]);
             }
         }

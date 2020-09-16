@@ -65,13 +65,13 @@
                 </li>
                 <li class="{{ Request::segment(2) === 'settings' ? 'pcoded-trigger' : '' }}">
                     <a href="{{ route('settings.show') }}" class="waves-effect waves-dark">
-                        <span class="pcoded-micon"><i class="fa fa-users"></i></span>
+                        <span class="pcoded-micon"><i class="fa fa-cogs"></i></span>
                         <span class="pcoded-mtext">Cài đặt chung</span>
                     </a>
                 </li>
                 <li class="pcoded-hasmenu {{ Request::segment(2) === 'sliders' ? 'pcoded-trigger' : '' }}">
                     <a href="javascript:void(0)" class="waves-effect waves-dark">
-                        <span class="pcoded-micon"><i class="fa fa-newspaper-o"></i></span>
+                        <span class="pcoded-micon"><i class="fa fa-sliders"></i></span>
                         <span class="pcoded-mtext">Cài đặt slider</span>
                     </a>
                     <ul class="pcoded-submenu" style="{{ Request::segment(2) === 'sliders' ? 'display: block' : '' }}">

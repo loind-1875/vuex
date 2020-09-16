@@ -5,8 +5,8 @@
                 <div class="header-column">
                     <div class="header-row">
                         <div class="header-logo">
-                            <a href="index.html">
-                                <img alt="{{ $settings[0]['value'] }}" width="100" height="48" data-sticky-width="82" data-sticky-height="40" data-sticky-top="25" src="{{ $settings[2]['logo'] }}">
+                            <a href="/">
+                                <img alt="{{ $settings[0]['detail'] }}" width="100" height="48" data-sticky-width="82" data-sticky-height="40" data-sticky-top="25" src="{{ $settings[2]['value'] }}">
                             </a>
                         </div>
                     </div>

@@ -53,32 +53,32 @@ class SettingsTableSeeder extends Seeder
             [
                 'setting_id' => 1,
                 'locale' => 'vi',
-                'value' => NULL,
+                'detail' => NULL,
             ],
             [
                 'setting_id' => 1,
                 'locale' => 'en',
-                'value' => NULL,
+                'detail' => NULL,
             ],
             [
                 'setting_id' => 1,
                 'locale' => 'cn',
-                'value' => NULL,
+                'detail' => NULL,
             ],
             [
                 'setting_id' => 2,
                 'locale' => 'vi',
-                'value' => NULL,
+                'detail' => NULL,
             ],
             [
                 'setting_id' => 2,
                 'locale' => 'en',
-                'value' => NULL,
+                'detail' => NULL,
             ],
             [
                 'setting_id' => 2,
                 'locale' => 'cn',
-                'value' => NULL,
+                'detail' => NULL,
             ],
         ]);
     }

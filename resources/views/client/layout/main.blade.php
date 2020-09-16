@@ -6,9 +6,9 @@
 
     <title>@yield('title')</title>
 
-    <meta name="keywords" content="{{ $settings[0]['value'] }}" />
-    <meta name="description" content="{{ $settings[1]['value'] }}">
-    <meta name="author" content="{{ $settings[0]['value'] }}">
+    <meta name="keywords" content="{{ $settings[0]['detail'] }}" />
+    <meta name="description" content="{{ $settings[1]['detail'] }}">
+    <meta name="author" content="{{ $settings[0]['detail'] }}">
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ $settings[3]['value'] }}" type="image/x-icon" />

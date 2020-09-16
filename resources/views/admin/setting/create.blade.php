@@ -42,7 +42,7 @@
                                         class="form-control"
                                         name="company_name[vi]"
                                         placeHolder="Nhập tên"
-                                        value="{{ $settings[0]->vi->value }}" 
+                                        value="{{ $settings[0]->vi->detail }}" 
                                     >
                                 </div>
                                 <div class="col-sm-12 m-b-30">
@@ -52,7 +52,7 @@
                                         class="form-control"
                                         name="company_name[en]"
                                         placeHolder="Nhập tên"
-                                        value="{{ $settings[0]->en->value }}"
+                                        value="{{ $settings[0]->en->detail }}"
                                     >
                                 </div>
                                 <div class="col-sm-12 m-b-30">
@@ -62,7 +62,7 @@
                                         class="form-control"
                                         name="company_name[cn]"
                                         placeHolder="Nhập tên"
-                                        value="{{ $settings[0]->cn->value }}"
+                                        value="{{ $settings[0]->cn->detail }}"
                                     >
                                 </div>
                                 <div class="col-sm-12 m-b-30">
@@ -86,16 +86,36 @@
                                     <img id="holder1" style="margin-top:15px;max-height:100px;" src="{{ $settings[3]->value }}">
                                 </div>
                                 <div class="col-sm-12 m-b-30">
+                                    <h4 class="sub-title">Banner 1 </h4>
+                                    <span class="input-group-btn">
+                                        <a id="lfm2" data-input="thumbnail2" data-preview="holder2" class="btn btn-primary">
+                                            <i class="fa fa-picture-o"></i> Choose
+                                        </a>
+                                    </span>
+                                    <input id="thumbnail2" class="form-control" type="text" name="banner1"  value="{{ $settings[6]->value }}">
+                                    <img id="holder2" style="margin-top:15px;max-height:100px;" src="{{ $settings[6]->value }}">
+                                </div>
+                                <div class="col-sm-12 m-b-30">
+                                    <h4 class="sub-title">Banner 2 </h4>
+                                    <span class="input-group-btn">
+                                        <a id="lfm3" data-input="thumbnail3" data-preview="holder3" class="btn btn-primary">
+                                            <i class="fa fa-picture-o"></i> Choose
+                                        </a>
+                                    </span>
+                                    <input id="thumbnail3" class="form-control" type="text" name="banner2"  value="{{ $settings[7]->value }}">
+                                    <img id="holder3" style="margin-top:15px;max-height:100px;" src="{{ $settings[7]->value }}">
+                                </div>
+                                <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Giới thiệu (VI)</h4>
-                                    <textarea id="short-detail" name="about[vi]" placeHolder="Nhập giới thiệu" class="form-control">{{ $settings[1]->vi->value }}</textarea>
+                                    <textarea id="short-detail" name="about[vi]" placeHolder="Nhập giới thiệu" class="form-control">{{ $settings[1]->vi->detail }}</textarea>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Giới thiệu (EN)</h4>
-                                    <textarea id="short-detail1" name="about[en]" placeHolder="Nhập giới thiệu" class="form-control">{{ $settings[1]->en->value }}</textarea>
+                                    <textarea id="short-detail1" name="about[en]" placeHolder="Nhập giới thiệu" class="form-control">{{ $settings[1]->en->detail }}</textarea>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Giới thiệu (CN)</h4>
-                                    <textarea id="short-detail2" name="about[cn]" placeHolder="Nhập giới thiệu" class="form-control">{{ $settings[1]->cn->value }}</textarea>
+                                    <textarea id="short-detail2" name="about[cn]" placeHolder="Nhập giới thiệu" class="form-control">{{ $settings[1]->cn->detail }}</textarea>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Email</h4>
@@ -103,7 +123,7 @@
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Phone</h4>
-                                    <input type="text" class="form-control" name="phone" placeHolder="Nhập số điện thoại" value="{{ $settings[4]->value }}" >
+                                    <input type="text" class="form-control" name="phone" placeHolder="Nhập số điện thoại" value="{{ $settings[5]->value }}" >
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <button class="btn btn-primary waves-effect waves-light" type="submit">Lưu</button>
@@ -157,6 +177,8 @@
         $(document).ready(function() {
             $('#lfm').filemanager('image');
             $('#lfm1').filemanager('image');
+            $('#lfm2').filemanager('image');
+            $('#lfm3').filemanager('image');
             CKEDITOR.replace('short-detail', options);
             CKEDITOR.replace('short-detail1', options);
             CKEDITOR.replace('short-detail2', options);

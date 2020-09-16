@@ -17,7 +17,7 @@ class CreateSettingTranslationsTable extends Migration
             $table->bigIncrements('id');
             $table->string('setting_id');
             $table->string('locale');
-            $table->text('value')->nullable();
+            $table->text('detail')->nullable();
             $table->timestamps();
         });
     }

@@ -15,7 +15,7 @@ class Setting extends Model implements TranslatableContract
         'value',
     ];
 
-    public $translatedAttributes = ['value'];
+    public $translatedAttributes = ['detail'];
 
     public function settingTranslations()
     {
