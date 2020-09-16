@@ -1,7 +1,7 @@
 @extends('client.layout.main')
 
 @section('title')
-    {{ __('home.company.name') }}
+    {{ ($settings[0]['value']) }}
 @endsection
 
 @section('content')
@@ -356,16 +356,9 @@
                             {{ __('home.header.about') }}
                         </h2>
                     </div>
-                    <p class="appear-animation mb-0" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500">
-                        <strong>{{ __('home.company.name') }}</strong>
-                        {{ __('home.company.detail1') }}
-                    </p>
-                    <p class="mb-0 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="700">
-                        {{ __('home.company.detail2') }}
-                    </p>
-                    <p class="mb-0 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="900">
-                        <strong>{{ __('home.company.detail3') }}</strong>
-                    </p>
+                    <div class="appear-animation mb-0" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500">
+                        {!! $settings[1]['value'] !!}
+                    </div>
                 </div>
             </div>
         </div>
@@ -386,7 +379,7 @@
                                     <span class="product-thumb-info border-0">
                                         <a href="{{ route('client.product', parseLink($item)) }}">
                                             <span class="product-thumb-info-image">
-                                                <img alt="" class="img-fluid" src="{{ getImage($item->image) }}">
+                                                <img alt="" class="img-fluid" src="{{ ($item->image) }}">
                                             </span>
                                         </a>
                                         <span class="product-thumb-info-content product-thumb-info-content pl-0 bg-color-light">
@@ -418,7 +411,7 @@
                                     <span class="product-thumb-info border-0">
                                         <a href="{{ route('client.product', parseLink($ches)) }}">
                                             <span class="product-thumb-info-image">
-                                                <img alt="" class="img-fluid" src="{{ getImage($ches->image) }}">
+                                                <img alt="" class="img-fluid" src="{{ ($ches->image) }}">
                                             </span>
                                         </a>
                                         <span class="product-thumb-info-content product-thumb-info-content pl-0 bg-color-light">
@@ -448,7 +441,7 @@
                             <article class="post post-large pb-5">
                                 <div class="post-image">
                                     <a href="{{ route('client.post_detail', parseLink($item)) }}">
-                                        <img src="{{ getImage($item->image) }}" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="">
+                                        <img src="{{ ($item->image) }}" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="">
                                     </a>
                                 </div>
                                 <div class="post-date">

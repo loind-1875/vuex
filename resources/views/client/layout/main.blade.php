@@ -6,13 +6,13 @@
 
     <title>@yield('title')</title>
 
-    <meta name="keywords" content="HTML5 Template" />
-    <meta name="description" content="{{ __('home.company.name') }}">
-    <meta name="author" content="danhloimta">
+    <meta name="keywords" content="{{ $settings[0]['value'] }}" />
+    <meta name="description" content="{{ $settings[1]['value'] }}">
+    <meta name="author" content="{{ $settings[0]['value'] }}">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="shortcut icon" href="{{ $settings[3]['value'] }}" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="{{ $settings[3]['value'] }}">
 
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
@@ -22,6 +22,7 @@
 
     <link rel="stylesheet" href="/client/css/client.css">
     @yield('style')
+    @yield('meta')
 
 </head>
 

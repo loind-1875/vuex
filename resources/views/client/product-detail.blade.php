@@ -4,6 +4,14 @@
     {{ $product->name }}
 @endsection
 
+@section('meta')
+    <meta property="og:url" content="{{ route('client.product', parseLink($product)) }}">
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="{{ $product->name }}" />
+    <meta property="og:image" content="{{ $product->image }}">
+    <meta property="og:description" content="{{ strip_tags($product->short_detail) ?? $product->name }}">
+@endsection
+
 @section('content')
     <div class="container">
          <section class="page-header page-header-modern bg-color-light-scale-1 page-header-md">
@@ -45,7 +53,7 @@
                                     <div class="post-image">
                                         <div class="d-block">
                                             <a href="{{ route('client.product', parseLink($pro)) }}">
-                                                <img alt="" width="60" height="60" class="img-fluid" src="{{ getImage($pro->image) }}">
+                                                <img alt="" width="60" height="60" class="img-fluid" src="{{ ($pro->image) }}">
                                             </a>
                                         </div>
                                     </div>
@@ -65,7 +73,7 @@
                     <div class="col-lg-6">
                         <div class="owl-carousel owl-theme" data-plugin-options="{'items': 1, 'margin': 10}">
                             <div>
-                                <img alt="" height="300" class="img-fluid" src="{{ getImage($product->image) }}">
+                                <img alt="" height="300" class="img-fluid" src="{{ ($product->image) }}">
                             </div>
                         </div>
                     </div>
@@ -128,7 +136,7 @@
                             <span class="product-thumb-info border-0">
                                 <a href="{{ route('client.product', parseLink($pro)) }}">
                                     <span class="product-thumb-info-image">
-                                        <img alt="" class="img-fluid" src="{{ getImage($pro->image) }} ">
+                                        <img alt="" class="img-fluid" src="{{ ($pro->image) }} ">
                                     </span>
                                 </a>
                                 <span class="product-thumb-info-content product-thumb-info-content pl-0 bg-color-light">

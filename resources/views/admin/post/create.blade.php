@@ -31,31 +31,37 @@
                                 @csrf
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Tiêu đề (VI)<span>*</span></h4>
-                                    <input type="text" class="form-control" name="vi[title]" placeHolder="Nhập tiêu đề" value="{{ old('vi[title]') }}" required>
+                                    <input type="text" class="form-control" name="vi[title]" placeHolder="Nhập tiêu đề" value="{{ old('vi.title') }}" required>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Tiêu đề (EN)<span>*</span></h4>
-                                    <input type="text" class="form-control" name="en[title]" placeHolder="Nhập tiêu đề" value="{{ old('en[title]') }}" required>
+                                    <input type="text" class="form-control" name="en[title]" placeHolder="Nhập tiêu đề" value="{{ old('en.title') }}" required>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Tiêu đề (CN)<span>*</span></h4>
-                                    <input type="text" class="form-control" name="cn[title]" placeHolder="Nhập tiêu đề" value="{{ old('cn[title]') }}" required>
+                                    <input type="text" class="form-control" name="cn[title]" placeHolder="Nhập tiêu đề" value="{{ old('cn.title') }}" required>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Ảnh bài viết <span>*</span></h4>
-                                    <input type="file" class="form-control" name="images" required>
+                                    <span class="input-group-btn">
+                                        <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
+                                            <i class="fa fa-picture-o"></i> Choose
+                                        </a>
+                                   </span>
+                                    <input id="thumbnail" class="form-control" type="text" name="image" required value="{{ old('image') }}">
+                                    <img id="holder" style="margin-top:15px;max-height:100px;">
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Tóm tắt (VI)<span>*</span></h4>
-                                    <textarea id="short-detail" name="vi[short_detail]" placeHolder="Nhập tóm tắt" class="form-control">{{ old('vi[short_detail]') }}</textarea>
+                                    <textarea id="short-detail" name="vi[short_detail]" placeHolder="Nhập tóm tắt" class="form-control">{{ old('vi.short_detail') }}</textarea>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Tóm tắt (EN)<span>*</span></h4>
-                                    <textarea id="short-detail" name="en[short_detail]" placeHolder="Nhập tóm tắt" class="form-control">{{ old('en[short_detail]') }}</textarea>
+                                    <textarea id="short-detail" name="en[short_detail]" placeHolder="Nhập tóm tắt" class="form-control">{{ old('en.short_detail') }}</textarea>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Tóm tắt (CN)<span>*</span></h4>
-                                    <textarea id="short-detail" name="cn[short_detail]" placeHolder="Nhập tóm tắt" class="form-control">{{ old('cn[short_detail]') }}</textarea>
+                                    <textarea id="short-detail" name="cn[short_detail]" placeHolder="Nhập tóm tắt" class="form-control">{{ old('cn.short_detail') }}</textarea>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Chi tiết (VI)<span>*</span></h4>
@@ -90,12 +96,7 @@
 @endsection
 
 @section('style')
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
-@endsection
-
-@section('script')
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
-    <style>
+        <style>
         h4 span {
             color: red;
             font-size: 22px;
@@ -117,23 +118,25 @@
             min-height: 250px;
         }*/
     </style>
+@endsection
+
+@section('script')
+    <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
+    <script>
+        var options = {
+            filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+            filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
+            filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+            filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
+        };
+    </script>
+    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
     <script>
         $(document).ready(function() {
-            $('#summernote').summernote({
-                placeholder: 'Nhập chi tiết sản phẩm',
-                height: 350,
-                maximumImageFileSize: 2097152
-            });
-            $('#summernote1').summernote({
-                placeholder: 'Nhập chi tiết sản phẩm',
-                height: 350,
-                maximumImageFileSize: 2097152
-            });
-            $('#summernote2').summernote({
-                placeholder: 'Nhập chi tiết sản phẩm',
-                height: 350,
-                maximumImageFileSize: 2097152
-            });
+            $('#lfm').filemanager('image');
+            CKEDITOR.replace('summernote', options);
+            CKEDITOR.replace('summernote1', options);
+            CKEDITOR.replace('summernote2', options);
         });
     </script>
 @endsection

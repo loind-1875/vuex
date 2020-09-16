@@ -18,11 +18,11 @@ class ClientController extends Controller
         $news = Post::where('is_recruitment', 0)->take(3)->latest()->get();
 
         $engine = Category::with(['products' => function($q) {
-            $q->take(6)->latest();
+            $q->where('public', 1)->where('show_home', 1)->take(6)->latest();
         }])->where('id', 2)->first();
 
         $chemistry = Category::with(['products' => function($q) {
-            $q->take(6)->latest();
+            $q->where('public', 1)->where('show_home', 1)->take(6)->latest();
         }])->where('id', 1)->first();
 
         return view('client.client', compact('news', 'chemistry', 'engine'));
@@ -30,20 +30,14 @@ class ClientController extends Controller
 
     public function news()
     {
-        $engine = Category::findOrFail(2);
-
-        $chemistry = Category::findOrFail(1);
-
         $news = Post::where('is_recruitment', 0)->latest()->paginate(18);
 
-        return view('client.news', compact('news', 'engine', 'chemistry'));
+        return view('client.news', compact('news'));
     }
 
     public function recruitment()
     {
         $categories = $this->getCategories();
-        $engine = Category::find(2);
-        $chemistry = Category::find(1);
         $recruitments = Post::where('is_recruitment', 1)->latest()->paginate(10);
         $random = Post::where('is_recruitment', 1)->inRandomOrder()->get();
 
@@ -52,8 +46,6 @@ class ClientController extends Controller
             compact(
                 'recruitments',
                 'categories',
-                'engine',
-                'chemistry',
                 'random'
             )
         );
@@ -61,20 +53,12 @@ class ClientController extends Controller
 
     public function contact()
     {
-        $engine = Category::findOrFail(2);
-
-        $chemistry = Category::findOrFail(1);
-
-        return view('client.contact', compact('engine', 'chemistry'));
+        return view('client.contact');
     }
 
     public function about()
     {
-        $engine = Category::findOrFail(2);
-
-        $chemistry = Category::findOrFail(1);
-
-        return view('client.about', compact('engine', 'chemistry'));
+        return view('client.about');
     }
 
     public function newsDetail($slug)
@@ -123,13 +107,9 @@ class ClientController extends Controller
 
         $categories = $this->getCategories();
 
-        $engine = Category::find(2);
+        $newProduct = Product::where('public', 1)->take(3)->latest()->get();
 
-        $chemistry = Category::find(1);
-
-        $newProduct = Product::take(3)->latest()->get();
-
-        $products = $category->products()->paginate(24);
+        $products = $category->publicProducts()->latest()->paginate(24);
 
         $categories = $this->getCategories();
 
@@ -139,8 +119,6 @@ class ClientController extends Controller
                 'products',
                 'category',
                 'categories',
-                'engine',
-                'chemistry',
                 'newProduct'
             )
         );
@@ -162,9 +140,9 @@ class ClientController extends Controller
 
         $chemistry = Category::find(1);
 
-        $otherProducts = Product::where('id', '!=', $id)->take(4)->get();
+        $otherProducts = Product::where('id', '!=', $id)->where('public', 1)->take(4)->get();
 
-        $newProduct = Product::take(3)->latest()->get();
+        $newProduct = Product::take(3)->where('public', 1)->latest()->get();
 
         return view(
             'client.product-detail',
@@ -205,13 +183,10 @@ class ClientController extends Controller
 
         $result = ProductTranslation::where('name', 'like', '%' . $keyword . '%')
             ->where('locale', $lan)
+            ->where('public', 1)
             ->with('product', 'product.categories')
             ->get();
 
-        $engine = Category::find(2);
-
-        $chemistry = Category::find(1);
-
-        return view('client.search', compact('result', 'engine', 'chemistry', 'keyword'));
+        return view('client.search', compact('result', 'keyword'));
     }
 }

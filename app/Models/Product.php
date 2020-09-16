@@ -16,6 +16,8 @@ class Product extends Model implements TranslatableContract
         'slug',
         'image',
         'star',
+        'public',
+        'show_home',
     ];
 
     public function categories()
@@ -42,10 +44,12 @@ class Product extends Model implements TranslatableContract
     {
         return $this->productTranslation()->where('locale', 'vi');
     }
+
     public function en()
     {
         return $this->productTranslation()->where('locale', 'en');
     }
+
     public function cn()
     {
         return $this->productTranslation()->where('locale', 'cn');

@@ -27,12 +27,12 @@ class ProductRequest extends FormRequest
             'vi.name' => 'required',
             'en.name' => 'required',
             'cn.name' => 'required',
-            'images' => 'required|image|mimes:jpeg,bmp,png|max:2048',
+            'image' => 'required',
             'category' => 'required',
             'star' => 'required|min:0|max:5',
-            'vi.short_detail' => 'max:500',
-            'cn.short_detail' => 'max:500',
-            'en.short_detail' => 'max:500',
+            'vi.short_detail' => 'max:700',
+            'cn.short_detail' => 'max:700',
+            'en.short_detail' => 'max:700',
         ];
     }
 
@@ -43,8 +43,6 @@ class ProductRequest extends FormRequest
             'en.name.required' => 'Tên tiếng anh là bắt buộc',
             'cn.name.required' => 'Tên tiếng trung là bắt buộc',
             'images.required' => 'Ảnh là bắt buộc',
-            'images.max' => 'Ảnh tối đa là 2MB',
-            'images.mimes' => 'Chỉ được upload file ảnh jpeg, png, bmp',
             'category.required' => 'Danh mục là bắt buộc',
             'star.required' => 'Số sao là bắt buộc',
             'vi.short_detail.max' => 'Mô tả tối đa chỉ 500 kí tự',

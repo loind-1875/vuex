@@ -20,6 +20,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'admi
     Route::get('settings', 'AdminController@settings')->name('admin.setting');
     Route::put('settings', 'AdminController@updateSettings')->name('update.setting');
     Route::resource('contacts', 'ContactController')->only(['index', 'destroy']);
+    Route::get('setting-home', 'SettingController@index')->name('settings.show');
+    Route::put('settings-home', 'SettingController@update')->name('settings.store');
+    Route::resource('sliders', 'SliderController');
 });
 
 Route::group(['middleware' => 'locale', 'namespace' => 'Client'], function () {
@@ -38,5 +41,10 @@ Route::group(['middleware' => 'locale', 'namespace' => 'Client'], function () {
 });
 
 Auth::routes(['register' => false]);
+Route::get('api/{text}', 'ApiController@getMessage');
+
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+     \UniSharp\LaravelFilemanager\Lfm::routes();
+ });
 
 // Route::get('/home', 'HomeController@index')->name('home');

@@ -6,7 +6,7 @@
                     <div class="header-row">
                         <div class="header-logo">
                             <a href="index.html">
-                                <img alt="Porto" width="100" height="48" data-sticky-width="82" data-sticky-height="40" data-sticky-top="25" src="client/img/logo.png">
+                                <img alt="{{ $settings[0]['value'] }}" width="100" height="48" data-sticky-width="82" data-sticky-height="40" data-sticky-top="25" src="{{ $settings[2]['logo'] }}">
                             </a>
                         </div>
                     </div>

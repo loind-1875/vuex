@@ -28,12 +28,15 @@
                         <div class="card-block table-border-style">
                             @if (count($products))
                                 <div class="table-responsive">
-                                    <table class="table table-bordered table-hover">
+                                    <table class="table table-bordered table-hover" id="datatable">
                                         <thead>
                                         <tr>
                                             <th width="50px" align="center">#</th>
                                             <th align="center">Tên</th>
-                                            <th align="center">Giá</th>
+                                            <th align="center">Danh mục</th>
+                                            <th width="50px" align="center">Sao</th>
+                                            <th align="center">Public</th>
+                                            <th align="center">Show Home</th>
                                             <th width="100px" align="center">Thao tác</th>
                                         </tr>
                                         </thead>
@@ -42,7 +45,29 @@
                                                 <tr>
                                                     <td scope="row" align="center">{{ $index + 1 }}</td>
                                                     <td>{{ $product->name }}</td>
-                                                    <td>{{ $product->price }}</td>
+                                                    <td>
+                                                        @foreach ($product->categories as $cate)
+                                                            <span>{{ $cate->name }}</span>
+                                                            @if (!$loop->last),@endif
+                                                        @endforeach
+                                                    </td>
+                                                    <td align="center">{{ $product->star }}</td>
+                                                    <td align="center">
+                                                        <div class="category-single border-checkbox-section">
+                                                            <div class="border-checkbox-group border-checkbox-group-primary">
+                                                                <input class="border-checkbox" name="is_recruitment" value="1" {{ $product->public == 1 ? 'checked' : ''}} type="checkbox" id="checkbox1" disabled>
+                                                                <label class="border-checkbox-label" for="checkbox1"></label>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td align="center">
+                                                        <div class="category-single border-checkbox-section">
+                                                            <div class="border-checkbox-group border-checkbox-group-primary">
+                                                                <input class="border-checkbox" name="is_recruitment" value="1" {{ $product->show_home == 1 ? 'checked' : ''}} type="checkbox" id="checkbox2" disabled>
+                                                                <label class="border-checkbox-label" for="checkbox2"></label>
+                                                            </div>
+                                                        </div>
+                                                    </td>
                                                     <td align="center">
                                                         <a href="{{ route('products.edit', $product->id) }}" class="btn btn-primary btn-sm">
                                                             <i class="fa fa-pencil-square-o"></i>
@@ -58,13 +83,16 @@
                                                                 <i class="fa fa-trash"></i>
                                                             </button>
                                                         </form>
+                                                        <a target="_blank" href="{{ route('client.product', parseLink($product)) }}" class="btn btn-success btn-sm">
+                                                            <i class="fa fa-eye"></i>
+                                                        </a>
                                                     </td>
                                                 </tr>
                                             @endforeach
                                         </tbody>
                                     </table>
                                     <div class="m-t-15">
-                                        {{ $products->links() }}
+                                        
                                     </div>
                                 </div>
                             @else
@@ -79,6 +107,7 @@
 @endsection
 
 @section('style')
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
     <style>
         .card {
             margin-bottom: 100px;
@@ -97,4 +126,13 @@
             margin-bottom: 0;
         }
     </style>
+@endsection
+
+@section('script')
+    <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready( function () {
+            $('#datatable').DataTable();
+        });
+    </script>
 @endsection
