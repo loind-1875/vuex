@@ -11,7 +11,9 @@ class SettingController extends Controller
 {
     public function index()
     {
-        return view('admin.setting.create');
+        $settings = Setting::with('vi', 'en', 'cn')->get();
+
+        return view('admin.setting.create', compact('settings'));
     }
 
     public function update(Request $request)
@@ -29,25 +31,27 @@ class SettingController extends Controller
         ]);
 
         foreach ($data as $key => $value) {
-            dd(Setting::update([
-                'key' => $key,
+            $setting = Setting::where('key', $key)->first();
+
+            $setting->update([
                 'value' => $value,
-            ]));
+            ]);
         }
 
         foreach ($trans as $key => $tran) {
-            $setting = Setting::update([
-                'key' => $key,
-            ]);
+            $setting = Setting::where('key', $key)->first();
 
             foreach ($tran as $key2 => $value) {
-                SettingTranslation::update([
-                    'setting_id' => $setting->id,
-                    'locale' => $key2,
+                $settingTran = SettingTranslation::where('setting_id', $setting->id)
+                    ->where('locale', $key2)
+                    ->first();
+
+                $settingTran->update([
                     'value' => $value
                 ]);
             }
         }
-        dd($data);
+
+        return redirect()->back()->with('success', 'Cập nhật thành công');
     }
 }

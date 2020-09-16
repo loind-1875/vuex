@@ -23,6 +23,11 @@
                                     </ul>
                                 </div>
                             @endif
+                            @if (session('success'))
+                                <div class="alert alert-success">
+                                    {{ session('success') }}
+                                </div>
+                            @endif
                         </div>
                     </div>
                     <div class="row">
@@ -32,15 +37,33 @@
                                 @method('put')
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Tên công ty (VI)</h4>
-                                    <input type="text" class="form-control" name="company_name[vi]" placeHolder="Nhập tên" value="{{ old('vi.title') }}" >
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        name="company_name[vi]"
+                                        placeHolder="Nhập tên"
+                                        value="{{ $settings[0]->vi->value }}" 
+                                    >
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Tên công ty (EN)</h4>
-                                    <input type="text" class="form-control" name="company_name[en]" placeHolder="Nhập tên" value="{{ old('en.title') }}" >
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        name="company_name[en]"
+                                        placeHolder="Nhập tên"
+                                        value="{{ $settings[0]->en->value }}"
+                                    >
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Tên công ty (CN)</h4>
-                                    <input type="text" class="form-control" name="company_name[cn]" placeHolder="Nhập tên" value="{{ old('cn.title') }}" >
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        name="company_name[cn]"
+                                        placeHolder="Nhập tên"
+                                        value="{{ $settings[0]->cn->value }}"
+                                    >
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Logo </h4>
@@ -49,38 +72,38 @@
                                             <i class="fa fa-picture-o"></i> Choose
                                         </a>
                                     </span>
-                                    <input id="thumbnail" class="form-control" type="text" name="logo"  value="{{ old('image') }}">
-                                    <img id="holder" style="margin-top:15px;max-height:100px;">
+                                    <input id="thumbnail" class="form-control" type="text" name="logo"  value="{{ $settings[2]->value }}">
+                                    <img id="holder" style="margin-top:15px;max-height:100px;" src="{{ $settings[2]->value }}">
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Favicon </h4>
                                     <span class="input-group-btn">
-                                        <a id="lfm2" data-input="thumbnail1" data-preview="holder1" class="btn btn-primary upload-image">
+                                        <a id="lfm1" data-input="thumbnail1" data-preview="holder1" class="btn btn-primary">
                                             <i class="fa fa-picture-o"></i> Choose
                                         </a>
                                     </span>
-                                    <input id="thumbnail1" class="form-control" type="text" name="favicon"  value="{{ old('image') }}">
-                                    <img id="holder1" style="margin-top:15px;max-height:100px;">
+                                    <input id="thumbnail1" class="form-control" type="text" name="favicon"  value="{{ $settings[3]->value }}">
+                                    <img id="holder1" style="margin-top:15px;max-height:100px;" src="{{ $settings[3]->value }}">
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Giới thiệu (VI)</h4>
-                                    <textarea id="short-detail" name="about[vi]" placeHolder="Nhập giới thiệu" class="form-control">{{ old('vi.short_detail') }}</textarea>
+                                    <textarea id="short-detail" name="about[vi]" placeHolder="Nhập giới thiệu" class="form-control">{{ $settings[1]->vi->value }}</textarea>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Giới thiệu (EN)</h4>
-                                    <textarea id="short-detail1" name="about[en]" placeHolder="Nhập giới thiệu" class="form-control">{{ old('en.short_detail') }}</textarea>
+                                    <textarea id="short-detail1" name="about[en]" placeHolder="Nhập giới thiệu" class="form-control">{{ $settings[1]->en->value }}</textarea>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Giới thiệu (CN)</h4>
-                                    <textarea id="short-detail2" name="about[cn]" placeHolder="Nhập giới thiệu" class="form-control">{{ old('cn.short_detail') }}</textarea>
+                                    <textarea id="short-detail2" name="about[cn]" placeHolder="Nhập giới thiệu" class="form-control">{{ $settings[1]->cn->value }}</textarea>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Email</h4>
-                                    <input type="text" class="form-control" name="email" placeHolder="Nhập email" value="{{ old('cn.title') }}" >
+                                    <input type="text" class="form-control" name="email" placeHolder="Nhập email" value="{{ $settings[4]->value }}" >
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Phone</h4>
-                                    <input type="text" class="form-control" name="phone" placeHolder="Nhập số điện thoại" value="{{ old('cn.title') }}" >
+                                    <input type="text" class="form-control" name="phone" placeHolder="Nhập số điện thoại" value="{{ $settings[4]->value }}" >
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <button class="btn btn-primary waves-effect waves-light" type="submit">Lưu</button>
@@ -133,7 +156,7 @@
     <script>
         $(document).ready(function() {
             $('#lfm').filemanager('image');
-            $('#lfm2').filemanager('image');
+            $('#lfm1').filemanager('image');
             CKEDITOR.replace('short-detail', options);
             CKEDITOR.replace('short-detail1', options);
             CKEDITOR.replace('short-detail2', options);

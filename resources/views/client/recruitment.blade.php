@@ -4,6 +4,14 @@
     {{ __('home.recruitment') }}
 @endsection
 
+@section('meta')
+    <meta property="og:url" content="{{ route('client.recruitment') }}">
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="{{ __('home.recruitment') }}" />
+    <meta property="og:image" content="{{ $settings[6]['banner1'] }}">
+    <meta property="og:description" content="{{ __('home.recruitment') }}">
+@endsection
+
 @section('content')
     <section class="page-header page-header-modern bg-color-light-scale-1 page-header-md">
         <div class="container">

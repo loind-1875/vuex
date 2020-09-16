@@ -4,6 +4,14 @@
     {{ $news->title }}
 @endsection
 
+@section('meta')
+    <meta property="og:url" content="{{ route('client.post_detail', parseLink($news)) }}">
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="{{ $news->title }}" />
+    <meta property="og:image" content="{{ $news->image }}">
+    <meta property="og:description" content="{{ $news->title }}">
+@endsection
+
 @section('content')
     <section class="page-header page-header-modern bg-color-light-scale-1 page-header-md">
         <div class="container">
