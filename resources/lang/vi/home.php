@@ -41,6 +41,9 @@ return [
     'news' => 'Tin tức mới',
     'contact' => 'Thông tin liên hệ',
     'review' => 'Đánh giá từ khách hàng của chúng tôi',
+    'review_info' => 'Sự hài lòng của khách hàng, chất lượng dịch vụ và lòng trung thành là những yếu tố quan trọng giúp chúng tôi không ngừng phát triển!',
+    'partner' => 'Đối Tác Của Chúng Tôi',
+    'partner_info' => 'Những đối tác đồng hành cùng chúng tôi từ những ngày đầu thành lập',
     'footer' => [
         'hanoi' => 'Hà Nội',
         'address' => 'Địa chỉ',

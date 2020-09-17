@@ -69,6 +69,9 @@ return [
     'no_data' => 'No data',
     'we_are' => 'H.F.T Company',
     'review' => 'Reviews from our customers',
+    'review_info' => 'Customer satisfaction, service quality and loyalty are all important factors that keep us growing!',
+    'partner' => 'Our partner',
+    'partner_info' => 'The partners have been with us since the first days of establishment',
     'contact_us' => [
         'name' => 'Full name',
         'email' => 'Email',

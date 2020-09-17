@@ -24,6 +24,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'admi
     Route::put('setting-home', 'SettingController@update')->name('settings.store');
     Route::resource('sliders', 'SliderController');
     Route::resource('reviews', 'ReviewController');
+    Route::resource('partners', 'PartnerController');
 });
 
 Route::group(['middleware' => 'locale', 'namespace' => 'Client'], function () {

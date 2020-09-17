@@ -69,6 +69,9 @@ return [
     'no_data' => '没有数据',
     'we_are' => '',
     'review' => '客户的评论',
+    'review_info' => '客户满意度，服务质量和忠诚度都是使我们不断发展的重要因素！',
+    'partner' => '我们的伙伴',
+    'partner_info' => '自成立伊始，合作伙伴就与我们同在',
     'contact_us' => [
         'name' => '名称',
         'email' => '电子邮件',

@@ -7,6 +7,7 @@ use App\Models\Contact;
 use App\Models\Post;
 use App\Models\Product;
 use App\Http\Controllers\Controller;
+use App\Models\Partner;
 use App\Models\ProductTranslation;
 use App\Models\Review;
 use App\Models\Slider;
@@ -31,7 +32,9 @@ class ClientController extends Controller
 
         $reviews = Review::all();
 
-        return view('client.client', compact('news', 'chemistry', 'engine', 'sliders', 'reviews'));
+        $partners = Partner::all();
+
+        return view('client.client', compact('news', 'chemistry', 'engine', 'sliders', 'reviews', 'partners'));
     }
 
     public function news()

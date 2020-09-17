@@ -57,18 +57,6 @@
                         </li>
                     </ul>
                 </li>
-                <li class="{{ Request::segment(2) === 'contacts' ? 'pcoded-trigger' : '' }}">
-                    <a href="{{ route('contacts.index') }}" class="waves-effect waves-dark">
-                        <span class="pcoded-micon"><i class="fa fa-users"></i></span>
-                        <span class="pcoded-mtext">Danh sách liên hệ</span>
-                    </a>
-                </li>
-                <li class="{{ Request::segment(2) === 'settings' ? 'pcoded-trigger' : '' }}">
-                    <a href="{{ route('settings.show') }}" class="waves-effect waves-dark">
-                        <span class="pcoded-micon"><i class="fa fa-cogs"></i></span>
-                        <span class="pcoded-mtext">Cài đặt chung</span>
-                    </a>
-                </li>
                 <li class="pcoded-hasmenu {{ Request::segment(2) === 'sliders' ? 'pcoded-trigger' : '' }}">
                     <a href="javascript:void(0)" class="waves-effect waves-dark">
                         <span class="pcoded-micon"><i class="fa fa-sliders"></i></span>
@@ -104,6 +92,36 @@
                             </a>
                         </li>
                     </ul>
+                </li>
+                <li class="pcoded-hasmenu {{ Request::segment(2) === 'partners' ? 'pcoded-trigger' : '' }}">
+                    <a href="javascript:void(0)" class="waves-effect waves-dark">
+                        <span class="pcoded-micon"><i class="fa fa-handshake-o"></i></span>
+                        <span class="pcoded-mtext">Đối tác</span>
+                    </a>
+                    <ul class="pcoded-submenu" style="{{ Request::segment(2) === 'partners' ? 'display: block' : '' }}">
+                        <li class="">
+                            <a href="{{ route('partners.index') }}" class="waves-effect waves-dark">
+                                <span class="pcoded-mtext">Danh sách</span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="{{ route('partners.create') }}" class="waves-effect waves-dark">
+                                <span class="pcoded-mtext">Thêm mới</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="{{ Request::segment(2) === 'contacts' ? 'pcoded-trigger' : '' }}">
+                    <a href="{{ route('contacts.index') }}" class="waves-effect waves-dark">
+                        <span class="pcoded-micon"><i class="fa fa-users"></i></span>
+                        <span class="pcoded-mtext">Danh sách liên hệ</span>
+                    </a>
+                </li>
+                <li class="{{ Request::segment(2) === 'settings' ? 'pcoded-trigger' : '' }}">
+                    <a href="{{ route('settings.show') }}" class="waves-effect waves-dark">
+                        <span class="pcoded-micon"><i class="fa fa-cogs"></i></span>
+                        <span class="pcoded-mtext">Cài đặt chung</span>
+                    </a>
                 </li>
             </ul>
         </div>

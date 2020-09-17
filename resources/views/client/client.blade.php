@@ -217,23 +217,21 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2 class="font-weight-normal text-6 mb-4">{{ __('home.review') }}</h2>
+                    <h2 class="font-weight-normal text-center text-6 mb-4">{{ __('home.review') }}</h2>
+                    <p class="text-center">{{ __('home.review_info') }}</p>
+                    <hr class="solid my-3">
                     <div class="row">
                         <div class="owl-carousel owl-theme nav-bottom mb-0" data-plugin-options="{'items': 1, 'autoHeight': true, 'nav': true, 'dots': false}">
                             @forelse ($reviews as $review)
                                 <div>
-                                    <div class="col-12">
-                                        <div class="testimonial testimonial-primary">
-                                            <blockquote>
-                                                <p class="mb-0">{{ $review->content }}</p>
-                                            </blockquote>
-                                            <div class="testimonial-arrow-down"></div>
-                                            <div class="testimonial-author">
-                                                <div class="testimonial-author-thumbnail">
-                                                    <img src="{{ $review->image }}" class="rounded-circle" alt="">
-                                                </div>
-                                                <p><strong>{{ $review->name }}</strong><span>{{ $review->info }}</span></p>
-                                            </div>
+                                    <div class="testimonial testimonial-style-2">
+                                        <blockquote>
+                                            <p class="mb-0">{{ $review->content }}</p>
+                                        </blockquote>
+                                        <div class="testimonial-arrow-down"></div>
+                                        <div class="testimonial-author">
+                                            <img src="{{ $review->image }}" class="img-fluid rounded-circle" alt="">
+                                            <p><strong class="font-weight-extra-bold">{{ $review->name }}</strong><span>{{ $review->info }}</span></p>
                                         </div>
                                     </div>
                                 </div>
@@ -245,6 +243,24 @@
             </div>
         </div>
     </section>
+
+    <div class="container" id="partner">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2 class="font-weight-normal text-center text-6 mb-4">{{ __('home.partner') }}</h2>
+                <p class="text-center">{{ __('home.partner_info') }}</p>
+
+                <div class="owl-carousel partner owl-theme stage-margin rounded-nav" data-plugin-options="{'items': 5, 'margin': 10, 'loop': true, 'nav': true, 'dots': false, 'stagePadding': 40}">
+                    @forelse ($partners as $partner)
+                        <div class="item-partner">
+                            <img class="img-fluid" src="{{ $partner->image }}" alt="{{ $partner->name }}">
+                        </div>
+                    @empty
+                    @endforelse
+                </div>
+            </div>
+        </div>
+    </div>
 
     <section class="section appear-animation" data-appear-animation="fadeInUpShorter">
         <section class=" appear-animation" data-appear-animation="fadeInUpShorter">

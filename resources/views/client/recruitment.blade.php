@@ -17,12 +17,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 align-self-center p-static order-2 text-center">
-                    <h1 class="text-dark font-weight-bold text-8 mt-3">{{ __('home.detail_news') }}</h1>
+                    <h1 class="text-dark font-weight-bold text-8 mt-3">{{ __('home.recruitment') }}</h1>
                 </div>
                 <div class="col-md-12 align-self-center order-1">
                     <ul class="breadcrumb d-block text-center">
                         <li><a href="/"></a>{{ __('home.header.home') }}</li>
-                        <li class="active">{{ __('home.header.news') }}</li>
+                        <li class="active">{{ __('home.header.recruitment') }}</li>
                     </ul>
                 </div>
             </div>
