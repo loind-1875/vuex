@@ -52,3 +52,7 @@ html .featured-box-secondary h4 {
     font-size: 1.2em;
     line-height: 2em;
 }
+
+.testimonial blockquote p {
+    font-family: "Open Sans", Arial, sans-serif;
+}

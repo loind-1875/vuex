@@ -5,3 +5,7 @@ body {
 .note-editor .note-editing-area {
     background-color: white;
 }
+
+.dataTable.table td, .dataTable.table th {
+    white-space: inherit;
+}

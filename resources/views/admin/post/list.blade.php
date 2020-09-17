@@ -34,7 +34,7 @@
                                             <th width="50px" align="center">#</th>
                                             <th align="center">Tiêu đề</th>
                                             <th width="100px" align="center">Tin tuyển dụng</th>
-                                            <th width="100px" align="center">Thao tác</th>
+                                            <th width="180px" align="center">Thao tác</th>
                                         </tr>
                                         </thead>
                                         <tbody>

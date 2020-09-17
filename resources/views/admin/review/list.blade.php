@@ -1,7 +1,7 @@
 @extends('admin.layout.main')
 
 @section('title')
-    Danh sách slider
+    Danh sách review
 @endsection
 
 @section('content')
@@ -9,7 +9,7 @@
         <div class="col-sm-12">
             <div class="card">
                 <div class="card-header">
-                    <h5>Danh sách slider</h5>
+                    <h5>Danh sách review</h5>
                 </div>
                 <div class="row">
                     <div class="col-sm-12 p-30">
@@ -23,33 +23,33 @@
                 <div class="row">
                     <div class="col-sm-12 col-xl-12">
                         <div class="pl-4">
-                            <a href="{{ route('sliders.create') }}" class="btn btn-primary">Thêm mới</a>
+                            <a href="{{ route('reviews.create') }}" class="btn btn-primary">Thêm mới</a>
                         </div>
                         <div class="card-block table-border-style">
-                            @if (count($sliders))
+                            @if (count($reviews))
                                 <div class="table-responsive">
                                     <table class="table table-bordered table-hover" id="datatable">
                                         <thead>
                                         <tr>
                                             <th width="50px" align="center">#</th>
-                                            <th align="center">Image</th>
-                                            <th align="center">Url</th>
-                                            <th align="center">Order</th>
+                                            <th align="center">Tên</th>
+                                            <th align="center">Info</th>
+                                            <th align="center">Nội dung</th>
                                             <th width="120px" align="center">Thao tác</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach ($sliders as $index => $slider)
+                                        @foreach ($reviews as $index => $review)
                                             <tr>
                                                 <td scope="row" align="center">{{ $index + 1 }}</td>
-                                                <td> <img src="{{ $slider->image }}" height="100" /> </td>
-                                                <td>{{ $slider->url }}</td>
-                                                <td>{{ $slider->order }}</td>
+                                                <td>{{ $review->name }}</td>
+                                                <td>{{ $review->info }}</td>
+                                                <td><p>{{ $review->content }}</p></td>
                                                 <td align="center">
-                                                    <a href="{{ route('sliders.edit', $slider->id) }}" class="btn btn-primary btn-sm">
+                                                    <a href="{{ route('reviews.edit', $review->id) }}" class="btn btn-primary btn-sm">
                                                         <i class="fa fa-pencil-square-o"></i>
                                                     </a>
-                                                    <form action="{{ route('sliders.destroy', $slider->id) }}" method="POST" style="display: inline-block;">
+                                                    <form action="{{ route('reviews.destroy', $review->id) }}" method="POST" style="display: inline-block;">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button
@@ -67,7 +67,7 @@
                                     </table>
                                 </div>
                             @else
-                                <p class="text-center">Không có slider nào</p>
+                                <p class="text-center">Không có review nào</p>
                             @endif
                         </div>
                     </div>

@@ -37,7 +37,7 @@
                                             <th width="50px" align="center">Sao</th>
                                             <th align="center">Public</th>
                                             <th align="center">Show Home</th>
-                                            <th width="100px" align="center">Thao tác</th>
+                                            <th width="180px" align="center">Thao tác</th>
                                         </tr>
                                         </thead>
                                         <tbody>

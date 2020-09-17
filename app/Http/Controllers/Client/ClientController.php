@@ -8,6 +8,7 @@ use App\Models\Post;
 use App\Models\Product;
 use App\Http\Controllers\Controller;
 use App\Models\ProductTranslation;
+use App\Models\Review;
 use App\Models\Slider;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -28,7 +29,9 @@ class ClientController extends Controller
 
         $sliders = Slider::orderBy('order')->get();
 
-        return view('client.client', compact('news', 'chemistry', 'engine', 'sliders'));
+        $reviews = Review::all();
+
+        return view('client.client', compact('news', 'chemistry', 'engine', 'sliders', 'reviews'));
     }
 
     public function news()

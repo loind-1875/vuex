@@ -33,7 +33,7 @@
                                         <tr>
                                             <th width="50px" align="center">#</th>
                                             <th align="center">Tên</th>
-                                            <th width="100px" align="center">Thao tác</th>
+                                            <th width="180px" align="center">Thao tác</th>
                                         </tr>
                                         </thead>
                                         <tbody>

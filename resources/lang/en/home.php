@@ -68,6 +68,7 @@ return [
     'recruitment' => 'Recruitment',
     'no_data' => 'No data',
     'we_are' => 'H.F.T Company',
+    'review' => 'Reviews from our customers',
     'contact_us' => [
         'name' => 'Full name',
         'email' => 'Email',

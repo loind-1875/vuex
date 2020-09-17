@@ -87,6 +87,24 @@
                         </li>
                     </ul>
                 </li>
+                <li class="pcoded-hasmenu {{ Request::segment(2) === 'sliders' ? 'pcoded-trigger' : '' }}">
+                    <a href="javascript:void(0)" class="waves-effect waves-dark">
+                        <span class="pcoded-micon"><i class="fa fa-comments-o"></i></span>
+                        <span class="pcoded-mtext">Phản hồi</span>
+                    </a>
+                    <ul class="pcoded-submenu" style="{{ Request::segment(2) === 'reviews' ? 'display: block' : '' }}">
+                        <li class="">
+                            <a href="{{ route('reviews.index') }}" class="waves-effect waves-dark">
+                                <span class="pcoded-mtext">Danh sách</span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="{{ route('reviews.create') }}" class="waves-effect waves-dark">
+                                <span class="pcoded-mtext">Thêm mới</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>

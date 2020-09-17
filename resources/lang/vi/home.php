@@ -40,6 +40,7 @@ return [
     'chemistry' => 'Hóa chất',
     'news' => 'Tin tức mới',
     'contact' => 'Thông tin liên hệ',
+    'review' => 'Đánh giá từ khách hàng của chúng tôi',
     'footer' => [
         'hanoi' => 'Hà Nội',
         'address' => 'Địa chỉ',

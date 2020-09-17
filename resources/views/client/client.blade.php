@@ -214,6 +214,39 @@
     </div>
 
     <section class="section appear-animation" data-appear-animation="fadeInUpShorter">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="font-weight-normal text-6 mb-4">{{ __('home.review') }}</h2>
+                    <div class="row">
+                        <div class="owl-carousel owl-theme nav-bottom mb-0" data-plugin-options="{'items': 1, 'autoHeight': true, 'nav': true, 'dots': false}">
+                            @forelse ($reviews as $review)
+                                <div>
+                                    <div class="col-12">
+                                        <div class="testimonial testimonial-primary">
+                                            <blockquote>
+                                                <p class="mb-0">{{ $review->content }}</p>
+                                            </blockquote>
+                                            <div class="testimonial-arrow-down"></div>
+                                            <div class="testimonial-author">
+                                                <div class="testimonial-author-thumbnail">
+                                                    <img src="{{ $review->image }}" class="rounded-circle" alt="">
+                                                </div>
+                                                <p><strong>{{ $review->name }}</strong><span>{{ $review->info }}</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @empty
+                            @endforelse
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section appear-animation" data-appear-animation="fadeInUpShorter">
         <section class=" appear-animation" data-appear-animation="fadeInUpShorter">
             <div class="container">
                 <div class="col text-center">

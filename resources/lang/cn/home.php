@@ -68,6 +68,7 @@ return [
     'recruitment' => '招募',
     'no_data' => '没有数据',
     'we_are' => '',
+    'review' => '客户的评论',
     'contact_us' => [
         'name' => '名称',
         'email' => '电子邮件',
