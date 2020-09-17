@@ -26,7 +26,7 @@ class ClientController extends Controller
             $q->where('public', 1)->where('show_home', 1)->take(6)->latest();
         }])->where('id', 1)->first();
 
-        $sliders = Slider::orderByDesc('order')->get();
+        $sliders = Slider::orderBy('order')->get();
 
         return view('client.client', compact('news', 'chemistry', 'engine', 'sliders'));
     }

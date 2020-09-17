@@ -32,7 +32,7 @@
                             data-fontsize="['50','50','50','90']"
                             data-lineheight="['55','55','55','95']">{{ $slider->text2 }}</div>
 
-                        <div class="tp-caption font-weight-light ws-normal text-center text-color-light"
+                        <div class="tp-caption font-weight-light ws-normal text-center text-color-light mt-4"
                             data-frames='[{"from":"opacity:0;","speed":300,"to":"o:1;","delay":2000,"split":"chars","splitdelay":0.05,"ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
                             data-x="center"
                             data-y="center" data-voffset="['60','60','60','105']"

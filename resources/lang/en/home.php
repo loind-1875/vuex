@@ -12,10 +12,10 @@ return [
     'warranty_detail' => 'Be always ready to receive any queries, solve any problems that customers face during the process of using HFT \'s product',
     'about_us' => 'About us',
     'company' => [
-        'name' => ' ',
+        'name' => 'Chemical Services And Trading Co. Ltd.',
         'detail1' => 'H.F.T chemical service and trading company limited was established on January 15th 2008. Through over 10 years of operation, development in the field of chemicals and manufacturing, assembling electric motorcycles and bicycles, HFT is proud to be one of the best electric motorcycles and bicycles engine manufacturers in the current market.',
         'detail2' => 'H.F.T chemical service and trading company limited was established on January 15th 2008. Through over 10 years of operation, development in the field of chemicals and manufacturing, assembling electric motorcycles and bicycles, HFT is proud to be one of the best electric motorcycles and bicycles engine manufacturers in the current market.',
-        'detail3' => 'H.F.T has always committed to bring customers products with the best quality, resonable prices and satisfaction of working style and service attitude',
+        'detail3' => 'H.F.T has always committed to bring customers products with the best quality, reasonable prices and satisfaction of working style and service attitude',
         'we' => 'We always',
         'create' => 'Create',
         'build' => 'Build',
