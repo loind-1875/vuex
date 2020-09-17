@@ -262,41 +262,74 @@
         </div>
     </div>
 
-    <section class="section appear-animation" data-appear-animation="fadeInUpShorter">
-        <section class=" appear-animation" data-appear-animation="fadeInUpShorter">
-            <div class="container">
-                <div class="col text-center">
-                    <h2 class="font-weight-semibold text-6 mb-0">{{ __('home.header.news') }}</h2>
-                </div>
-                <div class="row mt-5 appear-animation" data-appear-animation="fadeInUpShorter">
-                    @foreach ($news as $item)
-                        <div class="col-lg-4 mb-4">
-                            <article class="post post-large pb-5">
-                                <div class="post-image">
-                                    <a href="{{ route('client.post_detail', parseLink($item)) }}">
-                                        <img src="{{ ($item->image) }}" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="">
-                                    </a>
-                                </div>
-                                <div class="post-date">
-                                    <span class="day">{{ getDay($item->updated_at) }}</span>
-                                    <span class="month">{{ getMonth($item->updated_at) }}</span>
-                                </div>
-                                <div class="post-content">
-                                    <h4>
-                                        <a href="{{ route('client.post_detail', parseLink($item)) }}" class="text-decoration-none">{{ $item->title }}</a>
-                                    </h4>
-                                    <p class="mb-1">{{ $item->short_detail }}</p>
-                                    <a href="{{ route('client.post_detail', parseLink($item)) }}" class="btn btn-light text-uppercase text-primary text-1 py-2 px-3 mb-1 mt-2">
-                                        <strong>{{ __('home.read_more') }}</strong>
-                                        <i class="fas fa-chevron-right text-2 pl-2"></i>
-                                    </a>
-                                </div>
-                            </article>
-                        </div>
-                    @endforeach
-                </div>
+    <section class="section appear-animation pb-4" data-appear-animation="fadeInUpShorter">
+        <div class="container">
+            <div class="col text-center">
+                <h2 class="font-weight-semibold text-6 mb-0">{{ __('home.header.news') }}</h2>
             </div>
+            <div class="row mt-5 appear-animation" data-appear-animation="fadeInUpShorter">
+                @foreach ($news as $item)
+                    <div class="col-lg-4 mb-4">
+                        <article class="post post-large">
+                            <div class="post-image">
+                                <a href="{{ route('client.post_detail', parseLink($item)) }}">
+                                    <img src="{{ ($item->image) }}" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="">
+                                </a>
+                            </div>
+                            <div class="post-date">
+                                <span class="day">{{ getDay($item->updated_at) }}</span>
+                                <span class="month">{{ getMonth($item->updated_at) }}</span>
+                            </div>
+                            <div class="post-content">
+                                <h4>
+                                    <a href="{{ route('client.post_detail', parseLink($item)) }}" class="text-decoration-none">{{ $item->title }}</a>
+                                </h4>
+                                <p class="mb-1">{{ $item->short_detail }}</p>
+                                <a href="{{ route('client.post_detail', parseLink($item)) }}" class="btn btn-light text-uppercase text-primary text-1 py-2 px-3 mb-1 mt-2">
+                                    <strong>{{ __('home.read_more') }}</strong>
+                                    <i class="fas fa-chevron-right text-2 pl-2"></i>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section
 
+    <section class="appear-animation" data-appear-animation="fadeInUpShorter">
+        <div class="container">
+            <div class="col text-center">
+                <h2 class="font-weight-semibold text-6 mb-0">{{ __('home.header.recruitment') }}</h2>
+            </div>
+            <div class="row mt-5 appear-animation" data-appear-animation="fadeInUpShorter">
+                @foreach ($recruitments as $recruitment)
+                    <div class="col-lg-4 mb-4">
+                        <article class="post post-large pb-5">
+                            <div class="post-image">
+                                <a href="{{ route('client.post_detail', parseLink($recruitment)) }}">
+                                    <img src="{{ ($recruitment->image) }}" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="">
+                                </a>
+                            </div>
+                            <div class="post-date">
+                                <span class="day">{{ getDay($recruitment->updated_at) }}</span>
+                                <span class="month">{{ getMonth($recruitment->updated_at) }}</span>
+                            </div>
+                            <div class="post-content">
+                                <h4>
+                                    <a href="{{ route('client.post_detail', parseLink($recruitment)) }}" class="text-decoration-none">{{ $recruitment->title }}</a>
+                                </h4>
+                                <p class="mb-1">{{ $recruitment->short_detail }}</p>
+                                <a href="{{ route('client.post_detail', parseLink($recruitment)) }}" class="btn btn-light text-uppercase text-primary text-1 py-2 px-3 mb-1 mt-2">
+                                    <strong>{{ __('home.read_more') }}</strong>
+                                    <i class="fas fa-chevron-right text-2 pl-2"></i>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+                @endforeach
+            </div>
+        </div>
     </section>
 @endsection
 

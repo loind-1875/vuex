@@ -20,6 +20,8 @@ class ClientController extends Controller
     {
         $news = Post::where('is_recruitment', 0)->take(3)->latest()->get();
 
+        $recruitments = Post::where('is_recruitment', 1)->take(3)->latest()->get();
+
         $engine = Category::with(['products' => function($q) {
             $q->where('public', 1)->where('show_home', 1)->take(6)->latest();
         }])->where('id', 2)->first();
@@ -34,7 +36,7 @@ class ClientController extends Controller
 
         $partners = Partner::all();
 
-        return view('client.client', compact('news', 'chemistry', 'engine', 'sliders', 'reviews', 'partners'));
+        return view('client.client', compact('news', 'chemistry', 'engine', 'sliders', 'reviews', 'partners', 'recruitments'));
     }
 
     public function news()
