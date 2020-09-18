@@ -30,48 +30,6 @@
     </section>
     <div class="container py-4">
         <div class="row">
-            <div class="col-lg-3">
-                <aside class="sidebar">
-                    <div class="tabs tabs-dark mb-4 pb-2">
-                        <ul class="nav nav-tabs">
-                            <li class="nav-item active">
-                                <a class="nav-link show active text-1 font-weight-bold text-uppercase" href="#popularPosts" data-toggle="tab">
-                                    {{ __('home.random') }}
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="popularPosts">
-                                <ul class="simple-post-list">
-                                    @if (count($random))
-                                        @foreach ($random as $n)
-                                            <li>
-                                                <div class="post-image">
-                                                    <div class="img-thumbnail img-thumbnail-no-borders d-block">
-                                                        <a href="{{ route('client.post_detail', parseLink($n)) }}">
-                                                            <img src="{{ ($n->image) }}" width="50" height="50" alt="">
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="post-info">
-                                                    <a href="{{ route('client.post_detail', parseLink($n)) }}">
-                                                        {{ $n->title }}
-                                                    </a>
-                                                    <div class="post-meta">
-                                                        {{ formatDate($n->updated_at) }}
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        @endforeach
-                                    @else
-                                        <li><p>{{ __('home.no_data') }}</p></li>
-                                    @endif
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </aside>
-            </div>
             <div class="col-lg-9">
                 <div class="blog-posts">
                     @if (count($recruitments))
@@ -118,6 +76,7 @@
                     @endif
                 </div>
             </div>
+            @include('client.layout.sidebar')
         </div>
 
 @endsection

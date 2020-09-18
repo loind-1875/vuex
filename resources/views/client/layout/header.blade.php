@@ -76,37 +76,37 @@
                                 <nav class="collapse">
                                     <ul class="nav nav-pills" id="mainNav">
                                         <li class="dropdown">
-                                            <a class="dropdown-item dropdown-toggle active" href="/">
+                                            <a class="dropdown-item dropdown-toggle {{ activeMenu('/') }}" href="/">
                                                 {{ __('home.header.home') }}
                                             </a>
                                         </li>
                                         <li class="dropdown dropdown-mega">
-                                            <a class="dropdown-item dropdown-toggle" href="{{ route('client.about') }}">
+                                            <a class="dropdown-item dropdown-toggle {{ activeMenu('gioi-thieu') }}" href="{{ route('client.about') }}">
                                                 {{ __('home.header.about') }}
                                             </a>
                                         </li>
                                         <li class="dropdown dropdown-mega">
-                                            <a class="dropdown-item dropdown-toggle" href="{{ route('client.category', parseLink($chemistry)) }}">
+                                            <a class="dropdown-item dropdown-toggle {{ activeMenu('hoa-chat-1') }}" href="{{ route('client.category', parseLink($chemistry)) }}">
                                                 {{ $chemistry->name }}
                                             </a>
                                         </li>
                                         <li class="dropdown dropdown-mega">
-                                            <a class="dropdown-item dropdown-toggle" href="{{ route('client.category', parseLink($engine)) }}">
+                                            <a class="dropdown-item dropdown-toggle {{ activeMenu('dong-co-2') }}" href="{{ route('client.category', parseLink($engine)) }}">
                                                 {{ $engine->name }}
                                             </a>
                                         </li>
                                         <li class="dropdown dropdown-mega">
-                                            <a class="dropdown-item dropdown-toggle" href="{{ route('client.recruitment') }}">
+                                            <a class="dropdown-item dropdown-toggle {{ activeMenu('tuyen-dung') }}" href="{{ route('client.recruitment') }}">
                                                 {{ __('home.header.recruitment') }}
                                             </a>
                                         </li>
                                         <li class="dropdown dropdown-mega">
-                                            <a class="dropdown-item dropdown-toggle" href="{{ route('client.post') }}">
+                                            <a class="dropdown-item dropdown-toggle {{ activeMenu('tin-tuc') }}" href="{{ route('client.post') }}">
                                                 {{ __('home.header.news') }}
                                             </a>
                                         </li>
                                         <li class="dropdown dropdown-mega">
-                                            <a class="dropdown-item dropdown-toggle" href="{{ route('client.contact') }}">
+                                            <a class="dropdown-item dropdown-toggle {{ activeMenu('lien-he') }}" href="{{ route('client.contact') }}">
                                                 {{ __('home.header.contact') }}
                                             </a>
                                         </li>

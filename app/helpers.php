@@ -1,6 +1,7 @@
 <?php
 
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Str;
 
 if (!function_exists('uuid_str')) {
@@ -75,4 +76,12 @@ if (!function_exists('formatDate')) {
     {
         return $date->toDateString();
     }
+}
+
+function activeMenu($uri = '') {
+    $active = '';
+    if (Request::is(Request::segment(1) . '/' . $uri . '/*') || Request::is(Request::segment(1) . '/' . $uri) || Request::is($uri)) {
+        $active = 'active';
+    }
+    return $active;
 }

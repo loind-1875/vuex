@@ -34,40 +34,6 @@
             </div>
         </section>
         <div class="row">
-            <div class="col-lg-3">
-                <aside class="sidebar">
-                    <h5 class="font-weight-bold pt-3">{{ __('home.categories') }}</h5>
-                        <ul class="nav nav-list flex-column">
-                            @foreach ($categories as $category)
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('client.category', parseLink($category)) }}">{{ $category->name }}</a>
-                                </li>
-                            @endforeach
-                        </ul>
-                <div class="row mb-5">
-                    <div class="col">
-                        <h5 class="font-weight-bold pt-5">{{ __('home.new_product') }}</h5>
-                        <ul class="simple-post-list">
-                            @foreach ($newProduct as $pro)
-                                <li>
-                                    <div class="post-image">
-                                        <div class="d-block">
-                                            <a href="{{ route('client.product', parseLink($pro)) }}">
-                                                <img alt="" width="60" height="60" class="img-fluid" src="{{ ($pro->image) }}">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="post-info">
-                                        <a href="{{ route('client.product', parseLink($pro)) }}">{{ $pro->name }}</a>
-                                    </div>
-                                </li>
-                            @endforeach
-                        </ul>
-                    </div>
-                </div>
-                </aside>
-            </div>
-
             <div class="col-lg-9">
                 <div class="row">
                     <div class="col-lg-6">
@@ -150,6 +116,7 @@
                     </div>
                 </div>
             </div>
+            @include('client.layout.sidebar')
         </div>
     </div>
 

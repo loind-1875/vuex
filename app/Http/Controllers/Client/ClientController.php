@@ -41,21 +41,44 @@ class ClientController extends Controller
     {
         $news = Post::where('is_recruitment', 0)->latest()->paginate(18);
 
-        return view('client.news', compact('news'));
+        $categories = $this->getCategories();
+        $recentProducts = Product::take(6)
+        ->where('public', 1)
+        ->latest()
+        ->get();
+        $recentNews = Post::where('is_recruitment', 0)->take(3)->latest()->get();
+        $recentRecruitments = Post::where('is_recruitment', 1)->take(3)->latest()->get();
+
+        return view('client.news', compact(
+                'news',
+                'recentProducts',
+                'recentNews',
+                'recentRecruitments',
+                'categories'
+            )
+        );
     }
 
     public function recruitment()
     {
         $categories = $this->getCategories();
         $recruitments = Post::where('is_recruitment', 1)->latest()->paginate(10);
-        $random = Post::where('is_recruitment', 1)->inRandomOrder()->get();
+
+        $recentProducts = Product::take(6)
+        ->where('public', 1)
+        ->latest()
+        ->get();
+        $recentNews = Post::where('is_recruitment', 0)->take(3)->latest()->get();
+        $recentRecruitments = Post::where('is_recruitment', 1)->take(3)->latest()->get();
 
         return view(
             'client.recruitment',
             compact(
                 'recruitments',
                 'categories',
-                'random'
+                'recentProducts',
+                'recentNews',
+                'recentRecruitments'
             )
         );
     }
@@ -73,17 +96,10 @@ class ClientController extends Controller
     public function newsDetail($slug)
     {
         $id = last(explode('-', $slug));
-        $news = Post::find($id);
+        $news = Post::findOrFail($id);
         $categories = $this->getCategories();
 
-        $engine = Category::find(2);
-
-        $chemistry = Category::find(1);
         $recently = Post::where('is_recruitment', 0)->take(6)->latest()->get();
-
-        if (!$news) {
-            abort(Response::HTTP_NOT_FOUND);
-        }
 
         return view(
             'client.news-detail',
@@ -108,19 +124,13 @@ class ClientController extends Controller
     {
         $id = last(explode('-', $slug));
 
-        $category = Category::find($id);
-
-        if (!$category) {
-            abort(Response::HTTP_NOT_FOUND);
-        }
-
-        $categories = $this->getCategories();
-
-        $newProduct = Product::where('public', 1)->take(3)->latest()->get();
-
+        $category = Category::findOrFail($id);
         $products = $category->publicProducts()->latest()->paginate(24);
-
         $categories = $this->getCategories();
+        
+        $recentProducts = Product::where('public', 1)->take(6)->latest()->get();
+        $recentNews = Post::where('is_recruitment', 0)->take(3)->latest()->get();
+        $recentRecruitments = Post::where('is_recruitment', 1)->take(3)->latest()->get();
 
         return view('
             client.category',
@@ -128,7 +138,9 @@ class ClientController extends Controller
                 'products',
                 'category',
                 'categories',
-                'newProduct'
+                'recentProducts',
+                'recentNews',
+                'recentRecruitments'
             )
         );
     }
@@ -137,21 +149,26 @@ class ClientController extends Controller
     {
         $id = last(explode('-', $slug));
 
-        $product = Product::with('categories')->find($id);
-
-        if (!$product) {
-            abort(Response::HTTP_NOT_FOUND);
-        }
+        $product = Product::with('categories')->findOrFail($id);
 
         $categories = $this->getCategories();
+        $productCategoryIds = $product->categories->pluck('id')->toArray();
 
-        $engine = Category::find(2);
+        $otherProducts = Product::where('id', '!=', $id)
+            ->where('public', 1)
+            ->inRandomOrder()
+            ->whereHas('categories', function($query) use ($productCategoryIds) {
+                $query->whereIn('category_id', $productCategoryIds);
+            })
+            ->take(5)
+            ->get();
 
-        $chemistry = Category::find(1);
-
-        $otherProducts = Product::where('id', '!=', $id)->where('public', 1)->take(4)->get();
-
-        $newProduct = Product::take(3)->where('public', 1)->latest()->get();
+        $recentProducts = Product::take(6)
+            ->where('public', 1)
+            ->latest()
+            ->get();
+        $recentNews = Post::where('is_recruitment', 0)->take(3)->latest()->get();
+        $recentRecruitments = Post::where('is_recruitment', 1)->take(3)->latest()->get();
 
         return view(
             'client.product-detail',
@@ -159,9 +176,9 @@ class ClientController extends Controller
                 'product',
                 'categories',
                 'otherProducts',
-                'chemistry',
-                'engine',
-                'newProduct'
+                'recentProducts',
+                'recentNews',
+                'recentRecruitments'
             )
         );
     }
