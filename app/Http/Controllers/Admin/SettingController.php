@@ -30,6 +30,7 @@ class SettingController extends Controller
         $trans = $request->only([
             'company_name',
             'about',
+            'about2',
         ]);
 
         foreach ($data as $key => $value) {
@@ -46,7 +47,7 @@ class SettingController extends Controller
             foreach ($tran as $key2 => $value) {
                 $settingTran = SettingTranslation::where('setting_id', $setting->id)
                     ->where('locale', $key2)
-                    ->first();
+                    ->firstOrFail();
 
                 $settingTran->update([
                     'detail' => $value
