@@ -25,6 +25,8 @@ class SettingController extends Controller
             'phone',
             'banner1',
             'banner2',
+            'time_working',
+            'show_room',
         ]);
 
         $trans = $request->only([

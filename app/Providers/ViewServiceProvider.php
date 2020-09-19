@@ -26,14 +26,16 @@ class ViewServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $chemistry = Category::find(1);
-        $engine = Category::find(2);
+        $categories = Category::all();
+        $chemistry = $categories->find(1);
+        $engine = $categories->find(2);
         $settings = Setting::get();
 
         View::share([
             'engine' => $engine,
             'chemistry' => $chemistry,
-            'settings' => $settings
+            'settings' => $settings,
+            'categories' => $categories,
         ]);
     }
 }

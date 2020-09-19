@@ -106,4 +106,7 @@ return [
         'show_result_for' => 'Hiển thị kết quả cho',
         'result_found' => 'kết quả tìm thấy',
     ],
+    'show_room' => 'Địa chỉ',
+    'time_working' => 'Thời gian làm việc',
+    'info' => 'Thông tin',
 ];

@@ -99,4 +99,7 @@ return [
         'show_result_for' => 'Show result for',
         'result_found' => 'result found',
     ],
+    'show_room' => 'Address',
+    'time_working' => 'Working time',
+    'info' => 'Information',
 ];

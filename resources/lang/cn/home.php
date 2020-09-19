@@ -99,4 +99,7 @@ return [
         'show_result_for' => '显示结果',
         'result_found' => '找到结果',
     ],
+    'show_room' => '地址',
+    'time_working' => '工作时间',
+    'info' => '信息',
 ];

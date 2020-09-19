@@ -139,6 +139,16 @@
                                     <h4 class="sub-title">Phone</h4>
                                     <input type="text" class="form-control" name="phone" placeHolder="Nhập số điện thoại" value="{{ $settings[5]->value ?? '' }}" >
                                 </div>
+                                
+                                <div class="col-sm-12 m-b-30">
+                                    <h4 class="sub-title">Giờ làm việc</h4>
+                                    <textarea id="time_working" name="time_working" placeHolder="Nhập giờ làm việc" class="form-control">{{ $settings[9]->value ?? '' }}</textarea>
+                                </div>
+                                
+                                <div class="col-sm-12 m-b-30">
+                                    <h4 class="sub-title">Địa chỉ văn phòng</h4>
+                                    <textarea id="short-detail6" name="show_room" placeHolder="Nhập địa chỉ văn phòng" class="form-control">{{ $settings[9]->value ?? '' }}</textarea>
+                                </div>
                                 <div class="col-sm-12 m-b-30">
                                     <button class="btn btn-primary waves-effect waves-light" type="submit">Lưu</button>
                                 </div>
@@ -199,6 +209,8 @@
             CKEDITOR.replace('short-detail3', options);
             CKEDITOR.replace('short-detail4', options);
             CKEDITOR.replace('short-detail5', options);
+            CKEDITOR.replace('short-detail6', options);
+            CKEDITOR.replace('time_working', options);
         });
     </script>
 @endsection
