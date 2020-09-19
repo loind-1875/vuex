@@ -3,6 +3,12 @@
         <div class="pcoded-inner-navbar main-menu">
             <div class="pcoded-navigation-label">Navigation</div>
             <ul class="pcoded-item pcoded-left-item">
+                <li class="{{ Request::segment(2) === 'dashboard' ? 'pcoded-trigger' : '' }}">
+                    <a href="{{ route('settings.show') }}" class="waves-effect waves-dark">
+                        <span class="pcoded-micon"><i class="feather icon-home"></i></span>
+                        <span class="pcoded-mtext">Dashboard</span>
+                    </a>
+                </li>
                 <li class="pcoded-hasmenu {{ Request::segment(2) === 'products' ? 'pcoded-trigger' : '' }}">
                     <a href="javascript:void(0)" class="waves-effect waves-dark">
                         <span class="pcoded-micon"><i class="fa fa-product-hunt"></i></span>

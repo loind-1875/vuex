@@ -38,7 +38,7 @@ mix.js('resources/js/app.js', 'public/js/app.js')
         'resources/assets/admin/js/script.js',
         'resources/assets/admin/js/rocket-loader.min.js.js',
     ], 'public/admin/js/admin.js')
-    // .copyDirectory('resources/assets/admin/ttf', 'public/admin/ttf')
+    .copyDirectory('resources/assets/admin/img', 'public/admin/img')
     // .copyDirectory('resources/assets/admin/woff', 'public/admin/woff');
 
     /* ---------------------------client------------------------------ */

@@ -142,7 +142,7 @@
                                 
                                 <div class="col-sm-12 m-b-30">
                                     <h4 class="sub-title">Giờ làm việc</h4>
-                                    <textarea id="time_working" name="time_working" placeHolder="Nhập giờ làm việc" class="form-control">{{ $settings[9]->value ?? '' }}</textarea>
+                                    <textarea id="time_working" name="time_working" placeHolder="Nhập giờ làm việc" class="form-control">{{ $settings[10]->value ?? '' }}</textarea>
                                 </div>
                                 
                                 <div class="col-sm-12 m-b-30">
