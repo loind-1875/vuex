@@ -181,7 +181,8 @@
             </div>
         </div>
 
-        <div class="row">
+        <hr class="solid my-5">
+        <div class="row mt-2">
             <div class="col">
                 <div class="col text-center" data-appear-animation="fadeInLeft">
                     <h2 class="font-weight-semibold text-6 mb-0">{{ __('home.header.chemistry') }}</h2>
