@@ -57,7 +57,7 @@ return [
     'categories' => '类别',
     'new_product' => '新产品',
     'detail' => '详情',
-    'other_product' => '其他产品',
+    'other_product' => '同类产品',
     'no_product' => '没有产品',
     'category' => '类别',
     'list_news' => '新闻列表',
@@ -102,4 +102,5 @@ return [
     'show_room' => '地址',
     'time_working' => '工作时间',
     'info' => '信息',
+    'same_category' => '同一类别',
 ];

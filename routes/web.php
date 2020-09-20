@@ -12,7 +12,7 @@
 */
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'admin'], function() {
-    Route::get('dashboard', 'AdminController@index');
+    Route::get('dashboard', 'AdminController@index')->name('admin.dashboard');
     Route::resource('products', 'ProductController');
     Route::resource('categories', 'CategoryController');
     Route::resource('posts', 'PostController');
@@ -35,6 +35,7 @@ Route::group(['middleware' => 'locale', 'namespace' => 'Client'], function () {
     Route::get('gioi-thieu', 'ClientController@about')->name('client.about');
     Route::get('bao-hanh', 'ClientController@guarantee')->name('client.guarantee');
     Route::get('tin-tuc/{slug}', 'ClientController@newsDetail')->name('client.post_detail');
+    Route::get('tuyen-dung/{slug}', 'ClientController@newsDetail')->name('client.rec_detail');
     Route::get('danh-muc/{slug}', 'ClientController@detailCategory')->name('client.category');
     Route::get('san-pham/{slug}', 'ClientController@detailProduct')->name('client.product');
     Route::post('contact', 'ClientController@sendContact')->name('client.send_contact');

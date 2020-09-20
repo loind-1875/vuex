@@ -57,7 +57,7 @@ return [
     'categories' => 'Categories',
     'new_product' => 'New Product',
     'detail' => 'Detail',
-    'other_product' => 'Other products',
+    'other_product' => 'Similar product',
     'no_product' => 'No Product',
     'category' => 'Category',
     'list_news' => 'List news',
@@ -102,4 +102,5 @@ return [
     'show_room' => 'Address',
     'time_working' => 'Working time',
     'info' => 'Information',
+    'same_category' => 'Same category',
 ];

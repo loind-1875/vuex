@@ -307,7 +307,7 @@
                     <div class="col-lg-4 mb-4">
                         <article class="post post-large pb-5">
                             <div class="post-image">
-                                <a href="{{ route('client.post_detail', parseLink($recruitment)) }}">
+                                <a href="{{ route('client.rec_detail', parseLink($recruitment)) }}">
                                     <img src="{{ ($recruitment->image) }}" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="">
                                 </a>
                             </div>
@@ -317,10 +317,10 @@
                             </div>
                             <div class="post-content">
                                 <h4>
-                                    <a href="{{ route('client.post_detail', parseLink($recruitment)) }}" class="text-decoration-none">{{ $recruitment->title }}</a>
+                                    <a href="{{ route('client.rec_detail', parseLink($recruitment)) }}" class="text-decoration-none">{{ $recruitment->title }}</a>
                                 </h4>
                                 <p class="mb-1">{{ $recruitment->short_detail }}</p>
-                                <a href="{{ route('client.post_detail', parseLink($recruitment)) }}" class="btn btn-light text-uppercase text-primary text-1 py-2 px-3 mb-1 mt-2">
+                                <a href="{{ route('client.rec_detail', parseLink($recruitment)) }}" class="btn btn-light text-uppercase text-primary text-1 py-2 px-3 mb-1 mt-2">
                                     <strong>{{ __('home.read_more') }}</strong>
                                     <i class="fas fa-chevron-right text-2 pl-2"></i>
                                 </a>

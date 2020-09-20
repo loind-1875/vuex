@@ -17,7 +17,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 align-self-center p-static order-2 text-center">
-                    <h1 class="text-dark font-weight-bold text-8  mt-3">{{ __('home.detail_news') }}</h1>
+                    <h1 class="text-dark font-weight-bold text-8  mt-3">{{ $news->title }}</h1>
                 </div>
                 <div class="col-md-12 align-self-center order-1">
                     <ul class="breadcrumb d-block text-center">
@@ -30,51 +30,8 @@
     </section>
     <div class="container py-4">
         <div class="row">
-            <div class="col-lg-3">
-                <aside class="sidebar">
-                    <div class="tabs tabs-dark mb-4 pb-2">
-                        <ul class="nav nav-tabs">
-                            <li class="nav-item active">
-                                <a class="nav-link show active text-1 font-weight-bold text-uppercase" href="#popularPosts" data-toggle="tab">
-                                    {{ __('home.recently') }}
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="popularPosts">
-                                <ul class="simple-post-list">
-                                    @if (count($recently))
-                                        @foreach ($recently as $n)
-                                            <li>
-                                                <div class="post-image">
-                                                    <div class="img-thumbnail img-thumbnail-no-borders d-block">
-                                                        <a href="{{ route('client.post_detail', parseLink($n)) }}">
-                                                            <img src="{{ $n->image }}" width="50" height="50" alt="">
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="post-info">
-                                                    <a href="{{ route('client.post_detail', parseLink($n)) }}">
-                                                        {{ $n->title }}
-                                                    </a>
-                                                    <div class="post-meta">
-                                                        {{ formatDate($n->updated_at) }}
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        @endforeach
-                                    @else
-                                        <li><p>{{ __('home.no_data') }}</p></li>
-                                    @endif
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </aside>
-            </div>
-            <div class="col-lg-9">
+            <div class="col-lg-9 col-sm-12">
                 <div class="blog-posts single-post">
-
                     <article class="post post-large blog-single-post border-0 m-0 p-0">
                         <div class="post-image ml-0">
                             <a href="#">
@@ -100,7 +57,27 @@
                     </article>
 
                 </div>
+                <hr class="solid my-5">
+
+                <h4 class="mb-3">{{ __('home.same_category') }}</h4>
+                <div class="owl-carousel owl-theme" data-plugin-options="{'items': 4, 'autoplay': true, 'autoplayTimeout': 3000, 'dots': false}">
+                    @foreach ($recently as $n)
+                        <span class="product-thumb-info border-0 mr-2">
+                            <a href="{{ route('client.post', parseLink($n)) }}">
+                                <span class="product-thumb-info-image">
+                                    <img alt="{{ $n->title }}" class="img-fluid" src="{{ ($n->image) }} ">
+                                </span>
+                            </a>
+                            <span class="product-thumb-info-content product-thumb-info-content pl-0 bg-color-light">
+                                <a href="{{ route('client.post', parseLink($n)) }}">
+                                    <h4 class="text-4 text-primary">{{ $n->title }}</h4>
+                                </a>
+                            </span>
+                        </span>
+                    @endforeach
+                </div>
             </div>
+            @include('client.layout.sidebar')
         </div>
 
 @endsection

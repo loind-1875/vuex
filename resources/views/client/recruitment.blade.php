@@ -38,7 +38,7 @@
                                 <div class="row mb-3">
                                     <div class="col-lg-5">
                                         <div class="post-image">
-                                            <a href="{{ route('client.post_detail', parseLink($rec)) }}">
+                                            <a href="{{ route('client.rec_detail', parseLink($rec)) }}">
                                                 <img src="{{ ($rec->image) }}" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="{{ $rec->title }}" />
                                             </a>
                                         </div>
@@ -46,7 +46,7 @@
                                     <div class="col-lg-7">
                                         <div class="post-content">
                                             <h2 class="font-weight-semibold pt-4 pt-lg-0 text-5 line-height-4 mb-2">
-                                                <a href="{{ route('client.post_detail', parseLink($rec)) }}">{{ $rec->title }}</a>
+                                                <a href="{{ route('client.rec_detail', parseLink($rec)) }}">{{ $rec->title }}</a>
                                             </h2>
                                             <p class="mb-0">
                                                 {{ $rec->short_detail }}
@@ -59,7 +59,7 @@
                                         <div class="post-meta">
                                             <span><i class="far fa-calendar-alt"></i> {{ formatDate($rec->updated_at) }}</span>
                                             <span class="d-block d-sm-inline-block float-sm-right mt-3 mt-sm-0">
-                                                <a href="{{ route('client.post_detail', parseLink($rec)) }}" class="btn btn-xs btn-light text-1 text-uppercase">
+                                                <a href="{{ route('client.rec_detail', parseLink($rec)) }}" class="btn btn-xs btn-light text-1 text-uppercase">
                                                     {{ __('home.read_more') }}
                                                 </a>
                                             </span>

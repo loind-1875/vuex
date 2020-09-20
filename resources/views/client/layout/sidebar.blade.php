@@ -75,13 +75,13 @@
                                         <li>
                                             <div class="post-image">
                                                 <div class="img-thumbnail img-thumbnail-no-borders d-block">
-                                                    <a href="{{ route('client.product', parseLink($new)) }}">
+                                                    <a href="{{ route('client.post_detail', parseLink($new)) }}">
                                                         <img src="{{ ($new->image) }}" width="100" alt="{{ $new->title }}">
                                                     </a>
                                                 </div>
                                             </div>
                                             <div class="post-info">
-                                                <a href="{{ route('client.post', parseLink($new)) }}">
+                                                <a href="{{ route('client.post_detail', parseLink($new)) }}">
                                                     {{ $new->title }}
                                                 </a>
                                                 <div class="post-meta">
@@ -119,13 +119,13 @@
                                         <li>
                                             <div class="post-image">
                                                 <div class="img-thumbnail img-thumbnail-no-borders d-block">
-                                                    <a href="{{ route('client.product', parseLink($new)) }}">
+                                                    <a href="{{ route('client.rec_detail', parseLink($new)) }}">
                                                         <img src="{{ ($new->image) }}" width="100" alt="{{ $new->title }}">
                                                     </a>
                                                 </div>
                                             </div>
                                             <div class="post-info">
-                                                <a href="{{ route('client.post', parseLink($new)) }}">
+                                                <a href="{{ route('client.rec_detail', parseLink($new)) }}">
                                                     {{ $new->title }}
                                                 </a>
                                                 <div class="post-meta">

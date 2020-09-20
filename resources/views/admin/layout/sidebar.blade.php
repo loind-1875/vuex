@@ -4,7 +4,7 @@
             <div class="pcoded-navigation-label">Navigation</div>
             <ul class="pcoded-item pcoded-left-item">
                 <li class="{{ Request::segment(2) === 'dashboard' ? 'pcoded-trigger' : '' }}">
-                    <a href="{{ route('settings.show') }}" class="waves-effect waves-dark">
+                    <a href="{{ route('admin.dashboard') }}" class="waves-effect waves-dark">
                         <span class="pcoded-micon"><i class="feather icon-home"></i></span>
                         <span class="pcoded-mtext">Dashboard</span>
                     </a>

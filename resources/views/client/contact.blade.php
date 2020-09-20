@@ -87,51 +87,15 @@
 
             </div>
             <div class="col-lg-6">
-
                 <div class="appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="800">
-                    <h4 class="mt-2 mb-1">{{ __('home.footer.hanoi') }}</h4>
-                    <ul class="list list-icons list-icons-style-2 mt-2">
-                        <li>
-                            <i class="fas fa-map-marker-alt top-6"></i>
-                            <strong class="text-dark">{{ __('home.footer.office_address') }}:</strong>
-                            {{ __('home.footer.office_address_detail') }}
-                        </li>
-                        <li>
-                            <i class="fas fa-phone top-6"></i>
-                            <strong class="text-dark">{{ __('home.footer.tel') }}:</strong>
-                            (+84) 024.33542250
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="appear-animation mt-4" data-appear-animation="fadeIn" data-appear-animation-delay="800">
-                    <h4 class="mt-2 mb-1">{{ __('home.footer.hcm') }}</h4>
-                    <ul class="list list-icons list-icons-style-2 mt-2">
-                        <li>
-                            <i class="fas fa-map-marker-alt top-6"></i>
-                            <strong class="text-dark">{{ __('home.footer.office_address') }}:</strong>
-                            {{ __('home.footer.office_address_detail2') }}
-                        </li>
-                        <li>
-                            <i class="fas fa-phone top-6"></i>
-                            <strong class="text-dark">{{ __('home.footer.tel') }}:</strong>
-                            (+84) 028.35533922
-                        </li>
-                    </ul>
+                     <h4 class="pt-5">{{ __('home.show_room') }}</h4>
+                    {!! $settings[9]->value !!}
                 </div>
 
                 <div class="appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="950">
-                    <h4 class="pt-5">Business <strong>Hours</strong></h4>
-                    <ul class="list list-icons list-dark mt-2">
-                        <li><i class="far fa-clock top-6"></i> Monday - Friday - 9am to 5pm</li>
-                        <li><i class="far fa-clock top-6"></i> Saturday - 9am to 2pm</li>
-                        <li><i class="far fa-clock top-6"></i> Sunday - Closed</li>
-                    </ul>
+                    <h4 class="pt-5">{{ __('home.time_working') }}</h4>
+                    {!! $settings[10]->value !!}
                 </div>
-
-                <h4 class="pt-5">Get in <strong>Touch</strong></h4>
-                <p class="lead mb-0 text-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo at velit imperdiet varius. In eu ipsum vitae velit congue iaculis vitae at risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-
             </div>
 
         </div>

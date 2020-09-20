@@ -68,7 +68,7 @@ return [
     'categories' => 'Danh mục',
     'new_product' => 'Sản phẩm mới',
     'detail' => 'Chi tiết',
-    'other_product' => 'Sản phẩm khác ',
+    'other_product' => 'Sản phẩm tương tự',
     'no_product' => 'Không có sản phẩm nào',
     'category' => 'Danh mục',
     'list_news' => 'Danh sách tin tức',
@@ -109,4 +109,5 @@ return [
     'show_room' => 'Địa chỉ',
     'time_working' => 'Thời gian làm việc',
     'info' => 'Thông tin',
+    'same_category' => 'Cùng thể loại',
 ];

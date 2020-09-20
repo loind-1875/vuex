@@ -9,3 +9,45 @@ body {
 .dataTable.table td, .dataTable.table th {
     white-space: inherit;
 }
+
+.card.prod-p-card.card-red {
+    background-color: #ff5370;
+}
+
+.card.prod-p-card.card-blue {
+    background-color: #4099ff;
+}
+
+.card.prod-p-card.card-green {
+    background-color: #2ed8b6;
+}
+
+.card.prod-p-card.card-yellow {
+    background-color: #ffb64d;
+}
+
+.card.prod-p-card i {
+    background-color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    padding: 11px 0;
+    font-size: 18px;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    -webkit-box-shadow: 0 8px 15px rgba(62,57,107,.2);
+    box-shadow: 0 8px 15px rgba(62,57,107,.2);
+    display: block;
+}
+
+.card.prod-p-card:hover i{
+    -webkit-box-shadow: 0 4px 4px rgba(62,57,107,.2);
+    box-shadow: 0 4px 4px rgba(62,57,107,.2);
+    -webkit-transform: scale(.9) translatey(5px);
+    transform: scale(.9) translatey(5px);
+}
+
+.card.prod-p-card {
+    min-height: 141px;
+}

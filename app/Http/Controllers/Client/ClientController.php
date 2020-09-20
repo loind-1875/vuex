@@ -43,7 +43,6 @@ class ClientController extends Controller
     {
         $news = Post::where('is_recruitment', 0)->latest()->paginate(18);
 
-        $categories = $this->getCategories();
         $recentProducts = Product::take(6)
         ->where('public', 1)
         ->latest()
@@ -55,15 +54,13 @@ class ClientController extends Controller
                 'news',
                 'recentProducts',
                 'recentNews',
-                'recentRecruitments',
-                'categories'
+                'recentRecruitments'
             )
         );
     }
 
     public function recruitment()
     {
-        $categories = $this->getCategories();
         $recruitments = Post::where('is_recruitment', 1)->latest()->paginate(10);
 
         $recentProducts = Product::take(6)
@@ -77,7 +74,6 @@ class ClientController extends Controller
             'client.recruitment',
             compact(
                 'recruitments',
-                'categories',
                 'recentProducts',
                 'recentNews',
                 'recentRecruitments'
@@ -99,18 +95,31 @@ class ClientController extends Controller
     {
         $id = last(explode('-', $slug));
         $news = Post::findOrFail($id);
-        $categories = $this->getCategories();
 
-        $recently = Post::where('is_recruitment', 0)->take(6)->latest()->get();
+        if ($news->is_recruitment) {
+            $recently = Post::where('is_recruitment', 1)->take(6)->latest()->get();
+        } else {
+            $recently = Post::where('is_recruitment', 0)->take(6)->latest()->get();
+        }
+
+
+        $recentProducts = Product::take(6)
+            ->where('public', 1)
+            ->latest()
+            ->get();
+        $recentNews = Post::where('is_recruitment', 0)->take(3)->latest()->get();
+        $recentRecruitments = Post::where('is_recruitment', 1)->take(3)->latest()->get();
 
         return view(
             'client.news-detail',
             compact(
                 'news',
-                'categories',
                 'engine',
                 'chemistry',
-                'recently'
+                'recently',
+                'recentProducts',
+                'recentNews',
+                'recentRecruitments'
             )
         );
     }
@@ -128,7 +137,6 @@ class ClientController extends Controller
 
         $category = Category::findOrFail($id);
         $products = $category->publicProducts()->latest()->paginate(24);
-        $categories = $this->getCategories();
         
         $recentProducts = Product::where('public', 1)->take(6)->latest()->get();
         $recentNews = Post::where('is_recruitment', 0)->take(3)->latest()->get();
@@ -139,7 +147,6 @@ class ClientController extends Controller
             compact(
                 'products',
                 'category',
-                'categories',
                 'recentProducts',
                 'recentNews',
                 'recentRecruitments'
@@ -153,7 +160,6 @@ class ClientController extends Controller
 
         $product = Product::with('categories')->findOrFail($id);
 
-        $categories = $this->getCategories();
         $productCategoryIds = $product->categories->pluck('id')->toArray();
 
         $otherProducts = Product::where('id', '!=', $id)
@@ -176,7 +182,6 @@ class ClientController extends Controller
             'client.product-detail',
             compact(
                 'product',
-                'categories',
                 'otherProducts',
                 'recentProducts',
                 'recentNews',
@@ -209,12 +214,28 @@ class ClientController extends Controller
 
         $keyword = $request->keyword;
 
-        $result = ProductTranslation::where('name', 'like', '%' . $keyword . '%')
-            ->where('locale', $lan)
-            ->where('public', 1)
-            ->with('product', 'product.categories')
-            ->get();
+        $result = Product::where('public', 1)
+            ->whereHas('productTranslations', function($q) use ($lan, $keyword) {
+                $q->where('locale', $lan)
+                    ->where('name', 'like', '%' . $keyword . '%');
+            })
+            ->with('categories')
+            ->paginate(15);
 
-        return view('client.search', compact('result', 'keyword'));
+        $recentProducts = Product::take(6)
+            ->where('public', 1)
+            ->latest()
+            ->get();
+        $recentNews = Post::where('is_recruitment', 0)->take(3)->latest()->get();
+        $recentRecruitments = Post::where('is_recruitment', 1)->take(3)->latest()->get();
+
+        return view('client.search', compact(
+                'result',
+                'keyword',
+                'recentProducts',
+                'recentNews',
+                'recentRecruitments'
+            )
+        );
     }
 }

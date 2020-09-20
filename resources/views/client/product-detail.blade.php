@@ -20,7 +20,7 @@
 
                     <div class="col-md-12 align-self-center p-static order-2 text-center">
 
-                        <h1 class="text-dark font-weight-bold text-8 mt-4">{{ __('home.product_detail') }}</h1>
+                        <h1 class="text-dark font-weight-bold text-8 mt-4">{{ $product->name }}</h1>
                     </div>
 
                     <div class="col-md-12 align-self-center order-1">
@@ -34,7 +34,7 @@
             </div>
         </section>
         <div class="row">
-            <div class="col-lg-9">
+            <div class="col-lg-9 col-sm-12">
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="owl-carousel owl-theme" data-plugin-options="{'items': 1, 'margin': 10}">
@@ -48,7 +48,7 @@
                         <div class="summary entry-summary">
                             <h1 class="mb-0 font-weight-bold text-7">{{ $product->name }}</h1>
                             <div class="pb-0 clearfix">
-                                <div title="Rated 3 out of 5" class="float-left">
+                                <div title="{{ $product->star }} of 5" class="float-left">
                                     <input
                                         type="text"
                                         class="d-none"
@@ -64,7 +64,9 @@
                                 <span class="posted-in">
                                     {{ __('home.categories') }}:
                                     @foreach ($product->categories as $cate)
-                                        <a rel="tag" href="{{ route('client.category', parseLink($cate)) }}">{{ $cate->name }}</a>,
+                                        <a rel="tag" href="{{ route('client.category', parseLink($cate)) }}">
+                                            {{ $loop->last ? $cate->name : $cate->name . ',' }}
+                                        </a>
                                     @endforeach
                                 </span>
                             </div>
@@ -95,25 +97,21 @@
                 <hr class="solid my-5">
 
                 <h4 class="mb-3">{{ __('home.other_product') }}</h4>
-                <div class="masonry-loader masonry-loader-showing">
-                    <div class="row products product-thumb-info-list mt-3" data-plugin-masonry data-plugin-options="{'layoutMode': 'fitRows'}">
-                        @foreach ($otherProducts as $pro)
-                        <div class="col-12 col-sm-6 col-lg-3 product">
-                            <span class="product-thumb-info border-0">
-                                <a href="{{ route('client.product', parseLink($pro)) }}">
-                                    <span class="product-thumb-info-image">
-                                        <img alt="" class="img-fluid" src="{{ ($pro->image) }} ">
-                                    </span>
-                                </a>
-                                <span class="product-thumb-info-content product-thumb-info-content pl-0 bg-color-light">
-                                    <a href="{{ route('client.product', parseLink($pro)) }}">
-                                        <h4 class="text-4 text-primary">{{ $pro->name }}</h4>
-                                    </a>
+                <div class="owl-carousel owl-theme" data-plugin-options="{'items': 4, 'autoplay': true, 'autoplayTimeout': 3000, 'dots': false}">
+                    @foreach ($otherProducts as $pro)
+                        <span class="product-thumb-info border-0 mr-2">
+                            <a href="{{ route('client.product', parseLink($pro)) }}">
+                                <span class="product-thumb-info-image">
+                                    <img alt="" class="img-fluid" src="{{ ($pro->image) }} ">
                                 </span>
+                            </a>
+                            <span class="product-thumb-info-content product-thumb-info-content pl-0 bg-color-light">
+                                <a href="{{ route('client.product', parseLink($pro)) }}">
+                                    <h4 class="text-4 text-primary">{{ $pro->name }}</h4>
+                                </a>
                             </span>
-                        </div>
-                        @endforeach
-                    </div>
+                        </span>
+                    @endforeach
                 </div>
             </div>
             @include('client.layout.sidebar')

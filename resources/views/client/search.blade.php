@@ -5,7 +5,7 @@
 @endsection
 
 @section('meta')
-    <meta property="og:url" content="{{ route('client.recruitment') }}">
+    <meta property="og:url" content="{{ route('client.search') }}">
     <meta property="og:type" content="article" />
     <meta property="og:title" content="{{ __('home.search.index') }}" />
     <meta property="og:image" content="{{ $settings[6]['banner1'] }}">
@@ -53,33 +53,72 @@
             </div>
         </div>
         <div class="row">
-            <div class="col">
-
-                <ul class="simple-post-list m-0">
+            <div class="col-md-9 col-sm-12">
+                <div class="blog-posts">
                     @forelse($result as $value)
-                        <li>
-                            <div class="post-info">
-                                <a href="{{ route('client.product', parseLink($value->product)) }}">
-                                    {{ $value->name }}
-                                </a>
-                                <div class="post-meta">
-                                    @forelse($value->product->categories as $cate)
-                                        <span class="text-dark text-uppercase font-weight-semibold">
-                                            {{ $cate->name }}
-                                        </span>
-                                    @empty
-                                        <span class="text-dark text-uppercase font-weight-semibold">
-                                        </span>
-                                    @endforelse
-                                    | {{ formatDate($value->updated_at) }}
+                        <article class="post post-medium">
+                            <div class="row mb-3">
+                                <div class="col-lg-5">
+                                    <div class="post-image">
+                                        <a href="{{ route('client.product', parseLink($value)) }}">
+                                            <img src="{{ ($value->image) }}" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="{{ $value->name }}" />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7">
+                                    <div class="post-content mt-0">
+                                        <h2 class="font-weight-semibold pt-4 pt-lg-0 text-5 line-height-4 mb-2">
+                                            <a href="{{ route('client.product', parseLink($value)) }}">{{ $value->name }}</a>
+                                        </h2>
+                                        <div class="pb-2 clearfix">
+                                            <div title="{{ $value->star }} of 5" class="float-left">
+                                                <input
+                                                    type="text"
+                                                    class="d-none"
+                                                    value="{{ $value->star }}"
+                                                    title=""
+                                                    data-plugin-star-rating data-plugin-options="{'displayOnly': true, 'color': 'primary', 'size':'xs'}">
+                                            </div>
+                                        </div>
+                                        @forelse($value->categories as $key => $cate)
+                                            <p class="mb-1">
+                                                <a href="{{ route('client.category', parseLink($cate)) }}">
+                                                    {{ $loop->last ? $cate->name : $cate->name . ',' }}
+                                                </a>
+                                            </p>
+                                        @empty
+                                        @endforelse
+                                        <p class="mb-0">
+                                            {{ mb_strlen($value->short_detail) > 150 ? substr($value->short_detail, 0, 150) . '...' : $value->short_detail }}
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                        </li>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="post-meta">
+                                        <span><i class="far fa-calendar-alt"></i> {{ formatDate($value->updated_at) }}</span>
+                                        <span class="d-block d-sm-inline-block float-sm-right mt-3 mt-sm-0">
+                                            <a href="{{ route('client.post_detail', parseLink($value)) }}" class="btn btn-xs btn-light text-1 text-uppercase">
+                                                {{ __('home.read_more') }}
+                                            </a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
                     @empty
                         <h4 class="text-center">{{ __('home.no_data') }}</h4>
                     @endforelse
-                </ul>
+                </div>
+
+                <div class="row">
+                    <div class="col mt-4">
+                        {{ $result->links() }}
+                    </div>
+                </div>
             </div>
+            @include('client.layout.sidebar')
         </div>
     </div>
 @endsection
