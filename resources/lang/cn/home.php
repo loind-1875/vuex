@@ -103,4 +103,5 @@ return [
     'time_working' => '工作时间',
     'info' => '信息',
     'same_category' => '同一类别',
+    'success' => '提交成功'
 ];

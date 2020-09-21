@@ -110,4 +110,5 @@ return [
     'time_working' => 'Thời gian làm việc',
     'info' => 'Thông tin',
     'same_category' => 'Cùng thể loại',
+    'success' => 'Gửi thành công',
 ];

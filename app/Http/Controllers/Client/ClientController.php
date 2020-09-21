@@ -114,8 +114,6 @@ class ClientController extends Controller
             'client.news-detail',
             compact(
                 'news',
-                'engine',
-                'chemistry',
                 'recently',
                 'recentProducts',
                 'recentNews',
@@ -194,7 +192,7 @@ class ClientController extends Controller
     {
         Contact::create($request->all());
 
-        return redirect()->back()->with('success', 'Gửi thành công');
+        return redirect()->back()->with('success', __('home.success'));
     }
 
     public function changeLanguage($language)

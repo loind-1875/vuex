@@ -103,4 +103,5 @@ return [
     'time_working' => 'Working time',
     'info' => 'Information',
     'same_category' => 'Same category',
+    'success' => 'Submitted successfully',
 ];
