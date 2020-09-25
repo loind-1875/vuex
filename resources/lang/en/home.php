@@ -3,13 +3,13 @@
 return [
     'choose_me' => 'Why choose us',
     'quality' => 'Quality',
-    'quality_detail' => 'To create the best products in Vietnam and for the Vietnamese people to use.',
+    'quality_detail' => 'We provide the best made-in-Vietnam products for the uses of Vietnamese people',
     'technology' => 'Technology',
-    'tech_detail' => 'Always concentrate on studying and applying new technical and technological innovations on our products',
+    'tech_detail' => 'We always focus on learning and applying new scientific – technical improvements to our products. ',
     'trust' => 'Trust',
-    'trust_detail' => 'Consumers’ safety, customer’s rights and benefits are considered as a guideline for every product and service’s development strategies',
+    'trust_detail' => 'Our top criteria are the consumer safety and the customer benefits, we use them as the guidelines for every product – service development policy of the company.',
     'warranty' => 'Warranty',
-    'warranty_detail' => 'Be always ready to receive any queries, solve any problems that customers face during the process of using HFT \'s product',
+    'warranty_detail' => 'Guarantee department is always ready to receive any enquiries or problem reports that the customers encounter when using the products of H.F.T Company.',
     'about_us' => 'About us',
     'company' => [
         'name' => 'Chemical Services And Trading Co. Ltd.',

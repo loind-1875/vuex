@@ -3,13 +3,13 @@
 return [
     'choose_me' => 'Tại sao chọn chúng tôi',
     'quality' => 'Chất lượng',
-    'quality_detail' => 'Tạo ra được những sản phẩm tốt nhất ngay trên đất nước Việt Nam và cho chính người Việt Nam sử dụng.',
+    'quality_detail' => 'Tạo ra những sản phẩm tốt nhất ngay trên đất nước Việt Nam cho chính người Việt Nam sử dụng.',
     'technology' => 'Công nghệ',
-    'tech_detail' => 'Luôn chú trọng việc học hỏi, áp dụng những cải tiến kĩ thuật, công nghệ  mới vào sản phẩm của mình',
+    'tech_detail' => 'Luôn chú trọng việc học hỏi, áp dụng những cải tiến kĩ thuật công nghệ mới vào sản phẩm của mình.',
     'trust' => 'Niềm tin',
     'trust_detail' => 'Với tiêu chí đặt sự an toàn của người tiêu dùng và quyền lợi khách hàng làm kim chỉ nam cho mọi chính sách phát triển sản phẩm và dịch vụ của Công ty.',
     'warranty' => 'Bảo hành',
-    'warranty_detail' => 'Bộ phận bảo hành luôn sẵn sàng tiếp nhận mọi thắc mắc, vấn đề khách hàng  gặp phải trong suốt quá trình đồng hành và sử dụng sản phẩm của H.F.T',
+    'warranty_detail' => 'Bộ phận bảo hành luôn sẵn sàng tiếp nhận mọi thắc mắc, vấn đề khách hàng  gặp phải trong suốt quá trình đồng hành và sử dụng sản phẩm của H.F.T.',
     'company' => [
         'name' => 'Công ty TNHH Thương Mại Và Dịch Vụ Hóa Chất H.F.T',
         'detail1' => 'được thành lập vào ngày 15/01/2008.
