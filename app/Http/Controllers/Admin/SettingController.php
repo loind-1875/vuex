@@ -26,13 +26,13 @@ class SettingController extends Controller
             'banner1',
             'banner2',
             'time_working',
-            'show_room',
         ]);
 
         $trans = $request->only([
             'company_name',
             'about',
             'about2',
+            'show_room',
         ]);
 
         foreach ($data as $key => $value) {

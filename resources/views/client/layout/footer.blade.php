@@ -6,7 +6,7 @@
         <div class="row py-5">
             <div class="col-lg-5 col-md-5 col-sm-12 appear-animation animated fadeIn appear-animation-visible" data-appear-animation="fadeIn" data-appear-animation-delay="1000" data-plugin-options="{'accY': -200}" style="animation-delay: 1000ms;">
                 <h4>{{ __('home.show_room') }}</h4>
-                    {!! $settings[9]->value ?? '' !!}
+                    {!! $settings[9]->detail ?? '' !!}
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 appear-animation animated fadeIn appear-animation-visible" data-appear-animation="fadeIn" data-appear-animation-delay="1200" data-plugin-options="{'accY': -200}" style="animation-delay: 1200ms;">
                 <h4>{{ __('home.info') }}</h4>

@@ -146,8 +146,16 @@
                                 </div>
                                 
                                 <div class="col-sm-12 m-b-30">
-                                    <h4 class="sub-title">Địa chỉ văn phòng</h4>
-                                    <textarea id="short-detail6" name="show_room" placeHolder="Nhập địa chỉ văn phòng" class="form-control">{{ $settings[9]->value ?? '' }}</textarea>
+                                    <h4 class="sub-title">Địa chỉ văn phòng (VI)</h4>
+                                    <textarea id="short-detail6" name="show_room[vi]" placeHolder="Nhập địa chỉ văn phòng" class="form-control">{{ $settings[9]->vi->detail ?? '' }}</textarea>
+                                </div>
+                                <div class="col-sm-12 m-b-30">
+                                    <h4 class="sub-title">Địa chỉ văn phòng (EN)</h4>
+                                    <textarea id="short-detail7" name="show_room[en]" placeHolder="Nhập địa chỉ văn phòng" class="form-control">{{ $settings[9]->en->detail ?? '' }}</textarea>
+                                </div>
+                                <div class="col-sm-12 m-b-30">
+                                    <h4 class="sub-title">Địa chỉ văn phòng (CN)</h4>
+                                    <textarea id="short-detail8" name="show_room[cn]" placeHolder="Nhập địa chỉ văn phòng" class="form-control">{{ $settings[9]->cn->detail ?? '' }}</textarea>
                                 </div>
                                 <div class="col-sm-12 m-b-30">
                                     <button class="btn btn-primary waves-effect waves-light" type="submit">Lưu</button>
@@ -210,6 +218,8 @@
             CKEDITOR.replace('short-detail4', options);
             CKEDITOR.replace('short-detail5', options);
             CKEDITOR.replace('short-detail6', options);
+            CKEDITOR.replace('short-detail7', options);
+            CKEDITOR.replace('short-detail8', options);
             CKEDITOR.replace('time_working', options);
         });
     </script>
