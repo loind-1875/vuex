@@ -38,7 +38,7 @@
                             data-frames='[{"delay":1000,"speed":2000,"frame":"0","from":"sX:1.5;opacity:0;fb:20px;","to":"o:1;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
                             data-x="center"
                             data-y="center"
-                            data-fontsize="['22','22','22','40']"
+                            data-fontsize="['44','30','22','40']"
                             data-lineheight="['55','55','55','95']">{{ $slider->text2 }}</div>
 
                         <div class="tp-caption font-weight-light ws-normal text-center text-color-light mt-4"
@@ -46,7 +46,7 @@
                             data-x="center"
                             data-y="center" data-voffset="['60','60','60','105']"
                             data-width="['530','530','530','1100']"
-                            data-fontsize="['16','16','16','40']"
+                            data-fontsize="['22','22','16','40']"
                             data-lineheight="['26','26','26','45']"
                             >
                             {{ $slider->text3 }}

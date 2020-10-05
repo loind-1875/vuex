@@ -26,17 +26,38 @@ html .featured-box-secondary h4 {
     margin-bottom: 60px;
 }
 
+#header .header-nav-features .header-nav-top-icon, #header .header-nav-features .header-nav-top-icon-img {
+    color: #fff;
+}
+
+#header .header-logo img {
+    top: -9px;
+}
+
+#header .header-nav-main nav > ul > li > a {
+    background: -webkit-linear-gradient(#000, #fff, #000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+
 @media (min-width: 992px) {
     #header .header-nav-main nav > ul > li > a {
-        color: #a21817;
+        color: #fff;
+        font-size: 16px;
     }
 
     #header .header-nav-main nav > ul:not(:hover) > li > a.active {
-        background-color: #a21817;
+        background-color: transparent;
+        color: #C4161C;
+        -webkit-text-fill-color: #C4161C;
     }
 
     #header .header-nav-main nav > ul > li.open > a, #header .header-nav-main nav > ul > li:hover > a {
-        background-color: #a21817;
+        background-color: transparent;
+        color: #a21817;
+        -webkit-text-fill-color: #C4161C;
     }
 
     #header .header-nav-main nav > ul > li.dropdown.open > a, #header .header-nav-main nav > ul > li.dropdown:hover > a {
@@ -53,8 +74,8 @@ html .featured-box-secondary h4 {
     line-height: 2em;
 }
 
-.testimonial blockquote p {
-    font-family: "Open Sans", Arial, sans-serif;
+body, html, .testimonial blockquote p {
+    font-family: 'Quicksand', sans-serif;
 }
 
 .item-partner {
@@ -139,6 +160,15 @@ html .featured-box-secondary h4 {
 
 #header .header-column {
     justify-content: center;
+}
+
+#header .header-nav-main nav > ul > li > a {
+    font-weight: bold;
+}
+
+#header .header-body {
+    background-color: #204063;
+    border: none;
 }
 
 @media (max-width: 550px) {
