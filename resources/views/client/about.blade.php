@@ -59,31 +59,79 @@
 
                 <div class="row mt-3 mb-5">
                     <div class="col-md-4 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="800">
-                        <h3 class="font-weight-bold text-4 mb-2">{{ __('home.company.our_mission') }}</h3>
+                        <h3 class="font-weight-bold text-4 mb-2 text-center">{{ __('home.company.our_mission') }}</h3>
                         <p>{{ __('home.company.our_mission_detail') }}</p>
                     </div>
                     <div class="col-md-4 appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="600">
-                        <h3 class="font-weight-bold text-4 mb-2">{{ __('home.company.our_vision') }}</h3>
+                        <h3 class="font-weight-bold text-4 mb-2 text-center">{{ __('home.company.our_vision') }}</h3>
                         <p>{{ __('home.company.our_mission_detail') }}.</p>
                     </div>
                     <div class="col-md-4 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="800">
-                        <h3 class="font-weight-bold text-4 mb-2">{{ __('home.company.why_us') }}</h3>
+                        <h3 class="font-weight-bold text-4 mb-2 text-center">{{ __('home.company.why_us') }}</h3>
                         <p>{{ __('home.company.why_us_detail') }}</p>
                     </div>
                 </div>
 
             </div>
         </div>
-
     </div>
 
     <section class="section section-height-3 bg-color-grey-scale-1 m-0 border-0">
         <div class="container">
-            <div class="row align-items-center justify-content-center">
+            <h3 class="text-center">
+                {!! __('home.share') !!}
+            </h3>
+            <blockquote class="blockquote-primary">
+                <p>{!! __('home.share_detail') !!}</p>
+            </blockquote>
+
+        </div>
+    </section>
+
+    <section class="parallax section section-text-light section-parallax section-center mt-0 mb-0" data-plugin-parallax data-plugin-options="{'speed': 1.5}" data-image-src="{{ asset('/client/img/slides/4.jpg') }}">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="owl-carousel owl-theme nav-bottom rounded-nav" data-plugin-options="{'items': 1, 'loop': false}">
+                        <div>
+                            <div class="testimonial testimonial-style-2 testimonial-with-quotes mb-0">
+                                <div class="testimonial-author">
+                                    <img src="" class="img-fluid rounded-circle" alt="{{ __('home.share1_name') }}">
+                                </div>
+                                <blockquote>
+                                    <p class="mb-0">{{ __('home.share1') }}</p>
+                                </blockquote>
+                                <div class="testimonial-author">
+                                    <p><strong class="font-weight-extra-bold">{{ __('home.share1_name') }}</strong><span>{{ __('home.share1_info') }}</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="testimonial testimonial-style-2 testimonial-with-quotes mb-0">
+                                <div class="testimonial-author">
+                                    <img src="" class="img-fluid rounded-circle" alt="{{ __('home.share2_name') }}">
+                                </div>
+                                <blockquote>
+                                    <p class="mb-0">{{ __('home.share2') }}</p>
+                                </blockquote>
+                                <div class="testimonial-author">
+                                    <p><strong class="font-weight-extra-bold">{{ __('home.share2_name') }}</strong><span>{{ __('home.share2_info') }}</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{-- <section class="section section-height-3 bg-color-grey-scale-1 m-0 border-0"> --}}
+        <div class="container mt-4 mb-4">
+            <div class="row pt-4 pb-4 align-items-center justify-content-center">
                 <div class="col-lg-12 pb-sm-4 pb-lg-0 pr-lg-5 mb-sm-5 mb-lg-0 about-us-page">
                     {!! $settings[8]['detail'] !!}
                 </div>
             </div>
         </div>
-    </section>
+    {{-- </section> --}}
 @endsection

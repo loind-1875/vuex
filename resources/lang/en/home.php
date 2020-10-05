@@ -104,4 +104,14 @@ return [
     'info' => 'Information',
     'same_category' => 'Same category',
     'success' => 'Submitted successfully',
+    'share' => 'MESSAGE FROM THE LEADERSHIP',
+    'share_detail' => 'H.F.T – with the core business philosophy: "Ideology represents position" <br> From the beginning, when settling down the very first foundation of H.F.T, we have always been questioning ourselves: <br> How can H.F.T reputation contribute to the prominence of customer’s products? <br> How to make H.F.T staff proudly smile when bumping into the products they made in the market? <br> To archive these goals, we requires the efforts of each staff at H.F.T and, above all, the correct business orientation of the Leadership. <br>',
+    'share1' => 'in life, what clearly stays in my mind is the bonding relationship between me and my friends, my colleagues and my brothers – Vietnam is so familiar to me that I consider this place my second hometown. Therefore, how can I not appreciate it, retain it in me and contribute to its development? What I am pursuing now and must successfully bring to this lovely S-shaped country is to establish the products with the best quality, the highest stability and the most reasonable price to the customers and consumers. I would love to extend my appreciation to all valued customers for choosing H.F.T, to all my friends for giving me such great opportunities, and to all my colleagues for supporting me. Thank you for your love and trust to me and H.F.T. I promise not to let you down, and to try my best to foster this company better, bigger and stronger!',
+    'share2' => '“Ideology leads to position
+    Working together, sharing together”
+    H.F.T to me is not simply a company working and pursuing commercial purposes. H.F.T grows up along with emotions and benefits of customers. When they are satisfied and believe in you, your company and your products, means that you and your company have accomplished great business values. Besides that, customers are also our companions – they can help us to create valuable products in the market. Every product we made with huge passion and union of the company as a whole, we join hands to create perfect products representing our ideology: do it well, do it carefully, do it responsibly and do it passionately. We, H.F.T, will always be ready to learn, to try, to develop ourselves and to improve our product quality. My appreciation to the sustantial efforts of our staff. To step further, we must be united and we will grow stronger than ever.',
+    'share1_name' => 'Ngo',
+    'share2_name' => 'Nguyet',
+    'share1_info' => 'CEO',
+    'share2_info' => 'CEO',
 ];
