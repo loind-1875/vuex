@@ -140,3 +140,15 @@ html .featured-box-secondary h4 {
 #header .header-column {
     justify-content: center;
 }
+
+@media (max-width: 550px) {
+    p {
+        line-height: 45px;
+    }
+    .list.list-icons, .categories {
+        padding-left: 15px;
+    }
+    .list.list-icons p, .categories p {
+        margin-bottom: 0;
+    }
+}
