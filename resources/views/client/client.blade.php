@@ -17,22 +17,13 @@
                             data-bgrepeat="no-repeat"
                             class="rev-slidebg">
 
-                        <div class="tp-caption"
-                            data-x="center" data-hoffset="['0','0','0','0']"
-                            data-y="center" data-voffset="['-150','-150','-150','-150']"
-                            data-start="1000"
-                            data-transform_in="x:[-300%];opacity:0;s:500;"
-                            data-transform_idle="opacity:1;s:500;">
-                            <img src="/client/img/logo.png" alt="">
-                        </div>
-
                         <div class="tp-caption text-color-light font-weight-normal"
                             data-x="center"
                             data-y="center" data-voffset="['-50','-50','-50','-75']"
                             data-start="700"
                             data-fontsize="['16','16','16','40']"
                             data-lineheight="['25','25','25','45']"
-                            data-transform_in="y:[-50%];opacity:0;s:500;"></div>
+                            data-transform_in="y:[-50%];opacity:0;s:500;">{{ $slider->text1 }}</div>
 
                         <div class="tp-caption font-weight-extra-bold text-color-light negative-ls-1"
                             data-frames='[{"delay":1000,"speed":2000,"frame":"0","from":"sX:1.5;opacity:0;fb:20px;","to":"o:1;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
@@ -46,7 +37,7 @@
                             data-x="center"
                             data-y="center" data-voffset="['60','60','60','105']"
                             data-width="['530','530','530','1100']"
-                            data-fontsize="['22','22','16','40']"
+                            data-fontsize="['22','22','16','30']"
                             data-lineheight="['26','26','26','45']"
                             >
                             {{ $slider->text3 }}

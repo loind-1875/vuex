@@ -60,15 +60,15 @@
                 <div class="row mt-3 mb-5">
                     <div class="col-md-4 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="800">
                         <h3 class="font-weight-bold text-4 mb-2 text-center">{{ __('home.company.our_mission') }}</h3>
-                        <p>{{ __('home.company.our_mission_detail') }}</p>
+                        <p class="text-sm-center">{{ __('home.company.our_mission_detail') }}</p>
                     </div>
                     <div class="col-md-4 appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="600">
                         <h3 class="font-weight-bold text-4 mb-2 text-center">{{ __('home.company.our_vision') }}</h3>
-                        <p>{{ __('home.company.our_mission_detail') }}.</p>
+                        <p class="text-sm-center">{{ __('home.company.our_mission_detail') }}.</p>
                     </div>
                     <div class="col-md-4 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="800">
                         <h3 class="font-weight-bold text-4 mb-2 text-center">{{ __('home.company.why_us') }}</h3>
-                        <p>{{ __('home.company.why_us_detail') }}</p>
+                        <p class="text-sm-center">{{ __('home.company.why_us_detail') }}</p>
                     </div>
                 </div>
 

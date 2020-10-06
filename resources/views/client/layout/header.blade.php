@@ -6,7 +6,7 @@
                     <div class="header-row">
                         <div class="header-logo">
                             <a href="/">
-                                <img alt="{{ $settings[0]['detail'] }}" height="100" data-sticky-width="" data-sticky-height="40" data-sticky-top="40" src="{{ $settings[2]['value'] }}">
+                                <img alt="{{ $settings[0]['detail'] }}" data-sticky-width="60" data-sticky-height="" data-sticky-top="23" src="{{ $settings[2]['value'] }}">
                             </a>
                         </div>
                     </div>
@@ -15,7 +15,7 @@
                     <div class="header-row pt-3">
                         <nav class="header-nav-top">
                             <ul class="nav nav-pills">
-                                <li class="nav-item dropdown nav-item-left-border d-none d-sm-block nav-item-left-border-remove nav-item-left-border-md-show">
+                                <li class="nav-item dropdown nav-item-left-border d-sm-block nav-item-left-border-remove nav-item-left-border-md-show">
                                     @if (Session::get('website_language') === 'cn')
                                        <a class="nav-link" href="#" role="button" id="dropdownLanguage" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <img src="{{ asset('client/img/blank.gif') }}" class="flag flag-cn" alt="China" />
@@ -71,7 +71,7 @@
                         </div>
                     </div>
                     <div class="header-row">
-                        <div class="header-nav pt-1">
+                        <div class="header-nav">
                             <div class="header-nav-main header-nav-main-effect-1 header-nav-main-sub-effect-1">
                                 <nav class="collapse">
                                     <ul class="nav nav-pills" id="mainNav">
