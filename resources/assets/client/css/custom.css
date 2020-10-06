@@ -39,8 +39,14 @@ html .featured-box-secondary h4 {
     padding: 16px 0;
 }
 
-#header .header-nav-main nav > ul > li > a {
+#header .header-nav-main nav > ul > li > a{
     background: -webkit-linear-gradient(#000, #fff, #000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h4, h5, h3, h2, h1  {
+    background: -webkit-linear-gradient(#000, #9c9a9ac9, #000);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
