@@ -32,7 +32,6 @@ html .featured-box-secondary h4 {
 
 #header .header-logo img {
     top: 0;
-    /*max-height: 100%;*/
     width: 80px
 }
 
@@ -56,14 +55,14 @@ html .featured-box-secondary h4 {
 
     #header .header-nav-main nav > ul:not(:hover) > li > a.active {
         background-color: transparent;
-        color: #C4161C;
-        -webkit-text-fill-color: #C4161C;
+        color: #ff0009;
+        -webkit-text-fill-color: #ff0009;
     }
 
     #header .header-nav-main nav > ul > li.open > a, #header .header-nav-main nav > ul > li:hover > a {
         background-color: transparent;
-        color: #a21817;
-        -webkit-text-fill-color: #C4161C;
+        color: #ff0009;
+        -webkit-text-fill-color: #ff0009;
     }
 
     #header .header-nav-main nav > ul > li.dropdown.open > a, #header .header-nav-main nav > ul > li.dropdown:hover > a {
@@ -78,10 +77,6 @@ html .featured-box-secondary h4 {
 .about-us-page p {
     font-size: 1.2em;
     line-height: 2em;
-}
-
-body, html, .testimonial blockquote p {
-    font-family: 'Quicksand', sans-serif;
 }
 
 .item-partner {
@@ -158,6 +153,14 @@ body, html, .testimonial blockquote p {
 #footer .list.list-icons li {
     list-style: disc;
     padding-left: 0;
+}
+
+body, html, .testimonial blockquote p {
+    font-family: 'Quicksand', sans-serif;
+}
+
+#mainNav {
+    font-family: "Open Sans", Arial, sans-serif;
 }
 
 #header .header-logo, #header .header-logo a {
