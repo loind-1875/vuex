@@ -60,6 +60,22 @@ h4, h5, h3, h2, h1:not(.text-change)  {
     -webkit-text-fill-color: transparent;
 }
 
+.text-change .bg-primary {
+    background-color: #385574 !important;
+}
+
+.text-change b {
+    background: -webkit-linear-gradient(#fff, #b5b4b4, #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.color-gradient {
+    background: -webkit-linear-gradient(#fffbfb, #bbb5b5c7, #fff8f8)!important;
+    -webkit-background-clip: text!important;
+    -webkit-text-fill-color: transparent!important;
+}
+
 html .featured-box-effect-3.featured-box-secondary:hover .icon-featured {
     background: rgb(232,233,236)!important;
     background: linear-gradient(180deg, rgba(232,233,236,1) 0%, rgba(132,136,144,0.9864320728291317) 60%, rgba(235,235,240,1) 100%)!important;

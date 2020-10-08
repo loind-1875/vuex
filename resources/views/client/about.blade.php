@@ -19,7 +19,7 @@
         <div class="container">
             <div class="row mt-5">
                 <div class="col-md-12 align-self-center p-static order-2 text-center">
-                    <h1 class="text-9 font-weight-bold mt-4">{{ __('home.header.about') }}</h1>
+                    <h1 class="text-9 font-weight-bold mt-4 color-gradient">{{ __('home.header.about') }}</h1>
                     <span class="sub-title mt-4">{{ $settings[0]['detail'] }}</span>
                 </div>
                 <div class="col-md-12 align-self-center order-1">
@@ -39,7 +39,7 @@
                     <div class="col-md-10 mx-md-auto">
                         <div class="overflow-hidden mb-3">
                             <h1 class="word-rotator text-change slide font-weight-bold text-8 mb-0 appear-animation" data-appear-animation="maskUp">
-                                <p>{{ __('home.company.name') }} </p>
+                                <p>{{ $settings[0]['detail'] }} </p>
                                 <span>{{ __('home.company.we') }}</span>
                                 <span class="word-rotator-words bg-primary">
                                     <b class="is-visible">{{ __('home.company.create') }}</b>

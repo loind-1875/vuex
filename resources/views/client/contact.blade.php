@@ -19,7 +19,7 @@
         <div class="container">
             <div class="row mt-5">
                 <div class="col-md-12 align-self-center p-static order-2 text-center">
-                    <h1 class="text-9 font-weight-bold mt-4">{{ __('home.header.contact') }}</h1>
+                    <h1 class="text-9 font-weight-bold mt-4 color-gradient">{{ __('home.header.contact') }}</h1>
                     <span class="sub-title mt-4">{{ $settings[0]['detail'] }}</span>
                 </div>
                 <div class="col-md-12 align-self-center order-1">
