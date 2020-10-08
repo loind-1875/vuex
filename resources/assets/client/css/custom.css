@@ -65,9 +65,13 @@ h4, h5, h3, h2, h1:not(.text-change)  {
 }
 
 .text-change b {
-    background: -webkit-linear-gradient(#fff, #b5b4b4, #fff);
+    background: -webkit-linear-gradient(#828282, #fff, #636161);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.text-change p {
+    line-height: 40px;
 }
 
 .color-gradient {
