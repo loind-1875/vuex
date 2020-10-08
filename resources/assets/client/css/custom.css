@@ -44,13 +44,17 @@ html .text-color-dark {
     padding: 16px 0;
 }
 
+h1.text-change {
+    
+}
+
 #header .header-nav-main nav > ul > li > a{
     background: -webkit-linear-gradient(#000, #fff, #000);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-h4, h5, h3, h2, h1  {
+h4, h5, h3, h2, h1:not(.text-change)  {
     background: -webkit-linear-gradient(#000, #969292, #000);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

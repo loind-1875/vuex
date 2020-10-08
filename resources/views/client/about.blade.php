@@ -38,7 +38,7 @@
                 <div class="row text-center pb-5">
                     <div class="col-md-10 mx-md-auto">
                         <div class="overflow-hidden mb-3">
-                            <h1 class="word-rotator slide font-weight-bold text-8 mb-0 appear-animation" data-appear-animation="maskUp">
+                            <h1 class="word-rotator text-change slide font-weight-bold text-8 mb-0 appear-animation" data-appear-animation="maskUp">
                                 <p>{{ __('home.company.name') }} </p>
                                 <span>{{ __('home.company.we') }}</span>
                                 <span class="word-rotator-words bg-primary">
