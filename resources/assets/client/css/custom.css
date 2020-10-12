@@ -235,6 +235,10 @@ p {
     color: #000;
 }
 
+.testimonial.testimonial-with-quotes p {
+    text-align: justify;
+}
+
 @media (max-width: 550px) {
     p {
         line-height: 35px;

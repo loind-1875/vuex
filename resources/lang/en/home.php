@@ -110,8 +110,8 @@ return [
     'share2' => '“Ideology leads to position
     Working together, sharing together”
     H.F.T to me is not simply a company working and pursuing commercial purposes. H.F.T grows up along with emotions and benefits of customers. When they are satisfied and believe in you, your company and your products, means that you and your company have accomplished great business values. Besides that, customers are also our companions – they can help us to create valuable products in the market. Every product we made with huge passion and union of the company as a whole, we join hands to create perfect products representing our ideology: do it well, do it carefully, do it responsibly and do it passionately. We, H.F.T, will always be ready to learn, to try, to develop ourselves and to improve our product quality. My appreciation to the sustantial efforts of our staff. To step further, we must be united and we will grow stronger than ever.',
-    'share1_name' => 'Ngo',
-    'share2_name' => 'Nguyet',
+    'share1_name' => 'CEO Ngo Trung Hong',
+    'share2_name' => 'CEO Phung Minh Nguyet',
     'share1_info' => 'CEO',
     'share2_info' => 'CEO',
 ];

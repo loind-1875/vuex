@@ -58,15 +58,11 @@
                 </div>
 
                 <div class="row mt-3 mb-5">
-                    <div class="col-md-4 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="800">
+                    <div class="col-md-6 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="800">
                         <h3 class="font-weight-bold text-4 mb-2 text-center">{{ __('home.company.our_mission') }}</h3>
                         <p class="text-sm-center">{{ __('home.company.our_mission_detail') }}</p>
                     </div>
-                    <div class="col-md-4 appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="600">
-                        <h3 class="font-weight-bold text-4 mb-2 text-center">{{ __('home.company.our_vision') }}</h3>
-                        <p class="text-sm-center">{{ __('home.company.our_mission_detail') }}.</p>
-                    </div>
-                    <div class="col-md-4 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="800">
+                    <div class="col-md-6 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="800">
                         <h3 class="font-weight-bold text-4 mb-2 text-center">{{ __('home.company.why_us') }}</h3>
                         <p class="text-sm-center">{{ __('home.company.why_us_detail') }}</p>
                     </div>
@@ -95,27 +91,21 @@
                     <div class="owl-carousel owl-theme nav-bottom rounded-nav" data-plugin-options="{'items': 1, 'loop': false}">
                         <div>
                             <div class="testimonial testimonial-style-2 testimonial-with-quotes mb-0">
-                                <div class="testimonial-author">
-                                    <img src="" class="img-fluid rounded-circle" alt="{{ __('home.share1_name') }}">
-                                </div>
                                 <blockquote>
                                     <p class="mb-0">{{ __('home.share1') }}</p>
                                 </blockquote>
                                 <div class="testimonial-author">
-                                    <p><strong class="font-weight-extra-bold">{{ __('home.share1_name') }}</strong><span>{{ __('home.share1_info') }}</span></p>
+                                    <p><strong class="font-weight-extra-bold">{{ __('home.share1_name') }}</strong></p>
                                 </div>
                             </div>
                         </div>
                         <div>
                             <div class="testimonial testimonial-style-2 testimonial-with-quotes mb-0">
-                                <div class="testimonial-author">
-                                    <img src="" class="img-fluid rounded-circle" alt="{{ __('home.share2_name') }}">
-                                </div>
                                 <blockquote>
                                     <p class="mb-0">{{ __('home.share2') }}</p>
                                 </blockquote>
                                 <div class="testimonial-author">
-                                    <p><strong class="font-weight-extra-bold">{{ __('home.share2_name') }}</strong><span>{{ __('home.share2_info') }}</span></p>
+                                    <p><strong class="font-weight-extra-bold">{{ __('home.share2_name') }}</strong></p>
                                 </div>
                             </div>
                         </div>
