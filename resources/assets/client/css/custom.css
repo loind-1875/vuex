@@ -37,7 +37,7 @@ html .text-color-dark {
 
 #header .header-logo img {
     top: 0;
-    width: 80px
+    width: 115px
 }
 
 #header .header-nav {
@@ -227,7 +227,7 @@ body, html, .testimonial blockquote p {
 }
 
 #header .header-body {
-    background-color: #204063e3;
+    background-color: #010648;
     border: none;
 }
 
