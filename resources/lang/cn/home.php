@@ -44,8 +44,8 @@ return [
         'office_address_detail2' => '越南胡志明市平盛郡13坊平利 324号.',
     ],
     'header' => [
-        'home' => '家',
-        'about' => '关于我们',
+        'home' => '首页',
+        'about' => '简介',
         'chemistry' => '化学',
         'engine' => '发动机',
         'recruitment' => '招募',
