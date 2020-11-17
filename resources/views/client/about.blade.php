@@ -43,7 +43,6 @@
                                 <span>{{ __('home.company.we') }}</span>
                                 <span class="word-rotator-words bg-primary">
                                     <b class="is-visible">{{ __('home.company.create') }}</b>
-                                    <b>{{ __('home.company.develop') }}</b>
                                     <b>{{ __('home.company.build') }}</b>
                                 </span>
                                 <span> {{ __('home.company.solutions') }}</span>
