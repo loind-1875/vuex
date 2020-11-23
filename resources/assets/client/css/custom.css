@@ -103,14 +103,14 @@ html .featured-box-effect-3.featured-box-secondary .icon-featured:after {
 
     #header .header-nav-main nav > ul:not(:hover) > li > a.active {
         background-color: transparent;
-        color: #ff0009;
-        -webkit-text-fill-color: #ff0009;
+        color: #9c090e;
+        -webkit-text-fill-color: #9c090e;
     }
 
     #header .header-nav-main nav > ul > li.open > a, #header .header-nav-main nav > ul > li:hover > a {
         background-color: transparent;
-        color: #ff0009;
-        -webkit-text-fill-color: #ff0009;
+        color: #9c090e;
+        -webkit-text-fill-color: #9c090e;
     }
 
     #header .header-nav-main nav > ul > li.dropdown.open > a, #header .header-nav-main nav > ul > li.dropdown:hover > a {
