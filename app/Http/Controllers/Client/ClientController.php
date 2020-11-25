@@ -23,14 +23,14 @@ class ClientController extends Controller
         $recruitments = Post::where('is_recruitment', 1)->take(3)->latest()->get();
 
         $engine = Category::with(['products' => function($q) {
-            $q->where('public', 1)->where('show_home', 1)->take(6)->latest();
+            $q->where('public', 1)->where('show_home', 1)->take(6)->orderBy('updated_at');
         }])->where('id', 2)->first();
 
         $chemistry = Category::with(['products' => function($q) {
-            $q->where('public', 1)->where('show_home', 1)->take(6)->latest();
+            $q->where('public', 1)->where('show_home', 1)->take(6)->orderBy('updated_at');
         }])->where('id', 1)->first();
 
-        $sliders = Slider::orderBy('order')->get();
+        $sliders = Slider::orderBy('order')->orderBy('id')->get();
 
         $reviews = Review::all();
 
