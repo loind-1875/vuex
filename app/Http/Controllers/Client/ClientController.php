@@ -134,7 +134,7 @@ class ClientController extends Controller
         $id = last(explode('-', $slug));
 
         $category = Category::findOrFail($id);
-        $products = $category->publicProducts()->latest()->paginate(24);
+        $products = $category->publicProducts()->orderBy('updated_at')->paginate(24);
         
         $recentProducts = Product::where('public', 1)->take(6)->latest()->get();
         $recentNews = Post::where('is_recruitment', 0)->take(3)->latest()->get();
