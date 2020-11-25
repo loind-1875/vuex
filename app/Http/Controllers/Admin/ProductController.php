@@ -22,7 +22,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::with('categories')->latest()->get();
+        $products = Product::with('categories')->orderBy('id')->get();
 
         return view('admin.product.list', compact('products'));
     }
