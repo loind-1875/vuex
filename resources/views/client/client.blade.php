@@ -248,9 +248,7 @@
     <div class="container" id="partner">
         <div class="row">
             <div class="col-sm-12">
-                <h2 class="font-weight-normal text-center text-6 mb-4">{{ __('home.partner') }}</h2>
-                <p class="text-center">{{ __('home.partner_info') }}</p>
-
+                <h2 class="font-weight-normal text-center text-6 mb-4">{{ __('home.partner_info') }}</h2>
                 <div class="owl-carousel partner owl-theme stage-margin rounded-nav" data-plugin-options="{'items': 5, 'margin': 10, 'loop': true, 'nav': true, 'dots': false, 'stagePadding': 40}">
                     @forelse ($partners as $partner)
                         <div class="item-partner">
