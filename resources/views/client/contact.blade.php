@@ -89,7 +89,7 @@
             <div class="col-lg-6">
                 <div class="appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="800">
                      <h4 class="pt-5">{{ __('home.show_room') }}</h4>
-                    {!! $settings[9]->value !!}
+                    {!! $settings[9]->detail !!}
                 </div>
 
                 <div class="appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="950">
