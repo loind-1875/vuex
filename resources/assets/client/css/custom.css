@@ -336,3 +336,9 @@ p {
     bottom: 15px;
     left: 15px;
 }
+
+#detail-page .owl-carousel .owl-item img {
+    max-width: 100%;
+    width: auto;
+    display: unset;
+}

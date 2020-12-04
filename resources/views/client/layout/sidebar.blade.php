@@ -32,7 +32,7 @@
                                             <div class="post-image">
                                                 <div class="img-thumbnail img-thumbnail-no-borders d-block">
                                                     <a href="{{ route('client.product', parseLink($n)) }}">
-                                                        <img src="{{ ($n->image) }}" width="100" height="50" alt="{{ $n->name }}">
+                                                        <img src="{{ ($n->image) }}" width="100" alt="{{ $n->name }}">
                                                     </a>
                                                 </div>
                                             </div>

@@ -8,8 +8,8 @@
     <meta property="og:url" content="{{ route('client.category', parseLink($category)) }}">
     <meta property="og:type" content="article" />
     <meta property="og:title" content="{{ $category->name }}" />
-    <meta property="og:image" content="{{ $settings[6]['banner1'] }}">
-    <meta property="og:description" content="{{ $category->description }}">
+    <meta property="og:image" content="{{ $settings[6]['value'] }}">
+    <meta property="og:description" content="{{ strip_tags($category->description) }}">
 @endsection
 
 @section('content')

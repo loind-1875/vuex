@@ -33,12 +33,12 @@
                 </div>
             </div>
         </section>
-        <div class="row">
+        <div class="row" id="detail-page">
             <div class="col-lg-9 col-sm-12">
-                <div class="row">
+                <div class="row mb-4">
                     <div class="col-lg-6">
                         <div class="owl-carousel owl-theme" data-plugin-options="{'items': 1, 'margin': 10}">
-                            <div>
+                            <div class="text-center">
                                 <img alt="" height="300" class="img-fluid" src="{{ ($product->image) }}">
                             </div>
                         </div>
@@ -77,7 +77,7 @@
                     </div>
                 </div>
 
-                <div class="row">
+                <div class="row mt-4">
                     <div class="col">
                         <div class="tabs tabs-product mb-2">
                             <ul class="nav nav-tabs">

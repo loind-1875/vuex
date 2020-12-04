@@ -8,7 +8,7 @@
     <meta property="og:url" content="{{ route('client.search') }}">
     <meta property="og:type" content="article" />
     <meta property="og:title" content="{{ __('home.search.index') }}" />
-    <meta property="og:image" content="{{ $settings[6]['banner1'] }}">
+    <meta property="og:image" content="{{ $settings[6]['value'] }}">
     <meta property="og:description" content="{{ __('home.search.index') }}">
 @endsection
 
