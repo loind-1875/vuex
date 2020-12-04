@@ -280,7 +280,7 @@
                         <article class="post post-large">
                             <div class="post-image">
                                 <a href="{{ route('client.post_detail', parseLink($item)) }}">
-                                    <img src="{{ ($item->image) }}" class="br-15 img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="">
+                                    <img src="{{ ($item->image) }}" class="br-15 img-fluid img-thumbnail img-thumbnail-no-borders" alt="">
                                 </a>
                             </div>
                             <div class="post-date">

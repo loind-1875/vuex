@@ -61,7 +61,7 @@
                                 <div class="col-lg-5">
                                     <div class="post-image">
                                         <a href="{{ route('client.product', parseLink($value)) }}">
-                                            <img src="{{ ($value->image) }}" class="br-15 img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="{{ $value->name }}" />
+                                            <img src="{{ ($value->image) }}" class="br-15 img-fluid img-thumbnail img-thumbnail-no-borders" alt="{{ $value->name }}" />
                                         </a>
                                     </div>
                                 </div>

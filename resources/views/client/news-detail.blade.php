@@ -35,7 +35,7 @@
                     <article class="post post-large blog-single-post border-0 m-0 p-0">
                         <div class="post-image ml-0">
                             <a href="#">
-                                <img src="{{ ($news->image) }}" class="w-100 br-15 img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="{{ $news->title }}" />
+                                <img src="{{ ($news->image) }}" class="w-100 br-15 img-fluid img-thumbnail img-thumbnail-no-borders" alt="{{ $news->title }}" />
                             </a>
                         </div>
 
