@@ -7,7 +7,7 @@
     <title>@yield('title')</title>
 
     <meta name="keywords" content="{{ $settings[0]['detail'] }}" />
-    <meta name="description" content="{{ $settings[1]['detail'] }}">
+    <meta name="description" content="{!! $settings[1]['detail'] !!}">
     <meta name="author" content="{{ $settings[0]['detail'] }}">
 
     <!-- Favicon -->
@@ -34,6 +34,8 @@
     </div>
 
     @include('client.layout.footer')
+    <a rel="nofollow" target="_blank" href="http://zalo.me/123" title="Zalo 123" id="floating-sms-zalo"></a>
+    <a rel="nofollow" target="_blank" href="tel:0984282942" title="Gửi tin nhắn cho chúng tôi qua Facebook" class="ctrlq fb-button"><i class="fa fa-phone" aria-hidden="true"></i></a>
 </div>
 
 <script src="/client/js/client.js"></script>
