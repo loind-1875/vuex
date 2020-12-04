@@ -35,7 +35,7 @@
                     <article class="post post-large blog-single-post border-0 m-0 p-0">
                         <div class="post-image ml-0">
                             <a href="#">
-                                <img src="{{ ($news->image) }}" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="{{ $news->title }}" />
+                                <img src="{{ ($news->image) }}" class="w-100 br-15 img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="{{ $news->title }}" />
                             </a>
                         </div>
 
@@ -65,7 +65,7 @@
                         <span class="product-thumb-info border-0 mr-2">
                             <a href="{{ route('client.post', parseLink($n)) }}">
                                 <span class="product-thumb-info-image">
-                                    <img alt="{{ $n->title }}" class="img-fluid" src="{{ ($n->image) }} ">
+                                    <img alt="{{ $n->title }}" class="br-15 img-fluid" src="{{ ($n->image) }} ">
                                 </span>
                             </a>
                             <span class="product-thumb-info-content product-thumb-info-content pl-0 bg-color-light">

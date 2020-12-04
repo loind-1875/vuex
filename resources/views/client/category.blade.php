@@ -40,7 +40,7 @@
                                         <span class="product-thumb-info border-0">
                                             <a href="{{ route('client.product', parseLink($product)) }}">
                                                 <span class="product-thumb-info-image">
-                                                    <img alt="" class="img-fluid" src="{{ ($product->image) }}">
+                                                    <img alt="" class="img-fluid br-15" src="{{ ($product->image) }}">
                                                 </span>
                                             </a>
                                             <span class="product-thumb-info-content product-thumb-info-content pl-0 bg-color-light">

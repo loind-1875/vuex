@@ -39,7 +39,7 @@
                     <div class="col-lg-6">
                         <div class="owl-carousel owl-theme" data-plugin-options="{'items': 1, 'margin': 10}">
                             <div class="text-center">
-                                <img alt="" height="300" class="img-fluid" src="{{ ($product->image) }}">
+                                <img alt="" height="300" class="img-fluid br-15" src="{{ ($product->image) }}">
                             </div>
                         </div>
                     </div>
@@ -97,12 +97,12 @@
                 <hr class="solid my-5">
 
                 <h4 class="mb-3">{{ __('home.other_product') }}</h4>
-                <div class="owl-carousel owl-theme" data-plugin-options="{'items': 4, 'autoplay': true, 'autoplayTimeout': 3000, 'dots': false}">
+                <div class="owl-carousel owl-theme pb-4 mb-4" data-plugin-options="{'items': 4, 'autoplay': true, 'autoplayTimeout': 3000, 'dots': false, 'margin': 20}">
                     @foreach ($otherProducts as $pro)
                         <span class="product-thumb-info border-0 mr-2">
                             <a href="{{ route('client.product', parseLink($pro)) }}">
                                 <span class="product-thumb-info-image">
-                                    <img alt="" class="img-fluid" src="{{ ($pro->image) }} ">
+                                    <img alt="" class="img-fluid br-15" src="{{ ($pro->image) }} ">
                                 </span>
                             </a>
                             <span class="product-thumb-info-content product-thumb-info-content pl-0 bg-color-light">

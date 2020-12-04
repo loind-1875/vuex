@@ -342,3 +342,7 @@ p {
     width: auto;
     display: unset;
 }
+
+.br-15 {
+    border-radius: 15px;
+}

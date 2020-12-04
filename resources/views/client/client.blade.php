@@ -171,7 +171,7 @@
                                     <span class="product-thumb-info border-0">
                                         <a href="{{ route('client.product', parseLink($item)) }}">
                                             <span class="product-thumb-info-image">
-                                                <img alt="" class="img-fluid" src="{{ ($item->image) }}">
+                                                <img alt="" class="img-fluid br-15" src="{{ ($item->image) }}">
                                             </span>
                                         </a>
                                         <span class="product-thumb-info-content product-thumb-info-content pl-0 bg-color-light">
@@ -204,7 +204,7 @@
                                     <span class="product-thumb-info border-0">
                                         <a href="{{ route('client.product', parseLink($ches)) }}">
                                             <span class="product-thumb-info-image">
-                                                <img alt="" class="img-fluid" src="{{ ($ches->image) }}">
+                                                <img alt="" class="img-fluid br-15" src="{{ ($ches->image) }}">
                                             </span>
                                         </a>
                                         <span class="product-thumb-info-content product-thumb-info-content pl-0 bg-color-light">
@@ -280,7 +280,7 @@
                         <article class="post post-large">
                             <div class="post-image">
                                 <a href="{{ route('client.post_detail', parseLink($item)) }}">
-                                    <img src="{{ ($item->image) }}" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="">
+                                    <img src="{{ ($item->image) }}" class="br-15 img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="">
                                 </a>
                             </div>
                             <div class="post-date">
@@ -315,7 +315,7 @@
                         <article class="post post-large pb-5">
                             <div class="post-image">
                                 <a href="{{ route('client.rec_detail', parseLink($recruitment)) }}">
-                                    <img src="{{ ($recruitment->image) }}" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="">
+                                    <img src="{{ ($recruitment->image) }}" class="br-15 img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="">
                                 </a>
                             </div>
                             <div class="post-date">

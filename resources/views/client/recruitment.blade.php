@@ -39,7 +39,7 @@
                                     <div class="col-lg-5">
                                         <div class="post-image">
                                             <a href="{{ route('client.rec_detail', parseLink($rec)) }}">
-                                                <img src="{{ ($rec->image) }}" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="{{ $rec->title }}" />
+                                                <img src="{{ ($rec->image) }}" class="br-15 img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="{{ $rec->title }}" />
                                             </a>
                                         </div>
                                     </div>

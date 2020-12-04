@@ -32,7 +32,7 @@
                                             <div class="post-image">
                                                 <div class="img-thumbnail img-thumbnail-no-borders d-block">
                                                     <a href="{{ route('client.product', parseLink($n)) }}">
-                                                        <img src="{{ ($n->image) }}" width="100" alt="{{ $n->name }}">
+                                                        <img class="br-15" src="{{ ($n->image) }}" width="100" alt="{{ $n->name }}">
                                                     </a>
                                                 </div>
                                             </div>
@@ -76,7 +76,7 @@
                                             <div class="post-image">
                                                 <div class="img-thumbnail img-thumbnail-no-borders d-block">
                                                     <a href="{{ route('client.post_detail', parseLink($new)) }}">
-                                                        <img src="{{ ($new->image) }}" width="100" alt="{{ $new->title }}">
+                                                        <img class="br-15" src="{{ ($new->image) }}" width="100" alt="{{ $new->title }}">
                                                     </a>
                                                 </div>
                                             </div>
@@ -120,7 +120,7 @@
                                             <div class="post-image">
                                                 <div class="img-thumbnail img-thumbnail-no-borders d-block">
                                                     <a href="{{ route('client.rec_detail', parseLink($new)) }}">
-                                                        <img src="{{ ($new->image) }}" width="100" alt="{{ $new->title }}">
+                                                        <img class="br-15" src="{{ ($new->image) }}" width="100" alt="{{ $new->title }}">
                                                     </a>
                                                 </div>
                                             </div>
