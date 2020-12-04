@@ -45,7 +45,7 @@
                                             </a>
                                             <span class="product-thumb-info-content product-thumb-info-content pl-0 bg-color-light">
                                                 <a href="{{ route('client.product', parseLink($product)) }}">
-                                                    <h4 class="text-4 text-primary">{{ $product->name }}</h4>
+                                                    <h4 class="text-4 text-center">{{ $product->name }}</h4>
                                                 </a>
                                             </span>
                                         </span>

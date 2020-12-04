@@ -315,7 +315,7 @@
                         <article class="post post-large pb-5">
                             <div class="post-image">
                                 <a href="{{ route('client.rec_detail', parseLink($recruitment)) }}">
-                                    <img src="{{ ($recruitment->image) }}" class="br-15 img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="">
+                                    <img src="{{ ($recruitment->image) }}" class="br-15 img-fluid img-thumbnail img-thumbnail-no-borders" alt="">
                                 </a>
                             </div>
                             <div class="post-date">
