@@ -34,8 +34,17 @@
     </div>
 
     @include('client.layout.footer')
-    <a rel="nofollow" target="_blank" href="http://zalo.me/123" title="Zalo 123" id="floating-sms-zalo"></a>
-    <a rel="nofollow" target="_blank" href="tel:0984282942" title="Gửi tin nhắn cho chúng tôi qua Facebook" class="ctrlq fb-button"><i class="fa fa-phone" aria-hidden="true"></i></a>
+
+    <div class="contact-action">
+        <a rel="nofollow" target="_blank" href="http://zalo.me/0943863377" title="Zalo 0943 863 377" id="floating-sms-zalo"></a>
+        <div class="phonering-alo-phone phonering-alo-green phonering-alo-show" id="phonering-alo-phoneIcon">
+            <div class="phonering-alo-ph-circle"></div>
+            <div class="phonering-alo-ph-circle-fill"></div>
+            <a href="tel:0943863377" class="pps-btn-img" title="Call">
+                <div class="phonering-alo-ph-img-circle"></div>
+            </a>
+        </div>
+    </div>
 </div>
 
 <script src="/client/js/client.js"></script>
