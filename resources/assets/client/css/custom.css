@@ -749,7 +749,7 @@ p {
 
 .contact-action {
     position: fixed;
-    top: 30%;
+    bottom: 5%;
     right: 0;
     width: 100px;
     height: 190px;
