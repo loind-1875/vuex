@@ -443,8 +443,7 @@ p {
 }
 
 .phonering-alo-phone.phonering-alo-green .phonering-alo-ph-img-circle {
-    background-color:#00aff2;
-    background-color:#00aff2 9
+    background-color: #080b35;
 }
 
 .phonering-alo-phone.phonering-alo-gray.phonering-alo-hover .phonering-alo-ph-img-circle,.phonering-alo-phone.phonering-alo-gray:hover .phonering-alo-ph-img-circle {
@@ -738,7 +737,7 @@ p {
     bottom: 125px;
     height: 60px;
     width: 60px;
-    background: #05a3e5 url(../img/zalo-icon.png) center / 43px no-repeat;
+    background: #080b35 url(../img/zalo-icon.png) center / 43px no-repeat;
     z-index: 99;
     color: #FFF;
     font-size: 35px;
