@@ -45,7 +45,7 @@ html .text-color-dark {
 }
 
 h1.text-change {
-    
+
 }
 
 #header .header-nav-main nav > ul > li > a{
@@ -790,4 +790,10 @@ p {
 
 .page-header h1 {
     line-height: normal;
+}
+
+.detail-about img {
+    max-width: 100%!important;
+    width: 100%!important;
+    height: 100%!important;
 }

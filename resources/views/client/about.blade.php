@@ -8,7 +8,7 @@
     <meta property="og:url" content="{{ route('client.about') }}">
     <meta property="og:type" content="article" />
     <meta property="og:title" content="{{ __('home.header.about') }}" />
-    <meta property="og:image" content="{{ $settings[6]['value'] }}">
+    <meta property="og:image" content="{{ strip_tags($settings[6]['value']) }}">
     <meta property="og:description" content="{{ strip_tags($settings[1]['detail']) ?? '' }}">
 @endsection
 
@@ -115,7 +115,7 @@
     </section>
 
     {{-- <section class="section section-height-3 bg-color-grey-scale-1 m-0 border-0"> --}}
-        <div class="container mt-4 mb-4">
+        <div class="container detail-about mt-4 mb-4">
             <div class="row pt-4 pb-4 align-items-center justify-content-center">
                 <div class="col-lg-12 pb-sm-4 pb-lg-0 pr-lg-5 mb-sm-5 mb-lg-0 about-us-page">
                     {!! $settings[8]['detail'] !!}
