@@ -797,3 +797,8 @@ p {
     width: 100%!important;
     height: 100%!important;
 }
+
+.product-thumb-info img {
+    transition: all .2s;
+    height: 345px;
+}
