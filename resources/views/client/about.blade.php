@@ -13,7 +13,7 @@
 @endsection
 
 @section('content')
-    <section class="page-header page-header-modern page-header-background page-header-background-md overlay overlay-color-dark overlay-show overlay-op-7"
+    <!-- <section class="page-header page-header-modern page-header-background page-header-background-md overlay overlay-color-dark overlay-show overlay-op-7"
          style="background-image: url({{ asset('/client/img/slides/5.jpg') }}); background-position: bottom;"
     >
         <div class="container">
@@ -30,7 +30,11 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
+
+    <video autoplay muted loop id="myVideo" style="width: 100%; height: 100vh; object-fit: cover;">
+        <source src="storage/video.mp4" type="video/mp4">
+    </video>
 
     <div class="container">
         <div class="row pt-5">
