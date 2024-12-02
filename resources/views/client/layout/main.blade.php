@@ -9,7 +9,8 @@
     <meta name="keywords" content="{{ strip_tags($settings[1]['detail']) }}" />
     <meta name="description" content="{{ strip_tags($settings[1]['detail']) }}">
     <meta name="author" content="{{ strip_tags($settings[1]['detail']) }}">
-
+    <meta name="google-site-verification" content="md8So3WGcjFYUxULqChjUssWxyLmBygvZSzIN-YQWu0" />
+    
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ $settings[3]['value'] }}" type="image/x-icon" />
     <link rel="apple-touch-icon" href="{{ $settings[3]['value'] }}">
