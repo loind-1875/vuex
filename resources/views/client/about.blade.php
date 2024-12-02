@@ -32,7 +32,7 @@
         </div>
     </section> -->
 
-    <video autoplay muted loop id="myVideo" style="width: 100%; height: 100vh; object-fit: cover;">
+    <video autoplay muted loop id="myVideo" style="width: 100%;">
         <source src="storage/video.mp4" type="video/mp4">
     </video>
 
