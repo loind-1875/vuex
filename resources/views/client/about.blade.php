@@ -31,10 +31,23 @@
             </div>
         </div>
     </section> -->
+    <div class="video-about" style="position: relative">
+        <button class="open-volume" type="button" onclick="toggleMute()" id="button" style="position: absolute;
+                    top: 10px;
+                    left: 10px;
+                    border: 1px solid #eee;
+                    border-radius: 100%;
+                    width: 35px;
+                    height: 35px;
+                    background: #070b35;
+                    color: #fff;">
+                    <i class="fas fa-volume-up"></i>
+                </button>
 
-    <video autoplay muted loop id="myVideo" style="width: 100%;">
-        <source src="storage/video.mp4" type="video/mp4">
-    </video>
+                <video autoplay muted loop id="myVideo" style="width: 100%; pointer-events: none">
+                    <source src="storage/video.mp4" type="video/mp4">
+                </video>
+    </div>
 
     <div class="container">
         <div class="row pt-5">
